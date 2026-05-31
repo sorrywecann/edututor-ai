@@ -23,7 +23,7 @@ aiosqlite>=0.20.0
 
 # ── Cache (redis client is imported at module level in main.py; the backend
 #    runs fine with no redis server reachable, but the import must resolve) ──
-redis[hiredis]>=5.2.0
+redis[hiredis]>=8.0.0
 
 # ── TTS: Edge (cloud, free, Slovak voice — no local model) ──
 edge-tts>=6.1.9
