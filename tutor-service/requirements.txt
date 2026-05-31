@@ -112,4 +112,4 @@ pytest-cov>=4.1.0
 
 # ── Misc model/data deps ──────────────────────────────────────
 huggingface-hub>=0.17.0
-scipy>=1.10.0
+scipy>=1.17.1
