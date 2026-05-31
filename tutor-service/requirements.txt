@@ -19,7 +19,7 @@ aiosqlite>=0.20.0
 # asyncpg: async PostgreSQL driver — required when DATABASE_URL is
 # postgresql+asyncpg://... (docker-compose.yml hardcodes this).
 # Without this, backend crashes at startup with ModuleNotFoundError.
-asyncpg>=0.30.0
+asyncpg>=0.31.0
 
 # ── Cache ─────────────────────────────────────────────────────
 redis[hiredis]>=5.2.0
