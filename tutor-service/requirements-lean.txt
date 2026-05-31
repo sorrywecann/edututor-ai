@@ -48,7 +48,7 @@ groq>=0.9.0
 chromadb>=0.5.0
 
 # ── Document processing (KB uploads) ──
-python-docx>=1.1.0
+python-docx>=1.2.0
 docx2txt>=0.8
 openpyxl>=3.1.5
 pdfplumber>=0.10.0
