@@ -35,7 +35,7 @@ jobs:
     name: Secrets gate (gitleaks)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0    # full history for gitleaks
       - name: Run gitleaks
@@ -60,7 +60,7 @@ jobs:
             context: ./core
             dockerfile: ./core/Dockerfile
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Determine version tag
         id: vars
@@ -133,7 +133,7 @@ jobs:
       version: ${{ steps.vars.outputs.version }}
       tag: ${{ steps.vars.outputs.tag }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - id: vars
         run: |
@@ -163,7 +163,7 @@ jobs:
     needs: [build-images, build-tarball]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - uses: actions/download-artifact@v4
         with:
@@ -233,7 +233,7 @@ jobs:
     needs: [build-images, build-tarball, smoke-test]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0   # need full history for release-notes extraction
 
