@@ -82,7 +82,7 @@ pypdf>=3.17.0
 pypdfium2>=4.0.0   # third-tier PDF extractor for files pdfplumber+pypdf can't parse
 
 # ── Utilities ─────────────────────────────────────────────────
-psutil>=5.9.0
+psutil>=7.2.2
 
 # ── Skills (Phase 7) ──────────────────────────────────────────
 # Web search backend for the WebSearchSkill search_web tool (DuckDuckGo HTML,

@@ -61,4 +61,4 @@ trafilatura>=2.0.0,<3.0.0
 fsrs>=6.0.0,<7.0.0
 
 # ── Utilities ──
-psutil>=5.9.0
+psutil>=7.2.2
