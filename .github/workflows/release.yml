@@ -263,7 +263,7 @@ jobs:
             echo "value=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - uses: softprops/action-gh-release@v2
+      - uses: softprops/action-gh-release@v3
         with:
           name: EduTutor.AI ${{ needs.build-tarball.outputs.tag }}
           body_path: release_notes.md
