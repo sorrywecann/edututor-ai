@@ -49,7 +49,7 @@ torchaudio>=2.1.0
 
 # ── TTS supporting libs (audio processing) ───────────────────────────────
 librosa>=0.10.0
-gruut>=2.2.3
+gruut>=2.4.0
 anyascii==0.3.3
 inflect==7.5.0
 
