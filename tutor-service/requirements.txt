@@ -32,7 +32,7 @@ av>=13.0.0
 numpy>=1.24.0
 
 # ── TTS ───────────────────────────────────────────────────────
-edge-tts>=6.1.9
+edge-tts>=7.2.8
 piper-tts>=1.2.0
 
 # ── TTS: Kokoro (82M, fast CPU inference, 8 languages, 50 preset voices) ──
