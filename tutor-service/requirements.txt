@@ -27,7 +27,7 @@ redis[hiredis]>=5.2.0
 # ── STT ───────────────────────────────────────────────────────
 faster-whisper>=1.0.3
 groq>=0.9.0
-soundfile>=0.12.1
+soundfile>=0.13.1
 av>=13.0.0
 numpy>=1.24.0
 
