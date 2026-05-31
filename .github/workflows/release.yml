@@ -1,0 +1,275 @@
+name: Release
+
+# Triggered by version tag push (e.g. `git tag v1.0.0 && git push --tags`).
+# Produces:
+#   - Multi-arch (amd64+arm64) Docker images on GHCR, signed via cosign keyless
+#   - SBOM (SPDX JSON) for each image
+#   - Source tarball with SHA-256 checksum
+#   - GitHub Release page with notes drawn from CHANGELOG.md
+#
+# Org-agnostic: uses ${{ github.repository_owner }}. Works after the repo
+# migrates to its public home (sorrywecan/edututor-ai or elsewhere).
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to release (e.g. v1.0.0)'
+        required: true
+
+permissions:
+  contents: write       # create GitHub Release
+  packages: write       # push to ghcr.io
+  id-token: write       # cosign keyless OIDC
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_OWNER: ${{ github.repository_owner }}
+
+jobs:
+  # Gate 1: secrets must be clean before any artifact is built or published.
+  secrets-gate:
+    name: Secrets gate (gitleaks)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0    # full history for gitleaks
+      - name: Run gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_CONFIG: .gitleaks.toml
+
+  # Job: build, sign, and push multi-arch images for each service.
+  build-images:
+    name: Build & push ${{ matrix.service }}
+    needs: secrets-gate
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - service: backend
+            context: ./tutor-service
+            dockerfile: ./tutor-service/Dockerfile
+          - service: frontend
+            context: ./core
+            dockerfile: ./core/Dockerfile
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Determine version tag
+        id: vars
+        run: |
+          TAG="${GITHUB_REF_NAME:-${{ github.event.inputs.tag }}}"
+          echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
+          echo "version=${TAG#v}" >> "$GITHUB_OUTPUT"
+          echo "image=${REGISTRY}/${IMAGE_OWNER}/edututor-${{ matrix.service }}" >> "$GITHUB_OUTPUT"
+
+      - uses: docker/setup-qemu-action@v3
+      - uses: docker/setup-buildx-action@v3
+
+      - name: Login to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push image
+        id: build
+        uses: docker/build-push-action@v5
+        with:
+          context: ${{ matrix.context }}
+          file: ${{ matrix.dockerfile }}
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: |
+            ${{ steps.vars.outputs.image }}:${{ steps.vars.outputs.tag }}
+            ${{ steps.vars.outputs.image }}:${{ steps.vars.outputs.version }}
+            ${{ steps.vars.outputs.image }}:latest
+          labels: |
+            org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
+            org.opencontainers.image.revision=${{ github.sha }}
+            org.opencontainers.image.version=${{ steps.vars.outputs.version }}
+          cache-from: type=gha,scope=${{ matrix.service }}
+          cache-to: type=gha,mode=max,scope=${{ matrix.service }}
+          provenance: true
+          sbom: true
+
+      - name: Install cosign
+        uses: sigstore/cosign-installer@v3
+
+      - name: Sign image (keyless)
+        env:
+          DIGEST: ${{ steps.build.outputs.digest }}
+        run: |
+          cosign sign --yes "${{ steps.vars.outputs.image }}@${DIGEST}"
+
+      - name: Generate SBOM (SPDX JSON)
+        uses: anchore/sbom-action@v0
+        with:
+          image: ${{ steps.vars.outputs.image }}:${{ steps.vars.outputs.tag }}
+          format: spdx-json
+          output-file: sbom-${{ matrix.service }}.spdx.json
+          upload-artifact: false
+
+      - name: Upload SBOM artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom-${{ matrix.service }}
+          path: sbom-${{ matrix.service }}.spdx.json
+
+  # Job: produce the source tarball that end users actually download.
+  build-tarball:
+    name: Build source tarball
+    needs: secrets-gate
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.vars.outputs.version }}
+      tag: ${{ steps.vars.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: vars
+        run: |
+          TAG="${GITHUB_REF_NAME:-${{ github.event.inputs.tag }}}"
+          echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
+          echo "version=${TAG#v}" >> "$GITHUB_OUTPUT"
+
+      - name: Create source archive
+        run: |
+          VERSION="${{ steps.vars.outputs.version }}"
+          PREFIX="edututor-${VERSION}/"
+          ARCHIVE="edututor-${VERSION}.tar.gz"
+          git archive HEAD --format=tar.gz --prefix="${PREFIX}" -o "${ARCHIVE}"
+          sha256sum "${ARCHIVE}" > "${ARCHIVE}.sha256"
+          ls -la "${ARCHIVE}" "${ARCHIVE}.sha256"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-tarball
+          path: |
+            edututor-*.tar.gz
+            edututor-*.tar.gz.sha256
+
+  # Job: prove the built images actually work end-to-end.
+  smoke-test:
+    name: Smoke test release artifact
+    needs: [build-images, build-tarball]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: source-tarball
+
+      - name: Extract tarball
+        run: |
+          VERSION="${{ needs.build-tarball.outputs.version }}"
+          tar -xzf "edututor-${VERSION}.tar.gz"
+          ls -la "edututor-${VERSION}/"
+
+      - name: Prepare environment
+        run: |
+          VERSION="${{ needs.build-tarball.outputs.version }}"
+          cd "edututor-${VERSION}"
+          cp .env.example .env
+          echo "GHCR_OWNER=${IMAGE_OWNER}" >> .env
+          echo "IMAGE_TAG=${{ needs.build-tarball.outputs.tag }}" >> .env
+
+      - name: Login to GHCR (for pulling private/just-pushed images)
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Pull release images
+        run: |
+          VERSION="${{ needs.build-tarball.outputs.version }}"
+          cd "edututor-${VERSION}"
+          export GHCR_OWNER="${IMAGE_OWNER}"
+          export IMAGE_TAG="${{ needs.build-tarball.outputs.tag }}"
+          docker compose -f docker-compose.yml -f docker-compose.release.yml pull
+
+      - name: Bring up stack
+        run: |
+          VERSION="${{ needs.build-tarball.outputs.version }}"
+          cd "edututor-${VERSION}"
+          export GHCR_OWNER="${IMAGE_OWNER}"
+          export IMAGE_TAG="${{ needs.build-tarball.outputs.tag }}"
+          docker compose -f docker-compose.yml -f docker-compose.release.yml up -d
+          docker compose ps
+
+      - name: Run smoke test
+        run: |
+          VERSION="${{ needs.build-tarball.outputs.version }}"
+          chmod +x "edututor-${VERSION}/scripts/verify_release.sh"
+          MAX_WAIT_SECONDS=300 "edututor-${VERSION}/scripts/verify_release.sh"
+
+      - name: Dump logs on failure
+        if: failure()
+        run: |
+          VERSION="${{ needs.build-tarball.outputs.version }}"
+          cd "edututor-${VERSION}"
+          docker compose -f docker-compose.yml -f docker-compose.release.yml logs --tail=200
+
+      - name: Tear down
+        if: always()
+        run: |
+          VERSION="${{ needs.build-tarball.outputs.version }}"
+          cd "edututor-${VERSION}"
+          docker compose -f docker-compose.yml -f docker-compose.release.yml down -v
+
+  # Final job: cut the GitHub Release with all artifacts attached.
+  publish-release:
+    name: Publish GitHub Release
+    needs: [build-images, build-tarball, smoke-test]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # need full history for release-notes extraction
+
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Extract release notes from CHANGELOG
+        id: notes
+        run: |
+          VERSION="${{ needs.build-tarball.outputs.version }}"
+          if grep -q "## \[${VERSION}\]" CHANGELOG.md; then
+            awk "/^## \[${VERSION}\]/,/^## \[/" CHANGELOG.md | sed '$d' > release_notes.md
+          else
+            printf "## %s\n\nSee CHANGELOG.md for details.\n" "${VERSION}" > release_notes.md
+          fi
+          echo "--- release notes preview ---"
+          head -40 release_notes.md
+
+      - name: Determine prerelease flag
+        id: prerelease
+        run: |
+          TAG="${{ needs.build-tarball.outputs.tag }}"
+          if [[ "${TAG}" == *"-rc"* || "${TAG}" == *"-alpha"* || "${TAG}" == *"-beta"* ]]; then
+            echo "value=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "value=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          name: EduTutor.AI ${{ needs.build-tarball.outputs.tag }}
+          body_path: release_notes.md
+          prerelease: ${{ steps.prerelease.outputs.value }}
+          files: |
+            artifacts/source-tarball/edututor-*.tar.gz
+            artifacts/source-tarball/edututor-*.tar.gz.sha256
+            artifacts/sbom-backend/sbom-backend.spdx.json
+            artifacts/sbom-frontend/sbom-frontend.spdx.json

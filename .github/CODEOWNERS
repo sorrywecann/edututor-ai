@@ -1,0 +1,22 @@
+# EduTutor.AI — Code ownership
+# Default: any change requires review from sorrywecan org maintainers
+* @sorrywecan/maintainers
+
+# Backend (Python FastAPI)
+/tutor-service/ @sorrywecan/backend
+
+# Frontend (Next.js + React)
+/core/ @sorrywecan/frontend
+
+# Desktop (Electron + NSIS)
+/desktop/ @sorrywecan/desktop
+
+# UE5 Avatar (Blueprint + MetaHuman)
+/docs/ue5/ @sorrywecan/unreal
+
+# Documentation & ADRs
+/docs/ @sorrywecan/docs
+*.md @sorrywecan/docs
+
+# CI/CD
+/.github/ @sorrywecan/maintainers

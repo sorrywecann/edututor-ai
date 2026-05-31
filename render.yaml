@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: edututor-backend
+    runtime: docker
+    rootDir: tutor-service
+    dockerfilePath: Dockerfile
+    plan: free
+    healthCheckPath: /api/v1/health/ready
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-4o-mini
+      - key: STT_PROVIDER
+        value: faster-whisper-small
+      - key: TTS_PROVIDER
+        value: edge
+      - key: LIPSYNC_PROVIDER
+        value: text
+      - key: LLM_PROVIDER
+        value: openai
+      - key: VECTOR_DB_BACKEND
+        value: chroma
+      - key: NEXTAUTH_SECRET
+        value: q85wprnh6uHeKUGP/REmB/B47tvRBNHjp5mVSafnQMg=
+      - key: APP_ENV
+        value: production
+      - key: DATABASE_URL
+        value: sqlite+aiosqlite:///data/edututor.db

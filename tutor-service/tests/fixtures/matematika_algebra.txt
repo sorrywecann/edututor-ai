@@ -1,0 +1,76 @@
+ALGEBRA PRE ZÁKLADNÉ ŠKOLY — 8. ROČNÍK
+
+1. LINEÁRNE ROVNICE
+
+Lineárna rovnica je rovnica tvaru ax + b = c, kde a, b, c sú reálne čísla a x je neznáma.
+
+Postup riešenia:
+- Presuň všetky členy s neznámou na ľavú stranu.
+- Presuň všetky konštanty na pravú stranu.
+- Vydeľ obe strany koeficientom pri neznámej.
+
+Príklad:
+  2x + 5 = 13
+  2x = 13 - 5
+  2x = 8
+  x = 4
+
+Overenie: 2(4) + 5 = 8 + 5 = 13 ✓
+
+2. SÚSTAVA DVOCH LINEÁRNYCH ROVNÍC
+
+Sústavu riešime substitučnou alebo eliminačnou metódou.
+
+Substitučná metóda:
+  x + y = 10
+  x - y = 4
+
+Z prvej rovnice: x = 10 - y
+Dosadíme do druhej: (10 - y) - y = 4
+  10 - 2y = 4
+  2y = 6
+  y = 3
+  x = 10 - 3 = 7
+
+Riešenie: x = 7, y = 3
+
+3. KVADRATICKÁ ROVNICA
+
+Tvar: ax² + bx + c = 0
+
+Diskriminant: D = b² - 4ac
+- Ak D > 0: dve rôzne reálne korene
+- Ak D = 0: jeden dvojnásobný koreň
+- Ak D < 0: žiadne reálne korene (komplexné)
+
+Vzorec: x = (-b ± √D) / 2a
+
+Príklad: x² - 5x + 6 = 0
+  D = 25 - 24 = 1
+  x₁ = (5 + 1) / 2 = 3
+  x₂ = (5 - 1) / 2 = 2
+
+4. MOCNINY A ODMOCNINY
+
+Mocnenie: aⁿ = a × a × ... × a (n-krát)
+Pravidlá:
+  aᵐ × aⁿ = aᵐ⁺ⁿ
+  aᵐ / aⁿ = aᵐ⁻ⁿ
+  (aᵐ)ⁿ = aᵐˣⁿ
+  a⁰ = 1 (pre a ≠ 0)
+
+Odmocnina: √a je číslo, ktorého druhá mocnina sa rovná a.
+  √16 = 4, pretože 4² = 16
+  √(a × b) = √a × √b
+  √(a/b) = √a / √b
+
+5. VÝRAZY A ICH ÚPRAVY
+
+Rozklad na súčin (faktorovanie):
+  a² - b² = (a + b)(a - b)         — rozklad rozdielu štvorcov
+  a² + 2ab + b² = (a + b)²         — úplný štvorec
+  a² - 2ab + b² = (a - b)²         — úplný štvorec
+
+Príklad:
+  x² - 9 = (x + 3)(x - 3)
+  x² + 6x + 9 = (x + 3)²

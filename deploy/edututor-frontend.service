@@ -1,0 +1,29 @@
+[Unit]
+Description=EduTutor.AI Frontend (Next.js)
+After=network.target edututor-backend.service
+Requires=edututor-backend.service
+
+[Service]
+Type=simple
+User=edututor
+Group=edututor
+WorkingDirectory=/opt/edututor/core
+EnvironmentFile=/opt/edututor/.env
+Environment=NODE_ENV=production
+Environment=PORT=3000
+Environment=HOSTNAME=0.0.0.0
+ExecStart=/usr/bin/node /opt/edututor/core/.next/standalone/server.js
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=edututor-frontend
+
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/opt/edututor/core/.next
+PrivateTmp=yes
+
+[Install]
+WantedBy=multi-user.target

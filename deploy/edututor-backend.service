@@ -1,0 +1,27 @@
+[Unit]
+Description=EduTutor.AI Backend (FastAPI)
+After=network.target postgresql.service redis.service
+Wants=postgresql.service redis.service
+
+[Service]
+Type=simple
+User=edututor
+Group=edututor
+WorkingDirectory=/opt/edututor/tutor-service
+EnvironmentFile=/opt/edututor/.env
+ExecStart=/opt/edututor/tutor-service/.venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=edututor-backend
+
+# Hardening
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/opt/edututor/data /opt/edututor/tutor-service/models
+PrivateTmp=yes
+
+[Install]
+WantedBy=multi-user.target

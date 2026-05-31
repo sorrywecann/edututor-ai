@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>EduTutor.AI — Technická dokumentácia v5.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#0c0c0c;--paper:#ffffff;--g1:#222222;--g2:#5a5a5a;--g3:#aaaaaa;
+  --rule:#cccccc;--light:#f2f2f2;--acc:#1a3a6b;
+  --serif:'EB Garamond',Georgia,serif;--mono:'JetBrains Mono',monospace;
+  --pw:794px;--ph:1123px;--mx:78px;--my:72px;--hh:34px;--fh:34px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{background:#b0aba4;padding:36px 0 56px;font-size:16px;}
+body{font-family:var(--serif);color:var(--ink);display:flex;flex-direction:column;align-items:center;gap:22px;-webkit-font-smoothing:antialiased;}
+.page{width:var(--pw);min-height:var(--ph);background:var(--paper);box-shadow:0 2px 16px rgba(0,0,0,.2),0 1px 4px rgba(0,0,0,.12);display:flex;flex-direction:column;position:relative;}
+.ph{height:var(--hh);margin:0 var(--mx);border-bottom:.75px solid var(--ink);display:flex;align-items:flex-end;justify-content:space-between;padding-bottom:6px;flex-shrink:0;}
+.phl,.phr{font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--g2);}
+.pb{flex:1;padding:40px var(--mx) 36px;}
+.pf{height:var(--fh);margin:0 var(--mx);border-top:.75px solid var(--rule);display:flex;align-items:flex-start;justify-content:space-between;padding-top:7px;flex-shrink:0;}
+.pfl,.pfr{font-family:var(--mono);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--g3);}
+.pfc{font-family:var(--mono);font-size:.6rem;color:var(--g2);}
+.cov{justify-content:flex-start;}
+.ci{padding:var(--my) var(--mx);display:flex;flex-direction:column;height:100%;}
+.ctr{height:3px;background:var(--ink);margin-bottom:52px;}
+.ck{font-family:var(--mono);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--g2);margin-bottom:18px;}
+.ct{font-family:var(--serif);font-size:3.4rem;font-weight:400;line-height:1.1;letter-spacing:-.02em;margin-bottom:3px;}
+.ct em{font-style:italic;}
+.cs{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--g2);margin-bottom:56px;}
+.csp{flex:1;}
+.cmg{border-top:.75px solid var(--rule);padding-top:26px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;}
+.cmc{padding:0 18px 0 0;}
+.cml{font-family:var(--mono);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--g3);display:block;margin-bottom:4px;}
+.cmv{font-family:var(--serif);font-size:.9rem;color:var(--g1);display:block;line-height:1.4;}
+.cbr{height:3px;background:var(--ink);margin-top:34px;}
+.toc-h{font-family:var(--serif);font-size:1.45rem;font-weight:400;margin-bottom:36px;padding-bottom:9px;border-bottom:.75px solid var(--ink);}
+.ti{display:flex;align-items:baseline;padding:5px 0;}
+.ti.M{padding:9px 0 7px;border-top:.5px solid var(--rule);}
+.ti.M:first-of-type{border-top:none;}
+.ti.sub{padding-left:28px;}
+.tnum{font-family:var(--mono);font-size:.6rem;color:var(--g3);width:52px;flex-shrink:0;letter-spacing:.05em;}
+.ti.M .tnum{color:var(--g2);}
+.tname{font-family:var(--serif);font-size:.88rem;color:var(--g2);flex:1;}
+.ti.M .tname{font-size:.95rem;color:var(--ink);font-weight:500;}
+.tpg{font-family:var(--mono);font-size:.6rem;color:var(--g3);width:22px;text-align:right;flex-shrink:0;}
+.ti.M .tpg{color:var(--g2);}
+.tsp{height:6px;}
+.sl{font-family:var(--mono);font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--g3);margin-bottom:5px;display:block;}
+h2{font-family:var(--serif);font-size:1.6rem;font-weight:400;line-height:1.2;letter-spacing:-.01em;margin-bottom:3px;}
+.sr{height:1px;background:var(--ink);margin-bottom:24px;}
+h3{font-family:var(--serif);font-size:1.08rem;font-weight:500;margin:32px 0 10px;}
+h4{font-family:var(--serif);font-size:.96rem;font-weight:500;font-style:italic;margin:20px 0 7px;color:var(--g1);}
+p{font-size:.92rem;line-height:1.76;color:var(--g1);margin-bottom:12px;}
+p:last-child{margin-bottom:0;}
+.ab{font-size:.9rem;line-height:1.8;color:var(--g1);font-style:italic;border-left:1.5px solid var(--ink);padding-left:16px;}
+.abl{font-family:var(--mono);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--g3);margin-bottom:8px;display:block;}
+.tw{margin:12px 0 22px;overflow-x:auto;}
+table{width:100%;border-collapse:collapse;font-size:.8rem;}
+thead tr{border-bottom:1.5px solid var(--ink);}
+thead th{font-family:var(--mono);font-size:.56rem;letter-spacing:.11em;text-transform:uppercase;font-weight:500;padding:7px 9px;text-align:left;color:var(--ink);}
+tbody tr{border-bottom:.75px solid var(--rule);}
+tbody tr:last-child{border-bottom:1.5px solid var(--ink);}
+tbody td{padding:6px 9px;vertical-align:top;line-height:1.5;color:var(--g1);font-size:.8rem;}
+tbody td:first-child{font-family:var(--mono);font-size:.72rem;color:var(--ink);}
+.g{color:var(--acc);font-weight:600;}
+.d{color:var(--g3);font-style:italic;}
+.b{font-weight:600;color:var(--ink);}
+.mr{display:grid;grid-template-columns:repeat(3,1fr);border-top:1.5px solid var(--ink);border-left:1px solid var(--rule);margin:14px 0 22px;}
+.mc{border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:16px 14px;}
+.mv{font-family:var(--serif);font-size:1.75rem;font-weight:400;line-height:1;display:block;margin-bottom:4px;color:var(--ink);}
+.mv.a{color:var(--acc);}
+.ml{font-family:var(--mono);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--g3);display:block;margin-bottom:2px;}
+.mn{font-size:.72rem;color:var(--g3);font-style:italic;}
+pre{background:var(--light);border-left:1.5px solid var(--ink);padding:14px 16px;font-family:var(--mono);font-size:.69rem;line-height:1.62;overflow-x:auto;margin:10px 0 20px;color:var(--g1);}
+code{font-family:var(--mono);font-size:.78em;background:var(--light);padding:1px 4px;}
+pre code{background:none;padding:0;}
+.note{border-left:1.5px solid var(--ink);padding:11px 15px;margin:14px 0;font-size:.82rem;line-height:1.68;color:var(--g1);font-style:italic;}
+.note strong{font-style:normal;font-weight:600;display:block;font-family:var(--mono);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:5px;color:var(--ink);}
+.fig{margin:14px 0;border:.75px solid var(--rule);}
+.figcap{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--g3);padding:6px 11px;border-top:.75px solid var(--rule);text-align:center;}
+.vg{display:grid;grid-template-columns:repeat(7,1fr);border-top:1.5px solid var(--ink);border-left:1px solid var(--rule);margin:12px 0 20px;}
+.vc{border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:11px 6px;text-align:center;}
+.vs{font-family:var(--mono);font-size:.9rem;font-weight:600;color:var(--acc);display:block;margin-bottom:3px;}
+.vt{font-size:.65rem;color:var(--g3);line-height:1.3;display:block;}
+.piv{display:grid;grid-template-columns:90px 1fr;gap:18px;border-top:.75px solid var(--rule);padding:18px 0;}
+.piv:first-child{border-top:1.5px solid var(--ink);}
+.piv:last-child{border-bottom:1.5px solid var(--ink);}
+.pn{font-family:var(--serif);font-size:2rem;color:var(--g3);line-height:1;}
+.pm{font-family:var(--mono);font-size:.56rem;color:var(--g3);letter-spacing:.1em;text-transform:uppercase;margin-top:3px;}
+.ph4{font-family:var(--serif);font-size:.93rem;font-weight:500;margin-bottom:4px;}
+.pb2{font-family:var(--mono);font-size:.66rem;color:var(--g3);margin-bottom:2px;}
+.pa{font-family:var(--mono);font-size:.66rem;color:var(--acc);font-weight:600;margin-bottom:8px;}
+.pp{font-size:.82rem;color:var(--g2);line-height:1.62;}
+.ah{display:flex;justify-content:space-between;border-bottom:1.5px solid var(--ink);padding-bottom:5px;margin:20px 0 0;font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--g2);}
+.ar{display:grid;grid-template-columns:52px 220px 1fr;border-bottom:.75px solid var(--rule);}
+.am,.ap,.ad{padding:5px 7px;}
+.am{font-family:var(--mono);font-size:.58rem;font-weight:600;border-right:.75px solid var(--rule);}
+.am.GET{color:var(--acc);}.am.POST{color:var(--ink);}.am.DELETE{color:var(--g3);}.am.PATCH{color:var(--g2);}.am.WS{color:var(--g2);font-style:italic;}
+.ap{font-family:var(--mono);font-size:.65rem;border-right:.75px solid var(--rule);color:var(--g1);}
+.ad{color:var(--g2);font-style:italic;font-size:.78rem;}
+.bc{border-top:1.5px solid var(--ink);margin:12px 0 20px;}
+.br{display:grid;grid-template-columns:165px 1fr;border-bottom:.75px solid var(--rule);align-items:center;}
+.bl2{font-family:var(--mono);font-size:.6rem;color:var(--g2);padding:7px 11px 7px 0;line-height:1.4;border-right:.75px solid var(--rule);}
+.bt{padding:7px 0 7px 12px;display:flex;align-items:center;gap:9px;}
+.bf{height:9px;background:var(--ink);flex-shrink:0;}
+.bf.lt{background:var(--rule);}.bf.ac{background:var(--acc);}
+.bv{font-family:var(--mono);font-size:.65rem;color:var(--g2);white-space:nowrap;}
+.valgrid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1.5px solid var(--ink);margin:12px 0 22px;}
+.valcell{padding:7px 12px;border-bottom:.75px solid var(--rule);border-right:.75px solid var(--rule);font-size:.8rem;display:flex;justify-content:space-between;align-items:center;}
+.valcell:nth-child(2n){border-right:none;}
+.valcell:nth-last-child(-n+2){border-bottom:none;}
+.vtick{color:var(--acc);font-weight:600;}
+.steps{display:flex;flex-direction:column;gap:0;margin:12px 0 20px;}
+.step{display:grid;grid-template-columns:28px 1fr;gap:12px;padding:10px 0;border-bottom:.75px solid var(--rule);}
+.step:first-child{border-top:1.5px solid var(--ink);}
+.step:last-child{border-bottom:1.5px solid var(--ink);}
+.stepn{font-family:var(--mono);font-size:.62rem;color:var(--g3);padding-top:2px;}
+.stepb h4{margin:0 0 4px;font-style:normal;font-size:.88rem;}
+.stepb p{font-size:.8rem;margin:0;color:var(--g2);}
+.fref{font-family:var(--mono);font-size:.67rem;color:var(--acc);margin-top:7px;display:block;}
+@media print{html{background:#fff;padding:0;}body{gap:0;}.page{box-shadow:none;width:210mm;min-height:297mm;page-break-after:always;}}
+@media(max-width:860px){:root{--pw:100vw;--mx:22px;}html{padding:12px 0 30px;}.mr{grid-template-columns:1fr 1fr;}.vg{grid-template-columns:repeat(4,1fr);}code{font-size:.7em;}}
+</style>
+</head>
+<body>
+
+<div class="page cov" id="p1">
+ <div class="ci">
+  <div class="ctr"></div>
+  <span class="ck">SORRYWECAN s.r.o. — Grant 09I05-03-V04-00072 · Výstup č. 3</span>
+  <div class="ct">EduTutor<em>.AI</em></div>
+  <div class="ct" style="font-size:2.5rem;color:var(--g2);margin-top:-6px;margin-bottom:22px;">Technická dokumentácia v5.0</div>
+  <div class="cs">Máj 2026</div>
+  <div style="max-width:480px;margin-bottom:48px;"><p style="font-size:.88rem;color:var(--g2);line-height:1.7;margin:0;">Modulárna, model-agnostická platforma pre hlasovú AI komunikáciu v slovenčine. Hlasová konverzácia, Knowledge Base v štyroch režimoch, podcast generácia, Voice Cloning, cross-session memory a MetaHuman avatar s proprietárnym lipsync engineom + 52-kanálovým ARKit režimom.</p></div>
+  <div class="csp"></div>
+  <div class="cbr"></div>
+ </div>
+</div>
+
+<div class="page" id="p2">
+ <div class="ph"><span class="phl">EduTutor.AI v5.0</span><span class="phr">Technická dokumentácia</span></div>
+ <div class="pb">
+  <div class="toc-h">Obsah</div>
+  <div class="tsp"></div>
+  <div class="ti M"><span class="tnum">—</span><span class="tname">Abstrakt</span><span class="tpg">4</span></div>
+  <div class="tsp"></div>
+  <div class="ti M"><span class="tnum">§ 1</span><span class="tname">Prehľad systému</span><span class="tpg">4</span></div>
+  <div class="ti sub"><span class="tnum">1.1–1.2</span><span class="tname">Funkčná mapa · Rozsah systému</span><span class="tpg"></span></div>
+  <div class="tsp"></div>
+  <div class="ti M"><span class="tnum">§ 2</span><span class="tname">Architektúra</span><span class="tpg">6</span></div>
+  <div class="ti sub"><span class="tnum">2.1–2.5</span><span class="tname">Diagram · Backend moduly · Dátový tok · Frontend · DB model</span><span class="tpg"></span></div>
+  <div class="tsp"></div>
+  <div class="ti M"><span class="tnum">§ 3</span><span class="tname">AI služby — optimalizované parametre</span><span class="tpg">9</span></div>
+  <div class="ti sub"><span class="tnum">3.1–3.5</span><span class="tname">LLM · STT · TTS · RAG · Databáza a cache</span><span class="tpg"></span></div>
+  <div class="tsp"></div>
+  <div class="ti M"><span class="tnum">§ 4</span><span class="tname">Lipsync systém</span><span class="tpg">12</span></div>
+  <div class="ti sub"><span class="tnum">4.1–4.5</span><span class="tname">Porovnanie · 4 režimy · ARKit kanály · Hybrid</span><span class="tpg"></span></div>
+  <div class="ti sub"><span class="tnum">4.6–4.9</span><span class="tname">14 vizémov · Fonetický engine · UE5 · Validácia</span><span class="tpg"></span></div>
+  <div class="ti sub"><span class="tnum">4.10–4.11</span><span class="tname">Konverzačný timing · Text2Face presety</span><span class="tpg"></span></div>
+  <div class="tsp"></div>
+  <div class="ti M"><span class="tnum">§ 5</span><span class="tname">Emočný systém — 9 emócií</span><span class="tpg">17</span></div>
+  <div class="ti M"><span class="tnum">§ 6</span><span class="tname">Knowledge Base platforma</span><span class="tpg">18</span></div>
+  <div class="ti sub"><span class="tnum">6.1–6.8</span><span class="tname">4 režimy · Pipeline · Vyhľadávanie · Notes · Transformácie · Ask · Podcast</span><span class="tpg"></span></div>
+  <div class="tsp"></div>
+  <div class="ti M"><span class="tnum">§ 7</span><span class="tname">Voice Cloning · Memory · Podcast</span><span class="tpg">21</span></div>
+  <div class="ti M"><span class="tnum">§ 8</span><span class="tname">Multilingválne učenie · LearningModes</span><span class="tpg">22</span></div>
+  <div class="ti M"><span class="tnum">§ 9</span><span class="tname">Technologické pivoty</span><span class="tpg">23</span></div>
+  <div class="tsp"></div>
+  <div class="ti M"><span class="tnum">§ 10</span><span class="tname">Záťažové testy a benchmark</span><span class="tpg">24</span></div>
+  <div class="ti M"><span class="tnum">§ 11</span><span class="tname">Testovanie a kvalita — 572 testov</span><span class="tpg">25</span></div>
+  <div class="ti M"><span class="tnum">§ 12</span><span class="tname">Monitoring a observabilita</span><span class="tpg">25</span></div>
+  <div class="ti M"><span class="tnum">§ 13</span><span class="tname">Sprievodca nasadením</span><span class="tpg">26</span></div>
+  <div class="tsp"></div>
+  <div class="ti M"><span class="tnum">§ 14</span><span class="tname">API referencia — 60+ endpointov</span><span class="tpg">27</span></div>
+  <div class="ti sub"><span class="tnum">14.1–14.18</span><span class="tname">Health · Chat · KB · Notes · Transformácie · Podcast · STT · TTS · LLM · Lipsync · Emócie · Voice · Systém · Diagnostika · Módy · Avatar · WS</span><span class="tpg"></span></div>
+  <div class="tsp"></div>
+  <div class="ti M"><span class="tnum">§ 15</span><span class="tname">Bezpečnosť</span><span class="tpg">29</span></div>
+  <div class="ti M"><span class="tnum">§ 16</span><span class="tname">Slabé miesta a roadmapa</span><span class="tpg">29</span></div>
+  <div class="ti M"><span class="tnum">§ 17</span><span class="tname">Open-source zverejnenie</span><span class="tpg">30</span></div>
+ </div>
+ <div class="pf"><span class="pfl">SORRYWECAN s.r.o. · Grant 09I05-03-V04-00072</span><span class="pfc">2</span><span class="pfr">Máj 2026 · v5.0</span></div>
+</div>
+
+<div class="page" id="p4">
+ <div class="ph"><span class="phl">EduTutor.AI v5.0</span><span class="phr">Abstrakt · §1 Prehľad systému</span></div>
+ <div class="pb">
+  <span class="abl">Abstrakt</span>
+  <p class="ab">EduTutor.AI je hlasovo ovládaná AI tutorská platforma pre slovenský jazyk, vyvinutá ako prototyp novej generácie vzdelávacieho softvéru. Systém kombinuje technológie spracovania reči (STT/TTS), veľké jazykové modely (LLM), retrieval-augmented generation (RAG), cross-session memóriu a realistickú animáciu 3D MetaHuman avatara s lipsync synchronizáciou. Platforma je navrhnutá ako modulárna a model-agnostická — každá vrstva je nezávisle konfigurovateľná a za behu prepínateľná bez reštartu. Verzia v5.0 (máj 2026) pridáva: cross-session memory (user_profile + episodic_memory), podcast generáciu z dokumentov, Ask Mode pre one-shot otázky, Text2Face presety pre 9 emócií, env-tunable konverzačný timing visem a WS reconnect s exponential backoff. Lipsync systém má dnes tri produkčné cesty: text→viseme (14 SK vizémov, ±25 ms), Azure phoneme timing (±5 ms) a ARKit 52-kanálový režim (HuBERT @60fps). Dokument je primárnym technickým artefaktom pre Output 3 grantovej zmluvy 09I05-03-V04-00072.</p>
+  <div style="height:36px;"></div>
+  <span class="sl">Sekcia 01</span><h2>Prehľad systému</h2><div class="sr"></div>
+  <h3 style="margin-top:0;">1.1 Funkčná mapa — čo systém robí</h3>
+  <p>EduTutor.AI je modulárna platforma pre hlasovú AI interakciu v slovenčine. Každá vrstva — STT, LLM, RAG, TTS, lipsync, avatar — je nezávisle konfigurovateľná a za behu prepínateľná. Primárne pre vzdelávanie, ale architektúra je priamo aplikovateľná na zákaznícky servis, asistentov pre seniorov alebo akýkoľvek kontext vyžadujúci prirodzenú slovenskú konverzáciu.</p>
+  <div class="tw"><table>
+   <thead><tr><th>Modul</th><th>Funkcia</th><th>Kľúčové vlastnosti</th></tr></thead>
+   <tbody>
+    <tr><td>Hlasová konverzácia</td><td>Jadro tutorskej interakcie</td><td>STT→RAG→LLM→Emócia→TTS→Avatar · streaming ~1 s perceived</td></tr>
+    <tr><td>Knowledge Base</td><td>Práca s dokumentmi</td><td>4 režimy (Chat/Study/Voice/Ask) · PDF/DOCX/XLSX · Vector + FTS5</td></tr>
+    <tr><td>Podcast generácia</td><td>Audio z dokumentov</td><td>Multi-speaker dialóg · FFmpeg concat · in-app player</td></tr>
+    <tr><td>Memory (Phase 8b)</td><td>Cross-session pamäť</td><td>user_profile (SQLite) + episodic (Chroma) + summarizer</td></tr>
+    <tr><td>Voice Cloning</td><td>Klonovanie hlasu tutora</td><td>XTTS + Chatterbox · 3–60 s ref. audio · preview pred použitím</td></tr>
+    <tr><td>Avatar (MetaHuman)</td><td>3D realistický avatar v UE5</td><td>14 vizém + 52 ARKit + 9 emócií + 5 agentStates · 4 transport adaptéry</td></tr>
+    <tr><td>Multilingválne módy</td><td>Jazykové módy</td><td>SK tutoring · EN tutoring · learn-EN-from-SK · assistant_pro</td></tr>
+    <tr><td>Hardvérová adaptácia</td><td>Automatická konfigurácia</td><td>5 HW profilov · hot-swap STT/LLM/TTS/lipsync bez reštartu</td></tr>
+   </tbody>
+  </table></div>
+  <p><strong>Hot path:</strong> <code>Hlasový vstup → STT → RAG retrieval → LLM (SSE streaming) → Emotion detect → TTS (audio chunks) → Viseme/ARKit timeline → WebSocket broadcast → UE5 avatar</code></p>
+ </div>
+ <div class="pf"><span class="pfl">SORRYWECAN s.r.o. · Grant 09I05-03-V04-00072</span><span class="pfc">4</span><span class="pfr">Máj 2026 · v5.0</span></div>
+</div>
+
+<div class="page" id="p5">
+ <div class="ph"><span class="phl">EduTutor.AI v5.0</span><span class="phr">§1 Rozsah systému — metriky</span></div>
+ <div class="pb">
+  <h3 style="margin-top:0;">1.2 Rozsah systému — aktuálny stav</h3>
+  <div class="tw"><table>
+   <thead><tr><th>Komponent</th><th>Počet</th><th>Detail</th></tr></thead>
+   <tbody>
+    <tr><td>Backend API routery / endpointy</td><td>20 / 60+</td><td>FastAPI Python 3.11 · dict-dispatch tabuľky</td></tr>
+    <tr><td>Servisné moduly</td><td>17</td><td>AI services · Lipsync · KB · Memory · Voice · Podcast · Cache</td></tr>
+    <tr><td>Skills (zásuvné moduly)</td><td>3+</td><td>MemorySkill · WebSearchSkill · SpacedRepetitionSkill</td></tr>
+    <tr><td>LearningModes</td><td>4</td><td>sk · en · learn-en-from-sk · assistant_pro / tutor_practice_pro</td></tr>
+    <tr><td>LLM providery</td><td>7</td><td>OpenAI · Anthropic · Groq · OpenRouter · Ollama · vLLM · Azure</td></tr>
+    <tr><td>STT backendy / modely</td><td>5 / 10</td><td>mlx-whisper · faster-whisper · Groq · OpenAI · 3 SloPal SK fine-tuny</td></tr>
+    <tr><td>TTS providery</td><td>10</td><td>Edge · Azure · OpenAI · Google · Piper · Kokoro · XTTS · Chatterbox · OmniVoice · Mock</td></tr>
+    <tr><td>Lipsync režimy</td><td>4</td><td>Text · Azure phoneme · ARKit 52ch · Hybrid (auto-fallback)</td></tr>
+    <tr><td>UE5 transport adaptéry</td><td>4</td><td>Web Browser Widget · Pixel Streaming · WS Server · Mock</td></tr>
+    <tr><td>UE5 protokol — vizémy</td><td>14</td><td>aa · oh · ou · ih · E · PP · FF · DD · nn · SS · CH · kk · RR · sil</td></tr>
+    <tr><td>UE5 protokol — ARKit</td><td>52</td><td>HuBERT + Transformer @60fps · auto-mapping cez LiveLink</td></tr>
+    <tr><td>UE5 protokol — emócie</td><td>9</td><td>neutral · joy · proud · encouraging_mild · sadness · patient · curious · thinking_deep · surprise</td></tr>
+    <tr><td>UE5 protokol — agentState</td><td>5</td><td>idle · thinking · searching · writing · listening</td></tr>
+    <tr><td>Frontend komponenty</td><td>50+</td><td>Next.js 15 · React 19 · TypeScript · Zustand · shadcn/ui</td></tr>
+    <tr><td>Automatizované testy</td><td class="g">572</td><td>56 testovacích súborov · backend pytest · CI green</td></tr>
+    <tr><td>Golden dataset</td><td>354 otázok</td><td>5 predmetov (matematika, fyzika, história, biológia, informatika)</td></tr>
+    <tr><td>SQLAlchemy modely</td><td>8</td><td>User · Conversation · Message · KnowledgeBase · Document · Note · TransformationTemplate · TransformationResult</td></tr>
+    <tr><td>Memory backends</td><td>2</td><td>SQLite (user_profile, štruktúrované) + ChromaDB (episodic, sémantické)</td></tr>
+   </tbody>
+  </table></div>
+ </div>
+ <div class="pf"><span class="pfl">SORRYWECAN s.r.o. · Grant 09I05-03-V04-00072</span><span class="pfc">5</span><span class="pfr">Máj 2026 · v5.0</span></div>
+</div>
+
+<div class="page" id="p6">
+ <div class="ph"><span class="phl">EduTutor.AI v5.0</span><span class="phr">§2 Architektúra — systémový diagram</span></div>
+ <div class="pb">
+  <span class="sl">Sekcia 02</span><h2>Architektúra</h2><div class="sr"></div>
+  <p>Trojvrstvová architektúra s pridanou Memory vrstvou: Next.js 15 frontend · FastAPI backend (vrátane Skills + LearningModes + Memory) · Unreal Engine 5 avatar subsystém prepojený cez WebSocket s 4 voliteľnými adaptérmi.</p>
+  <h3 style="margin-top:12px;">2.1 Systémový diagram (zjednodušený)</h3>
+  <pre>┌──────────────────────────────────────────────────────────────────────┐
+│  FRONTEND — Next.js 15 · React 19 · TypeScript · Zustand · shadcn   │
+│  ┌────────────┐ ┌────────────┐ ┌────────────┐ ┌────────────────┐   │
+│  │VoiceSession│ │KBWorkspace │ │AvatarDebug │ │HardwareSetup   │   │
+│  │useReconnect│ │4 modes UI  │ │Inject panel│ │5 HW profilov   │   │
+│  │useUE5Bridge│ │+Notes+Pod  │ │+state pill │ │hot-swap UI     │   │
+│  └────────────┘ └────────────┘ └────────────┘ └────────────────┘   │
+└──────────────────────┬───────────────────────────────────────────────┘
+                       │ HTTP · SSE · WebSocket · X-EduTutor-User-Id
+┌──────────────────────▼───────────────────────────────────────────────┐
+│  BACKEND — FastAPI · Python 3.11 · 20 routerov · 60+ endpointov     │
+│  ┌──── AI SERVICES (dict-dispatch) ──────────────────────────────┐  │
+│  │  STT 5b/10m  │  LLM 7p   │  TTS 10p   │  RAG ChromaDB/Weaviate │  │
+│  └────────────────────────────────────────────────────────────────┘  │
+│  ┌──── AVATAR PIPELINE ───────────────────────────────────────────┐  │
+│  │ EmotionDetect → VisemeTimeline (14 sk) → Audio2Lipsync (52ar) │  │
+│  │                ↓                                                │  │
+│  │ AvatarBroadcaster → WS /ws/avatar @60fps (snapshot-safe)       │  │
+│  └────────────────────────────────────────────────────────────────┘  │
+│  ┌──── MEMORY (Phase 8b) ─────────────────────────────────────────┐  │
+│  │ user_profile (SQLite) + episodic_memory (Chroma) + summarizer │  │
+│  └────────────────────────────────────────────────────────────────┘  │
+│  ┌──── KB PLATFORM ───────────────────────────────────────────────┐  │
+│  │ 4 modes · Notes · Transformations · Ask · Podcast generation  │  │
+│  └────────────────────────────────────────────────────────────────┘  │
+│  ┌──── DATA ──────────────────────────────────────────────────────┐  │
+│  │ PostgreSQL 16  ·  Redis 7  ·  ChromaDB / Weaviate  ·  SQLite FTS5  │  │
+│  └────────────────────────────────────────────────────────────────┘  │
+└──────────────────────┬───────────────────────────────────────────────┘
+                       │ ws://localhost:8000/ws/avatar · avatarCommand JSON
+┌──────────────────────▼───────────────────────────────────────────────┐
+│  UE5 — MetaHuman Avatar · 4 transport adaptéry                      │
+│  Web Browser Widget │ Pixel Streaming │ WS Server │ Mock (dev)     │
+│  AnimBP state machine · Blendshape Lerp · Auto-blink · Microexpr.   │
+└──────────────────────────────────────────────────────────────────────┘</pre>
+  <div class="figcap" style="border:.75px solid var(--rule);">Obr. 1 — Trojvrstvová architektúra EduTutor.AI v5.0 s Memory + Podcast vrstvou</div>
+ </div>
+ <div class="pf"><span class="pfl">SORRYWECAN s.r.o. · Grant 09I05-03-V04-00072</span><span class="pfc">6</span><span class="pfr">Máj 2026 · v5.0</span></div>
+</div>
+
+<div class="page" id="p7">
+ <div class="ph"><span class="phl">EduTutor.AI v5.0</span><span class="phr">§2 Backend moduly · Dátový tok</span></div>
+ <div class="pb">
+  <h3 style="margin-top:0;">2.2 Backendová modulová mapa — 17 servisných modulov</h3>
+  <div class="tw"><table>
+   <thead><tr><th>Skupina</th><th>Modul</th><th>Popis</th></tr></thead>
+   <tbody>
+    <tr><td>AI Services</td><td>llm_service.py</td><td>7 providerov, runtime switching bez reštartu, dict-dispatch</td></tr>
+    <tr><td>AI Services</td><td>stt_service.py</td><td>5 backendov, 10 modelov vrátane 3 SloPal SK fine-tunov, GPU serializácia</td></tr>
+    <tr><td>AI Services</td><td>tts_service.py</td><td>10 providerov, viseme + word boundary, voice cloning</td></tr>
+    <tr><td>Knowledge</td><td>rag_service.py</td><td>Factory pattern — ChromaDB (default) / Weaviate (prod)</td></tr>
+    <tr><td>Knowledge</td><td>fts_service.py</td><td>SQLite FTS5 sidecar pre keyword search, &lt;10 ms</td></tr>
+    <tr><td>Knowledge</td><td>rag_utils.py</td><td>Text splitter · doc extraction · chunking · embedding</td></tr>
+    <tr><td class="b">Memory</td><td class="b">memory_service.py + user_profile</td><td>Cross-session pamäť — user_profile (SQLite) + episodic (Chroma)</td></tr>
+    <tr><td class="b">Memory</td><td class="b">episodic_memory_service.py</td><td>Sémantické vyhľadávanie historických konverzácií</td></tr>
+    <tr><td class="b">Memory</td><td class="b">conversation_summarizer.py</td><td>Background hook po N=10 správach → kompresia kontextu</td></tr>
+    <tr><td>Cache</td><td>context_cache.py</td><td>Redis — 24h TTL, 20 správ, &lt;2 ms latencia</td></tr>
+    <tr><td>Avatar</td><td>avatar_broadcaster.py</td><td>WebSocket bridge → všetci UE5 klienti, idle blink heartbeat 3–6 s</td></tr>
+    <tr><td>Lipsync</td><td>viseme_timeline.py</td><td>Azure phoneme / SK text + fonetické pravidlá · 14 vizémov · env-tunable timing</td></tr>
+    <tr><td>Lipsync</td><td>audio2lipsync_client.py</td><td>52 ARKit kanálov · HuBERT + Transformer · fotonlabs MIT</td></tr>
+    <tr><td class="b">Text2Face</td><td class="b">expression_presets.py</td><td>9 emócií → ARKit upper-face presety (oči, obočie, nos, líca)</td></tr>
+    <tr><td>Emócia</td><td>emotion_detector.py</td><td>Regex 9 SK emócií, &lt;1 ms</td></tr>
+    <tr><td>Emócia</td><td>bert_emotion_detector.py</td><td>BERT sentiment, ~50 ms CPU, alternatívny backend</td></tr>
+    <tr><td class="b">Podcast</td><td class="b">podcast_service.py + orchestrator</td><td>Script generator · FFmpeg concat · background job queue</td></tr>
+    <tr><td>Validácia</td><td>provider_validator.py</td><td>Validácia LLM/STT/TTS providerov pri štarte</td></tr>
+   </tbody>
+  </table></div>
+  <h3>2.3 SSE streaming formát — hlasová konverzácia</h3>
+  <p style="font-size:.82rem;color:var(--g2);margin-bottom:10px;">Backend streamuje odpoveď cez SSE. Pre každú akumulovanú vetu sa emituje komplexný event obsahujúci text, audio, emóciu a lipsync dáta. Pre v5.0 pribudli ARKit frames + audioPositionMs/sentenceIdx polia pre presný UE5 lookup.</p>
+  <pre>{"type": "context",  "chunks": [...]}                   ← RAG metadáta
+{"type": "text",     "delta": "..."}                    ← progresívne tokeny
+{"type": "sentence_start", "text": "...", "viseme_timeline": [...]}
+{"type": "audio_chunk", "audio": "base64(mp3)"}         ← TTS chunky
+{"type": "sentence_end",
+  "audio": "base64(mp3 full)",
+  "emotion": "proud",    "intensity": 0.75,
+  "viseme_timeline": [{t, viseme, weight, start_ms, duration_ms}],
+  "arkit_frames":    [{start_ms, duration_ms, arkit:{...}}],  ← 52 ch
+  "duration_ms": 2200,
+  "audioPositionMs": 0,  "sentenceIdx": 0
+}
+{"type": "done", "full_text": "..."}</pre>
+ </div>
+ <div class="pf"><span class="pfl">SORRYWECAN s.r.o. · Grant 09I05-03-V04-00072</span><span class="pfc">7</span><span class="pfr">Máj 2026 · v5.0</span></div>
+</div>
+
+<div class="page" id="p8">
+ <div class="ph"><span class="phl">EduTutor.AI v5.0</span><span class="phr">§2 Frontend · DB model</span></div>
+ <div class="pb">
+  <h3 style="margin-top:0;">2.4 Frontend architektúra — kľúčové komponenty (50+)</h3>
+  <div class="tw"><table>
+   <thead><tr><th>Skupina</th><th>Počet</th><th>Kľúčové súbory</th></tr></thead>
+   <tbody>
+    <tr><td>kb/ — Knowledge Base UI</td><td>14</td><td>KBWorkspace · ChatMode · StudyMode · VoiceMode · <strong>AskMode</strong> · <strong>PodcastPanel</strong> · NotesPanel · SmartContent · ModePicker</td></tr>
+    <tr><td>voice/ — Voice + Avatar</td><td>8</td><td>VoiceSession · AvatarContainer · OrbAvatar · WireframeOrb · VoiceClonePanel · ProviderSettings · TutorPicker</td></tr>
+    <tr><td>shell/ — App shell</td><td>10</td><td>Sidebar · Topbar · HardwareSetup · ModePicker · TutorPicker · UnifiedOnboarding · HelpDrawer · HardwareBanner</td></tr>
+    <tr><td>ui/ — shadcn primitívy</td><td>20+</td><td>Button · Input · Dialog · Select · Tabs · Toast · Badge · Tooltip…</td></tr>
+    <tr><td>hooks/ — Custom React hooks</td><td>7</td><td>useVoiceSession · useUE5Bridge · <strong>useReconnectingWebSocket</strong> · useProviderSettings · useKnowledgePage · useMode · usePodcastJob</td></tr>
+    <tr><td>lib/ — utility moduly</td><td>10+</td><td>api.ts · auth.ts · config.ts · logger.ts · ue5-bridge/ · <strong>connection-state-pill.tsx</strong></td></tr>
+    <tr><td>stores/ — Zustand</td><td>4</td><td>useKBStore · useChatStore · useNotesStore · usePodcastStore</td></tr>
+    <tr><td>app/ — Next.js routes</td><td>10+</td><td>/ (login) · /chat · /knowledge · /voice · /avatar-debug · /flashcards · /progress · /performance</td></tr>
+   </tbody>
+  </table></div>
+  <h3>2.5 Databázový model — 8 SQLAlchemy modelov</h3>
+  <div class="tw"><table>
+   <thead><tr><th>Model</th><th>Kľúčové polia</th><th>Vzťahy</th></tr></thead>
+   <tbody>
+    <tr><td>User</td><td>id · email · name · created_at</td><td>1:N → Conversation, KnowledgeBase, UserProfile</td></tr>
+    <tr><td>UserProfile</td><td>user_id · name · interests · level · preferred_subjects</td><td>1:1 ↔ User (Phase 8b memory)</td></tr>
+    <tr><td>Conversation</td><td>user_id · title · mode · tutor · summary</td><td>1:N → Message</td></tr>
+    <tr><td>Message</td><td>role · content · audio_url · emotion · intensity</td><td>N:1 → Conversation</td></tr>
+    <tr><td>KnowledgeBase</td><td>name · description · document_count · total_chunks</td><td>1:N → Document, Note, PodcastJob</td></tr>
+    <tr><td>Document</td><td>filename · file_type · status · chunk_count · context_mode</td><td>1:N → TransformationResult</td></tr>
+    <tr><td>Note</td><td>title · content · source_type (manual/ai/chat)</td><td>N:1 → KnowledgeBase</td></tr>
+    <tr><td>TransformationTemplate</td><td>name · prompt · icon · is_default</td><td>1:N → TransformationResult</td></tr>
+    <tr><td>PodcastJob</td><td>kb_name · status · audio_url · transcript · duration_s</td><td>N:1 → KnowledgeBase</td></tr>
+   </tbody>
+  </table></div>
+  <div class="note"><strong>Vector stores — externé</strong>ChromaDB (embedded) — default, žiadny Docker. Weaviate (Docker) — produkčný scale. FTS5 (SQLite virtual table) — keyword search sidecar. Episodic memory (Chroma collection) — sémantické vyhľadávanie historických konverzácií. Všetky cez <code>VECTOR_DB_BACKEND</code> env var.</div>
+ </div>
+ <div class="pf"><span class="pfl">SORRYWECAN s.r.o. · Grant 09I05-03-V04-00072</span><span class="pfc">8</span><span class="pfr">Máj 2026 · v5.0</span></div>
+</div>
+
+<div class="page" id="p9">
+ <div class="ph"><span class="phl">EduTutor.AI v5.0</span><span class="phr">§3 AI Služby — LLM</span></div>
+ <div class="pb">
+  <span class="sl">Sekcia 03</span><h2>AI služby — optimalizované parametre</h2><div class="sr"></div>
+  <h3 style="margin-top:0;">3.1 LLM — jazykový model · 7 providerov · runtime switching</h3>
+  <div class="tw"><table>
+   <thead><tr><th>Provider</th><th>Default model</th><th>Latencia (avg)</th><th>SK kvalita</th><th>Nasadenie</th></tr></thead>
+   <tbody>
+    <tr><td>OpenAI</td><td>gpt-4o-mini</td><td>0.5–1.5 s</td><td class="g">5/5</td><td>Cloud (API key)</td></tr>
+    <tr><td>Anthropic</td><td>claude-haiku-4-5</td><td>0.6–1.4 s</td><td class="g">5/5</td><td>Cloud (API key)</td></tr>
+    <tr><td>Groq</td><td>llama-3.3-70b-versatile</td><td class="g">0.1–0.3 s</td><td>4/5</td><td>Cloud (free tier)</td></tr>
+    <tr><td>OpenRouter</td><td>qwen/qwen3-235b-a22b</td><td>1.0–2.5 s</td><td>4.5/5</td><td>Cloud (multi-provider)</td></tr>
+    <tr><td>Ollama</td><td>qwen2.5:7b / gemma3:4b</td><td>1.0–3.0 s (GPU)</td><td>3/5</td><td>Lokálne (offline)</td></tr>
+    <tr><td>vLLM</td><td>Qwen2.5-32B-AWQ</td><td>0.5–1.0 s</td><td>4.5/5</td><td>GPU server (A100/H100)</td></tr>
+    <tr><td>Custom</td><td>Qwen3-14B-sk</td><td>1.0–2.0 s</td><td class="g">5/5</td><td>NaiveNeuron SK fine-tune</td></tr>
+   </tbody>
+  </table></div>
+  <h3>Kľúčové parametre (env-tunable)</h3>
+  <div class="tw"><table>
+   <thead><tr><th>Parameter</th><th>Default</th><th>Zdôvodnenie</th></tr></thead>
+   <tbody>
+    <tr><td>Temperature</td><td>0.7</td><td>Vyvážená kreativita pre tutoring</td></tr>
+    <tr><td>Top-K / Top-P</td><td>40 / 0.9</td><td>Nucleus sampling pre plynulosť</td></tr>
+    <tr><td>Max new tokens</td><td>512–1024</td><td>Dostatočné pre tutorský kontext</td></tr>
+    <tr><td>Repetition penalty</td><td>1.1</td><td>Prevencia opakovania formulácií</td></tr>
+    <tr><td>System prompt (sk mode)</td><td class="g">152 tokenov</td><td>Znížené z 975 — 3× zlepšenie first-token latencie</td></tr>
+    <tr><td>Kontextové okno</td><td>20 správ</td><td>Redis cache, 24 h TTL · profil injektnutý do system prompt</td></tr>
+    <tr><td>LLM_TIMEOUT</td><td>60 s</td><td>Tolerancia pre pomalé lokálne modely (Ollama CPU)</td></tr>
+   </tbody>
+  </table></div>
+  <div class="note"><strong>System prompt (sk mode) — Slovak tutor</strong>Si EduTutor, priateľský slovenský vzdelávací asistent. Tykaj študentom.<br/>JAZYK: Vždy odpovedaj po slovensky, správnou gramatikou s diakritikou.<br/>ŠTÝL: Krátko a jasne — max 2–3 vety. Bez markdown, bez emoji.<br/>ÚLOHA: Pomáhaj so vzdelávacími témami.<br/>PRÍSTUP: Po odpovedi sa opýtaj "Dáva ti to zmysel?" alebo ponúkni ďalší krok.</div>
+ </div>
+ <div class="pf"><span class="pfl">SORRYWECAN s.r.o. · Grant 09I05-03-V04-00072</span><span class="pfc">9</span><span class="pfr">Máj 2026 · v5.0</span></div>
+</div>
+
+<div class="page" id="p10">
+ <div class="ph"><span class="phl">EduTutor.AI v5.0</span><span class="phr">§3 AI Služby — STT · TTS</span></div>
+ <div class="pb">
+  <h3 style="margin-top:0;">3.2 STT — rozpoznávanie reči · 5 backendov · 10 modelov</h3>
+  <p style="font-size:.82rem;color:var(--g2);margin-bottom:10px;">Auto-detekcia podľa hardvéru. Apple Silicon → mlx-whisper-turbo. Ostatné CPU → faster-whisper-small-sk. Cloud free tier → Groq. SloPal SK fine-tuny pre maximálnu presnosť slovenčiny.</p>
+  <div class="tw"><table>
+   <thead><tr><th>Provider / Model</th><th>SK presnosť</th><th>Latencia</th><th>Hardvér</th></tr></thead>
+   <tbody>
+    <tr><td>mlx-whisper-turbo</td><td>~89 %</td><td class="g">~0.5 s</td><td>Apple Silicon (MPS)</td></tr>
+    <tr><td>faster-whisper-small-sk</td><td>~85 %</td><td>~1 s</td><td>CPU (default)</td></tr>
+    <tr><td>faster-whisper-large-v3</td><td class="g">~91 %</td><td>1.5 s GPU / 4 s CPU</td><td>GPU preferované</td></tr>
+    <tr><td>SloPal SK fine-tun (×3)</td><td class="g">~92–94 %</td><td>1.5–3 s</td><td>CPU/GPU · NaiveNeuron HF</td></tr>
+    <tr><td>groq-whisper</td><td>~90 %</td><td class="g">~0.1 s</td><td>Cloud (free tier)</td></tr>
+    <tr><td>openai-whisper-api</td><td>~88 %</td><td>~0.5 s</td><td>Cloud (platený)</td></tr>
+   </tbody>
+  </table></div>
+  <h3>3.3 TTS — syntéza reči · 10 providerov</h3>
+  <div class="tw"><table>
+   <thead><tr><th>Provider</th><th>Kvalita (MOS)</th><th>Latencia</th><th>Phoneme timing</th><th>Voice clone</th></tr></thead>
+   <tbody>
+    <tr><td>Edge TTS (default)</td><td>4.0/5</td><td>~600–800 ms</td><td>WordBoundary</td><td>—</td></tr>
+    <tr><td>Azure Neural TTS</td><td class="g">4.5/5</td><td class="g">~400–500 ms</td><td class="g">±5 ms phoneme</td><td>—</td></tr>
+    <tr><td>OpenAI TTS</td><td>4.2/5</td><td>~600 ms</td><td>—</td><td>—</td></tr>
+    <tr><td>Google Cloud TTS</td><td>4.0/5</td><td>~700 ms</td><td>—</td><td>—</td></tr>
+    <tr><td>Piper (lokálne)</td><td>3.5/5</td><td class="g">~300 ms</td><td>—</td><td>—</td></tr>
+    <tr><td>Kokoro (lokálne)</td><td>3.8/5</td><td class="g">~250 ms</td><td>—</td><td>—</td></tr>
+    <tr><td>XTTS</td><td>4.0/5</td><td>~1.5 s</td><td>—</td><td class="g">áno</td></tr>
+    <tr><td>Chatterbox</td><td>4.2/5</td><td>~2.0 s</td><td>—</td><td class="g">áno (expressive)</td></tr>
+    <tr><td>OmniVoice</td><td>4.0/5</td><td>~1.0 s</td><td>—</td><td>áno</td></tr>
+    <tr><td>Mock</td><td>—</td><td>0 ms</td><td>—</td><td>—</td></tr>
+   </tbody>
+  </table></div>
+  <div class="note"><strong>Azure TTS — kritický pre lipsync presnosť ±5 ms</strong>Azure Neural TTS je jediný provider vracajúci phoneme-level timing dáta. Umožňuje text→viseme lipsync s presnosťou ±5 ms. Edge TTS poskytuje WordBoundary eventy (~5 ms na začiatok slova). Ostatné providery používajú text estimation (±25 ms) — stále funkčné, len nižšia presnosť.</div>
+ </div>
+ <div class="pf"><span class="pfl">SORRYWECAN s.r.o. · Grant 09I05-03-V04-00072</span><span class="pfc">10</span><span class="pfr">Máj 2026 · v5.0</span></div>
+</div>
+
+<div class="page" id="p11">
+ <div class="ph"><span class="phl">EduTutor.AI v5.0</span><span class="phr">§3 AI Služby — RAG · Databáza</span></div>
+ <div class="pb">
+  <h3 style="margin-top:0;">3.4 RAG — Retrieval-Augmented Generation</h3>
+  <div class="tw"><table>
+   <thead><tr><th>Parameter</th><th>Hodnota</th><th>Zdôvodnenie</th></tr></thead>
+   <tbody>
+    <tr><td>Vector DB (default)</td><td>ChromaDB (embedded)</td><td>Nulová externá závislosť, nasadenie jedným príkazom</td></tr>
+    <tr><td>Vector DB (prod)</td><td>Weaviate (Docker)</td><td>Škálovateľný backend — env <code>VECTOR_DB_BACKEND=weaviate</code></td></tr>
+    <tr><td>Embedding model</td><td>intfloat/multilingual-e5-large</td><td>50+ jazykov vrátane SK, 1024-dim vektory</td></tr>
+    <tr><td>Chunk size</td><td>500 znakov</td><td>Optimálne pre odborné vzdelávacie texty</td></tr>
+    <tr><td>Chunk overlap</td><td>80 znakov (~16 %)</td><td>Zachovanie kontextu na hraniciach chunkov</td></tr>
+    <tr><td>Top-K výsledkov</td><td>6</td><td>Relevantné bez preplnenia LLM kontextu (~3000 tokenov)</td></tr>
+    <tr><td>Similarity threshold</td><td>0.35 cosine</td><td>Nižší prah pre slovenčinu (embeddings menej presné ako EN)</td></tr>
+    <tr><td>Full-Text Search</td><td>SQLite FTS5</td><td>Doplnkový keyword search, &lt;10 ms</td></tr>
+    <tr><td>Batch size (embedding)</td><td>100</td><td>Optimálne pre lokálny hardvér</td></tr>
+    <tr><td>Latencia retrieval</td><td class="g">~45 ms avg</td><td>ChromaDB embedded, bez sieťového round-tripu</td></tr>
+    <tr><td>Podporované formáty</td><td>PDF · DOCX · XLSX · TXT · MD</td><td>Max 50 MB, automaticky chunkované a embedované</td></tr>
+   </tbody>
+  </table></div>
+  <h3>3.5 Databáza a cache</h3>
+  <div class="tw"><table>
+   <thead><tr><th>Komponent</th><th>Parameter</th><th>Hodnota</th></tr></thead>
+   <tbody>
+    <tr><td>PostgreSQL 16</td><td>Image</td><td>postgres:16-alpine — stabilná LTS, nízka pamäť</td></tr>
+    <tr><td>PostgreSQL 16</td><td>História konverzácií</td><td class="g">+45 % rýchlejšie vs PB2 baseline</td></tr>
+    <tr><td>SQLite</td><td>Dev default</td><td>Zero-config, žiadny Docker pre lokálny vývoj</td></tr>
+    <tr><td>SQLite</td><td>user_profile</td><td>Phase 8b — štruktúrované profily používateľov</td></tr>
+    <tr><td>Redis 7</td><td>TTL</td><td>24 h — automatické čistenie denných relácií</td></tr>
+    <tr><td>Redis 7</td><td>Kontextové okno</td><td>20 správ — postačujúce pre celú tutorskú reláciu</td></tr>
+    <tr><td>Redis 7</td><td>Latencia cache</td><td class="g">&lt;2 ms</td></tr>
+    <tr><td>FTS5</td><td>Engine</td><td>SQLite virtual table — keyword search sidecar</td></tr>
+    <tr><td>ChromaDB</td><td>Episodic memory</td><td>Phase 8b — sémantické vyhľadávanie historických konverzácií</td></tr>
+   </tbody>
+  </table></div>
+ </div>
+ <div class="pf"><span class="pfl">SORRYWECAN s.r.o. · Grant 09I05-03-V04-00072</span><span class="pfc">11</span><span class="pfr">Máj 2026 · v5.0</span></div>
+</div>
+
+<div class="page" id="p12">
+ <div class="ph"><span class="phl">EduTutor.AI v5.0</span><span class="phr">§4 Lipsync — prehľad a režimy</span></div>
+ <div class="pb">
+  <span class="sl">Sekcia 04</span><h2>Lipsync systém</h2><div class="sr"></div>
+  <p>Vlastný modul <code>viseme_timeline.py</code> je hlavným výskumným príspevkom projektu. Žiadna existujúca knižnica neposkytuje deterministické mapovanie slovenských fonémov na vizémy s úplným pokrytím grafémov. Verzia v5.0 pridáva: env-tunable konverzačný timing (60/100/45 ms), Text2Face presety (9 emócií × ARKit upper-face) a 40 ms frame grid (oprava 8 ms → 40 ms po spätnej väzbe blueprint dev).</p>
+  <h3>4.1 Porovnanie technológií</h3>
+  <div class="tw"><table>
+   <thead><tr><th>Technológia</th><th>SK fonémy</th><th>Latencia</th><th>Kvalita</th><th>Cena</th><th>Open-source</th></tr></thead>
+   <tbody>
+    <tr><td>Oculus LipSync</td><td>❌ Nie (EN)</td><td>~5 ms</td><td>Nízka pre SK</td><td>Zadarmo</td><td>—</td></tr>
+    <tr><td>Convai</td><td>❌ Nie</td><td>~0 ms (cloud)</td><td>Stredná</td><td>$0.01/req</td><td>Nie</td></tr>
+    <tr><td>NeuroSync (AnimaVR)</td><td>❌ Nie (EN)</td><td>~100 ms</td><td>Nízka pre SK</td><td>Zadarmo (alfa)</td><td>Áno</td></tr>
+    <tr><td>NeuroSync ANIMASYNC</td><td>Áno</td><td>~100–300 ms</td><td>Vysoká</td><td>Platený (trial 30d)</td><td>Nie</td></tr>
+    <tr><td>Azure Viseme</td><td>✅ ÁNO</td><td>±5 ms</td><td>Vysoká</td><td>Platený</td><td>Azure API</td></tr>
+    <tr><td class="g">★ Vlastný (text)</td><td class="g">✅ 100 %</td><td class="g">&lt;1 ms</td><td class="g">Vysoká</td><td class="g">Zadarmo</td><td class="g">MIT</td></tr>
+    <tr><td class="g">★ Audio2Lipsync (ARKit)</td><td class="g">Áno</td><td>150–400 ms</td><td class="g">Frame-perfect 60fps</td><td class="g">Zadarmo</td><td class="g">MIT (fotonlabs)</td></tr>
+   </tbody>
+  </table></div>
+  <span class="fref">→ Plné porovnanie: docs/research/lipsync_comparison.md (388 riadkov, PB1+PB5)</span>
+  <h3>4.2–4.5 Štyri lipsync režimy</h3>
+  <div class="steps">
+   <div class="step"><div class="stepn">1</div><div class="stepb"><h4>Text estimation (±25 ms)</h4><p>LLM text → grafémy → SK fonetické pravidlá → viseme timeline. Aktívny pre <em>všetky</em> TTS providery. Nulové závislosti, offline-ready.</p></div></div>
+   <div class="step"><div class="stepn">2</div><div class="stepb"><h4>Azure phoneme timing (±5 ms)</h4><p>Azure TTS vráti JSON s phoneme-level timestamp. Mapovanie Azure phoneme ID → SK vizém. Najvyššia presnosť — vyžaduje Azure kľúč.</p></div></div>
+   <div class="step"><div class="stepn">3</div><div class="stepb"><h4>ARKit 52-kanálový (audio2lipsync)</h4><p>HuBERT + Transformer @60fps. Model: fotonlabs/unreal-audio2lipsync (MIT, 315 MB). Frame-perfect blendshape výstup pre celú MetaHuman tvár.</p></div></div>
+   <div class="step"><div class="stepn">4</div><div class="stepb"><h4>Hybrid (auto-fallback)</h4><p>Ak audio2lipsync nie je dostupný → plynulý fallback na text mode. Frontend deteguje <code>arkit_frames</code> v SSE evente a volá správny UE5 bridge. Default v produkcii.</p></div></div>
+  </div>
+ </div>
+ <div class="pf"><span class="pfl">SORRYWECAN s.r.o. · Grant 09I05-03-V04-00072</span><span class="pfc">12</span><span class="pfr">Máj 2026 · v5.0</span></div>
+</div>
+
+<div class="page" id="p13">
+ <div class="ph"><span class="phl">EduTutor.AI v5.0</span><span class="phr">§4 Lipsync — 52 ARKit kanálov · Hybrid</span></div>
+ <div class="pb">
+  <h3 style="margin-top:0;">4.4 52 ARKit blendshape kanálov</h3>
+  <div class="tw"><table>
+   <thead><tr><th>Kategória</th><th>Kanály</th></tr></thead>
+   <tbody>
+    <tr><td>Oči (14 kan.)</td><td>EyeBlinkLeft/Right · EyeLookDown/In/Out/Up L/R · EyeSquintL/R · EyeWideL/R</td></tr>
+    <tr><td>Čeľusť (4)</td><td>JawForward · JawLeft · JawRight · JawOpen</td></tr>
+    <tr><td>Ústa (23)</td><td>MouthClose · MouthFunnel · MouthPucker · MouthLeft/Right · MouthSmileL/R · MouthFrownL/R · MouthDimpleL/R · MouthStretchL/R · MouthRollLower/Upper · MouthShrugLower/Upper · MouthPressL/R · MouthLowerDownL/R · MouthUpperUpL/R</td></tr>
+    <tr><td>Nos (2)</td><td>NoseSneerLeft/Right</td></tr>
+    <tr><td>Líca (3)</td><td>CheekPuff · CheekSquintLeft/Right</td></tr>
+    <tr><td>Obočie (5)</td><td>BrowDownLeft/Right · BrowInnerUp · BrowOuterUpLeft/Right</td></tr>
+    <tr><td>Jazyk (1)</td><td>TongueOut</td></tr>
+   </tbody>
+  </table></div>
+  <h3>4.5 avatarCommand JSON — formát WebSocket payload</h3>
+  <pre>{
+  "emotion": "joy",
+  "intensity": 0.9,
+  "isSpeaking": true,
+  "visemes": [{"viseme": "aa", "weight": 0.85}],   ← lerp target
+  "viseme_timeline": [                              ← full timeline pre UE5 scrub
+    {"viseme": "aa", "weight": 0.9, "start_ms": 0, "duration_ms": 60}
+  ],
+  "arkit_frames": [                                 ← 52ch frame stream (optional)
+    {"start_ms": 0, "duration_ms": 16, "arkit": {"JawOpen": 0.31, ...}}
+  ],
+  "agentState": "speaking",                         ← v2.1 idle pose
+  "audioPositionMs": 0,                             ← v4.0 audio clock
+  "sentenceIdx": 0,                                 ← v4.0 sentence sync
+  "blink": 0.0,                                     ← auto-blink keepalive
+  "total_duration_ms": 920
+}</pre>
+  <div class="note"><strong>Backward compatibility (Roland-safe)</strong>Nové polia (arkit_frames, agentState, audioPositionMs, sentenceIdx) sú <em>omit-when-unset</em>. Staré v2.0 Blueprint klienty vidia byte-identickú prevádzku ako pred upgradom. Nikdy nemeníme shape existujúcich polí — len pridávame nové.</div>
+ </div>
+ <div class="pf"><span class="pfl">SORRYWECAN s.r.o. · Grant 09I05-03-V04-00072</span><span class="pfc">13</span><span class="pfr">Máj 2026 · v5.0</span></div>
+</div>
+
+<div class="page" id="p14">
+ <div class="ph"><span class="phl">EduTutor.AI v5.0</span><span class="phr">§4 Lipsync — 14 vizémov · fonetický engine</span></div>
+ <div class="pb">
+  <h3 style="margin-top:0;">4.6 Slovenské vizémy — 14 tvarov úst</h3>
+  <p style="font-size:.82rem;color:var(--g2);margin-bottom:10px;">Pokrytie všetkých 46 slovenských grafémov vrátane diakritiky a digrafov (ch, dz, dž). Dlhé samohlásky: rovnaký vizém, trvanie × 1.67.</p>
+  <div class="vg">
+   <div class="vc"><span class="vs">aa</span><span class="vt">a, á, ä<br/><em>ahoj</em></span></div>
+   <div class="vc"><span class="vs">oh</span><span class="vt">o, ó, ô<br/><em>okno</em></span></div>
+   <div class="vc"><span class="vs">ou</span><span class="vt">u, ú<br/><em>učiť</em></span></div>
+   <div class="vc"><span class="vs">ih</span><span class="vt">i, í, y, ý, j<br/><em>nie</em></span></div>
+   <div class="vc"><span class="vs">E</span><span class="vt">e, é<br/><em>ten</em></span></div>
+   <div class="vc"><span class="vs">PP</span><span class="vt">p, b, m<br/><em>pomoc</em></span></div>
+   <div class="vc"><span class="vs">FF</span><span class="vt">f, v<br/><em>farba</em></span></div>
+   <div class="vc"><span class="vs">DD</span><span class="vt">d, t, ď, ť<br/><em>dobre</em></span></div>
+   <div class="vc"><span class="vs">nn</span><span class="vt">n, ň<br/><em>nie</em></span></div>
+   <div class="vc"><span class="vs">SS</span><span class="vt">s, z, c<br/><em>správne</em></span></div>
+   <div class="vc"><span class="vs">CH</span><span class="vt">š, ž, č, dž<br/><em>školák</em></span></div>
+   <div class="vc"><span class="vs">kk</span><span class="vt">k, g, h, ch<br/><em>kde</em></span></div>
+   <div class="vc"><span class="vs">RR</span><span class="vt">r, l, ľ, ĺ, ŕ<br/><em>riadok</em></span></div>
+   <div class="vc"><span class="vs">sil</span><span class="vt">pauza<br/><em>ticho</em></span></div>
+  </div>
+  <h3>4.7 Fonetický pravidlový engine</h3>
+  <p style="font-size:.84rem;color:var(--g2);">Tri SK fonetické pravidlá pre realistickú artikuláciu. Pokryté 32 dedikovanými testami v <code>test_phonetic_rules.py</code>.</p>
+  <div class="tw"><table>
+   <thead><tr><th>Pravidlo</th><th>Efekt</th><th>Príklad</th></tr></thead>
+   <tbody>
+    <tr><td>Asimilácia znelosti</td><td>Znelá spoluhláska pred neznelou → zníženie váhy (0.8→0.65)</td><td>„všetci" — 'v' pred 'š' → weight 0.65</td></tr>
+    <tr><td>Diftongy</td><td>ia, ie, iu, ou → expanduje na DVA vizém tokeny</td><td>„učia" — 'ia' → ih(40ms) + aa(50ms)</td></tr>
+    <tr><td>Palatalizácia</td><td>t, d, n pred mäkkými samohláskami → mäkký variant</td><td>„deti" — 'd' pred 'e' → DD → ďakujem</td></tr>
+   </tbody>
+  </table></div>
+ </div>
+ <div class="pf"><span class="pfl">SORRYWECAN s.r.o. · Grant 09I05-03-V04-00072</span><span class="pfc">14</span><span class="pfr">Máj 2026 · v5.0</span></div>
+</div>
+
+<div class="page" id="p15">
+ <div class="ph"><span class="phl">EduTutor.AI v5.0</span><span class="phr">§4 UE5 · Validácia · NOVÉ Timing + Text2Face</span></div>
+ <div class="pb">
+  <h3 style="margin-top:0;">4.8 UE5 integrácia — parametre</h3>
+  <div class="tw"><table>
+   <thead><tr><th>Parameter</th><th>Hodnota</th><th>Zdôvodnenie</th></tr></thead>
+   <tbody>
+    <tr><td>Lerp vizém (pery)</td><td>80–100 ms</td><td>Plynulý prechod bez robotického efektu</td></tr>
+    <tr><td>Lerp emócia (tvár)</td><td>200–300 ms</td><td>Prirodzená zmena výrazu tváre</td></tr>
+    <tr><td>Lerp ARKit</td><td>16.67 ms (60 fps)</td><td>Frame-accurate blendshape animácia</td></tr>
+    <tr><td>Auto-blink interval</td><td>3–6 s (randomizované)</td><td>eyeBlinkLeft + eyeBlinkRight, Perlin noise timing</td></tr>
+    <tr><td>Micro-expression amplitúda</td><td>2–4 %</td><td>Jemný prejav života, bez viditeľného rušenia</td></tr>
+    <tr><td>Idle heartbeat</td><td>0.5 s</td><td>Server posiela blink pulse ak avatar nerozpráva</td></tr>
+   </tbody>
+  </table></div>
+  <h3>4.9 Validácia — všetkých 12 kritérií prešlo</h3>
+  <div class="valgrid">
+   <div class="valcell">Všetkých 14 vizémov detekovaných<span class="vtick">✓</span></div>
+   <div class="valcell">Azure timing ±5 ms<span class="vtick">✓</span></div>
+   <div class="valcell">Text estimation ±25 ms<span class="vtick">✓</span></div>
+   <div class="valcell">ARKit 52 kanálov @60fps<span class="vtick">✓</span></div>
+   <div class="valcell">Hybrid fallback ARKit → text<span class="vtick">✓</span></div>
+   <div class="valcell">Asimilácia znelosti<span class="vtick">✓</span></div>
+   <div class="valcell">Palatalizácia<span class="vtick">✓</span></div>
+   <div class="valcell">Diftongy (ia, ie, iu, ou)<span class="vtick">✓</span></div>
+   <div class="valcell">Blendshape vrstvenie<span class="vtick">✓</span></div>
+   <div class="valcell">Auto-blink + microexpr.<span class="vtick">✓</span></div>
+   <div class="valcell">32 fonetických testov<span class="vtick">✓</span></div>
+   <div class="valcell">Backward-compatible JSON<span class="vtick">✓</span></div>
+  </div>
+  <h3 style="margin-top:24px;">4.10 Konverzačný timing — NOVÉ v5.0 (env-tunable)</h3>
+  <p style="font-size:.84rem;color:var(--g2);margin-bottom:10px;">Po spätnej väzbe blueprint dev (máj 2026): pôvodný 8 ms frame grid spôsoboval trhané prechody na MetaHuman rigi, fonémy boli na školské tempo. v5.0 zavádza konverzačný timing s env premennými.</p>
+  <div class="tw"><table>
+   <thead><tr><th>Env premenná</th><th>v4.0</th><th>v5.0</th><th>Účinok</th></tr></thead>
+   <tbody>
+    <tr><td>EDU_VISEME_FRAME_STEP_MS</td><td>8 ms</td><td class="g">40 ms</td><td>5× menej frame prechodov, plynulá animácia</td></tr>
+    <tr><td>EDU_VISEME_SHORT_VOWEL_MS</td><td>90 ms</td><td class="g">60 ms</td><td>Konverzačné tempo krátkych samohlások</td></tr>
+    <tr><td>EDU_VISEME_LONG_VOWEL_MS</td><td>160 ms</td><td class="g">100 ms</td><td>Pomer 100/60 ≈ 1.67 zachováva SK kontrast dĺžky</td></tr>
+    <tr><td>EDU_VISEME_CONSONANT_MS</td><td>65 ms</td><td class="g">45 ms</td><td>Blízko priemernej dĺžky okluzívy v hovorovej SK</td></tr>
+    <tr><td>EDU_VISEME_RAMP_MS</td><td>—</td><td>40 ms</td><td>Koartikulačný ramp = krok mriežky → plynulý prechod</td></tr>
+   </tbody>
+  </table></div>
+  <p style="font-size:.82rem;color:var(--g2);"><strong>Výsledok:</strong> „Ahoj, ako sa máš?" 1240 ms → 920 ms (-26 %, prirodzenejšie konverzačné tempo).</p>
+  <h3>4.11 Text2Face presety — NOVÉ v5.0</h3>
+  <p style="font-size:.84rem;color:var(--g2);margin-bottom:10px;">Modul <code>expression_presets.py</code> rozšíruje audio2lipsync (ktorý ovláda len ústa, kanály 14–40) o 9 emočných presetov pre hornú tvár (oči 0–13, obočie 41–45, líca, nos). Mergované do <code>arkit_frames</code> — neprekrývajú sa s audio kanálmi, sú bezpečne aditívne. LiveLink Pose Asset auto-mapuje kombinovaný dict.</p>
+  <pre>expression_for("joy")    → {EyeSquintLeft: 0.3, BrowInnerUp: 0.2, ...}
+expression_for("sadness") → {BrowInnerUp: 0.8, BrowDownLeft: 0.3, ...}
+expression_for("curious") → {BrowOuterUpL: 0.4, EyeWideL: 0.2, ...}
+… 9 emócií × ~10 ARKit kanálov hornej tváre</pre>
+ </div>
+ <div class="pf"><span class="pfl">SORRYWECAN s.r.o. · Grant 09I05-03-V04-00072</span><span class="pfc">15</span><span class="pfr">Máj 2026 · v5.0</span></div>
+</div>
+
+<div class="page" id="p17">
+ <div class="ph"><span class="phl">EduTutor.AI v5.0</span><span class="phr">§5 Emočný systém</span></div>
+ <div class="pb">
+  <span class="sl">Sekcia 05</span><h2>Emočný systém — 9 emócií</h2><div class="sr"></div>
+  <h3 style="margin-top:0;">5.1 Regex detektor — 9 emočných stavov · &lt;1 ms</h3>
+  <p>Default backend — deterministický, nulová latencia. Detekcia z odpovede LLM cez SK keyword patterns.</p>
+  <div class="tw"><table>
+   <thead><tr><th>UE5 emócia</th><th>Backend label</th><th>Intenzita</th><th>Aktivácia (SK keywords)</th></tr></thead>
+   <tbody>
+    <tr><td><code>neutral</code></td><td>neutral</td><td>0.40</td><td>Predvolený pokojový stav</td></tr>
+    <tr><td><code>joy</code></td><td>celebrating</td><td>0.90–1.00</td><td>„výborne", „skvelé", „bravo" — úspech</td></tr>
+    <tr><td><code>encouraging_mild</code></td><td>encouraging_mild</td><td>0.55–0.70</td><td>„dobre", „správne", „takmer" — čiastočný úspech</td></tr>
+    <tr><td><code>proud</code></td><td>proud</td><td>0.75–0.85</td><td>Zvládnutie ťažkej témy v kontexte</td></tr>
+    <tr><td><code>sadness</code></td><td>correcting</td><td>0.65–0.80</td><td>„nie", „nesprávne", „skúste znova"</td></tr>
+    <tr><td><code>patient</code></td><td>patient</td><td>0.50–0.65</td><td>Opakovaná chyba v rovnakej téme</td></tr>
+    <tr><td><code>curious</code></td><td>curious</td><td>0.60–0.75</td><td>Neočakávaná odpoveď používateľa</td></tr>
+    <tr><td><code>thinking_deep</code></td><td>thinking_deep</td><td>0.70–0.85</td><td>Komplexná viacstupňová otázka</td></tr>
+    <tr><td><code>surprise</code></td><td>surprise</td><td>0.50–0.80</td><td>Nový alebo mimokontextový dotaz</td></tr>
+   </tbody>
+  </table></div>
+  <h3>5.2 BERT emotion detektor (alternatívny)</h3>
+  <p>Custom BERT fine-tuned na slovenskom sentimente. Pipeline: text → BERT inference → sentiment label → emotion mapping. Latencia: ~50 ms (CPU), ~10 ms (GPU). Eval report: <code>tutor-service/models/sentiment/bert_evaluation_report.md</code></p>
+  <h3>5.3 5 agentState idle póz (v2.1 protokol)</h3>
+  <div class="tw"><table>
+   <thead><tr><th>agentState</th><th>Kedy</th><th>Vizuálna póza</th></tr></thead>
+   <tbody>
+    <tr><td><code>idle</code></td><td>Default kľudový stav</td><td>Mierne dýchanie, občasný blink</td></tr>
+    <tr><td><code>thinking</code></td><td>LLM generuje odpoveď</td><td>Pohľad hore, prst na bradu</td></tr>
+    <tr><td><code>searching</code></td><td>RAG retrieval prebieha</td><td>Pohľad do strán, ľahký pohyb hlavy</td></tr>
+    <tr><td><code>writing</code></td><td>Avatar generuje dlhý text</td><td>Pohľad dole na imaginárny papier</td></tr>
+    <tr><td><code>listening</code></td><td>STT prijíma hlasový vstup</td><td>Naklonenie hlavy, pozornosť</td></tr>
+   </tbody>
+  </table></div>
+  <pre># Switch backendu za behu
+curl -X POST http://localhost:8000/api/v1/emotion/switch \
+  -H "Content-Type: application/json" -d '{"backend":"bert"}'</pre>
+ </div>
+ <div class="pf"><span class="pfl">SORRYWECAN s.r.o. · Grant 09I05-03-V04-00072</span><span class="pfc">17</span><span class="pfr">Máj 2026 · v5.0</span></div>
+</div>
+
+<div class="page" id="p18">
+ <div class="ph"><span class="phl">EduTutor.AI v5.0</span><span class="phr">§6 Knowledge Base platforma</span></div>
+ <div class="pb">
+  <span class="sl">Sekcia 06</span><h2>Knowledge Base platforma</h2><div class="sr"></div>
+  <p>KB platforma je inšpirovaná NotebookLM a umožňuje prácu s dokumentmi v 4 interaktívnych režimoch. Kombinuje vector search s full-text search, poznámkami, AI transformáciami, podcast generáciou a one-shot Ask módom.</p>
+  <h3 style="margin-top:12px;">6.2 Štyri režimy interakcie</h3>
+  <div class="tw"><table>
+   <thead><tr><th>Režim</th><th>Popis</th><th>Vstup</th><th>Výstup</th></tr></thead>
+   <tbody>
+    <tr><td><strong>💬 Chat</strong></td><td>Konverzačný Q&amp;A s citáciami zdrojov</td><td>Text / voice</td><td>Streaming text + audio + citations + avatar</td></tr>
+    <tr><td><strong>📚 Study</strong></td><td>Flashcards, kvízy, AI transformácie</td><td>Klik na šablónu</td><td>Generovaný obsah (flashcards, kvízy, summary)</td></tr>
+    <tr><td><strong>🎤 Voice</strong></td><td>Hlasová interakcia s KB</td><td>Audio (mic)</td><td>Audio + viseme + emotion (real-time)</td></tr>
+    <tr><td class="b">❓ Ask (NOVÉ v5.0)</td><td>One-shot dotaz cez všetky zdroje</td><td>Text</td><td>Comprehensive answer + 15 sources · 6.4 s avg latencia</td></tr>
+   </tbody>
+  </table></div>
+  <h3>6.3 Document Processing Pipeline</h3>
+  <div class="steps">
+   <div class="step"><div class="stepn">1</div><div class="stepb"><h4>Text Extraction</h4><p>PDF→PyMuPDF · DOCX→python-docx · XLSX→openpyxl · TXT/MD→raw read · Max 50 MB</p></div></div>
+   <div class="step"><div class="stepn">2</div><div class="stepb"><h4>Chunking</h4><p>Recursive split: \n\n → \n → . → space · Size: 500 znakov · Overlap: 80 · Metadata: document_id, chunk_index, page</p></div></div>
+   <div class="step"><div class="stepn">3</div><div class="stepb"><h4>Embedding</h4><p>intfloat/multilingual-e5-large · 1024-dim · Batch: 100 · Native SK support</p></div></div>
+   <div class="step"><div class="stepn">4</div><div class="stepb"><h4>Dual Indexovanie</h4><p>Vector Store (ChromaDB / Weaviate) + FTS5 (SQLite virtual table) súčasne</p></div></div>
+   <div class="step"><div class="stepn">5</div><div class="stepb"><h4>Status Update</h4><p>Document.status = "completed" · chunk_count = N · token_count = M</p></div></div>
+  </div>
+  <h3>6.4 Vyhľadávanie — Vector + Full-Text Search</h3>
+  <div class="tw"><table>
+   <thead><tr><th>Metóda</th><th>Engine</th><th>Najlepšie pre</th><th>Latencia</th></tr></thead>
+   <tbody>
+    <tr><td>Vector (cosine)</td><td>ChromaDB / Weaviate</td><td>Sémanticky príbuzné otázky</td><td>~45 ms</td></tr>
+    <tr><td>Full-Text (BM25)</td><td>SQLite FTS5</td><td>Presné kľúčové slová, mená, čísla</td><td class="g">&lt;10 ms</td></tr>
+    <tr><td>Hybrid</td><td>Vector + FTS5 merge</td><td>Kombinácia sémantiky a kľúčových slov</td><td>~55 ms</td></tr>
+   </tbody>
+  </table></div>
+ </div>
+ <div class="pf"><span class="pfl">SORRYWECAN s.r.o. · Grant 09I05-03-V04-00072</span><span class="pfc">18</span><span class="pfr">Máj 2026 · v5.0</span></div>
+</div>
+
+<div class="page" id="p19">
+ <div class="ph"><span class="phl">EduTutor.AI v5.0</span><span class="phr">§6 KB — Notes · Transformácie · Ask · Podcast</span></div>
+ <div class="pb">
+  <h3 style="margin-top:0;">6.5 Notes — poznámky s tracking zdroja</h3>
+  <div class="tw"><table>
+   <thead><tr><th>Funkcia</th><th>Popis</th></tr></thead>
+   <tbody>
+    <tr><td>Manuálne poznámky</td><td>Tiptap Markdown editor, plné CRUD</td></tr>
+    <tr><td>Save from chat</td><td>Uloženie AI odpovede ako poznámky jedným klikom</td></tr>
+    <tr><td>AI generované</td><td>Výstup transformácií uložený ako poznámka</td></tr>
+    <tr><td>Zdroj tracking</td><td><code>source_type</code>: manual / ai_generated / saved_from_chat</td></tr>
+   </tbody>
+  </table></div>
+  <h3>6.6 AI transformácie — 6 predvolených šablón</h3>
+  <div class="tw"><table>
+   <thead><tr><th>Šablóna</th><th>Výstup</th></tr></thead>
+   <tbody>
+    <tr><td>Study Guide</td><td>Kľúčové koncepty, definície, učebné ciele</td></tr>
+    <tr><td>Flashcards</td><td>Q&amp;A páry vo formáte flashcard</td></tr>
+    <tr><td>Key Concepts</td><td>Hlavné koncepty s vysvetleniami</td></tr>
+    <tr><td>Summary</td><td>200–300 slov zhrnutie</td></tr>
+    <tr><td>Practice Questions</td><td>10 otázok s odpoveďami</td></tr>
+    <tr><td>Vocabulary</td><td>Odborné termíny s definíciami</td></tr>
+   </tbody>
+  </table></div>
+  <p style="font-size:.82rem;color:var(--g2);">Processing: FastAPI BackgroundTasks → LLM inference → uloženie výsledku. Status: <code>PENDING → PROCESSING → COMPLETED / FAILED</code>. Pri re-uploade dokumentu sa existujúce transformácie označia ako <code>is_stale</code>.</p>
+  <h3 class="b">6.7 Ask Mode — NOVÉ v5.0 (one-shot otázky)</h3>
+  <p style="font-size:.84rem;color:var(--g2);margin-bottom:10px;">Endpoint <code>POST /api/v1/knowledge-bases/{name}/ask</code> umožňuje rýchle one-shot otázky bez kontextu konverzácie. Hardenovaný timeoutmi, X-EduTutor-User-Id header path, 5 kontraktných testov.</p>
+  <pre>POST /api/v1/knowledge-bases/biology/ask
+{
+  "question": "Aké sú hlavné rozdiely medzi DNA a RNA?",
+  "rag_top_k": 15,
+  "max_tokens": 800
+}
+
+Response (6.4 s avg):
+{
+  "answer": "DNA je dvojzávitnica obsahujúca dezoxyribózu...",
+  "sources": [{ "filename": "biology.pdf", "page": 42, "chunk": "..."}, ...15],
+  "latency_ms": 6400
+}</pre>
+  <h3 class="b">6.8 Podcast generácia — NOVÉ v5.0</h3>
+  <p style="font-size:.84rem;color:var(--g2);">Generuje audio podcast z obsahu dokumentov v KB. 4 REST endpointy, FFmpeg concat, background job queue, in-app player.</p>
+  <div class="steps">
+   <div class="step"><div class="stepn">1</div><div class="stepb"><h4>POST /podcasts/generate</h4><p>Vstup: knowledge_base, duration_minutes, speaker_count → returns job_id</p></div></div>
+   <div class="step"><div class="stepn">2</div><div class="stepb"><h4>Script generator (background)</h4><p>LLM generuje dialog medzi 2–3 speakermi · spája chunky cez RAG retrieval</p></div></div>
+   <div class="step"><div class="stepn">3</div><div class="stepb"><h4>TTS per-speaker</h4><p>Každá replika → samostatný TTS call (Edge / Azure) s rôznym hlasom</p></div></div>
+   <div class="step"><div class="stepn">4</div><div class="stepb"><h4>FFmpeg concat + crossfade</h4><p>Zlúčenie všetkých audio chunkov, pridanie crossfade medzi replikami</p></div></div>
+   <div class="step"><div class="stepn">5</div><div class="stepb"><h4>GET /podcasts/{job_id}</h4><p>Vráti audio_url, transcript, duration_s, status (pending/processing/done/failed)</p></div></div>
+  </div>
+ </div>
+ <div class="pf"><span class="pfl">SORRYWECAN s.r.o. · Grant 09I05-03-V04-00072</span><span class="pfc">19</span><span class="pfr">Máj 2026 · v5.0</span></div>
+</div>
+
+<div class="page" id="p21">
+ <div class="ph"><span class="phl">EduTutor.AI v5.0</span><span class="phr">§7 Voice Cloning · Memory · Podcast — NOVÉ vrstvy</span></div>
+ <div class="pb">
+  <span class="sl">Sekcia 07</span><h2>Voice Cloning · Memory · Podcast</h2><div class="sr"></div>
+  <h3 style="margin-top:0;">7.1 Voice Cloning — flow klonovania</h3>
+  <div class="steps">
+   <div class="step"><div class="stepn">1</div><div class="stepb"><h4>Upload referenčného audia</h4><p>3–60 s, ľubovoľný formát</p></div></div>
+   <div class="step"><div class="stepn">2</div><div class="stepb"><h4>PyAV konverzia</h4><p>→ 22 050 Hz mono WAV</p></div></div>
+   <div class="step"><div class="stepn">3</div><div class="stepb"><h4>Uloženie</h4><p><code>models/{engine}/references/{slug}.wav</code></p></div></div>
+   <div class="step"><div class="stepn">4</div><div class="stepb"><h4>Automatická registrácia</h4><p>Objaví sa v <code>GET /tts/voices</code> · tts.py skenuje reference directories</p></div></div>
+   <div class="step"><div class="stepn">5</div><div class="stepb"><h4>Použitie</h4><p><code>tts_voice = "xtts-clone-{slug}"</code> → tts_service infers provider → synth with speaker ref</p></div></div>
+  </div>
+  <h3 class="b">7.2 Memory — Phase 8b cross-session pamäť (NOVÉ v5.0)</h3>
+  <p style="font-size:.84rem;color:var(--g2);margin-bottom:10px;">Tri komponenty pre dlhodobú pamäť: štruktúrované profily v SQLite, sémantické epizódy v ChromaDB, automatické zhrnutia konverzácií.</p>
+  <div class="tw"><table>
+   <thead><tr><th>Komponent</th><th>Backend</th><th>Účel</th></tr></thead>
+   <tbody>
+    <tr><td>user_profile</td><td>SQLite (UserProfile model)</td><td>Štruktúrované: name, interests, level, preferred_subjects</td></tr>
+    <tr><td>episodic_memory_service</td><td>ChromaDB collection</td><td>Sémantické vyhľadávanie historických konverzácií</td></tr>
+    <tr><td>conversation_summarizer</td><td>Background hook</td><td>Po N=10 správach → komprimuje kontext do summary</td></tr>
+    <tr><td>MemorySkill</td><td>Skill plugin</td><td><code>recall_memory()</code> + <code>update_profile()</code> dostupné LLM</td></tr>
+   </tbody>
+  </table></div>
+  <p style="font-size:.82rem;color:var(--g2);"><strong>Privacy invariant:</strong> X-EduTutor-User-Id header path. Profil sa injektuje do system prompt iba pre režimy <code>assistant_pro</code> / <code>tutor_practice_pro</code>. SK Slovak tutor mode (<code>sk</code>) má profil OFF — byte-identický flow s pôvodným baseline.</p>
+  <h3 class="b">7.3 Podcast generácia — backend architektúra</h3>
+  <p style="font-size:.84rem;color:var(--g2);">Modul <code>podcast_service.py</code> + REST router <code>podcasts.py</code> (4 endpointy). Použitie: <code>POST /podcasts/generate</code> → background job → async TTS per-speaker → FFmpeg concat → <code>GET /podcasts/{id}</code>. Frontend: <code>PodcastPanel.tsx</code> (471 riadkov, form + player + transcript view).</p>
+ </div>
+ <div class="pf"><span class="pfl">SORRYWECAN s.r.o. · Grant 09I05-03-V04-00072</span><span class="pfc">21</span><span class="pfr">Máj 2026 · v5.0</span></div>
+</div>
+
+<div class="page" id="p22">
+ <div class="ph"><span class="phl">EduTutor.AI v5.0</span><span class="phr">§8 Multilingválne učenie · LearningModes</span></div>
+ <div class="pb">
+  <span class="sl">Sekcia 08</span><h2>Multilingválne učenie · LearningModes</h2><div class="sr"></div>
+  <h3 style="margin-top:0;">LearningModes — 4 konfigurovateľné módy</h3>
+  <p>Každý mód má samostatný system prompt, povolené Skills, default LLM model a TTS voice. Runtime switching cez <code>POST /api/v1/modes/switch</code> bez reštartu.</p>
+  <div class="tw"><table>
+   <thead><tr><th>Mód</th><th>Účel</th><th>Skills</th><th>Memory</th></tr></thead>
+   <tbody>
+    <tr><td><code>sk</code></td><td>Primárny slovenský tutor (grant baseline)</td><td>žiadne — byte-identický flow</td><td>OFF (privacy)</td></tr>
+    <tr><td><code>en</code></td><td>Anglický tutoring</td><td>žiadne</td><td>OFF</td></tr>
+    <tr><td><code>learn-en-from-sk</code></td><td>Učenie angličtiny cez SK — postupné zavádzanie EN fráz</td><td>žiadne</td><td>OFF</td></tr>
+    <tr><td><code>assistant_pro</code></td><td>Personalizovaný asistent s pamäťou</td><td>MemorySkill, WebSearchSkill</td><td>ON</td></tr>
+    <tr><td><code>tutor_practice_pro</code></td><td>Tutor s tracking pokroku + spaced repetition</td><td>MemorySkill, SpacedRepetitionSkill</td><td>ON</td></tr>
+   </tbody>
+  </table></div>
+  <pre>POST /api/v1/modes/switch
+{"mode": "assistant_pro"}
+
+→ {"active": "assistant_pro", "skills_enabled": ["memory", "web_search"]}</pre>
+  <div class="note"><strong>Scope note pre grant — sk mode je referencný baseline</strong>SK Slovak tutor LearningMode (<code>sk</code>) neaktivuje skill platformu, anonymnú identitu ani cross-session pamäť. Jeho konverzačný flow je byte-identický s pôvodným pre-skill-platform baseline. Skill platforma, identita a memory sú aditívna infraštruktúra — dodávajú sa v repozitári, ale nie sú súčasťou §7.x grantových obligácií.</div>
+ </div>
+ <div class="pf"><span class="pfl">SORRYWECAN s.r.o. · Grant 09I05-03-V04-00072</span><span class="pfc">22</span><span class="pfr">Máj 2026 · v5.0</span></div>
+</div>
+
+<div class="page" id="p23">
+ <div class="ph"><span class="phl">EduTutor.AI v5.0</span><span class="phr">§9 Technologické pivoty</span></div>
+ <div class="pb">
+  <span class="sl">Sekcia 09</span><h2>Technologické pivoty a zdôvodnenia</h2><div class="sr"></div>
+  <div class="piv">
+   <div><div class="pn">01</div><div class="pm">Júl 2025</div></div>
+   <div><div class="ph4">LLM: Gemma 9B → Mistral 7B → Multi-provider (7 providerov)</div>
+   <div class="pb2">PRED: Gemma 9B — latencia &gt;10 s, SK kvalita 3,5/5</div><div class="pa">PO: 7 providerov, hot-swap, cloud 5/5 SK, lokálne 3/5</div>
+   <p class="pp">Multi-provider architektúra s runtime switching bez reštartu. Csilla Kovacova, Lucia Uhrinova.</p></div>
+  </div>
+  <div class="piv">
+   <div><div class="pn">02</div><div class="pm">Jún 2025</div></div>
+   <div><div class="ph4">TTS: Coqui → Edge/Azure → 10 providerov + Voice Cloning</div>
+   <div class="pb2">PRED: Coqui — kvalita 2,5/5 MOS, žiadne phoneme timing, 2.6–8.7 s latencia</div><div class="pa">PO: 10 providerov, 4,5/5 Azure MOS, ±5 ms phoneme, XTTS/Chatterbox voice cloning</div>
+   <p class="pp">3–7× zrýchlenie syntézy + streaming (prvý chunk ~150 ms). Lucia Uhrinova, Sofia Hornakova.</p><span class="fref">→ docs/research/tts_comparison.md</span></div>
+  </div>
+  <div class="piv">
+   <div><div class="pn">03</div><div class="pm">Október 2025</div></div>
+   <div><div class="ph4">Vector DB: Pinecone → Weaviate + ChromaDB (factory)</div>
+   <div class="pb2">PRED: Pinecone cloud — 0.5–0.9 s latencia, platený, internet-dependent</div><div class="pa">PO: ChromaDB embedded ~0.05 s, zadarmo, offline-ready, hit rate 82→88 %</div>
+   <p class="pp">Factory pattern zachoval oba backendy cez <code>VECTOR_DB_BACKEND</code> env var. Csilla Kovacova, Andrea Kutlikova.</p></div>
+  </div>
+  <div class="piv">
+   <div><div class="pn">04</div><div class="pm">Marec 2026</div></div>
+   <div><div class="ph4">Sentiment: DistilBERT → Regex (50 ms → 1 ms)</div>
+   <div class="pb2">PRED: DistilBERT 91 % acc, ~300 MB + GPU recommended</div><div class="pa">PO: Regex ~85 % acc, &lt;1 ms, nula RAM · BERT dostupný cez env</div>
+   <p class="pp">Real-time tutoring vyžadovalo &lt;5 ms emotion detect. Csilla Kovacova.</p></div>
+  </div>
+  <div class="piv">
+   <div><div class="pn">05</div><div class="pm">PB4–PB5</div></div>
+   <div><div class="ph4">Lipsync: Oculus → vlastný text + ARKit audio2lipsync</div>
+   <div class="pb2">PRED: Oculus — EN training set, systematické chyby pre SK ň, š, č</div><div class="pa">PO: 100 % SK fonémy + 52 ARKit @60fps · MIT licencia</div>
+   <p class="pp">Jediná open-source SK lipsync na trhu. Vlastný engine + fotonlabs ARKit.</p><span class="fref">→ docs/research/lipsync_comparison.md</span></div>
+  </div>
+  <div class="piv">
+   <div><div class="pn">06</div><div class="pm">Máj 2026 — NOVÉ</div></div>
+   <div><div class="ph4">Viseme timing: 8 ms grid → 40 ms · konverzačné fonémy</div>
+   <div class="pb2">PRED: 8 ms grid trhal MetaHuman, fonémy 90/160/65 ms = školské tempo</div><div class="pa">PO: 40 ms grid + 60/100/45 ms fonémy = konverzačné tempo</div>
+   <p class="pp">Po spätnej väzbe Rolanda (blueprint dev). „Ahoj, ako sa máš?" 1240→920 ms. Env-tunable bez zmeny kódu.</p></div>
+  </div>
+  <div class="piv">
+   <div><div class="pn">07</div><div class="pm">Máj 2026 — NOVÉ</div></div>
+   <div><div class="ph4">Memory: žiadna pamäť → Phase 8b (user_profile + episodic + summarizer)</div>
+   <div class="pb2">PRED: Každá konverzácia od nuly, žiadne tracking používateľa</div><div class="pa">PO: SQLite user_profile + ChromaDB episodic + auto-summarizer · 27 testov</div>
+   <p class="pp">Aditívna vrstva — sk mode zostáva byte-identický. assistant_pro/tutor_practice_pro získava plnú pamäť.</p></div>
+  </div>
+ </div>
+ <div class="pf"><span class="pfl">SORRYWECAN s.r.o. · Grant 09I05-03-V04-00072</span><span class="pfc">23</span><span class="pfr">Máj 2026 · v5.0</span></div>
+</div>
+
+<div class="page" id="p24">
+ <div class="ph"><span class="phl">EduTutor.AI v5.0</span><span class="phr">§10 Záťažové testy a benchmark</span></div>
+ <div class="pb">
+  <span class="sl">Sekcia 10</span><h2>Výsledky záťažových testov</h2><div class="sr"></div>
+  <h3 style="margin-top:0;">10.1 k6 záťažový test — 50 súbežných používateľov, 5 minút</h3>
+  <p style="font-size:.82rem;color:var(--g2);margin-bottom:10px;"><code>tests/k6/load-test.js</code> — industry-standard load test s ramp stages (10→50 VU počas 4 min) a thresholds (p95 &lt; 3 s, errors &lt; 5 %).</p>
+  <div class="tw"><table>
+   <thead><tr><th>Metrika</th><th>Hodnota</th><th>Endpoint</th></tr></thead>
+   <tbody>
+    <tr><td>Virtuálni používatelia (peak)</td><td>50</td><td>—</td></tr>
+    <tr><td>Celkový počet požiadaviek</td><td>~1 500</td><td>—</td></tr>
+    <tr><td>p50 latencia</td><td class="g">1.8 s</td><td>chat</td></tr>
+    <tr><td>p95 latencia</td><td class="g">2.9 s</td><td>chat</td></tr>
+    <tr><td>p99 latencia</td><td>4.1 s</td><td>chat</td></tr>
+    <tr><td>Chybovosť</td><td class="g">&lt;1 %</td><td>chat</td></tr>
+    <tr><td>Priepustnosť</td><td>~5 req/s</td><td>chat</td></tr>
+    <tr><td>RAG retrieval priemer</td><td class="g">45 ms</td><td>query</td></tr>
+    <tr><td>FTS5 vyhľadávanie</td><td class="g">&lt;10 ms</td><td>query (FTS)</td></tr>
+    <tr><td>WS broadcast</td><td class="g">&lt;5 ms</td><td>/ws/avatar</td></tr>
+   </tbody>
+  </table></div>
+  <h3>10.2 Python concurrent load test — NOVÉ v5.0</h3>
+  <p style="font-size:.82rem;color:var(--g2);"><code>scripts/load_test.py</code> — asyncio + httpx · 4 grant-required scenáre (5/10/25/50 users × 2 rounds) · P50/P95/P99 latency · success rate · throughput · error breakdown. JSON výstup pre dokumentáciu.</p>
+  <h3>10.3 E2E latencia — porovnanie konfigurácií</h3>
+  <div class="bc">
+   <div class="br"><div class="bl2">Starý STU stack (Gemma + Coqui)</div><div class="bt"><div class="bf" style="width:186px"></div><span class="bv">až 15.5 s</span></div></div>
+   <div class="br"><div class="bl2">Cloud (OpenAI + Edge TTS)</div><div class="bt"><div class="bf lt" style="width:104px"></div><span class="bv">5–9 s</span></div></div>
+   <div class="br"><div class="bl2">GPU RTX 4090 (Ollama)</div><div class="bt"><div class="bf ac" style="width:36px"></div><span class="bv">~3.0 s</span></div></div>
+   <div class="br"><div class="bl2">Server vLLM (A100)</div><div class="bt"><div class="bf ac" style="width:24px"></div><span class="bv">~2–3 s</span></div></div>
+   <div class="br"><div class="bl2">Perceived (SSE streaming)</div><div class="bt"><div class="bf ac" style="width:12px"></div><span class="bv">~1.0 s</span></div></div>
+   <div class="br"><div class="bl2">CPU only (Ollama CPU)</div><div class="bt"><div class="bf" style="width:352px"></div><span class="bv">21–35 s</span></div></div>
+  </div>
+  <h3>10.4 GPU benchmark — RTX 4090 (Vast.ai)</h3>
+  <div class="tw"><table>
+   <thead><tr><th>Model</th><th>Krátky prompt</th><th>Stredný</th><th>Dlhý</th><th>VRAM</th></tr></thead>
+   <tbody>
+    <tr><td>Mistral 7B</td><td class="g">0.95 s (best: 0.65 s)</td><td class="g">1.07 s</td><td class="g">1.24 s</td><td>8.8 GB</td></tr>
+    <tr><td>Gemma3:12b</td><td>1.34 s (best: 1.26 s)</td><td>1.66 s</td><td>1.18 s</td><td>~12 GB</td></tr>
+    <tr><td>Qwen2.5:7b</td><td>~1.1 s</td><td>~1.3 s</td><td>~1.5 s</td><td>~6 GB</td></tr>
+   </tbody>
+  </table></div>
+  <span class="fref">→ Plný benchmark report: docs/benchmark_report.md (210 r.) · STU vs PB5</span>
+ </div>
+ <div class="pf"><span class="pfl">SORRYWECAN s.r.o. · Grant 09I05-03-V04-00072</span><span class="pfc">24</span><span class="pfr">Máj 2026 · v5.0</span></div>
+</div>
+
+<div class="page" id="p25">
+ <div class="ph"><span class="phl">EduTutor.AI v5.0</span><span class="phr">§11 Testovanie · §12 Monitoring</span></div>
+ <div class="pb">
+  <span class="sl">Sekcia 11</span><h2>Testovanie a kvalita — 572 testov</h2><div class="sr"></div>
+  <h3 style="margin-top:0;">11.1 Automatizované testy — 572 testov v 56 súboroch</h3>
+  <div class="tw"><table>
+   <thead><tr><th>Test suite</th><th>Počet</th><th>Oblasť</th></tr></thead>
+   <tbody>
+    <tr><td>test_viseme_timeline_*.py</td><td>~44</td><td>Vizém generovanie + hĺbkové testy</td></tr>
+    <tr><td>test_phonetic_rules.py</td><td>32</td><td>SK fonetické pravidlá (asimilácia, palatalizácia, diftongy)</td></tr>
+    <tr><td>test_memory_*.py (Phase 8b)</td><td class="g">27</td><td>NOVÉ — user_profile, episodic, summarizer, MemorySkill</td></tr>
+    <tr><td>test_podcasts_*.py</td><td class="g">23</td><td>NOVÉ — Podcast service, FFmpeg concat, orchestrator</td></tr>
+    <tr><td>test_text2face.py</td><td class="g">6</td><td>NOVÉ — Expression presets (9 emócií)</td></tr>
+    <tr><td>test_ask_mode.py</td><td class="g">5</td><td>NOVÉ — Ask endpoint hardening</td></tr>
+    <tr><td>test_knowledge_base_api.py</td><td>~30</td><td>KB API endpointy</td></tr>
+    <tr><td>test_chat_*.py + test_chat_stream.py</td><td>~25</td><td>Chat + RAG + streaming</td></tr>
+    <tr><td>test_ws_avatar.py</td><td>~12</td><td>WebSocket invariants (snapshot-safe, wait_for, cancellation)</td></tr>
+    <tr><td>test_rag_*.py</td><td>~18</td><td>RAG search, edge cases, golden dataset</td></tr>
+    <tr><td>test_stt_*.py + test_tts_*.py</td><td>~30</td><td>STT/TTS providery, dispatch tabuľky</td></tr>
+    <tr><td>test_llm_*.py</td><td>~15</td><td>LLM providery, system prompt, mode switching</td></tr>
+    <tr><td>+ ďalších 35+ súborov</td><td>~305</td><td>API endpointy, smoke, integrácia, edge cases</td></tr>
+   </tbody>
+  </table></div>
+  <p style="font-size:.82rem;color:var(--g2);"><strong>CI status:</strong> 572 passed, 1 skipped · frontend tsc clean · build green. Smoke testy: <code>scripts/smoke_avatar_ws.py</code> + <code>smoke_platform.sh</code> + <code>smoke_skills.sh</code> — ALL GREEN.</p>
+  <h3>11.2 Golden Dataset</h3>
+  <p>354 otázok z 5 predmetov (matematika, fyzika, história, biológia, informatika). JSON formát: otázka, očakávaná oblasť, metadáta. Použitie: RAG benchmark — recall, precision, relevance score. Lokácia: <code>test-files/golden_dataset/</code></p>
+  <h3>11.3 Benchmark systém</h3>
+  <pre>curl -X POST http://localhost:8000/api/v1/diagnostics/rag  # RAG + golden dataset
+curl http://localhost:8000/api/v1/performance              # p50/p95 per modul
+k6 run tests/k6/load-test.js                              # k6 záťažový test
+python scripts/load_test.py --all-scenarios               # 4 grant scenáre</pre>
+  <div style="height:18px;"></div>
+  <span class="sl">Sekcia 12</span><h2>Monitoring a observabilita</h2><div class="sr"></div>
+  <div class="tw"><table>
+   <thead><tr><th>Komponent</th><th>Úloha</th><th>Metriky</th></tr></thead>
+   <tbody>
+    <tr><td>Prometheus</td><td>Scraping metrík z FastAPI</td><td>Request count · Latency histogramy (p50/p95/p99) · Error rates · WS connections</td></tr>
+    <tr><td>Grafana</td><td>Vizualizácia dashboardov</td><td>Real-time dashboard · Alerting</td></tr>
+    <tr><td>Nginx</td><td>Reverse proxy + SSL + rate limiting</td><td>Access logy · Per-IP limits</td></tr>
+    <tr><td>Health probes</td><td>K8s/Docker health</td><td>/health · /health/ready · /health/live</td></tr>
+    <tr><td>WS reconnect telemetry</td><td>NOVÉ v5.0 — frontend connection state</td><td>ConnectionStatePill → connection state events</td></tr>
+   </tbody>
+  </table></div>
+ </div>
+ <div class="pf"><span class="pfl">SORRYWECAN s.r.o. · Grant 09I05-03-V04-00072</span><span class="pfc">25</span><span class="pfr">Máj 2026 · v5.0</span></div>
+</div>
+
+<div class="page" id="p26">
+ <div class="ph"><span class="phl">EduTutor.AI v5.0</span><span class="phr">§13 Sprievodca nasadením</span></div>
+ <div class="pb">
+  <span class="sl">Sekcia 13</span><h2>Sprievodca nasadením</h2><div class="sr"></div>
+  <h3 style="margin-top:0;">13.1 Konfigurácie podľa scenára</h3>
+  <div class="tw"><table>
+   <thead><tr><th>Scenár</th><th>Hardvér</th><th>Stack</th><th>E2E</th><th>Perceived</th></tr></thead>
+   <tbody>
+    <tr><td>Škola (cloud)</td><td>Akýkoľvek PC + internet</td><td>Cloud LLM + Edge TTS</td><td>5–9 s</td><td>~1–2 s</td></tr>
+    <tr><td>Škola (GPU)</td><td>RTX 4060+</td><td>Ollama + Edge TTS</td><td class="g">~3–5 s</td><td class="g">~1 s</td></tr>
+    <tr><td>Demo + grant</td><td>Akýkoľvek + Azure</td><td>Cloud LLM + Azure TTS</td><td>5–9 s</td><td>~1–2 s, ±5 ms sync</td></tr>
+    <tr><td>Plne offline</td><td>Mac M3+ / GPU</td><td>Ollama + Piper TTS</td><td>3–8 s (GPU)</td><td>~1–2 s</td></tr>
+    <tr><td>Produkčný server</td><td>A100 / H100</td><td>vLLM + Edge TTS</td><td class="g">~2–3 s</td><td class="g">&lt;1 s</td></tr>
+   </tbody>
+  </table></div>
+  <h3>13.2 Docker — rýchly štart (odporúčané)</h3>
+  <p><strong>Požiadavky:</strong> Docker Desktop 4.0+ · 8 GB RAM · 20 GB disk · internet (prvý štart)</p>
+  <pre>git clone https://github.com/princeofwellness/edotutor.git
+cd edotutor
+cp .env.example .env                  # pridať aspoň jeden LLM API kľúč
+docker compose up --build             # prvý štart 3–5 min (model downloads)
+
+# Produkcia s Nginx + Prometheus + Grafana:
+docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d</pre>
+  <p style="font-size:.82rem;">UI: <code>http://localhost:3000</code> · API docs: <code>http://localhost:8000/docs</code><br/>Login: <code>edututor / edututor2026</code> (dev mode)</p>
+  <h3>13.3 Manuálne (bez Docker)</h3>
+  <pre>./start.sh         # Mac/Linux — auto-installs Python 3.11+, Node, pnpm
+start.bat          # Windows
+# Backend na :8000, frontend na :3000, prvý štart 2-3 min</pre>
+  <h3>13.4 Plne offline (Ollama + Piper)</h3>
+  <pre>OLLAMA_URL=http://localhost:11434/v1
+OLLAMA_MODEL=qwen2.5:7b              # alebo gemma3:4b pre 8GB RAM
+STT_PROVIDER=faster-whisper-small-sk
+TTS_PROVIDER=piper
+# ollama pull qwen2.5:7b              # 4.7 GB</pre>
+  <h3>13.5 Hardening pre produkciu</h3>
+  <p style="font-size:.82rem;color:var(--g2);">Healthchecky, resource limits (8 GB / 4 CPU backend, 2 GB / 2 CPU frontend), log rotation (50 MB × 3 súbory), systemd unit files v <code>deploy/edututor-backend.service</code> a <code>edututor-frontend.service</code>.</p>
+ </div>
+ <div class="pf"><span class="pfl">SORRYWECAN s.r.o. · Grant 09I05-03-V04-00072</span><span class="pfc">26</span><span class="pfr">Máj 2026 · v5.0</span></div>
+</div>
+
+<div class="page" id="p27">
+ <div class="ph"><span class="phl">EduTutor.AI v5.0</span><span class="phr">§14 API referencia (1/2)</span></div>
+ <div class="pb">
+  <span class="sl">Sekcia 14</span><h2>API referencia — 60+ endpointov</h2><div class="sr"></div>
+  <p style="font-size:.82rem;">Prefixované <code>/api/v1</code>. Swagger: <code>http://localhost:8000/docs</code>. Auth: X-EduTutor-User-Id header (anonymné identity).</p>
+  <div class="ah"><span>14.1 — Health (3)</span><span></span></div>
+  <div class="ar"><div class="am GET">GET</div><div class="ap">/health</div><div class="ad">Systémový check (DB, Redis, RAG, TTS)</div></div>
+  <div class="ar"><div class="am GET">GET</div><div class="ap">/health/ready</div><div class="ad">Kubernetes readiness probe</div></div>
+  <div class="ar"><div class="am GET">GET</div><div class="ap">/health/live</div><div class="ad">Kubernetes liveness probe</div></div>
+  <div class="ah"><span>14.2 — Chat (2)</span><span></span></div>
+  <div class="ar"><div class="am POST">POST</div><div class="ap">/chat</div><div class="ad">Single-turn chat s RAG, emóciou, viseme/ARKit</div></div>
+  <div class="ar"><div class="am POST">POST</div><div class="ap">/chat/stream</div><div class="ad">Streaming chat — SSE (text, sentence+audio+emotion+viseme, done)</div></div>
+  <div class="ah"><span>14.3 — Konverzácie (7)</span><span></span></div>
+  <div class="ar"><div class="am GET">GET</div><div class="ap">/stats</div><div class="ad">Agregované štatistiky (relácie, slová, streak)</div></div>
+  <div class="ar"><div class="am GET">GET</div><div class="ap">/conversations</div><div class="ad">Zoznam konverzácií (limit 1–100)</div></div>
+  <div class="ar"><div class="am POST">POST</div><div class="ap">/conversations</div><div class="ad">Nová konverzácia + LiveKit token</div></div>
+  <div class="ar"><div class="am GET">GET</div><div class="ap">/conversations/{id}/messages</div><div class="ad">Plná história správ</div></div>
+  <div class="ar"><div class="am DELETE">DELETE</div><div class="ap">/conversations/{id}</div><div class="ad">Ukončenie konverzácie</div></div>
+  <div class="ah"><span>14.4 — Knowledge Base (14)</span><span></span></div>
+  <div class="ar"><div class="am POST">POST</div><div class="ap">/knowledge-bases</div><div class="ad">Vytvorenie KB</div></div>
+  <div class="ar"><div class="am GET">GET</div><div class="ap">/knowledge-bases</div><div class="ad">Zoznam všetkých KB</div></div>
+  <div class="ar"><div class="am POST">POST</div><div class="ap">/knowledge-bases/{name}/documents</div><div class="ad">Upload dokumentu (PDF/DOCX/XLSX/TXT/MD, max 50 MB)</div></div>
+  <div class="ar"><div class="am PATCH">PATCH</div><div class="ap">/knowledge-bases/{name}/documents/{id}</div><div class="ad">Update (context_mode: full / off)</div></div>
+  <div class="ar"><div class="am POST">POST</div><div class="ap">/knowledge-bases/{name}/query</div><div class="ad">RAG sémantické vyhľadávanie</div></div>
+  <div class="ar"><div class="am POST">POST</div><div class="ap">/knowledge-bases/{name}/ask</div><div class="ad">NOVÉ — One-shot Q&amp;A across all sources</div></div>
+  <div class="ar"><div class="am POST">POST</div><div class="ap">/knowledge-bases/{name}/podcast</div><div class="ad">NOVÉ — Podcast generácia z dokumentov</div></div>
+  <div class="ah"><span>14.5 — Podcasts (4) NOVÉ v5.0</span><span></span></div>
+  <div class="ar"><div class="am POST">POST</div><div class="ap">/podcasts/generate</div><div class="ad">Spustenie podcast jobu (background)</div></div>
+  <div class="ar"><div class="am GET">GET</div><div class="ap">/podcasts</div><div class="ad">Zoznam mojich podcastov</div></div>
+  <div class="ar"><div class="am GET">GET</div><div class="ap">/podcasts/{id}</div><div class="ad">Detail + audio_url + transcript + status</div></div>
+  <div class="ar"><div class="am GET">GET</div><div class="ap">/podcasts/{id}/audio</div><div class="ad">Audio stream (MP3)</div></div>
+  <div class="ah"><span>14.6 — Notes (5)</span><span></span></div>
+  <div class="ar"><div class="am GET">GET</div><div class="ap">/knowledge-bases/{kb}/notes</div><div class="ad">Zoznam poznámok</div></div>
+  <div class="ar"><div class="am POST">POST</div><div class="ap">/knowledge-bases/{kb}/notes</div><div class="ad">Vytvorenie (manual/ai)</div></div>
+  <div class="ar"><div class="am POST">POST</div><div class="ap">/knowledge-bases/{kb}/notes/from-chat</div><div class="ad">Uloženie AI odpovede ako poznámky</div></div>
+  <div class="ah"><span>14.7 — Transformácie (5)</span><span></span></div>
+  <div class="ar"><div class="am GET">GET</div><div class="ap">/transformations/templates</div><div class="ad">Zoznam (6 default + vlastné)</div></div>
+  <div class="ar"><div class="am POST">POST</div><div class="ap">/transformations/apply</div><div class="ad">Aplikovanie šablóny na dokument</div></div>
+  <div class="ar"><div class="am GET">GET</div><div class="ap">/transformations/results/{id}</div><div class="ad">Výsledok + status (PENDING/PROCESSING/COMPLETED/FAILED)</div></div>
+  <div class="ah"><span>14.8 — STT (4)</span><span></span></div>
+  <div class="ar"><div class="am GET">GET</div><div class="ap">/stt/models</div><div class="ad">Zoznam STT modelov s porovnaním</div></div>
+  <div class="ar"><div class="am POST">POST</div><div class="ap">/stt</div><div class="ad">Transkripcia audia (multipart)</div></div>
+  <div class="ar"><div class="am POST">POST</div><div class="ap">/stt/switch</div><div class="ad">Hot-swap STT providera bez reštartu</div></div>
+  <div class="ah"><span>14.9 — TTS (2)</span><span></span></div>
+  <div class="ar"><div class="am GET">GET</div><div class="ap">/tts/voices</div><div class="ad">Dostupné hlasy vrátane klonovaných</div></div>
+  <div class="ar"><div class="am POST">POST</div><div class="ap">/tts</div><div class="ad">Text → audio (MP3/WAV) s voliteľným generovaním vizémov</div></div>
+ </div>
+ <div class="pf"><span class="pfl">SORRYWECAN s.r.o. · Grant 09I05-03-V04-00072</span><span class="pfc">27</span><span class="pfr">Máj 2026 · v5.0</span></div>
+</div>
+
+<div class="page" id="p28">
+ <div class="ph"><span class="phl">EduTutor.AI v5.0</span><span class="phr">§14 API referencia (2/2)</span></div>
+ <div class="pb">
+  <div class="ah"><span>14.10 — LLM (2)</span><span></span></div>
+  <div class="ar"><div class="am GET">GET</div><div class="ap">/llm/models</div><div class="ad">Dostupné LLM modely vrátane Ollama</div></div>
+  <div class="ar"><div class="am POST">POST</div><div class="ap">/llm/switch</div><div class="ad">Prepnutie LLM providera za behu</div></div>
+  <div class="ah"><span>14.11 — Lipsync (2)</span><span></span></div>
+  <div class="ar"><div class="am GET">GET</div><div class="ap">/lipsync/status</div><div class="ad">Aktívny provider (text / audio2lipsync / hybrid)</div></div>
+  <div class="ar"><div class="am POST">POST</div><div class="ap">/lipsync/switch</div><div class="ad">Prepnutie lipsync režimu</div></div>
+  <div class="ah"><span>14.12 — Emócie (2)</span><span></span></div>
+  <div class="ar"><div class="am GET">GET</div><div class="ap">/emotion/status</div><div class="ad">Aktívny backend (regex / bert)</div></div>
+  <div class="ar"><div class="am POST">POST</div><div class="ap">/emotion/switch</div><div class="ad">Prepnutie emotion backendu</div></div>
+  <div class="ah"><span>14.13 — Voice Cloning (4)</span><span></span></div>
+  <div class="ar"><div class="am GET">GET</div><div class="ap">/voice-clones</div><div class="ad">Zoznam klonovaných hlasov</div></div>
+  <div class="ar"><div class="am POST">POST</div><div class="ap">/voice-clones/upload</div><div class="ad">Upload referenčného audia (3–60 s)</div></div>
+  <div class="ar"><div class="am POST">POST</div><div class="ap">/voice-clones/{id}/preview</div><div class="ad">Preview syntézy pred použitím</div></div>
+  <div class="ar"><div class="am DELETE">DELETE</div><div class="ap">/voice-clones/{id}</div><div class="ad">Zmazanie klonu</div></div>
+  <div class="ah"><span>14.14 — Systém (7)</span><span></span></div>
+  <div class="ar"><div class="am GET">GET</div><div class="ap">/system/hardware</div><div class="ad">HW detekcia + odporúčaný profil</div></div>
+  <div class="ar"><div class="am GET">GET</div><div class="ap">/system/profiles</div><div class="ad">5 HW profilov (Minimal→Server)</div></div>
+  <div class="ar"><div class="am POST">POST</div><div class="ap">/system/apply</div><div class="ad">Auto-aplikácia optimálnej konfigurácie</div></div>
+  <div class="ar"><div class="am GET">GET</div><div class="ap">/system/check</div><div class="ad">Live kontrola providerov</div></div>
+  <div class="ar"><div class="am POST">POST</div><div class="ap">/system/config</div><div class="ad">Uloženie API kľúčov do .env bez reštartu</div></div>
+  <div class="ah"><span>14.15 — Diagnostika (4)</span><span></span></div>
+  <div class="ar"><div class="am POST">POST</div><div class="ap">/diagnostics/rag</div><div class="ad">RAG benchmark oproti golden datasetu (354 otázok)</div></div>
+  <div class="ar"><div class="am GET">GET</div><div class="ap">/diagnostics/rag/chunks/{kb}</div><div class="ad">Prehliadanie chunkov KB</div></div>
+  <div class="ar"><div class="am GET">GET</div><div class="ap">/performance</div><div class="ad">Live metriky — p50/p95 latency per modul</div></div>
+  <div class="ah"><span>14.16 — Learning Modes (2)</span><span></span></div>
+  <div class="ar"><div class="am GET">GET</div><div class="ap">/modes</div><div class="ad">Dostupné módy (sk / en / learn-en-from-sk / assistant_pro / tutor_practice_pro)</div></div>
+  <div class="ar"><div class="am POST">POST</div><div class="ap">/modes/switch</div><div class="ad">Prepnutie módu</div></div>
+  <div class="ah"><span>14.17 — Avatar (3)</span><span></span></div>
+  <div class="ar"><div class="am GET">GET</div><div class="ap">/avatar/status</div><div class="ad">WS status + počet pripojených UE5 klientov</div></div>
+  <div class="ar"><div class="am POST">POST</div><div class="ap">/avatar/dev/broadcast</div><div class="ad">Dev injektor (Inject panel) — manuálne posielanie payloadov</div></div>
+  <div class="ar"><div class="am WS">WS</div><div class="ap">/ws/avatar</div><div class="ad">WebSocket bridge pre UE5 — emócie, vizémy, ARKit @60fps</div></div>
+  <div class="ah"><span>14.18 — Memory (Phase 8b) — interné</span><span></span></div>
+  <div class="ar"><div class="am POST">POST</div><div class="ap">via MemorySkill</div><div class="ad">recall_memory() + update_profile() — vystavené LLM cez skill platform</div></div>
+ </div>
+ <div class="pf"><span class="pfl">SORRYWECAN s.r.o. · Grant 09I05-03-V04-00072</span><span class="pfc">28</span><span class="pfr">Máj 2026 · v5.0</span></div>
+</div>
+
+<div class="page" id="p29">
+ <div class="ph"><span class="phl">EduTutor.AI v5.0</span><span class="phr">§15 Bezpečnosť · §16 Slabé miesta a roadmapa</span></div>
+ <div class="pb">
+  <span class="sl">Sekcia 15</span><h2>Bezpečnosť</h2><div class="sr"></div>
+  <div class="tw"><table>
+   <thead><tr><th>Vrstva</th><th>Opatrenie</th><th>Detail</th></tr></thead>
+   <tbody>
+    <tr><td>Autentifikácia</td><td>NextAuth.js</td><td>Credentials / OAuth — session-based</td></tr>
+    <tr><td>Identita</td><td>X-EduTutor-User-Id header</td><td>Anonymné stable identity, Phase 8a/8b kompatibilné</td></tr>
+    <tr><td>API kľúče</td><td>Server-side only</td><td><code>.env</code>, gitignored, nikdy v client bundli</td></tr>
+    <tr><td>CORS</td><td>Whitelist origins</td><td>Konfigurovateľné cez env var</td></tr>
+    <tr><td>Upload limit</td><td>50 MB</td><td>Ochrana pred DoS cez file upload</td></tr>
+    <tr><td>Rate limiting</td><td>Per-IP</td><td>Nginx + aplikačná vrstva</td></tr>
+    <tr><td>SQL Injection</td><td>SQLAlchemy ORM</td><td>Parameterized queries</td></tr>
+    <tr><td>XSS</td><td>React auto-escaping</td><td>+ CSP headers (Nginx)</td></tr>
+    <tr><td>Docker</td><td>Non-root user</td><td>appuser/nextjs · ReadWritePaths obmedzené v systemd</td></tr>
+    <tr><td>WS handshake</td><td>capabilities negotiation</td><td>avatar_ready/ready_ack pre verzionovanie</td></tr>
+   </tbody>
+  </table></div>
+  <div style="height:20px;"></div>
+  <span class="sl">Sekcia 16</span><h2>Slabé miesta a roadmapa</h2><div class="sr"></div>
+  <h3 style="margin-top:0;">Aktuálne slabé miesta</h3>
+  <div class="tw"><table>
+   <thead><tr><th>Slabé miesto</th><th>Dopad</th><th>Mitigation</th></tr></thead>
+   <tbody>
+    <tr><td>STT bottleneck na CPU</td><td>&gt;10 súbežných req → fronta</td><td>GPU server / Groq cloud STT (~100 ms)</td></tr>
+    <tr><td>Lokálny LLM neškáluje</td><td>&gt;10 users → p95 &gt;10 s (CPU)</td><td>Cloud LLM pre produkciu</td></tr>
+    <tr><td>ChromaDB limitácie</td><td>&gt;10 000 dokumentov degraduje</td><td><code>VECTOR_DB_BACKEND=weaviate</code></td></tr>
+    <tr><td>UE5 GPU náročnosť</td><td>Pixel Streaming vyžaduje GPU server</td><td>Web Browser Widget pre grant demo (lokálny)</td></tr>
+    <tr><td class="b">CEF audio v Web Browser Widget</td><td>HTML5 audio ide cez OS speakers, nie UE5 mixer · mic blokovaný</td><td>Voice mode v separátnom okne, chat v UE5 widget · Pixel Streaming pre full audio routing</td></tr>
+    <tr><td>Edge TTS — internet</td><td>Offline bez zvuku s Edge</td><td>Piper lokálne (<code>TTS_PROVIDER=piper</code>)</td></tr>
+    <tr><td>Text estimation ±25 ms</td><td>Menej presná sync bez Azure/ARKit</td><td>Hybrid mode / Azure TTS pre demo</td></tr>
+   </tbody>
+  </table></div>
+  <h3>Roadmapa — identifikované príležitosti</h3>
+  <div class="tw"><table>
+   <thead><tr><th>Priorita</th><th>Vylepšenie</th><th>Zdroj</th></tr></thead>
+   <tbody>
+    <tr><td class="b">P0</td><td>SorryWeCan GitHub org migration · pre-publish secrets audit</td><td>grant §7.5</td></tr>
+    <tr><td class="b">P1</td><td>Socratic FSM — reálna pedagogická štruktúra dialógu</td><td>OpenTutor</td></tr>
+    <tr><td class="b">P1</td><td>FireRedVAD — 97.6 % presnosť detekcie hlasu</td><td>GitHub OSS</td></tr>
+    <tr><td>P2</td><td>Pronunciation coaching s viseme mouth-shape referenciou</td><td>vlastné</td></tr>
+    <tr><td>P2</td><td>Retrieval Practice Engine (Quiz Me Now)</td><td>SpacedRepetitionSkill</td></tr>
+    <tr><td>P2</td><td>Multi-speaker podcast dialogue (host/guest dynamics)</td><td>rozšírenie 7.3</td></tr>
+    <tr><td>P3</td><td>ColBERT reranking (+10–20 % retrieval)</td><td>RAGatouille</td></tr>
+    <tr><td>P3</td><td>BGE-M3 embeddings (alternatíva e5-large)</td><td>BAAI</td></tr>
+    <tr><td>P3</td><td>WebGL avatar (AnimaSync WASM) — bez UE5 závislosti</td><td>MIT</td></tr>
+   </tbody>
+  </table></div>
+ </div>
+ <div class="pf"><span class="pfl">SORRYWECAN s.r.o. · Grant 09I05-03-V04-00072</span><span class="pfc">29</span><span class="pfr">Máj 2026 · v5.0</span></div>
+</div>
+
+<div class="page" id="p30">
+ <div class="ph"><span class="phl">EduTutor.AI v5.0</span><span class="phr">§17 Open-source zverejnenie</span></div>
+ <div class="pb">
+  <span class="sl">Sekcia 17</span><h2>Open-source zverejnenie</h2><div class="sr"></div>
+  <p>Projekt zverejnený pod licenciou <strong>MIT</strong> v súlade s grantovou podmienkou §7.5: <em>„Dosiahnutý výstup bude zdieľaný v open-source databáze."</em></p>
+  <p><strong>Repozitár:</strong> <code>https://github.com/princeofwellness/edotutor</code> (migrácia na <code>sorrywecan/edututor-ai</code> plánovaná)</p>
+  <div class="tw"><table>
+   <thead><tr><th>Súčasť</th><th>Zahrnuté</th><th>Poznámka</th></tr></thead>
+   <tbody>
+    <tr><td>Backend — FastAPI (Python 3.11)</td><td class="g">✓</td><td>20 routerov · 60+ endpointov · 17 services</td></tr>
+    <tr><td>Frontend — Next.js 15 (React 19, TypeScript, Zustand)</td><td class="g">✓</td><td>50+ komponentov · mobile responsive · 4 KB modes</td></tr>
+    <tr><td>Docker Compose — dev + prod</td><td class="g">✓</td><td>Nginx · Prometheus · Grafana · healthchecky · resource limits</td></tr>
+    <tr><td>Systemd unit files</td><td class="g">✓</td><td>deploy/edututor-backend.service + frontend.service</td></tr>
+    <tr><td>Viseme Timeline — SK lipsync (14 vizémov + fonetický engine)</td><td class="g">✓</td><td>76 testov · backward-compatible · env-tunable timing</td></tr>
+    <tr><td>Audio2Lipsync — 52 ARKit kanálov</td><td class="g">✓</td><td>Checkpoint: auto-download z HuggingFace</td></tr>
+    <tr><td>Text2Face presety — 9 emócií × ARKit upper-face</td><td class="g">✓</td><td>NOVÉ v5.0 · 6 testov</td></tr>
+    <tr><td>Memory Phase 8b — user_profile + episodic + summarizer</td><td class="g">✓</td><td>NOVÉ v5.0 · 27 testov · X-EduTutor-User-Id header</td></tr>
+    <tr><td>Podcast Generation — 4 endpointy + UI</td><td class="g">✓</td><td>NOVÉ v5.0 · 23 testov · FFmpeg concat</td></tr>
+    <tr><td>WS Reconnect — exponential backoff hook + state pill</td><td class="g">✓</td><td>NOVÉ v5.0 · production resilience</td></tr>
+    <tr><td>Voice Cloning — XTTS + Chatterbox</td><td class="g">✓</td><td>Reference audio management</td></tr>
+    <tr><td>Emotion Detector — regex (9 emócií) + BERT</td><td class="g">✓</td><td>Eval report zahrnutý</td></tr>
+    <tr><td>Knowledge Base — Notes, Transformations, FTS5, 4 modes</td><td class="g">✓</td><td>Vrátane Ask + Podcast</td></tr>
+    <tr><td>Testy — 56 súborov, 572 testov</td><td class="g">✓</td><td>Unit · integrácia · fonetické · API · WS · golden dataset</td></tr>
+    <tr><td>Golden Dataset — 354 otázok, 5 predmetov</td><td class="g">✓</td><td>RAG benchmark dataset</td></tr>
+    <tr><td>Benchmark + Load test — k6 + scripts/load_test.py</td><td class="g">✓</td><td>4 grant-required scenáre</td></tr>
+    <tr><td>Dokumentácia — technická + 6 komparatívnych analýz</td><td class="g">✓</td><td>docs/research/ · docs/output3/ · docs/AUDIT_TECH_PIVOTY.md</td></tr>
+    <tr><td>Start skripty — Mac/Linux + Windows</td><td class="g">✓</td><td>start.sh · start.bat · auto-install dependencies</td></tr>
+    <tr><td>API kľúče (.env)</td><td class="d">✗</td><td>Vylúčené zo security dôvodov</td></tr>
+    <tr><td>UE5 projekt (~10 GB)</td><td class="d">✗</td><td>Vylúčené, Roland má separátne</td></tr>
+    <tr><td>Piper + Whisper modely</td><td class="d">✗</td><td>Auto-download pri prvom štarte</td></tr>
+   </tbody>
+  </table></div>
+  <div style="margin-top:28px;border-top:1.5px solid var(--ink);padding-top:22px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;">
+   <div>
+    <div style="font-family:var(--mono);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--g3);margin-bottom:6px;">Spoločnosť</div>
+    <div style="font-family:var(--serif);font-size:.86rem;color:var(--g1);line-height:1.7;">SORRYWECAN s.r.o.<br/>Bratislava, Slovensko<br/>Grant 09I05-03-V04-00072<br/>Výstup č. 3</div>
+   </div>
+   <div>
+    <div style="font-family:var(--mono);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--g3);margin-bottom:6px;">Dokumentácia</div>
+    <div style="font-family:var(--serif);font-size:.86rem;color:var(--g1);line-height:1.7;">Máj 2026 · v5.0<br/>Licencia: MIT Open-source<br/>572 testov · 60+ endpointov<br/>17 servisov · 50+ komponentov</div>
+   </div>
+   <div>
+    <div style="font-family:var(--mono);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--g3);margin-bottom:6px;">Kontakt</div>
+    <div style="font-family:var(--mono);font-size:.72rem;color:var(--g1);line-height:1.7;">github.com/princeofwellness/<br/>edotutor<br/>localhost:8000/docs<br/>localhost:3000/technicka-<br/>dokumentacia.html</div>
+   </div>
+  </div>
+ </div>
+ <div class="pf"><span class="pfl">SORRYWECAN s.r.o. · Grant 09I05-03-V04-00072</span><span class="pfc">30</span><span class="pfr">Máj 2026 · v5.0</span></div>
+</div>
+
+</body>
+</html>

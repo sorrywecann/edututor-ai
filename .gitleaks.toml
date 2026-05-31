@@ -1,0 +1,63 @@
+# EduTutor.AI gitleaks configuration
+# Used by:
+#   - .git/hooks/pre-commit (local protect)
+#   - .github/workflows/release.yml secrets-gate job
+#   - .github/workflows/ci.yml secrets-check job
+#
+# Default ruleset is extended; this file adds project-specific
+# allowlists for known false positives discovered in Step A1
+# secrets audit (see .sisyphus/secrets-audit-resolution.md).
+#
+# Historical findings (resolved upstream by token rotation):
+#   - EdutorUE/Config/DefaultEngine.ini lines 92, 143 — UE5 PixelStreaming
+#     SecurityToken values committed in dbdda6cc (martin@2realistic.com,
+#     2026-05-15) + 8ee05fde (Dustcendant, 2026-05-02). EdutorUE/ is now
+#     gitignored (`Edutor*/` pattern in .gitignore since 1a889a0). The
+#     leaked token values were ROTATED upstream on 2026-05-17 — leaked
+#     copies in git history are no longer valid credentials. Paths added
+#     to allowlist below so post-rotation scans do not re-flag the
+#     historical commits.
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "EduTutor.AI false-positive allowlist"
+
+# Paths whose contents are template-only, test fixtures, or rotated historical leaks
+paths = [
+  '''\.env\.example$''',
+  '''core/\.env\.example$''',
+  '''credentials\.json\.example$''',
+  '''tutor-service/tests/test_memory_recall\.py$''',
+  '''\.gitleaks\.toml$''',
+  '''docs/.*\.html?$''',
+  '''docs/EduTutor_AI_Technicka_Dokumentacia.*''',
+  '''EduTutor_AI_Technicka_Dokumentacia.*''',
+  '''EdutorUE/Config/DefaultEngine\.ini$''',
+  '''EdutorUE[^/]*/Config/DefaultEngine\.ini$''',
+]
+
+# Known-historical leaked tokens — rotated upstream 2026-05-17.
+# These commit SHAs contain credentials that are no longer valid:
+#   dbdda6cc — martin@2realistic.com (2026-05-15)
+#   8ee05fde — Dustcendant <d.svagr@gmail.com> (2026-05-02)
+# Adding by commit SHA so any FUTURE leak in same paths still fails detection.
+commits = [
+  '''dbdda6cc0ab475231e53bbea8a453574e2a06f8f''',
+  '''8ee05fde6e9353bd2cedf48c6d43329b71dc0945''',
+]
+
+# Known-safe placeholder/test strings
+regexes = [
+  '''YOUR_PRIVATE_KEY''',
+  '''YOUR_PROJECT_ID''',
+  '''YOUR_KEY_ID''',
+  '''YOUR_PRIVATE_KEY_ID''',
+  '''edututor-dev-build-secret-not-for-production''',
+  '''ci-build-secret-not-for-production''',
+  '''sk-XXXXXXXXXXXXXXXXXXXXXXXX''',
+  '''secret-marker-aaa''',
+  '''demo@edututor\.sk''',
+  '''edututor2026''',
+]

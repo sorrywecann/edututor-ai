@@ -1,0 +1,81 @@
+{
+  "name": "edututor-desktop",
+  "version": "0.8.9",
+  "private": true,
+  "description": "EduTutor.AI — Windows desktop launcher (Electron + NSIS installer)",
+  "type": "module",
+  "main": "main.mjs",
+  "scripts": {
+    "start": "electron .",
+    "check": "node orchestrator.mjs --check",
+    "stage": "node stage-resources.mjs",
+    "stage:heavy": "node stage-resources.mjs --heavy",
+    "dist": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "ai.sorrywecan.edututor",
+    "productName": "EduTutor.AI",
+    "directories": {
+      "output": "dist"
+    },
+    "compression": "normal",
+    "files": [
+      "main.mjs",
+      "orchestrator.mjs",
+      "preload.cjs",
+      "splash.html",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "resources/backend",
+        "to": "backend"
+      },
+      {
+        "from": "resources/frontend.tgz",
+        "to": "frontend.tgz"
+      },
+      {
+        "from": "resources/wilbur",
+        "to": "wilbur"
+      },
+      {
+        "from": "resources/ollama",
+        "to": "ollama"
+      }
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "artifactName": "EduTutor-Setup-${version}.${ext}",
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "EduTutor.AI",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "installerHeaderIcon": "build/icon.ico"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sorrywecann/edututor-ai.git",
+    "directory": "desktop"
+  },
+  "author": "SORRYWECAN s.r.o.",
+  "license": "MIT",
+  "homepage": "https://github.com/sorrywecann/edututor-ai#readme",
+  "bugs": {
+    "url": "https://github.com/sorrywecann/edututor-ai/issues"
+  }
+}

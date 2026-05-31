@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EduTutor.AI — Návod na inštaláciu</title>
+<style>
+  :root {
+    --bg:        #1a0e08;
+    --bg-deep:   #0c0805;
+    --ink:       #f4ede4;
+    --ink-dim:   #9a8f82;
+    --ink-faint: #5a5048;
+    --amber:     #E8A87C;
+    --line:      rgba(244, 237, 228, 0.08);
+    --line-strong: rgba(244, 237, 228, 0.16);
+    --ok:        #7ea88a;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: radial-gradient(ellipse at 50% 0%, var(--bg) 0%, var(--bg-deep) 70%);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    font-size: 15.5px;
+    line-height: 1.65;
+    min-height: 100vh;
+    padding: 56px 24px 96px;
+  }
+  .frame {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .eyebrow {
+    font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 18px;
+  }
+  h1 {
+    font-family: Georgia, 'Times New Roman', ui-serif, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(40px, 6vw, 64px);
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    color: var(--amber);
+    margin: 0 0 14px;
+  }
+  .lede {
+    font-family: Georgia, 'Times New Roman', ui-serif, serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink-dim);
+    margin: 0 0 56px;
+    max-width: 540px;
+    line-height: 1.5;
+  }
+  h2 {
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: -0.012em;
+    color: var(--ink);
+    margin: 56px 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+  }
+  h2 .num {
+    font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    color: var(--amber);
+    margin-right: 12px;
+    opacity: 0.85;
+  }
+  p { margin: 0 0 14px; }
+  ul, ol { margin: 0 0 18px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  code, .mono {
+    font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 13px;
+    background: rgba(0, 0, 0, 0.28);
+    padding: 2px 7px;
+    border-radius: 5px;
+    color: var(--ink);
+    border: 1px solid var(--line-strong);
+  }
+  .accent { color: var(--amber); }
+  .dim    { color: var(--ink-dim); }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 20px 0 30px;
+  }
+  .card {
+    background: rgba(244, 237, 228, 0.02);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+  .card .label {
+    font-family: ui-monospace, monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 6px;
+  }
+  .card .val {
+    font-size: 14px;
+    color: var(--ink);
+  }
+
+  .pill {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: rgba(232, 168, 124, 0.10);
+    color: var(--amber);
+    border: 1px solid var(--amber);
+    font-family: ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+
+  .files {
+    display: grid;
+    gap: 8px;
+    margin: 16px 0 26px;
+  }
+  .file {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr auto;
+    gap: 18px;
+    align-items: baseline;
+    padding: 12px 16px;
+    background: rgba(244, 237, 228, 0.02);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    font-size: 13.5px;
+  }
+  .file .name {
+    font-family: ui-monospace, monospace;
+    font-size: 13px;
+    color: var(--ink);
+  }
+  .file .desc { color: var(--ink-dim); font-size: 13px; }
+  .file .size {
+    font-family: ui-monospace, monospace;
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 0.12em;
+  }
+
+  .callout {
+    background: rgba(232, 168, 124, 0.06);
+    border: 1px solid rgba(232, 168, 124, 0.22);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 22px 0;
+    font-size: 14.5px;
+    color: var(--ink);
+  }
+  .callout .label {
+    font-family: ui-monospace, monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--amber);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  a {
+    color: var(--amber);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(232, 168, 124, 0.36);
+  }
+  a:hover { border-bottom-color: var(--amber); }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-family: ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+</style>
+</head>
+<body>
+<div class="frame">
+
+  <div class="eyebrow">EduTutor.AI · v0.8.7</div>
+  <h1>Vitaj</h1>
+  <p class="lede">Slovenský AI tutor s lokálnym jazykovým modelom a živým MetaHuman avatarom. Tento návod ťa prevedie inštaláciou.</p>
+
+  <h2><span class="num">01</span>Obsah balíka</h2>
+  <div class="files">
+    <div class="file">
+      <span class="name">EduTutor-Setup-0.8.7.exe</span>
+      <span class="desc">Inštalátor aplikácie</span>
+      <span class="size">1.7 GB</span>
+    </div>
+    <div class="file">
+      <span class="name">EduTutor-Setup-0.8.7.exe.sha256</span>
+      <span class="desc">Kontrolný súčet</span>
+      <span class="size">91 B</span>
+    </div>
+    <div class="file">
+      <span class="name">EduTutor_Technicka_dokumentacia.pdf</span>
+      <span class="desc">Technická dokumentácia</span>
+      <span class="size">3.1 MB</span>
+    </div>
+    <div class="file">
+      <span class="name">Navod_na_instalaciu.html</span>
+      <span class="desc">Tento súbor</span>
+      <span class="size">8 KB</span>
+    </div>
+  </div>
+
+  <h2><span class="num">02</span>Systémové požiadavky</h2>
+  <div class="grid">
+    <div class="card"><div class="label">Operačný systém</div><div class="val">Windows 11 (64-bit)</div></div>
+    <div class="card"><div class="label">Pamäť</div><div class="val">16 GB RAM odporúčané</div></div>
+    <div class="card"><div class="label">Disk</div><div class="val">~6 GB voľného miesta</div></div>
+    <div class="card"><div class="label">Grafika</div><div class="val">NVIDIA GPU (UE5 avatar)</div></div>
+    <div class="card"><div class="label">Sieť</div><div class="val">Iba pre prvé spustenie</div></div>
+  </div>
+
+  <h2><span class="num">03</span>Overenie pravosti <span class="pill">voliteľné</span></h2>
+  <p>V PowerShelli alebo cmd spusti:</p>
+  <p><code>certutil -hashfile EduTutor-Setup-0.8.7.exe SHA256</code></p>
+  <p>Výsledok porovnaj s obsahom súboru <code>EduTutor-Setup-0.8.7.exe.sha256</code>. Hodnoty musia byť identické.</p>
+
+  <h2><span class="num">04</span>Inštalácia</h2>
+  <ol>
+    <li>Spusti <code>EduTutor-Setup-0.8.7.exe</code> dvojklikom <span class="dim">— nie je potrebné spustenie ako Administrátor.</span></li>
+    <li>Potvrď cieľový priečinok (predvolene <code>%LOCALAPPDATA%\Programs\EduTutor.AI</code>).</li>
+    <li>Inštalátor automaticky vytvorí <span class="accent">desktopovú ikonu</span> aj odkaz v <span class="accent">Štart Menu</span>.</li>
+    <li>Po dokončení sa aplikácia dá spustiť bez reštartu.</li>
+  </ol>
+
+  <h2><span class="num">05</span>Prvé spustenie</h2>
+  <ol>
+    <li>Privíta ťa <span class="accent">Vitaj</span> obrazovka s pulzujúcim Orb avatarom. Stlač <span class="mono">Vstúpiť&nbsp;→</span>.</li>
+    <li>Zadaj svoje meno a vyber štýl tutora (Vážny / Praktický / Pohodový).</li>
+    <li>V <span class="accent">Hardvérových nastaveniach</span> si môžeš:
+      <ul>
+        <li>Vybrať LLM model — lokálne <span class="mono">Ollama</span> (Gemma, Llama, Qwen, Mistral) alebo cloud (OpenAI, Anthropic, Groq, DeepSeek)</li>
+        <li>Vybrať hlas tutora — <span class="mono">Lukáš</span> alebo <span class="mono">Viktória</span></li>
+        <li>Pridať vlastný API kľúč <span class="dim">(po overení sa rovno aktivuje pre chat)</span></li>
+        <li>Nainštalovať lokálny <span class="mono">Piper</span> TTS so slovenským hlasom <span class="dim">(offline syntéza)</span></li>
+        <li>Upraviť systémový prompt v záložke <span class="accent">Mozog</span></li>
+      </ul>
+    </li>
+  </ol>
+
+  <div class="callout">
+    <span class="label">Tip</span>
+    Esc kdekoľvek v nastaveniach ťa vráti späť na predošlú obrazovku.
+  </div>
+
+  <h2><span class="num">06</span>Bezpečnosť</h2>
+  <ul>
+    <li>Aplikácia beží v <span class="mono">Electron sandbox</span> móde s aktívnym <span class="mono">webSecurity</span>.</li>
+    <li>API kľúče sa ukladajú lokálne do <code>%APPDATA%\edututor-desktop\.env</code>.</li>
+    <li>Kľúče sa <span class="accent">nikdy</span> neposielajú nikam okrem priamo na zvoleného providera (OpenAI, Anthropic, ...).</li>
+    <li>Dev-only endpointy sú za <span class="mono">EDU_DEV_MODE=1</span> environment gateom — bežný používateľ ich nevidí.</li>
+  </ul>
+
+  <h2><span class="num">07</span>Odinštalovanie</h2>
+  <p>Dve cesty, obe rovnocenné:</p>
+  <ul>
+    <li><span class="accent">Štart Menu</span> → EduTutor.AI → <span class="mono">Uninstall EduTutor.AI</span></li>
+    <li>Windows <span class="accent">Nastavenia</span> → Aplikácie → EduTutor.AI → Odinštalovať</li>
+  </ul>
+  <p class="dim">Užívateľské dáta v <code>%APPDATA%\edututor-desktop\</code> zostanú zachované — odstráň ručne ak chceš úplne čistú stopu.</p>
+
+  <h2><span class="num">08</span>Technická dokumentácia</h2>
+  <p>Otvor priložený súbor: <code>EduTutor_Technicka_dokumentacia.pdf</code></p>
+
+  <h2><span class="num">09</span>Podpora a histórie verzií</h2>
+  <p>Najnovšia verzia + predošlé stabilné build-y:<br>
+  <a href="https://github.com/princeofwellness/edututor-ai-sandbox/releases">github.com/princeofwellness/edututor-ai-sandbox/releases</a></p>
+  <p class="dim">V prípade, že prvé spustenie zlyhá, predošlá stabilná verzia <span class="mono">v0.8.6</span> je v Releases history.</p>
+
+  <footer>
+    <span>Zostavené 2026-05-31</span>
+    <span>v0.8.7 · sorrywecann</span>
+  </footer>
+
+</div>
+</body>
+</html>

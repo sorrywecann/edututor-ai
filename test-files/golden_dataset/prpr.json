@@ -1,0 +1,923 @@
+[
+  {
+    "id": "PRPR-001",
+    "question": "Čo je premenná v jazyku C?",
+    "expected_keywords": [
+      "premenná",
+      "dátový typ",
+      "pamat",
+      "hodnota",
+      "deklaracia"
+    ],
+    "difficulty": "easy",
+    "subject": "PRPR",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: premenná, dátový typ, pamat"
+  },
+  {
+    "id": "PRPR-002",
+    "question": "Vymenujte základné dátové typy v C.",
+    "expected_keywords": [
+      "int",
+      "float",
+      "char",
+      "double",
+      "dátový typ"
+    ],
+    "difficulty": "easy",
+    "subject": "PRPR",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: int, float, char"
+  },
+  {
+    "id": "PRPR-003",
+    "question": "Čo je cyklus for a ako funguje?",
+    "expected_keywords": [
+      "for",
+      "cyklus",
+      "inicializacia",
+      "podmienka",
+      "inkrement"
+    ],
+    "difficulty": "easy",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-004",
+    "question": "Čo je cyklus while?",
+    "expected_keywords": [
+      "while",
+      "cyklus",
+      "podmienka",
+      "opakovanie"
+    ],
+    "difficulty": "easy",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-005",
+    "question": "Čo je funkcia v jazyku C?",
+    "expected_keywords": [
+      "funkcia",
+      "navratovy typ",
+      "parametre",
+      "volanie",
+      "definicia"
+    ],
+    "difficulty": "easy",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-006",
+    "question": "Čo je ukazovateľ (pointer)?",
+    "expected_keywords": [
+      "ukazovateľ",
+      "pointer",
+      "adresa",
+      "pamat",
+      "dereferencovanie"
+    ],
+    "difficulty": "easy",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-007",
+    "question": "Čo je pole v jazyku C?",
+    "expected_keywords": [
+      "pole",
+      "array",
+      "index",
+      "prvky",
+      "velKost"
+    ],
+    "difficulty": "easy",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-008",
+    "question": "Čo je struktura (struct)?",
+    "expected_keywords": [
+      "struct",
+      "struktura",
+      "polozky",
+      "zlozeny typ",
+      "skupiny dat"
+    ],
+    "difficulty": "easy",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-009",
+    "question": "Čo je rekurzia?",
+    "expected_keywords": [
+      "rekurzia",
+      "volanie samej seba",
+      "zakladny pripad",
+      "zasobnik"
+    ],
+    "difficulty": "easy",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-010",
+    "question": "Čo je podmieneny prikaz if-else?",
+    "expected_keywords": [
+      "if",
+      "else",
+      "podmienka",
+      "vetva",
+      "rozhodovanie"
+    ],
+    "difficulty": "easy",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-011",
+    "question": "Čo je prepinac switch v C?",
+    "expected_keywords": [
+      "switch",
+      "case",
+      "break",
+      "default",
+      "vetvy"
+    ],
+    "difficulty": "easy",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-012",
+    "question": "Čo robí printf a scanf?",
+    "expected_keywords": [
+      "printf",
+      "scanf",
+      "vystup",
+      "vstup",
+      "formatovanie"
+    ],
+    "difficulty": "easy",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-013",
+    "question": "Čo je retazec v C?",
+    "expected_keywords": [
+      "retazec",
+      "string",
+      "pole znakov",
+      "null terminator",
+      "char"
+    ],
+    "difficulty": "easy",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-014",
+    "question": "Čo je hlavičkový súbor (.h)?",
+    "expected_keywords": [
+      "hlavičkový súbor",
+      "header",
+      "deklaracia",
+      "include",
+      "prototyp"
+    ],
+    "difficulty": "easy",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-015",
+    "question": "Čo je preprocesor v C?",
+    "expected_keywords": [
+      "preprocesor",
+      "define",
+      "include",
+      "makro",
+      "kompilacia"
+    ],
+    "difficulty": "easy",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-016",
+    "question": "Čo je konstanta v C?",
+    "expected_keywords": [
+      "konstanta",
+      "const",
+      "define",
+      "nemenitelna hodnota"
+    ],
+    "difficulty": "easy",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-017",
+    "question": "Aký je rozdiel medzi do-while a while cyklom?",
+    "expected_keywords": [
+      "do-while",
+      "while",
+      "aspon raz",
+      "podmienka na konci"
+    ],
+    "difficulty": "easy",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-018",
+    "question": "Čo je operacia modulo (%)?",
+    "expected_keywords": [
+      "modulo",
+      "zvysok po deleni",
+      "operator",
+      "celociselne delenie"
+    ],
+    "difficulty": "easy",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-019",
+    "question": "Ako funguje malloc a free?",
+    "expected_keywords": [
+      "malloc",
+      "free",
+      "dynamicka pamat",
+      "halda",
+      "alokovanie"
+    ],
+    "difficulty": "medium",
+    "subject": "PRPR",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: malloc, free, dynamicka pamat"
+  },
+  {
+    "id": "PRPR-020",
+    "question": "Čo je rozdiel medzi calloc a malloc?",
+    "expected_keywords": [
+      "calloc",
+      "malloc",
+      "inicializacia nulami",
+      "pocet prvkov"
+    ],
+    "difficulty": "medium",
+    "subject": "PRPR",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: calloc, malloc, inicializacia nulami"
+  },
+  {
+    "id": "PRPR-021",
+    "question": "Ako funguje aritmetika s ukazovateľmi?",
+    "expected_keywords": [
+      "ukazovateľ",
+      "aritmetika",
+      "inkrementovanie",
+      "adresa",
+      "velkost typu"
+    ],
+    "difficulty": "medium",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-022",
+    "question": "Čo je segmentation fault?",
+    "expected_keywords": [
+      "segmentation fault",
+      "neplatny prístup",
+      "pamat",
+      "ukazovateľ",
+      "chyba"
+    ],
+    "difficulty": "medium",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-023",
+    "question": "Vysvetlite rozdiel medzi predanim hodnotou a referenciou.",
+    "expected_keywords": [
+      "hodnota",
+      "referencia",
+      "kopia",
+      "ukazovateľ",
+      "zmena"
+    ],
+    "difficulty": "medium",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-024",
+    "question": "Čo je unik pamati (memory leak)?",
+    "expected_keywords": [
+      "memory leak",
+      "unik",
+      "free",
+      "neuvulnena pamat",
+      "halda"
+    ],
+    "difficulty": "medium",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-025",
+    "question": "Ako funguje súbor I/O v C?",
+    "expected_keywords": [
+      "fopen",
+      "fclose",
+      "fread",
+      "fwrite",
+      "subor",
+      "FILE"
+    ],
+    "difficulty": "medium",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-026",
+    "question": "Čo je typedef v C?",
+    "expected_keywords": [
+      "typedef",
+      "alias",
+      "dátový typ",
+      "skratka",
+      "prehladnost"
+    ],
+    "difficulty": "medium",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-027",
+    "question": "Čo je enum v C?",
+    "expected_keywords": [
+      "enum",
+      "enumeracia",
+      "konstanty",
+      "celocisene",
+      "mnozina"
+    ],
+    "difficulty": "medium",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-028",
+    "question": "Vysvetlite rozdiel medzi lokalnou a globalnou premennou.",
+    "expected_keywords": [
+      "lokalna",
+      "globalna",
+      "rozsah platnosti",
+      "scope",
+      "zivotnost"
+    ],
+    "difficulty": "medium",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-029",
+    "question": "Čo je union v C?",
+    "expected_keywords": [
+      "union",
+      "zdielana pamat",
+      "polozky",
+      "velkost",
+      "alternativa struct"
+    ],
+    "difficulty": "medium",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-030",
+    "question": "Ako funguje rekurzivny vypocet faktorialu?",
+    "expected_keywords": [
+      "rekurzia",
+      "faktorial",
+      "zakladny pripad",
+      "n krát",
+      "zasobnik"
+    ],
+    "difficulty": "medium",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-031",
+    "question": "Čo je dvojrozmerné pole?",
+    "expected_keywords": [
+      "dvojrozmerne pole",
+      "matica",
+      "riadky",
+      "stlpce",
+      "index"
+    ],
+    "difficulty": "medium",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-032",
+    "question": "Vysvetlite operatory bitoveho posunu.",
+    "expected_keywords": [
+      "bitovy posun",
+      "shl",
+      "shr",
+      "bity",
+      "nasobenie"
+    ],
+    "difficulty": "medium",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-033",
+    "question": "Čo je void pointer?",
+    "expected_keywords": [
+      "void pointer",
+      "genericsy ukazovateľ",
+      "pretypovanie",
+      "typ"
+    ],
+    "difficulty": "medium",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-034",
+    "question": "Ako funguje strcmp a strcpy?",
+    "expected_keywords": [
+      "strcmp",
+      "strcpy",
+      "retazce",
+      "porovnanie",
+      "kopirovanie"
+    ],
+    "difficulty": "medium",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-035",
+    "question": "Čo je dangling pointer?",
+    "expected_keywords": [
+      "dangling pointer",
+      "uvolnena pamat",
+      "neplatny",
+      "undefined behavior"
+    ],
+    "difficulty": "medium",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-036",
+    "question": "Vysvetlite princíp rozdelenia programu na viac súborov.",
+    "expected_keywords": [
+      "modularita",
+      "header",
+      "zdrojove súbory",
+      "kompilacia",
+      "linkovanie"
+    ],
+    "difficulty": "medium",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-037",
+    "question": "Čo je Makefile a na čo slúži?",
+    "expected_keywords": [
+      "makefile",
+      "kompilacia",
+      "automatizacia",
+      "závislosťi",
+      "pravidla"
+    ],
+    "difficulty": "medium",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-038",
+    "question": "Vysvetlite rozdiel medzi statickou a dynamickou alokaciou.",
+    "expected_keywords": [
+      "staticka",
+      "dynamicka",
+      "zasobnik",
+      "halda",
+      "malloc",
+      "kompilacia"
+    ],
+    "difficulty": "medium",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-039",
+    "question": "Ako funguje realloc?",
+    "expected_keywords": [
+      "realloc",
+      "zmena velkosti",
+      "dynamicka pamat",
+      "existujuci blok"
+    ],
+    "difficulty": "medium",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-040",
+    "question": "Čo sú bitove operacie AND OR XOR?",
+    "expected_keywords": [
+      "AND",
+      "OR",
+      "XOR",
+      "bitove",
+      "operacie",
+      "maska"
+    ],
+    "difficulty": "medium",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-041",
+    "question": "Implementujte bubble sort v C.",
+    "expected_keywords": [
+      "bubble sort",
+      "triedenie",
+      "zamena",
+      "cyklus",
+      "porovnanie"
+    ],
+    "difficulty": "hard",
+    "subject": "PRPR",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: bubble sort, triedenie, zamena"
+  },
+  {
+    "id": "PRPR-042",
+    "question": "Implementujte reverzovanie retazca v C.",
+    "expected_keywords": [
+      "reverz",
+      "retazec",
+      "znaky",
+      "zamena",
+      "dlzka"
+    ],
+    "difficulty": "hard",
+    "subject": "PRPR",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: reverz, retazec, znaky"
+  },
+  {
+    "id": "PRPR-043",
+    "question": "Ako by ste implementovali spájaný zoznam v C?",
+    "expected_keywords": [
+      "spájaný zoznam",
+      "uzol",
+      "pointer",
+      "next",
+      "dynamicky"
+    ],
+    "difficulty": "hard",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-044",
+    "question": "Vysvetlite problemy s pretecenim zasobnika pri rekurzii.",
+    "expected_keywords": [
+      "stack overflow",
+      "rekurzia",
+      "hlbka",
+      "zasobnik",
+      "zakladny pripad"
+    ],
+    "difficulty": "hard",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-045",
+    "question": "Ako funguje qsort z stdlib?",
+    "expected_keywords": [
+      "qsort",
+      "porovnavacia funkcia",
+      "void pointer",
+      "stdlib",
+      "genericky"
+    ],
+    "difficulty": "hard",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-046",
+    "question": "Implementujte binárne vyhľadávanie v poli.",
+    "expected_keywords": [
+      "binarne vyhľadávanie",
+      "stred",
+      "rozdelenie",
+      "O(log n)",
+      "zotriedene"
+    ],
+    "difficulty": "hard",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-047",
+    "question": "Ako zabrániť buffer overflow v C?",
+    "expected_keywords": [
+      "buffer overflow",
+      "kontrola hranic",
+      "strncpy",
+      "bezpecnost",
+      "velkost"
+    ],
+    "difficulty": "hard",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-048",
+    "question": "Vysvetlite funkciové ukazovateľe v C.",
+    "expected_keywords": [
+      "funkciovy ukazovateľ",
+      "callback",
+      "adresa funkcie",
+      "parametre"
+    ],
+    "difficulty": "hard",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-049",
+    "question": "Implementujte zasobnik pomocou pola v C.",
+    "expected_keywords": [
+      "zasobnik",
+      "push",
+      "pop",
+      "top",
+      "velkost",
+      "pole"
+    ],
+    "difficulty": "hard",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-050",
+    "question": "Ako funguje variadic function (va_list)?",
+    "expected_keywords": [
+      "va_list",
+      "va_start",
+      "va_arg",
+      "premenný pocet",
+      "argumenty"
+    ],
+    "difficulty": "hard",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-051",
+    "question": "Vysvetlite volatile kľúčové slovo v C.",
+    "expected_keywords": [
+      "volatile",
+      "optimalizacia",
+      "kompilator",
+      "hardware",
+      "registry"
+    ],
+    "difficulty": "hard",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-052",
+    "question": "Implementujte citanie CSV suboru v C.",
+    "expected_keywords": [
+      "CSV",
+      "fgets",
+      "strtok",
+      "parsovanie",
+      "subor"
+    ],
+    "difficulty": "hard",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-053",
+    "question": "Ako funguje sprava pamati v C oproti jazykom s GC?",
+    "expected_keywords": [
+      "sprava pamati",
+      "rucna",
+      "garbage collection",
+      "malloc",
+      "free",
+      "zodpovednost"
+    ],
+    "difficulty": "hard",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-054",
+    "question": "Implementujte jednoduchy hash table v C.",
+    "expected_keywords": [
+      "hašovacia tabuľka",
+      "hašovacia funkcia",
+      "kolizia",
+      "pole",
+      "retazenie"
+    ],
+    "difficulty": "hard",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-055",
+    "question": "Čo sú undefined behavior v C a uveďte príklady.",
+    "expected_keywords": [
+      "undefined behavior",
+      "nedefinovane",
+      "pretecenie",
+      "null pointer",
+      "standard"
+    ],
+    "difficulty": "hard",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-056",
+    "question": "Vysvetlite proces kompilacie C programu.",
+    "expected_keywords": [
+      "kompilacia",
+      "preprocesor",
+      "assembler",
+      "linker",
+      "objektovy subor"
+    ],
+    "difficulty": "hard",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-057",
+    "question": "Ako implementovat dynamicke pole ktore sa automaticky zvacsuje?",
+    "expected_keywords": [
+      "dynamicke pole",
+      "realloc",
+      "kapacita",
+      "zdvojnasobenie",
+      "amortizovane"
+    ],
+    "difficulty": "hard",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-058",
+    "question": "Čo je restrict kľúčové slovo v C99?",
+    "expected_keywords": [
+      "restrict",
+      "optimalizacia",
+      "ukazovateľ",
+      "aliasing"
+    ],
+    "difficulty": "hard",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-059",
+    "question": "Implementujte meranie casu vykonavania funkcie v C.",
+    "expected_keywords": [
+      "cas",
+      "clock",
+      "time",
+      "meranie",
+      "vykon"
+    ],
+    "difficulty": "hard",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-060",
+    "question": "Čo je cyklus do-while a kedy ho pouzit?",
+    "expected_keywords": [
+      "do-while",
+      "aspon raz",
+      "menu",
+      "validacia vstupu"
+    ],
+    "difficulty": "easy",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-061",
+    "question": "Vysvetlite ternarny operator.",
+    "expected_keywords": [
+      "ternarny",
+      "podmienka",
+      "vyraz",
+      "skrateny if"
+    ],
+    "difficulty": "easy",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-062",
+    "question": "Čo je sizeof operator?",
+    "expected_keywords": [
+      "sizeof",
+      "velkost",
+      "bajty",
+      "dátový typ",
+      "pamat"
+    ],
+    "difficulty": "easy",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-063",
+    "question": "Vysvetlite princíp zásobníka volaní (call stack).",
+    "expected_keywords": [
+      "call stack",
+      "zasobnik volani",
+      "navratova adresa",
+      "lokalne premenne",
+      "ramec"
+    ],
+    "difficulty": "medium",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-064",
+    "question": "Čo je buffer a ako sa pouziva pri I/O?",
+    "expected_keywords": [
+      "buffer",
+      "vyrovnavacia pamat",
+      "flush",
+      "I/O",
+      "efektivita"
+    ],
+    "difficulty": "medium",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-065",
+    "question": "Ako funguje strtok na rozdelenie retazca?",
+    "expected_keywords": [
+      "strtok",
+      "tokenizacia",
+      "oddelovac",
+      "NULL",
+      "retazec"
+    ],
+    "difficulty": "medium",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-066",
+    "question": "Čo je assert makro a kedy ho pouzit?",
+    "expected_keywords": [
+      "assert",
+      "overenie",
+      "debug",
+      "podmienka",
+      "ladiaci nastroj"
+    ],
+    "difficulty": "medium",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-067",
+    "question": "Vysvetlite storage classes v C (auto, register, static, extern).",
+    "expected_keywords": [
+      "auto",
+      "register",
+      "static",
+      "extern",
+      "ulozenie",
+      "zivotnost"
+    ],
+    "difficulty": "hard",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-068",
+    "question": "Ako riešiť problemy s endianness?",
+    "expected_keywords": [
+      "endianness",
+      "big endian",
+      "little endian",
+      "bajty",
+      "poradie"
+    ],
+    "difficulty": "hard",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-069",
+    "question": "Čo je inline funkcia v C?",
+    "expected_keywords": [
+      "inline",
+      "rozsirenie",
+      "optimalizacia",
+      "rezijne naklady"
+    ],
+    "difficulty": "medium",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-070",
+    "question": "Vysvetlite rozdiel medzi puts a printf.",
+    "expected_keywords": [
+      "puts",
+      "printf",
+      "retazec",
+      "formatovanie",
+      "novy riadok"
+    ],
+    "difficulty": "easy",
+    "subject": "PRPR"
+  },
+  {
+    "id": "PRPR-071",
+    "question": "Ako funguje pole ukazovateľov na funkcie?",
+    "expected_keywords": [
+      "pole",
+      "ukazovateľ",
+      "funkcia",
+      "dispatch table",
+      "callback"
+    ],
+    "difficulty": "hard",
+    "subject": "PRPR"
+  }
+]

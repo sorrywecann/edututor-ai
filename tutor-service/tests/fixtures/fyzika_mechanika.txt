@@ -1,0 +1,98 @@
+FYZIKA — MECHANIKA PRE GYMNÁZIUM
+
+1. KINEMATIKA — POPIS POHYBU
+
+Pohyb je zmena polohy telesa v čase vzhľadom na zvolenú vzťažnú sústavu.
+
+Základné veličiny:
+- Dráha (s): vzdialenosť prejdená telesom [m]
+- Čas (t): trvanie pohybu [s]
+- Rýchlosť (v): zmena polohy za jednotku času [m/s]
+- Zrýchlenie (a): zmena rýchlosti za jednotku času [m/s²]
+
+Rovnomerný priamočiary pohyb:
+  v = konštantná
+  s = v × t
+
+Rovnomerne zrýchlený pohyb:
+  v = v₀ + a × t
+  s = v₀t + ½at²
+  v² = v₀² + 2as
+
+Voľný pád (špeciálny prípad, a = g = 9,81 m/s²):
+  v = g × t
+  h = ½ × g × t²
+
+2. NEWTONOVE POHYBOVÉ ZÁKONY
+
+1. Newtonov zákon (zákon zotrvačnosti):
+Teleso zotrváva v pokoji alebo v rovnomernom priamočiarom pohybe, pokiaľ naň nepôsobí vonkajšia sila.
+
+2. Newtonov zákon (zákon sily):
+F = m × a
+Sila je priamo úmerná hmotnosti a zrýchleniu.
+Jednotka sily: 1 N (newton) = 1 kg × m/s²
+
+3. Newtonov zákon (zákon akcie a reakcie):
+Každá sila má rovnako veľkú, ale opačne smerujúcu reakciu.
+Ak teleso A pôsobí na teleso B silou F, teleso B pôsobí na teleso A silou –F.
+
+3. GRAVITÁCIA
+
+Newtonov gravitačný zákon:
+  F = G × (m₁ × m₂) / r²
+
+kde:
+  G = 6,674 × 10⁻¹¹ N m²/kg² (gravitačná konštanta)
+  m₁, m₂ — hmotnosti telies
+  r — vzdialenosť medzi strediami telies
+
+Tiaž telesa:
+  G = m × g
+  g = 9,81 m/s² (tiažové zrýchlenie na povrchu Zeme)
+
+4. PRÁCA, ENERGIA, VÝKON
+
+Mechanická práca:
+  W = F × s × cos(α)
+  kde α je uhol medzi silou a smerom pohybu
+  Jednotka: 1 J (joule) = 1 N × m
+
+Kinetická energia:
+  Eₖ = ½ × m × v²
+  Energia pohybujúceho sa telesa
+
+Potenciálna energia (gravitačná):
+  Eₚ = m × g × h
+  Energia polohy telesa vo výške h
+
+Zákon zachovania mechanickej energie:
+  Eₖ + Eₚ = konšt.  (pri absencii trenia)
+
+Výkon:
+  P = W / t = F × v
+  Jednotka: 1 W (watt) = 1 J/s
+
+5. TRENIE
+
+Sila trenia pôsobí proti smeru pohybu (alebo hroziacej pohybu).
+
+Statické trenie: Fₜ,ₛ ≤ μₛ × Fₙ
+Kinetické trenie: Fₜ,ₖ = μₖ × Fₙ
+
+kde:
+  μ — koeficient trenia (bezrozmerná veličina)
+  Fₙ — normálová sila (kolmá na povrch)
+
+Príklady koeficientov trenia:
+  Drevo na dreve (suché): μₖ ≈ 0,3
+  Oceľ na ľade: μₖ ≈ 0,03
+  Guma na asfalte: μₖ ≈ 0,7
+
+6. JEDNODUCHÉ STROJE
+
+Páka: F₁ × l₁ = F₂ × l₂ (moment sily)
+Kladka pevná: mení smer sily, neznižuje námahu
+Kladka pohyblivá: znižuje potrebnú silu na polovicu
+Naklonená rovina: F = m × g × sin(α)
+Zlaté pravidlo mechaniky: čo ušetríme na sile, stratíme na dráhe.

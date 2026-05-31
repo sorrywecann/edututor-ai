@@ -1,0 +1,912 @@
+[
+  {
+    "id": "OOP-001",
+    "question": "Čo je trieda v objektovo orientovanom programovaní?",
+    "expected_keywords": [
+      "trieda",
+      "šablóna",
+      "objekt",
+      "atributy",
+      "metody"
+    ],
+    "difficulty": "easy",
+    "subject": "OOP",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: trieda, šablóna, objekt"
+  },
+  {
+    "id": "OOP-002",
+    "question": "Čo je objekt a ako vznikne z triedy?",
+    "expected_keywords": [
+      "objekt",
+      "inštancia",
+      "trieda",
+      "konštruktor"
+    ],
+    "difficulty": "easy",
+    "subject": "OOP",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: objekt, inštancia, trieda"
+  },
+  {
+    "id": "OOP-003",
+    "question": "Vysvetlite princíp enkapsulácie.",
+    "expected_keywords": [
+      "enkapsulácie",
+      "prístupové modifikátory",
+      "private",
+      "public",
+      "skryvanie"
+    ],
+    "difficulty": "easy",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-004",
+    "question": "Čo je dedičnosť v OOP?",
+    "expected_keywords": [
+      "dedičnosť",
+      "rodicovska trieda",
+      "potomok",
+      "extends",
+      "zdedene"
+    ],
+    "difficulty": "easy",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-005",
+    "question": "Čo je polymorfizmus?",
+    "expected_keywords": [
+      "polymorfizmus",
+      "viac tvarov",
+      "prepisovanie",
+      "pretyazovanie"
+    ],
+    "difficulty": "easy",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-006",
+    "question": "Aký je rozdiel medzi triedou a objektom?",
+    "expected_keywords": [
+      "trieda",
+      "objekt",
+      "šablóna",
+      "inštancia",
+      "pamat"
+    ],
+    "difficulty": "easy",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-007",
+    "question": "Čo je konštruktor a na čo slúži?",
+    "expected_keywords": [
+      "konštruktor",
+      "inicializacia",
+      "new",
+      "parametre"
+    ],
+    "difficulty": "easy",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-008",
+    "question": "Čo je deštruktor?",
+    "expected_keywords": [
+      "deštruktor",
+      "uvolnenie",
+      "pamat",
+      "zrusenie objektu"
+    ],
+    "difficulty": "easy",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-009",
+    "question": "Čo sú prístupové modifikátory?",
+    "expected_keywords": [
+      "public",
+      "private",
+      "protected",
+      "prístup",
+      "viditeľnosť"
+    ],
+    "difficulty": "easy",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-010",
+    "question": "Čo je abstraktná trieda?",
+    "expected_keywords": [
+      "abstraktna",
+      "nemôže inštancovať",
+      "abstraktné metódy",
+      "dedičnosť"
+    ],
+    "difficulty": "easy",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-011",
+    "question": "Čo je rozhranie (interface)?",
+    "expected_keywords": [
+      "rozhranie",
+      "interface",
+      "implementacia",
+      "kontrakt",
+      "metody"
+    ],
+    "difficulty": "easy",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-012",
+    "question": "Čo je metoda v kontexte OOP?",
+    "expected_keywords": [
+      "metoda",
+      "funkcia",
+      "trieda",
+      "spravanie",
+      "volanie"
+    ],
+    "difficulty": "easy",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-013",
+    "question": "Čo je atribut triedy?",
+    "expected_keywords": [
+      "atribut",
+      "premenná",
+      "stav",
+      "vlastnost",
+      "dáta"
+    ],
+    "difficulty": "easy",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-014",
+    "question": "Čo znamená kľúčové slovo static?",
+    "expected_keywords": [
+      "static",
+      "staticka metoda",
+      "trieda",
+      "bez instancie"
+    ],
+    "difficulty": "easy",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-015",
+    "question": "Čo je pretyazovanie metod (overloading)?",
+    "expected_keywords": [
+      "pretyazovanie",
+      "overloading",
+      "rovnaky nazov",
+      "rozne parametre"
+    ],
+    "difficulty": "easy",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-016",
+    "question": "Čo je prepisovanie metod (overriding)?",
+    "expected_keywords": [
+      "prepisovanie",
+      "overriding",
+      "potomok",
+      "rodicovska metoda"
+    ],
+    "difficulty": "easy",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-017",
+    "question": "Vysvetlite koncept this/self v OOP.",
+    "expected_keywords": [
+      "this",
+      "self",
+      "referencia",
+      "aktualny objekt"
+    ],
+    "difficulty": "easy",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-018",
+    "question": "Čo sú gettre a settre?",
+    "expected_keywords": [
+      "getter",
+      "setter",
+      "prístup",
+      "enkapsulácie",
+      "metody"
+    ],
+    "difficulty": "easy",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-019",
+    "question": "Čo je viacnasobna dedičnosť?",
+    "expected_keywords": [
+      "viacnasobna dedičnosť",
+      "viac rodicov",
+      "diamond problem",
+      "interface"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: viacnasobna dedičnosť, viac rodicov, diamond problem"
+  },
+  {
+    "id": "OOP-020",
+    "question": "Čo je abstrakcia v OOP?",
+    "expected_keywords": [
+      "abstrakcia",
+      "skryvanie detailov",
+      "rozhranie",
+      "zjednodusenie"
+    ],
+    "difficulty": "easy",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-021",
+    "question": "Aký je rozdiel medzi abstraktnou triedou a rozhranim?",
+    "expected_keywords": [
+      "abstraktná trieda",
+      "rozhranie",
+      "implementacia",
+      "dedičnosť",
+      "viacnasobne"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: abstraktná trieda, rozhranie, implementacia"
+  },
+  {
+    "id": "OOP-022",
+    "question": "Vysvetlite princíp SOLID - Single Responsibility.",
+    "expected_keywords": [
+      "SRP",
+      "jedna zodpovednost",
+      "trieda",
+      "zmena",
+      "dovod"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-023",
+    "question": "Vysvetlite princíp SOLID - Open/Closed.",
+    "expected_keywords": [
+      "OCP",
+      "otvoreny",
+      "zatvoreny",
+      "rozsirenie",
+      "modifikacia"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-024",
+    "question": "Vysvetlite princíp SOLID - Liskov Substitution.",
+    "expected_keywords": [
+      "LSP",
+      "Liskov",
+      "nahraditelnost",
+      "podtyp",
+      "rodicovsky typ"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-025",
+    "question": "Vysvetlite princíp SOLID - Interface Segregation.",
+    "expected_keywords": [
+      "ISP",
+      "segregacia",
+      "male rozhrania",
+      "klient",
+      "závislosť"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-026",
+    "question": "Vysvetlite princíp SOLID - Dependency Inversion.",
+    "expected_keywords": [
+      "DIP",
+      "inverzia závislosťi",
+      "abstrakcia",
+      "moduly",
+      "rozhranie"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-027",
+    "question": "Čo je kompozicia a ako sa lisi od dedičnosťi?",
+    "expected_keywords": [
+      "kompozicia",
+      "has-a",
+      "is-a",
+      "obsahuje",
+      "dedičnosť"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-028",
+    "question": "Čo je agregacia v OOP?",
+    "expected_keywords": [
+      "agregacia",
+      "slaba vazba",
+      "celok",
+      "cast",
+      "zivotnost"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-029",
+    "question": "Vysvetlite návrhový vzor Singleton.",
+    "expected_keywords": [
+      "singleton",
+      "jedna inštancia",
+      "globalny prístup",
+      "konštruktor"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-030",
+    "question": "Vysvetlite návrhový vzor Factory Method.",
+    "expected_keywords": [
+      "factory",
+      "tovaren",
+      "vytvaranie objektov",
+      "rozhranie",
+      "podtriedy"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-031",
+    "question": "Vysvetlite návrhový vzor Observer.",
+    "expected_keywords": [
+      "observer",
+      "pozorovatel",
+      "udalost",
+      "notifikacia",
+      "subscriber"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-032",
+    "question": "Vysvetlite návrhový vzor Strategy.",
+    "expected_keywords": [
+      "strategy",
+      "strategia",
+      "algoritmus",
+      "zamenitelnost",
+      "kontext"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-033",
+    "question": "Čo sú generické typy (generics)?",
+    "expected_keywords": [
+      "generics",
+      "typova bezpecnost",
+      "parametricky typ",
+      "šablóna"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-034",
+    "question": "Ako funguje spravanie vynimiek v OOP?",
+    "expected_keywords": [
+      "vynimka",
+      "try",
+      "catch",
+      "throw",
+      "osetrenie chyb"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-035",
+    "question": "Čo je UML diagram tried?",
+    "expected_keywords": [
+      "UML",
+      "diagram tried",
+      "vztahy",
+      "atributy",
+      "metody",
+      "trieda"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-036",
+    "question": "Vysvetlite rozdiel medzi shallow copy a deep copy.",
+    "expected_keywords": [
+      "shallow copy",
+      "deep copy",
+      "referencia",
+      "kopia",
+      "vnorene objekty"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-037",
+    "question": "Čo je asociacia medzi triedami?",
+    "expected_keywords": [
+      "asociacia",
+      "vztah",
+      "triedy",
+      "komunikacia",
+      "vazba"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-038",
+    "question": "Čo je method chaining?",
+    "expected_keywords": [
+      "retazenie metod",
+      "fluent",
+      "return this",
+      "volanie"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-039",
+    "question": "Ako funguje garbage collection v OOP jazykoch?",
+    "expected_keywords": [
+      "garbage collection",
+      "automaticke uvolnenie",
+      "pamat",
+      "referencia"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-040",
+    "question": "Čo je immutable objekt?",
+    "expected_keywords": [
+      "immutable",
+      "nemeniteľný",
+      "final",
+      "bezpecnost",
+      "vlakna"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-041",
+    "question": "Čo je late binding a early binding?",
+    "expected_keywords": [
+      "late binding",
+      "early binding",
+      "dynamicky",
+      "staticky",
+      "polymorfizmus"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-042",
+    "question": "Ako by ste navrhli triednu hierarchiu pre skolsky informacny system?",
+    "expected_keywords": [
+      "triedy",
+      "student",
+      "ucitel",
+      "dedičnosť",
+      "system",
+      "navrh"
+    ],
+    "difficulty": "hard",
+    "subject": "OOP",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: triedy, student, ucitel"
+  },
+  {
+    "id": "OOP-043",
+    "question": "Vysvetlite návrhový vzor MVC v kontexte webovej aplikácie.",
+    "expected_keywords": [
+      "MVC",
+      "model",
+      "view",
+      "controller",
+      "oddelenie zodpovednosti"
+    ],
+    "difficulty": "hard",
+    "subject": "OOP",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: MVC, model, view"
+  },
+  {
+    "id": "OOP-044",
+    "question": "Aké sú vyhody a nevyhody dedičnosťi oproti kompozicii?",
+    "expected_keywords": [
+      "dedičnosť",
+      "kompozicia",
+      "vazba",
+      "flexibilita",
+      "znovupoužiteľnosť"
+    ],
+    "difficulty": "hard",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-045",
+    "question": "Ako by ste implementovali návrhový vzor Decorator?",
+    "expected_keywords": [
+      "decorator",
+      "obalenie",
+      "rozsirenie",
+      "dynamicky",
+      "kompozicia"
+    ],
+    "difficulty": "hard",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-046",
+    "question": "Vysvetlite GRASP principy pre priradenie zodpovednosti.",
+    "expected_keywords": [
+      "GRASP",
+      "zodpovednost",
+      "creator",
+      "expert",
+      "controller"
+    ],
+    "difficulty": "hard",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-047",
+    "question": "Ako riešiť diamond problem pri viacnasobnej dedičnosťi?",
+    "expected_keywords": [
+      "diamond problem",
+      "viacnasobna dedičnosť",
+      "interface",
+      "virtualna dedičnosť"
+    ],
+    "difficulty": "hard",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-048",
+    "question": "Vysvetlite princíp Tell Don't Ask v OOP.",
+    "expected_keywords": [
+      "tell dont ask",
+      "enkapsulácie",
+      "spravanie",
+      "zodpovednost"
+    ],
+    "difficulty": "hard",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-049",
+    "question": "Ako navrhnete system s pouzitim dependency injection?",
+    "expected_keywords": [
+      "dependency injection",
+      "inverzia",
+      "kontajner",
+      "rozhranie",
+      "testovateľnosť"
+    ],
+    "difficulty": "hard",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-050",
+    "question": "Porovnajte prístup OOP a funkcionalneho programovania.",
+    "expected_keywords": [
+      "OOP",
+      "funkcionalne",
+      "stav",
+      "immutabilita",
+      "funkcie",
+      "objekty"
+    ],
+    "difficulty": "hard",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-051",
+    "question": "Vysvetlite návrhový vzor Abstract Factory.",
+    "expected_keywords": [
+      "abstract factory",
+      "rodina objektov",
+      "rozhranie",
+      "platforma"
+    ],
+    "difficulty": "hard",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-052",
+    "question": "Ako by ste navrhli event-driven system v OOP?",
+    "expected_keywords": [
+      "event",
+      "udalost",
+      "handler",
+      "publisher",
+      "subscriber",
+      "loosely coupled"
+    ],
+    "difficulty": "hard",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-053",
+    "question": "Čo je refaktoring a ake techniky OOP refaktoringu poznate?",
+    "expected_keywords": [
+      "refaktoring",
+      "extract method",
+      "rename",
+      "move",
+      "kvalita kodu"
+    ],
+    "difficulty": "hard",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-054",
+    "question": "Vysvetlite návrhový vzor Command.",
+    "expected_keywords": [
+      "command",
+      "prikaz",
+      "invoker",
+      "receiver",
+      "undo"
+    ],
+    "difficulty": "hard",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-055",
+    "question": "Ako zabezpecit thread safety v OOP?",
+    "expected_keywords": [
+      "thread safety",
+      "synchronizacia",
+      "mutex",
+      "lock",
+      "immutable"
+    ],
+    "difficulty": "hard",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-056",
+    "question": "Vysvetlite Law of Demeter.",
+    "expected_keywords": [
+      "law of demeter",
+      "minimum znalosti",
+      "vazba",
+      "delegacia"
+    ],
+    "difficulty": "hard",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-057",
+    "question": "Ako navrhnete plugin architekturu s vyuzitim OOP?",
+    "expected_keywords": [
+      "plugin",
+      "rozhranie",
+      "dynamicke nacitanie",
+      "rozšíriteľnosť"
+    ],
+    "difficulty": "hard",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-058",
+    "question": "Čo je kovariancia a kontravariancia v generickych typoch?",
+    "expected_keywords": [
+      "kovariancia",
+      "kontravariancia",
+      "generické typy",
+      "typova bezpecnost"
+    ],
+    "difficulty": "hard",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-059",
+    "question": "Vysvetlite návrhový vzor Adapter.",
+    "expected_keywords": [
+      "adapter",
+      "konverzia",
+      "rozhranie",
+      "kompatibilita",
+      "wrapper"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-060",
+    "question": "Vysvetlite návrhový vzor Facade.",
+    "expected_keywords": [
+      "facade",
+      "fasada",
+      "zjednodusenie",
+      "rozhranie",
+      "subsystem"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-061",
+    "question": "Čo je kohazia a coupling v navrhu tried?",
+    "expected_keywords": [
+      "kohazia",
+      "coupling",
+      "závislosť",
+      "súdržnosť",
+      "modularita"
+    ],
+    "difficulty": "hard",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-062",
+    "question": "Ako by ste testovali OOP kod pomocou unit testov?",
+    "expected_keywords": [
+      "unit test",
+      "mock",
+      "testovateľnosť",
+      "izolovanie",
+      "assert"
+    ],
+    "difficulty": "hard",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-063",
+    "question": "Čo sú design antipatterns v OOP?",
+    "expected_keywords": [
+      "antipattern",
+      "god class",
+      "spaghetti",
+      "blob",
+      "zly navrh"
+    ],
+    "difficulty": "hard",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-064",
+    "question": "Vysvetlite princíp programovania voči rozhraniu.",
+    "expected_keywords": [
+      "rozhranie",
+      "abstrakcia",
+      "implementacia",
+      "závislosť",
+      "flexibilita"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-065",
+    "question": "Čo je mixins a traits v OOP?",
+    "expected_keywords": [
+      "mixin",
+      "trait",
+      "znovupoužiteľnosť",
+      "viacnasobne",
+      "kompozicia"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-066",
+    "question": "Ako funguje serializacia objektov?",
+    "expected_keywords": [
+      "serializacia",
+      "deserializacia",
+      "ulozenie",
+      "prenos",
+      "format"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-067",
+    "question": "Čo je prototype pattern?",
+    "expected_keywords": [
+      "prototype",
+      "klonovanie",
+      "kopia",
+      "vytvaranie",
+      "vzor"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-068",
+    "question": "Vysvetlite rozdiel medzi has-a a is-a vztahom.",
+    "expected_keywords": [
+      "has-a",
+      "is-a",
+      "kompozicia",
+      "dedičnosť",
+      "vztah"
+    ],
+    "difficulty": "easy",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-069",
+    "question": "Čo je virtual method table (vtable)?",
+    "expected_keywords": [
+      "vtable",
+      "virtualna tabulka",
+      "polymorfizmus",
+      "dynamicky dispatch"
+    ],
+    "difficulty": "hard",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-070",
+    "question": "Ako OOP podporuje znovupoužiteľnosť kodu?",
+    "expected_keywords": [
+      "znovupoužiteľnosť",
+      "dedičnosť",
+      "kompozicia",
+      "modularita",
+      "rozhranie"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP"
+  },
+  {
+    "id": "OOP-071",
+    "question": "Čo je princíp najmenšieho prekvapenia v OOP návrhu?",
+    "expected_keywords": [
+      "princíp najmenšieho prekvapenia",
+      "intuitivnost",
+      "ocakavane spravanie",
+      "navrh"
+    ],
+    "difficulty": "hard",
+    "subject": "OOP"
+  }
+]

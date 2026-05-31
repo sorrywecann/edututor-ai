@@ -1,0 +1,184 @@
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:16-alpine
+    container_name: edututor-postgres
+    environment:
+      POSTGRES_DB: edututor
+      POSTGRES_USER: edututor
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-edututor_secure_password}
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U edututor"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: '1'
+        reservations:
+          memory: 256M
+          cpus: '0.25'
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "20m"
+        max-file: "3"
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: edututor-redis
+    ports:
+      - "127.0.0.1:6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes --maxmemory 384mb --maxmemory-policy allkeys-lru
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.5'
+        reservations:
+          memory: 64M
+          cpus: '0.1'
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # EduTutor Backend (Python FastAPI)
+  tutor-service:
+    build:
+      context: ./tutor-service
+      dockerfile: Dockerfile
+    container_name: edututor-backend
+    environment:
+      DATABASE_URL: postgresql+asyncpg://edututor:${POSTGRES_PASSWORD:-edututor_secure_password}@postgres:5432/edututor
+      REDIS_URL: redis://redis:6379
+      VECTOR_DB_BACKEND: chroma
+      CHROMA_PERSIST_DIRECTORY: /data/chroma
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      GROQ_API_KEY: ${GROQ_API_KEY:-}
+      AZURE_SPEECH_KEY: ${AZURE_SPEECH_KEY:-}
+      AZURE_SPEECH_REGION: ${AZURE_SPEECH_REGION:-westeurope}
+      STT_PROVIDER: ${STT_PROVIDER:-faster-whisper-small-sk}
+      OLLAMA_URL: ${OLLAMA_URL:-http://host.docker.internal:11434/v1}
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-mistral:latest}
+      HF_HOME: /data/huggingface
+      TRANSFORMERS_CACHE: /data/huggingface
+      HUGGINGFACE_TOKEN: ${HUGGINGFACE_TOKEN:-}
+      APP_ENV: production
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      EDU_VISEME_FRAME_STEP_MS: ${EDU_VISEME_FRAME_STEP_MS:-40}
+      EDU_VISEME_SHORT_VOWEL_MS: ${EDU_VISEME_SHORT_VOWEL_MS:-60}
+      EDU_VISEME_LONG_VOWEL_MS: ${EDU_VISEME_LONG_VOWEL_MS:-100}
+      EDU_VISEME_CONSONANT_MS: ${EDU_VISEME_CONSONANT_MS:-45}
+      UE5_BROADCAST_DELAY_MS: ${UE5_BROADCAST_DELAY_MS:-180}
+      LIPSYNC_PROVIDER: ${LIPSYNC_PROVIDER:-hybrid}
+    ports:
+      - "8000:8000"
+    volumes:
+      - chroma_data:/data/chroma
+      - hf_cache:/data/huggingface
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/health/ready"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+          cpus: '4'
+        reservations:
+          memory: 2G
+          cpus: '1'
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "3"
+
+  # EduTutor Frontend (Next.js)
+  core:
+    build:
+      context: ./core
+      dockerfile: Dockerfile
+      args:
+        # NEXT_PUBLIC_API_URL empty → browser uses relative URLs (no internal hostname in bundle)
+        NEXT_PUBLIC_API_URL: ""
+        # API_PROXY_TARGET is baked into the standalone route manifest at build time
+        API_PROXY_TARGET: http://tutor-service:8000
+        # auth.ts evaluates this at build time when NODE_ENV=production and
+        # throws if missing. Default below makes vanilla `docker compose up
+        # --build` work; production must override via .env (compose reads
+        # ${NEXTAUTH_SECRET} from the host environment / .env file).
+        NEXTAUTH_SECRET: ${NEXTAUTH_SECRET:-edututor-dev-build-secret-not-for-production}
+        NODE_ENV: ${NODE_ENV:-production}
+    container_name: edututor-frontend
+    environment:
+      NEXT_PUBLIC_API_URL: ""
+      NEXTAUTH_SECRET: ${NEXTAUTH_SECRET:-edututor-dev-build-secret-not-for-production}
+      NEXTAUTH_URL: ${NEXTAUTH_URL:-http://localhost:3000}
+      NODE_ENV: ${NODE_ENV:-production}
+    ports:
+      - "3000:3000"
+    depends_on:
+      tutor-service:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: '2'
+        reservations:
+          memory: 512M
+          cpus: '0.5'
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "3"
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  chroma_data:
+    driver: local
+  hf_cache:
+    driver: local
+
+networks:
+  default:
+    name: edututor-network

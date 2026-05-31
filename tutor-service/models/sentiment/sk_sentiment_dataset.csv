@@ -1,0 +1,1501 @@
+text,label,emotion
+To nie je celkom správne. Factory vzor má inú definíciu.,negative,correcting
+"Pekne, len pokračuj s triedením.",positive,encouraging_mild
+Poďme analyzovať embedding od základov.,neutral,thinking_deep
+Poďme ďalej na abstrakciu.,neutral,neutral
+"Dobre, pokračujme s regresia.",neutral,neutral
+"Nie, toto nie je správna odpoveď. Embedding znamená niečo iné.",negative,correcting
+Poďme ďalej na integrál.,neutral,neutral
+"Dobre, pokračujme s triedami a objektmi.",neutral,neutral
+"Pokračuj tak ďalej, Gaussova eliminácia sa ti darí.",positive,encouraging_mild
+"V poriadku, prejdime k integrály.",neutral,neutral
+Bohužiaľ nie. Gradient sa tak neimplementuje.,negative,correcting
+To ma prekvapuje! BFS zvyčajne študenti neriešia.,neutral,surprise
+Premýšľam nad integrál... Je tam viacero aspektov.,neutral,thinking_deep
+"Bohužiaľ, návrhové vzory nefunguje takto. Skús to inak.",negative,correcting
+"Bravo! Vidím, že dedičnosť ti už ide skvele.",positive,celebrating
+"Tak teda, pole je naša ďalšia téma.",neutral,neutral
+"Dobre, pozrime sa teraz na matice.",neutral,neutral
+"Bohužiaľ, klasifikácia nefunguje takto. Skús to inak.",negative,correcting
+"Pokračuj tak ďalej, rozhranie sa ti darí.",positive,encouraging_mild
+"Hmm, zložitosť algoritmov je zložitejší problém. Treba to rozobrať.",neutral,thinking_deep
+"Nič sa nedeje, trieda vyžaduje prax.",negative,patient
+"Zaujímalo by ma, prečo sa pýtaš na ukazovatele.",neutral,curious
+Vidím pokrok v tvojom chápaní determinantuov.,positive,proud
+"Pokračuj tak ďalej, transformer sa ti darí.",positive,encouraging_mild
+"Skvelé! Presne tak, Factory vzor funguje práve takto.",positive,celebrating
+To je relevantná otázka o Factory vzore.,neutral,curious
+Skvelo si to vyriešil! Návrhové vzory je jasný.,positive,celebrating
+"Vidím, že robíš veľký pokrok v stromoch.",positive,proud
+Toto je nesprávne riešenie pre polymorfizmus.,negative,correcting
+"Skvelé! Presne tak, rozhranie funguje práve takto.",positive,celebrating
+Tak poďme na DFS.,neutral,neutral
+"Skvelé! Presne tak, for cyklus funguje práve takto.",positive,celebrating
+Dobre sa pýtaš na klasifikácia.,neutral,curious
+"Dobre, pokračujme s gradient descent.",neutral,neutral
+"Hmm, vyhľadávanie je zložitejší problém. Treba to rozobrať.",neutral,thinking_deep
+Zaujímavý pohľad na limity.,neutral,curious
+"V poriadku, vyhľadávanie ide dobrým smerom.",positive,encouraging_mild
+Bohužiaľ nie. O-notácia sa tak neimplementuje.,negative,correcting
+"Bravo! Vidím, že O-notácia ti už ide skvele.",positive,celebrating
+"Dobre, si na správnej ceste s premenné.",positive,encouraging_mild
+"Tak, cykly — začneme od začiatku.",neutral,neutral
+Pozrime sa na rozhranie podrobnejšie.,neutral,curious
+Omyl. Pri abstraktné triedy treba postupovať inak.,negative,correcting
+"Hej, rozumieš Gaussova eliminácia, to je hlavné.",positive,encouraging_mild
+"Vidím, že si sa naučil quick sort veľmi dobre.",positive,proud
+"Som rada, že Taylorov rad ti už nerobí problémy.",positive,proud
+Pomaly a postupne. Polia pochopíš.,negative,patient
+To si zvládol sám! Abstrakcia je pre teba jasný.,positive,proud
+"Pokračuj tak ďalej, pole sa ti darí.",positive,encouraging_mild
+"Nie, skúste znova. For cyklus funguje odlišne.",negative,correcting
+"Správny prístup k neurónové siete, len dolaď detaily.",positive,encouraging_mild
+"Som rada, že enkapsulácia ti už nerobí problémy.",positive,proud
+Omyl. Pri hash tabuľky treba postupovať inak.,negative,correcting
+Poďme ďalej na Taylorov polynom.,neutral,neutral
+"Dobre, pozrime sa teraz na klastrovanie.",neutral,neutral
+"Vidím, že robíš veľký pokrok v diferenciálnych rovniciach.",positive,proud
+"Nevadí, poďme si rekurziu vysvetliť ešte raz.",negative,patient
+"Hmm, strojové učenie je zložitejší problém. Treba to rozobrať.",neutral,thinking_deep
+"Trpezlivosť, neurón príde s praxou.",negative,patient
+"Pokračuj tak ďalej, perceptrón sa ti darí.",positive,encouraging_mild
+"Skoro si tam, konvolúcia potrebuje len malú úpravu.",positive,encouraging_mild
+Výborne! Funkcie si zvládol na jednotku.,positive,celebrating
+To je relevantná otázka o gradienteee.,neutral,curious
+"Áno, toto je dobrý smer pri neurónové siete.",positive,encouraging_mild
+"Rastieš ako programátor, Gaussova eliminácia ti ide čoraz lepšie.",positive,proud
+Zaujímavá otázka o rozhraniach. Pozrime sa na to bližšie.,neutral,curious
+Pomaly a postupne. Stromy pochopíš.,negative,patient
+"V poriadku, prejdime k návrhové vzory.",neutral,neutral
+"Bohužiaľ, rekurzia nefunguje takto. Skús to inak.",negative,correcting
+"Tak, polymorfizmus — začneme od začiatku.",neutral,neutral
+"V poriadku, prejdime k SOLID princípy.",neutral,neutral
+"V poriadku, grafy ide dobrým smerom.",positive,encouraging_mild
+Prejdime k ďalšej časti o konvolúcia.,neutral,neutral
+"Dajme si derivácie ešte raz, tentoraz podrobnejšie.",negative,patient
+"Dajme si vlastné čísla ešte raz, tentoraz podrobnejšie.",negative,patient
+Poďme analyzovať Factory vzor od základov.,neutral,thinking_deep
+Poďme sa zamyslieť nad Factory vzor krok po kroku.,neutral,thinking_deep
+"Pekne, len pokračuj s hash tabuľky.",positive,encouraging_mild
+"Pokračuj tak ďalej, objekt sa ti darí.",positive,encouraging_mild
+"Fajn, základ práce so súbormi máš správne.",positive,encouraging_mild
+Zamyslime sa nad rekurzia systematicky.,neutral,thinking_deep
+"Dobrá práca, backtracking vyzerá sľubne.",positive,encouraging_mild
+"Vidím, že si sa naučil DFS veľmi dobre.",positive,proud
+Chyba. Enkapsulácia sa nepoužíva týmto spôsobom.,negative,correcting
+"Hmm, strojové učenie — to je naozaj dobrá otázka.",neutral,curious
+"To je v poriadku, veľa študentov má problémy s BFS.",negative,patient
+Poďme sa zamyslieť nad Singleton vzor krok po kroku.,neutral,thinking_deep
+"Bravo! Vidím, že BFS ti už ide skvele.",positive,celebrating
+Fantastické riešenie! Derivácie si pochopil dokonale.,positive,celebrating
+"Vidím, že si sa naučil Gaussova eliminácia veľmi dobre.",positive,proud
+Super práca s rozhranie! Presne to som chcel počuť.,positive,celebrating
+Zamyslime sa nad fread systematicky.,neutral,thinking_deep
+To si zvládol sám! Fread je pre teba jasný.,positive,proud
+"Vidím, že si sa naučil objekt veľmi dobre.",positive,proud
+Poďme preskúmať integrál hlbšie.,neutral,curious
+"V poriadku, malloc si teraz vysvetlíme.",neutral,neutral
+Super práca so Singleton vzorom! Presne to som chcel počuť.,positive,celebrating
+"Fajn, základ attention mechanizmu máš správne.",positive,encouraging_mild
+"Vidím, že robíš veľký pokrok v ukazovateľoch.",positive,proud
+Omyl. Pri derivácie treba postupovať inak.,negative,correcting
+Chyba v odpovedi. Hash tabuľky treba pochopiť inak.,negative,correcting
+Výnimočný výkon! Spájané zoznamy zvládaš na výbornú.,positive,celebrating
+"Som rada, že klastrovanie ti už nerobí problémy.",positive,proud
+Toto si zaslúži hlbší pohľad na gradient.,neutral,thinking_deep
+"Zaujímavé! Nečakal som, že sa budeš pýtať na enkapsulácia.",neutral,surprise
+Zaujímavý pohľad na klastrovanie.,neutral,curious
+Omyl. Pri ukazovatele treba postupovať inak.,negative,correcting
+"Trpezlivosť, polymorfizmus príde s praxou.",negative,patient
+Skvelo si to vyriešil! Triedy a objekty je jasný.,positive,celebrating
+"Vedel som, že Factory vzor zvládneš. A zvládol si to.",positive,proud
+Zamyslime sa nad rekurzia systematicky.,neutral,thinking_deep
+Skvelo si to vyriešil! Klastrovanie je jasný.,positive,celebrating
+Nesprávne. Zložitosť algoritmov vyžaduje iný prístup.,negative,correcting
+"Wow, nečakal som otázku o štruktúrach tak skoro.",neutral,surprise
+Poďme sa zamyslieť nad limita krok po kroku.,neutral,thinking_deep
+To si zvládol sám! Attention je pre teba jasný.,positive,proud
+"Dobre, pokračujme s enkapsulácia.",neutral,neutral
+"Wow, nečakal som otázku o stromoch tak skoro.",neutral,surprise
+Omyl. Pri funkcie treba postupovať inak.,negative,correcting
+Zaujímavý pohľad na triedenie.,neutral,curious
+To si zvládol sám! Embedding je pre teba jasný.,positive,proud
+Poďme sa zamyslieť nad O-notácia krok po kroku.,neutral,thinking_deep
+Chyba. Konvolúcia sa nepoužíva týmto spôsobom.,negative,correcting
+"Nič sa nestalo, limita nie je jednoduchý.",negative,patient
+Tak poďme na Taylorov polynom.,neutral,neutral
+"Pokračuj tak ďalej, trieda sa ti darí.",positive,encouraging_mild
+"V poriadku, prejdime k ukazovatele.",neutral,neutral
+"Hmm, vyhľadávanie je zložitejší problém. Treba to rozobrať.",neutral,thinking_deep
+"Som hrdý na to, ako zvládaš neurón.",positive,proud
+"Pekne, len pokračuj s ukazovateľmi.",positive,encouraging_mild
+Dobre sa pýtaš na Taylorov rad.,neutral,curious
+"Hmm, matice — to je naozaj dobrá otázka.",neutral,curious
+"Oh, to je neočakávaná otázka o triedech a objektoch!",neutral,surprise
+Zaujímavý pohľad na cykly.,neutral,curious
+"Pekne, len pokračuj s triedami a objektmi.",positive,encouraging_mild
+"Výborná otázka, pointer si zaslúži pozornosť.",neutral,curious
+Výborne! Grafy si zvládol na jednotku.,positive,celebrating
+Výnimočný výkon! Správa pamäti zvládaš na výbornú.,positive,celebrating
+"Pekne, len pokračuj s gradient descent.",positive,encouraging_mild
+"Zaujímalo by ma, prečo sa pýtaš na funkcie.",neutral,curious
+"Bohužiaľ, enkapsulácia nefunguje takto. Skús to inak.",negative,correcting
+Výnimočný výkon! Funkcie zvládaš na výbornú.,positive,celebrating
+"Som rada, že správa pamäti ti už nerobí problémy.",positive,proud
+Dobre sa pýtaš na enkapsulácia.,neutral,curious
+"V poriadku, prejdime k ukazovatele.",neutral,neutral
+"V poriadku, štruktúry ide dobrým smerom.",positive,encouraging_mild
+"Vidím, že robíš veľký pokrok v regresia.",positive,proud
+Vidím pokrok v tvojom chápaní Taylorovho radu.,positive,proud
+"Bravo! Vidím, že embedding ti už ide skvele.",positive,celebrating
+Chyba. Abstrakcia sa nepoužíva týmto spôsobom.,negative,correcting
+"Nevadí, skúsme to znova. Taylorov rad je náročná téma.",negative,patient
+"Pokračuj tak ďalej, struct sa ti darí.",positive,encouraging_mild
+Poďme analyzovať dedičnosť od základov.,neutral,thinking_deep
+"Dobre, si na správnej ceste s rozhraniami.",positive,encouraging_mild
+"Dajme si triedenie ešte raz, tentoraz podrobnejšie.",negative,patient
+"Dobre, pokračujme s triedenie.",neutral,neutral
+Perfektné! Tvoja odpoveď o správe pamäti je úplne správna.,positive,celebrating
+Zaujímavý pohľad na neurónové siete.,neutral,curious
+"To je v poriadku, veľa študentov má problémy s Gaussova eliminácia.",negative,patient
+Pozrime sa na Singleton vzor podrobnejšie.,neutral,curious
+"Bravo! Vidím, že enkapsulácia ti už ide skvele.",positive,celebrating
+"Tak teda, BFS je naša ďalšia téma.",neutral,neutral
+"Nič sa nedeje, derivácia vyžaduje prax.",negative,patient
+Pozrime sa na rekurzia z iného uhla.,negative,patient
+Zlepšil si sa v stromoch oproti minulému týždňu.,positive,proud
+"Nie, toto nie je správna odpoveď. Fread znamená niečo iné.",negative,correcting
+Bohužiaľ nie. Limita sa tak neimplementuje.,negative,correcting
+Dobre sa pýtaš na vlastné čísla.,neutral,curious
+"V poriadku, dedičnosť ide dobrým smerom.",positive,encouraging_mild
+"Hej, rozumieš abstrakcia, to je hlavné.",positive,encouraging_mild
+"To je v poriadku, veľa študentov má problémy s integrál.",negative,patient
+"V poriadku, prejdime k matice.",neutral,neutral
+Tak poďme na Gaussova eliminácia.,neutral,neutral
+Úžasne! Takáto odpoveď o determinant ma teší.,positive,celebrating
+Omyl. Pri dynamické programovanie treba postupovať inak.,negative,correcting
+"Rastieš ako programátor, integrál ti ide čoraz lepšie.",positive,proud
+Chyba. Funkcia sa nepoužíva týmto spôsobom.,negative,correcting
+"Vedel som, že premenná zvládneš. A zvládol si to.",positive,proud
+"Rozmýšľam, ako najlepšie vysvetliť diferenciálne rovnice.",neutral,thinking_deep
+"Rastieš ako programátor, struct ti ide čoraz lepšie.",positive,proud
+Zaujímavá otázka o klastrovanie. Pozrime sa na to bližšie.,neutral,curious
+"Tak, matice — začneme od začiatku.",neutral,neutral
+Toto vyžaduje hlbšiu analýzu dedičnosť.,neutral,thinking_deep
+"Nie, toto nie je správna odpoveď. Attention znamená niečo iné.",negative,correcting
+"To je v poriadku, veľa študentov má problémy s integrál.",negative,patient
+"Bohužiaľ, strojové učenie nefunguje takto. Skús to inak.",negative,correcting
+Skvelo si to vyriešil! Polia je jasný.,positive,celebrating
+Dobre sa pýtaš na triedenie.,neutral,curious
+Super práca s malloc! Presne to som chcel počuť.,positive,celebrating
+Chyba v odpovedi. Triedenie treba pochopiť inak.,negative,correcting
+Poďme analyzovať funkcia od základov.,neutral,thinking_deep
+"Vidím, že robíš veľký pokrok v grafoch.",positive,proud
+"Dajme si grafy ešte raz, tentoraz podrobnejšie.",negative,patient
+"Tak teda, dedičnosť je naša ďalšia téma.",neutral,neutral
+"Správny prístup k cykly, len dolaď detaily.",positive,encouraging_mild
+To je relevantná otázka o rozhraní.,neutral,curious
+To nie je celkom správne. Rekurzia má inú definíciu.,negative,correcting
+"Pekne, len pokračuj s dedičnosťou.",positive,encouraging_mild
+"Pokračuj tak ďalej, konvolúcia sa ti darí.",positive,encouraging_mild
+Skvelo si to vyriešil! Správa pamäti je jasný.,positive,celebrating
+"Skvelé! Presne tak, Gaussova eliminácia funguje práve takto.",positive,celebrating
+"Prekvapuješ ma, trieda je pokročilá téma.",neutral,surprise
+Výnimočný výkon! Abstraktné triedy zvládaš na výbornú.,positive,celebrating
+"Som rada, že grafy ti už nerobí problémy.",positive,proud
+"V poriadku, spájané zoznamy ide dobrým smerom.",positive,encouraging_mild
+Pomaly a postupne. Spájané zoznamy pochopíš.,negative,patient
+"Som hrdý na to, ako zvládaš embedding.",positive,proud
+"Dajme si Taylorov rad ešte raz, tentoraz podrobnejšie.",negative,patient
+"Moment, integrály potrebuje dôkladnejší rozbor.",neutral,thinking_deep
+"Tak, návrhové vzory — začneme od začiatku.",neutral,neutral
+"Moment, rozhrania potrebujú dôkladnejší rozbor.",neutral,thinking_deep
+"Nevadí, chyby sú súčasťou učenia. Spájané zoznamy zvládneš.",negative,patient
+"Nie, toto nie je správna odpoveď. Pole znamená niečo iné.",negative,correcting
+Pomaly a postupne. Hash tabuľky pochopíš.,negative,patient
+"Áno, toto je dobrý smer pri maticiach.",positive,encouraging_mild
+Bohužiaľ nie. Quick sort sa tak neimplementuje.,negative,correcting
+"Trpezlivosť, quick sort príde s praxou.",negative,patient
+"Moment, funkcie potrebuje dôkladnejší rozbor.",neutral,thinking_deep
+Poďme ďalej na Taylorov polynom.,neutral,neutral
+Zaujímavý pohľad na vyhľadávanie.,neutral,curious
+"Tak teda, struct je naša ďalšia téma.",neutral,neutral
+Pomaly a postupne. SOLID princípy pochopíš.,negative,patient
+Pozrime sa na premenná podrobnejšie.,neutral,curious
+Chyba. Abstrakcia sa nepoužíva týmto spôsobom.,negative,correcting
+"Moment, rozhrania potrebujú dôkladnejší rozbor.",neutral,thinking_deep
+"V poriadku, diferenciálne rovnice ide dobrým smerom.",positive,encouraging_mild
+Dobre sa pýtaš na diferenciálne rovnice.,neutral,curious
+To je relevantná otázka o pointeri.,neutral,curious
+Toto vyžaduje hlbšiu analýzu polí.,neutral,thinking_deep
+"Pokračuj tak ďalej, binárny strom sa ti darí.",positive,encouraging_mild
+"Bravo! Vidím, že O-notácia ti už ide skvele.",positive,celebrating
+Chyba v odpovedi. Polia treba pochopiť inak.,negative,correcting
+Výborne! Taylorov rad si zvládol na jednotku.,positive,celebrating
+"Nevadí, skúsme to znova. Dedičnosť je náročná téma.",negative,patient
+"Nič sa nestalo, konvolúcia nie je jednoduchý.",negative,patient
+"Správny prístup k integrály, len dolaď detaily.",positive,encouraging_mild
+"Trpezlivosť, DFS príde s praxou.",negative,patient
+"Hmm, klasifikácia je zložitejší problém. Treba to rozobrať.",neutral,thinking_deep
+"Skoro si tam, dedičnosť potrebuje len malú úpravu.",positive,encouraging_mild
+Nesprávne. Grafy vyžaduje iný prístup.,negative,correcting
+Pozrime sa na transformer podrobnejšie.,neutral,curious
+"Dobre, pokračujme s integrálmi.",neutral,neutral
+Dobre sa pýtaš na rozhrania.,neutral,curious
+To je relevantná otázka o DFS.,neutral,curious
+Tvoj pokrok v poliachch je skutočne pôsobivý.,positive,proud
+"To je v poriadku, veľa študentov má problémy s pole.",negative,patient
+"Dobrá práca, Gaussova eliminácia vyzerá sľubne.",positive,encouraging_mild
+"To je v poriadku, veľa študentov má problémy s attention.",negative,patient
+Toto je nesprávne riešenie pre zložitosť algoritmov.,negative,correcting
+"Výborne, presne tak sa Singleton vzor implementuje.",positive,celebrating
+"Pekne, len pokračuj s dedičnosťou.",positive,encouraging_mild
+"Nič sa nedeje, objekt vyžaduje prax.",negative,patient
+Vidím pokrok v tvojom chápaní SOLID princípov.,positive,proud
+To si zvládol sám! Fread je pre teba jasný.,positive,proud
+Pomaly a postupne. NLP pochopíš.,negative,patient
+Dobrá otázka. Quick sort je zaujímavá téma.,neutral,curious
+"Nevadí, skúsme to znova. Rozhrania sú náročná téma.",negative,patient
+"Som hrdý na to, ako zvládaš struct.",positive,proud
+Pomaly a postupne. Integrály pochopíš.,negative,patient
+Chyba v odpovedi. Diferenciálne rovnice treba pochopiť inak.,negative,correcting
+Pozrime sa na backtracking z iného uhla.,negative,patient
+"Dobre, si na správnej ceste s determinanty.",positive,encouraging_mild
+"Nie, toto nie je správna odpoveď. Premenná znamená niečo iné.",negative,correcting
+Toto si zaslúži hlbší pohľad na hash funkcia.,neutral,thinking_deep
+"Bravo! Vidím, že hash funkcia ti už ide skvele.",positive,celebrating
+"Dobrá práca, RNN vyzerá sľubne.",positive,encouraging_mild
+Poďme sa zamyslieť nad Factory vzor krok po kroku.,neutral,thinking_deep
+Toto vyžaduje hlbšiu analýzu spájané zoznamy.,neutral,thinking_deep
+"Bravo! Vidím, že BFS ti už ide skvele.",positive,celebrating
+"Nevadí, chyby sú súčasťou učenia. Neurónové siete zvládneš.",negative,patient
+Toto vyžaduje hlbšiu analýzu rozhrania.,neutral,thinking_deep
+Poďme ďalej na DFS.,neutral,neutral
+Poďme ďalej na Factory vzor.,neutral,neutral
+"Tak, Taylorov rad — začneme od začiatku.",neutral,neutral
+Toto je nesprávne riešenie pre zložitosť algoritmov.,negative,correcting
+Chyba v odpovedi. Polymorfizmus treba pochopiť inak.,negative,correcting
+"Som rada, že NLP ti už nerobí problémy.",positive,proud
+"Tak, rozhrania — začneme od začiatku.",neutral,neutral
+"Hej, rozumieš determinant, to je hlavné.",positive,encouraging_mild
+"Dajme si polymorfizmus ešte raz, tentoraz podrobnejšie.",negative,patient
+To si zvládol sám! DFS je pre teba jasný.,positive,proud
+"Nie, skúste znova. Objekt funguje odlišne.",negative,correcting
+"Nie, skúste znova. Polymorfizmus funguje odlišne.",negative,correcting
+"Moment, rozhrania potrebujú dôkladnejší rozbor.",neutral,thinking_deep
+"Rastieš ako programátor, malloc ti ide čoraz lepšie.",positive,proud
+Výborne! SOLID princípy si zvládol na jednotku.,positive,celebrating
+"Dobre, pokračujme s ukazovateľmi.",neutral,neutral
+Poďme sa zamyslieť nad RNN krok po kroku.,neutral,thinking_deep
+To ma prekvapuje! O-notácia zvyčajne študenti neriešia.,neutral,surprise
+Bohužiaľ nie. Linked list sa tak neimplementuje.,negative,correcting
+"Som hrdý na to, ako zvládaš trieda.",positive,proud
+"Moment, rekurzia potrebuje dôkladnejší rozbor.",neutral,thinking_deep
+Výborne! NLP si zvládol na jednotku.,positive,celebrating
+"V poriadku, prejdime k zložitosť algoritmov.",neutral,neutral
+Pomaly a postupne. Neurónové siete pochopíš.,negative,patient
+"Dobrá práca, derivácia vyzerá sľubne.",positive,encouraging_mild
+Dobre sa pýtaš na klastrovanie.,neutral,curious
+Zlepšil si sa v abstraktné triedy oproti minulému týždňu.,positive,proud
+Pomaly a postupne. Stromy pochopíš.,negative,patient
+To si zvládol sám! Neurón je pre teba jasný.,positive,proud
+Poďme sa zamyslieť nad trieda krok po kroku.,neutral,thinking_deep
+"Vidím, že robíš veľký pokrok v strojovom učení.",positive,proud
+Toto si zaslúži hlbší pohľad na trieda.,neutral,thinking_deep
+"Dobre, si na správnej ceste s enkapsulácia.",positive,encouraging_mild
+"Prekvapuješ ma, backtracking je pokročilá téma.",neutral,surprise
+"Skoro si tam, RNN potrebuje len malú úpravu.",positive,encouraging_mild
+"To je v poriadku, veľa študentov má problémy so Singleton vzorom.",negative,patient
+To je relevantná otázka o rozhraní.,neutral,curious
+Ideme na neurónové siete.,neutral,neutral
+"Vidím, že si sa naučil linked list veľmi dobre.",positive,proud
+"Pekne, len pokračuj s diferenciálne rovnice.",positive,encouraging_mild
+"Zaujímavé! Nečakal som, že sa budeš pýtať na vlastné čísla.",neutral,surprise
+To nie je celkom správne. Abstrakcia má inú definíciu.,negative,correcting
+Poďme analyzovať BFS od základov.,neutral,thinking_deep
+Pomaly a postupne. Premenné pochopíš.,negative,patient
+"Nič sa nestalo, Singleton vzor nie je jednoduchý.",negative,patient
+"Nevadí, chyby sú súčasťou učenia. Polymorfizmus zvládneš.",negative,patient
+Pozrime sa na limita podrobnejšie.,neutral,curious
+"Tak teda, determinant je naša ďalšia téma.",neutral,neutral
+"Nevadí, skúsme to znova. Neurónové siete sú náročná téma.",negative,patient
+Skvelo si to vyriešil! NLP je jasný.,positive,celebrating
+Toto si zaslúži hlbší pohľad na Singleton vzor.,neutral,thinking_deep
+"V poriadku, prejdime k správa pamäti.",neutral,neutral
+Tak poďme na Gaussova eliminácia.,neutral,neutral
+Super práca s Taylorov polynom! Presne to som chcel počuť.,positive,celebrating
+Premýšľam nad abstrakcia... Je tam viacero aspektov.,neutral,thinking_deep
+"Pekne, len pokračuj s vyhľadávanie.",positive,encouraging_mild
+"Nie, toto nie je správna odpoveď. Polymorfizmus znamená niečo iné.",negative,correcting
+"Nie, skúste znova. Singleton vzor funguje odlišne.",negative,correcting
+"Zaujímalo by ma, prečo sa pýtaš na dedičnosť.",neutral,curious
+"Dobre, pozrime sa teraz na neurónové siete.",neutral,neutral
+"Wow, nečakal som otázku o regresia tak skoro.",neutral,surprise
+"Wow, nečakal som otázku o klasifikácia tak skoro.",neutral,surprise
+"Nevadí, chyby sú súčasťou učenia. Klastrovanie zvládneš.",negative,patient
+"Dajme si neurónové siete ešte raz, tentoraz podrobnejšie.",negative,patient
+"Dobrá práca, backtracking vyzerá sľubne.",positive,encouraging_mild
+Omyl. Pri stromy treba postupovať inak.,negative,correcting
+"Vedel som, že struct zvládneš. A zvládol si to.",positive,proud
+"Trpezlivosť, pointer príde s praxou.",negative,patient
+To nie je celkom správne. Gradient má inú definíciu.,negative,correcting
+"Nevadí, skúsme to znova. Grafy sú náročná téma.",negative,patient
+"Bravo! Vidím, že polymorfizmus ti už ide skvele.",positive,celebrating
+Toto je nesprávne riešenie pre abstraktné triedy.,negative,correcting
+"Som hrdý na to, ako zvládaš binárny strom.",positive,proud
+Fantastické riešenie! Gradient descent si pochopil dokonale.,positive,celebrating
+"Som rada, že funkcie ti už nerobí problémy.",positive,proud
+"Nevadí, skúsme to znova. Integrály sú náročná téma.",negative,patient
+"Tak teda, konvolúcia je naša ďalšia téma.",neutral,neutral
+Dobre sa pýtaš na klasifikácia.,neutral,curious
+"Vedel som, že transformer zvládneš. A zvládol si to.",positive,proud
+Fantastické riešenie! Rekurzia si pochopil dokonale.,positive,celebrating
+"V poriadku, rozhranie si teraz vysvetlíme.",neutral,neutral
+Chyba v odpovedi. Taylorov rad treba pochopiť inak.,negative,correcting
+"Moment, návrhové vzory potrebuje dôkladnejší rozbor.",neutral,thinking_deep
+Toto vyžaduje hlbšiu analýzu abstraktné triedy.,neutral,thinking_deep
+"Dobre, pokračujme s dynamické programovanie.",neutral,neutral
+"Fajn, základ perceptrónu máš správne.",positive,encouraging_mild
+Fantastické riešenie! Regresia si pochopil dokonale.,positive,celebrating
+Tvoj pokrok v dynamickom programovaní je skutočne pôsobivý.,positive,proud
+"Výborne, presne tak sa dedičnosť implementuje.",positive,celebrating
+"Dobre, pozrime sa teraz na neurónové siete.",neutral,neutral
+"Nevadí, skúsme to znova. Strojové učenie sú náročná téma.",negative,patient
+Pomaly a postupne. Diferenciálne rovnice pochopíš.,negative,patient
+"V poriadku, prejdime k vyhľadávanie.",neutral,neutral
+Chyba v odpovedi. Ukazovatele treba pochopiť inak.,negative,correcting
+Výnimočný výkon! Zložitosť algoritmov zvládaš na výbornú.,positive,celebrating
+"Oh, to je neočakávaná otázka o SOLID princípy!",neutral,surprise
+"Nič sa nestalo, pointer nie je jednoduchý.",negative,patient
+Dobrá otázka. DFS je zaujímavá téma.,neutral,curious
+Tvoj pokrok v zložitosti algoritmov je skutočne pôsobivý.,positive,proud
+"Trpezlivosť, Factory vzor príde s praxou.",negative,patient
+"Tak, diferenciálne rovnice — začneme od začiatku.",neutral,neutral
+Toto je nesprávne riešenie pre polia.,negative,correcting
+"Hmm, triedenie — to je naozaj dobrá otázka.",neutral,curious
+"V poriadku, polymorfizmuso si teraz vysvetlíme.",neutral,neutral
+Perfektné! Tvoja odpoveď o súboroch je úplne správna.,positive,celebrating
+"Nie, toto nie je správna odpoveď. Rozhranie znamená niečo iné.",negative,correcting
+Toto je nesprávne riešenie pre klastrovanie.,negative,correcting
+"Dajme si rozhrania ešte raz, tentoraz podrobnejšie.",negative,patient
+Vidím pokrok v tvojom chápaní súborov.,positive,proud
+"Skvelé! Presne tak, enkapsulácia funguje práve takto.",positive,celebrating
+"Dobre, pokračujme s rekurzia.",neutral,neutral
+"Dobre, pozrime sa teraz na ukazovatele.",neutral,neutral
+Pozrime sa na Gaussova eliminácia z iného uhla.,negative,patient
+Poďme analyzovať DFS od základov.,neutral,thinking_deep
+"Hmm, NLP je zložitejší problém. Treba to rozobrať.",neutral,thinking_deep
+Dobrá otázka. Singleton vzor je zaujímavá téma.,neutral,curious
+Zaujímavá otázka o stromoch. Pozrime sa na to bližšie.,neutral,curious
+"Zaujímavé! Nečakal som, že sa budeš pýtať na derivácie.",neutral,surprise
+Fantastické riešenie! Štruktúry si pochopil dokonale.,positive,celebrating
+Zaujímavý pohľad na SOLID princípy.,neutral,curious
+Chyba v odpovedi. Vlastné čísla treba pochopiť inak.,negative,correcting
+"Rastieš ako programátor, trieda ti ide čoraz lepšie.",positive,proud
+"Pekne, len pokračuj s triedením.",positive,encouraging_mild
+"Fajn, základ rozhraní máš správne.",positive,encouraging_mild
+Nesprávne. Funkcie vyžadujú iný prístup.,negative,correcting
+"To je v poriadku, veľa študentov má problémy s Taylorov polynom.",negative,patient
+Dobrá otázka. Fread je zaujímavá téma.,neutral,curious
+Poďme analyzovať attention od základov.,neutral,thinking_deep
+Perfektné! Tvoja odpoveď o ukazovateľoch je úplne správna.,positive,celebrating
+Omyl. Pri premenné treba postupovať inak.,negative,correcting
+Prejdime k ďalšej časti o polymorfizmus.,neutral,neutral
+"Som hrdý na to, ako zvládaš Singleton vzor.",positive,proud
+Premýšľam nad determinant... Je tam viacero aspektov.,neutral,thinking_deep
+"V poriadku, perceptrón si teraz vysvetlíme.",neutral,neutral
+"Tak teda, attention je naša ďalšia téma.",neutral,neutral
+"Rozmýšľam, ako najlepšie vysvetliť matice.",neutral,thinking_deep
+"To je v poriadku, veľa študentov má problémy s premenná.",negative,patient
+"Áno, toto je dobrý smer pri správa pamäti.",positive,encouraging_mild
+"Nevadí, skúsme to znova. Vlastné čísla sú náročná téma.",negative,patient
+Perfektné! Tvoja odpoveď o klastrovaní je úplne správna.,positive,celebrating
+"Dobre, pokračujme s vyhľadávanie.",neutral,neutral
+"Rastieš ako programátor, RNN ti ide čoraz lepšie.",positive,proud
+"Dobre, pozrime sa teraz na rozhrania.",neutral,neutral
+Skvelo si to vyriešil! Súbory je jasný.,positive,celebrating
+Úžasne! Takáto odpoveď o neurón ma teší.,positive,celebrating
+"Nie, skúste znova. Fread funguje odlišne.",negative,correcting
+"Rastieš ako programátor, attention ti ide čoraz lepšie.",positive,proud
+Fantastické riešenie! Polymorfizmuso si pochopil dokonale.,positive,celebrating
+"Pekne, len pokračuj s štruktúrami.",positive,encouraging_mild
+"Dobre, pozrime sa teraz na neurónové siete.",neutral,neutral
+"Hej, rozumieš DFS algoritmu, to je hlavné.",positive,encouraging_mild
+Poďme sa zamyslieť nad Singleton vzor krok po kroku.,neutral,thinking_deep
+Pomaly a postupne. Neurónové siete pochopíš.,negative,patient
+"Som rada, že matice ti už nerobí problémy.",positive,proud
+"Výborná otázka, abstrakcia si zaslúži pozornosť.",neutral,curious
+Super práca s perceptrón! Presne to som chcel počuť.,positive,celebrating
+Toto je nesprávne riešenie pre polymorfizmus.,negative,correcting
+"Rozmýšľam, ako najlepšie vysvetliť limity.",neutral,thinking_deep
+Zaujímavý pohľad na správa pamäti.,neutral,curious
+Chyba v odpovedi. Triedy a objekty treba pochopiť inak.,negative,correcting
+Pozrime sa na konvolúcia z iného uhla.,negative,patient
+Premýšľam nad abstrakcia... Je tam viacero aspektov.,neutral,thinking_deep
+Skvelo si to vyriešil! Cykly je jasný.,positive,celebrating
+"Hmm, polymorfizmus je zložitejší problém. Treba to rozobrať.",neutral,thinking_deep
+Toto je nesprávne riešenie pre rekurzia.,negative,correcting
+"Skoro si tam, integrál potrebuje len malú úpravu.",positive,encouraging_mild
+Toto si zaslúži hlbší pohľad na backtracking.,neutral,thinking_deep
+Toto vyžaduje hlbšiu analýzu grafov.,neutral,thinking_deep
+Premýšľam nad integrál... Je tam viacero aspektov.,neutral,thinking_deep
+"Bohužiaľ, cykly nefunguje takto. Skús to inak.",negative,correcting
+Tak poďme na dedičnosť.,neutral,neutral
+Poďme analyzovať konvolúcia od základov.,neutral,thinking_deep
+Toto je nesprávne riešenie pre regresia.,negative,correcting
+To je relevantná otázka o O-notácii.,neutral,curious
+"Nevadí, skúsme to znova. Súbory sú náročná téma.",negative,patient
+"Dobre, pokračujme s ukazovateľmi.",neutral,neutral
+Výborne! Správu pamäti si zvládol na jednotku.,positive,celebrating
+Poďme sa zamyslieť nad rozhranie krok po kroku.,neutral,thinking_deep
+"Dajme si integrály ešte raz, tentoraz podrobnejšie.",negative,patient
+Toto si zaslúži hlbší pohľad na RNN.,neutral,thinking_deep
+"Výborná otázka, funkcia si zaslúži pozornosť.",neutral,curious
+"Skvelé! Presne tak, abstrakcia funguje práve takto.",positive,celebrating
+"Vedel som, že konvolúcia zvládneš. A zvládol si to.",positive,proud
+"Oh, to je neočakávaná otázka o návrhové vzory!",neutral,surprise
+"Zaujímalo by ma, prečo sa pýtaš na SOLID princípy.",neutral,curious
+Bohužiaľ nie. Limita sa tak neimplementuje.,negative,correcting
+Vidím pokrok v tvojom chápaní strojového učenia.,positive,proud
+Toto vyžaduje hlbšiu analýzu ukazovateľov.,neutral,thinking_deep
+"Áno, toto je dobrý smer pri súboroch.",positive,encouraging_mild
+Dobre sa pýtaš na regresia.,neutral,curious
+Zlepšil si sa v integráloch oproti minulému týždňu.,positive,proud
+"Nič sa nestalo, backtracking nie je jednoduchý.",negative,patient
+"Som hrdý na to, ako zvládaš dedičnosť.",positive,proud
+"Vidím, že si sa naučil dedičnosť veľmi dobre.",positive,proud
+Toto je nesprávne riešenie pre štruktúry.,negative,correcting
+"V poriadku, hash funkcia si teraz vysvetlíme.",neutral,neutral
+"Nevadí, skúsme to znova. Derivácie sú náročná téma.",negative,patient
+"Som hrdý na to, ako zvládaš pole.",positive,proud
+"Dobre, pokračujme s limitami.",neutral,neutral
+"Výborná otázka, konvolúcia si zaslúži pozornosť.",neutral,curious
+Výnimočný výkon! Determinanty zvládaš na výbornú.,positive,celebrating
+"Správny prístup k matice, len dolaď detaily.",positive,encouraging_mild
+"Pekne, len pokračuj s rekurziou.",positive,encouraging_mild
+"Výborná otázka, derivácia si zaslúži pozornosť.",neutral,curious
+Omyl. Pri cykly treba postupovať inak.,negative,correcting
+Chyba v odpovedi. Rozhrania treba pochopiť inak.,negative,correcting
+Vidím pokrok v tvojom chápaní dedičnosti.,positive,proud
+"Bohužiaľ, integrály nefunguje takto. Skús to inak.",negative,correcting
+Toto vyžaduje hlbšiu analýzu grafov.,neutral,thinking_deep
+"Správny prístup k cykly, len dolaď detaily.",positive,encouraging_mild
+Poďme ďalej na linked list.,neutral,neutral
+"Tak teda, determinant je naša ďalšia téma.",neutral,neutral
+"Správny prístup k návrhové vzory, len dolaď detaily.",positive,encouraging_mild
+Toto je nesprávne riešenie pre polymorfizmus.,negative,correcting
+"Nevadí, chyby sú súčasťou učenia. Limity zvládneš.",negative,patient
+"Dobre, pozrime sa teraz na súbory.",neutral,neutral
+Tak poďme na attention.,neutral,neutral
+"Áno, toto je dobrý smer pri klastrovanie.",positive,encouraging_mild
+Výborne! Triedy a objekty si zvládol na jednotku.,positive,celebrating
+Prejdime k ďalšej časti o O-notácia.,neutral,neutral
+Poďme preskúmať Gaussova eliminácia hlbšie.,neutral,curious
+"Hej, rozumieš limita, to je hlavné.",positive,encouraging_mild
+"Bravo! Vidím, že polymorfizmus ti už ide skvele.",positive,celebrating
+To nie je celkom správne. Embedding má inú definíciu.,negative,correcting
+"Výborne, presne tak sa DFS implementuje.",positive,celebrating
+"Tak teda, limita je naša ďalšia téma.",neutral,neutral
+Zaujímavý pohľad na strojové učenie.,neutral,curious
+"Rastieš ako programátor, struct ti ide čoraz lepšie.",positive,proud
+"Vidím, že si sa naučil transformer veľmi dobre.",positive,proud
+Pozrime sa na O-notácia podrobnejšie.,neutral,curious
+To je relevantná otázka o gradienteee.,neutral,curious
+"Hmm, abstraktné triedy je zložitejší problém. Treba to rozobrať.",neutral,thinking_deep
+Nesprávne. Návrhové vzory vyžaduje iný prístup.,negative,correcting
+Tvoj pokrok v stromoch je skutočne pôsobivý.,positive,proud
+"Rozmýšľam, ako najlepšie vysvetliť neurónové siete.",neutral,thinking_deep
+"Fajn, základ neurónu máš správne.",positive,encouraging_mild
+"Oh, to je neočakávaná otázka o premenné!",neutral,surprise
+Chyba. Perceptrón sa nepoužíva týmto spôsobom.,negative,correcting
+"Tak teda, polymorfizmus je naša ďalšia téma.",neutral,neutral
+"Trpezlivosť, hash funkcia príde s praxou.",negative,patient
+"Pokračuj tak ďalej, rozhranie sa ti darí.",positive,encouraging_mild
+Nesprávne. Ukazovatele vyžadujú iný prístup.,negative,correcting
+"Dajme si súbory ešte raz, tentoraz podrobnejšie.",negative,patient
+Perfektné! Tvoja odpoveď o súboroch je úplne správna.,positive,celebrating
+Zlepšil si sa v grafoch oproti minulému týždňu.,positive,proud
+Toto je komplexný problém. Ukazovatele majú viac vrstiev.,neutral,thinking_deep
+"Hej, rozumieš správe pamäte, to je hlavné.",positive,encouraging_mild
+"Wow, nečakal som otázku o neurónové siete tak skoro.",neutral,surprise
+"Hmm, triedenie — to je naozaj dobrá otázka.",neutral,curious
+"Nič sa nestalo, embedding nie je jednoduchý.",negative,patient
+"Som hrdý na to, ako zvládaš dedičnosť.",positive,proud
+Premýšľam nad Singleton vzor... Je tam viacero aspektov.,neutral,thinking_deep
+Skvelo si to vyriešil! Rekurzia je jasný.,positive,celebrating
+Super práca s pointer! Presne to som chcel počuť.,positive,celebrating
+To je relevantná otázka o perceptróne.,neutral,curious
+Chyba. Konvolúcia sa nepoužíva týmto spôsobom.,negative,correcting
+Výnimočný výkon! Hash tabuľky zvládaš na výbornú.,positive,celebrating
+"Dobre, pokračujme s rekurzia.",neutral,neutral
+Chyba. Konvolúcia sa nepoužíva týmto spôsobom.,negative,correcting
+Poďme preskúmať malloc hlbšie.,neutral,curious
+"V poriadku, struct si teraz vysvetlíme.",neutral,neutral
+Úžasne! Takáto odpoveď o rekurzii ma teší.,positive,celebrating
+"Hej, rozumieš premenná, to je hlavné.",positive,encouraging_mild
+"Dobrá práca, quick sort vyzerá sľubne.",positive,encouraging_mild
+"Hmm, triedenie je zložitejší problém. Treba to rozobrať.",neutral,thinking_deep
+Zamyslime sa nad fread systematicky.,neutral,thinking_deep
+"Nevadí, skúsme to znova. Abstraktné triedy sú náročná téma.",negative,patient
+"Bohužiaľ, polymorfizmus nefunguje takto. Skús to inak.",negative,correcting
+"Áno, toto je dobrý smer pri NLP.",positive,encouraging_mild
+"Nie, toto nie je správna odpoveď. Backtracking znamená niečo iné.",negative,correcting
+"Hmm, dynamické programovanie — to je naozaj dobrá otázka.",neutral,curious
+Výborne! Polia si zvládol na jednotku.,positive,celebrating
+"Pekne, len pokračuj s polymorfizmom.",positive,encouraging_mild
+"Dajme si regresia ešte raz, tentoraz podrobnejšie.",negative,patient
+Zamyslime sa nad dedičnosť systematicky.,neutral,thinking_deep
+Chyba v odpovedi. Premenné treba pochopiť inak.,negative,correcting
+"Dajme si strojové učenie ešte raz, tentoraz podrobnejšie.",negative,patient
+Omyl. Pri abstraktné triedy treba postupovať inak.,negative,correcting
+Dobre sa pýtaš na triedenie.,neutral,curious
+"Pokračuj tak ďalej, objekt sa ti darí.",positive,encouraging_mild
+"Tak, grafy — začneme od začiatku.",neutral,neutral
+Zlepšil si sa v enkapsulácia oproti minulému týždňu.,positive,proud
+"Nič sa nedeje, abstrakcia vyžaduje prax.",negative,patient
+"Moment, rekurzia potrebuje dôkladnejší rozbor.",neutral,thinking_deep
+Zamyslime sa nad attention systematicky.,neutral,thinking_deep
+"Správny prístup k klasifikácia, len dolaď detaily.",positive,encouraging_mild
+Chyba v odpovedi. Dynamické programovanie treba pochopiť inak.,negative,correcting
+"Tak, limity — začneme od začiatku.",neutral,neutral
+Vidím pokrok v tvojom chápaní determinantuov.,positive,proud
+"Rozmýšľam, ako najlepšie vysvetliť prácu s poľami.",neutral,thinking_deep
+Fantastické riešenie! Taylorov rad si pochopil dokonale.,positive,celebrating
+"Bravo! Vidím, že malloc ti už ide skvele.",positive,celebrating
+"Nevadí, poďme si triedenie vysvetliť ešte raz.",negative,patient
+Chyba. Determinant sa nepoužíva týmto spôsobom.,negative,correcting
+"Nič sa nestalo, binárny strom nie je jednoduchý.",negative,patient
+"Zaujímalo by ma, prečo sa pýtaš na dynamické programovanie.",neutral,curious
+Toto si zaslúži hlbší pohľad na BFS.,neutral,thinking_deep
+"Nie, toto nie je správna odpoveď. Transformer znamená niečo iné.",negative,correcting
+"Bohužiaľ, Taylorov rad nefunguje takto. Skús to inak.",negative,correcting
+Toto je komplexný problém. Matice majú viac vrstiev.,neutral,thinking_deep
+Toto vyžaduje hlbšiu analýzu správa pamäti.,neutral,thinking_deep
+"Prekvapuješ ma, attention je pokročilá téma.",neutral,surprise
+Pomaly a postupne. Triedenie pochopíš.,negative,patient
+To si zvládol sám! RNN je pre teba jasný.,positive,proud
+"Vidím, že robíš veľký pokrok v diferenciálnych rovniciach.",positive,proud
+"Skoro si tam, premenná potrebuje len malú úpravu.",positive,encouraging_mild
+"V poriadku, prejdime k spájané zoznamy.",neutral,neutral
+"Prekvapuješ ma, O-notácia je pokročilá téma.",neutral,surprise
+Výnimočný výkon! Limity zvládaš na výbornú.,positive,celebrating
+"Vidím, že si sa naučil RNN veľmi dobre.",positive,proud
+"Skoro si tam, integrál potrebuje len malú úpravu.",positive,encouraging_mild
+"Vedel som, že rozhranie zvládneš. A zvládol si to.",positive,proud
+"Nevadí, chyby sú súčasťou učenia. Cykly zvládneš.",negative,patient
+"Pokračuj tak ďalej, determinant sa ti darí.",positive,encouraging_mild
+"Nič sa nedeje, BFS vyžaduje prax.",negative,patient
+"Dobrá práca, perceptrón vyzerá sľubne.",positive,encouraging_mild
+"Tak teda, funkcia je naša ďalšia téma.",neutral,neutral
+Nesprávne. Polymorfizmus vyžaduje iný prístup.,negative,correcting
+Zaujímavý pohľad na zložitosť algoritmov.,neutral,curious
+"Fajn, základ spájaných zoznamov máš správne.",positive,encouraging_mild
+Chyba. DFS sa nepoužíva týmto spôsobom.,negative,correcting
+"Trpezlivosť, objekt príde s praxou.",negative,patient
+"Fajn, základ Factory vzoru máš správne.",positive,encouraging_mild
+"Skoro si tam, dedičnosť potrebuje len malú úpravu.",positive,encouraging_mild
+Chyba. Abstrakcia sa nepoužíva týmto spôsobom.,negative,correcting
+Zamyslime sa nad objekt systematicky.,neutral,thinking_deep
+"Bravo! Vidím, že Factory vzor ti už ide skvele.",positive,celebrating
+Pozrime sa na linked list podrobnejšie.,neutral,curious
+"Výborne, presne tak sa rekurzia implementuje.",positive,celebrating
+Toto je nesprávne riešenie pre polia.,negative,correcting
+"Hmm, gradient descent je zložitejší problém. Treba to rozobrať.",neutral,thinking_deep
+Ideme na zložitosť algoritmov.,neutral,neutral
+To nie je celkom správne. Konvolúcia má inú definíciu.,negative,correcting
+Chyba. Enkapsulácia sa nepoužíva týmto spôsobom.,negative,correcting
+Perfektné! Tvoja odpoveď o klasifikácia je úplne správna.,positive,celebrating
+"Áno, toto je dobrý smer pri dynamické programovanie.",positive,encouraging_mild
+"Vedel som, že konvolúcia zvládneš. A zvládol si to.",positive,proud
+"Bravo! Vidím, že Singleton vzor ti už ide skvele.",positive,celebrating
+Chyba. Polymorfizmuso sa nepoužíva týmto spôsobom.,negative,correcting
+"V poriadku, prejdime k návrhové vzory.",neutral,neutral
+"Nie, toto nie je správna odpoveď. Hash funkcia znamená niečo iné.",negative,correcting
+"Dobre, pozrime sa teraz na integrály.",neutral,neutral
+"Wow, nečakal som otázku o SOLID princípy tak skoro.",neutral,surprise
+"Skvelé! Presne tak, linked list funguje práve takto.",positive,celebrating
+"To je v poriadku, veľa študentov má problémy s enkapsulácia.",negative,patient
+Výborne! Ukazovatele si zvládol na jednotku.,positive,celebrating
+Poďme preskúmať quick sort hlbšie.,neutral,curious
+Dobrá otázka. Embedding je zaujímavá téma.,neutral,curious
+"Nevadí, poďme si súbory vysvetliť ešte raz.",negative,patient
+Super práca s derivácia! Presne to som chcel počuť.,positive,celebrating
+To nie je celkom správne. Taylorov polynom má inú definíciu.,negative,correcting
+"Nevadí, skúsme to znova. Abstraktné triedy sú náročná téma.",negative,patient
+"Pekne, len pokračuj s grafmi.",positive,encouraging_mild
+"Dobrá práca, O-notácia vyzerá sľubne.",positive,encouraging_mild
+"Zaujímalo by ma, prečo sa pýtaš na zložitosť algoritmov.",neutral,curious
+"Oh, to je neočakávaná otázka o zložitosť algoritmov!",neutral,surprise
+Chyba. Konvolúcia sa nepoužíva týmto spôsobom.,negative,correcting
+Prejdime k ďalšej časti o struct.,neutral,neutral
+Omyl. Pri diferenciálne rovnice treba postupovať inak.,negative,correcting
+Perfektné! Tvoja odpoveď o determinanty je úplne správna.,positive,celebrating
+Toto je nesprávne riešenie pre vlastné čísla.,negative,correcting
+Poďme analyzovať attention od základov.,neutral,thinking_deep
+"Moment, triedenie potrebuje dôkladnejší rozbor.",neutral,thinking_deep
+"Som rada, že limity ti už nerobí problémy.",positive,proud
+"Trpezlivosť, DFS príde s praxou.",negative,patient
+"Fajn, základ trieda máš správne.",positive,encouraging_mild
+Pozrime sa na integrál z iného uhla.,negative,patient
+"Hmm, funkcie je zložitejší problém. Treba to rozobrať.",neutral,thinking_deep
+"Vedel som, že for cyklus zvládneš. A zvládol si to.",positive,proud
+"Trpezlivosť, DFS príde s praxou.",negative,patient
+"Som rada, že návrhové vzory ti už nerobí problémy.",positive,proud
+"Dobre, pozrime sa teraz na spájané zoznamy.",neutral,neutral
+Bohužiaľ nie. Singleton vzor sa tak neimplementuje.,negative,correcting
+Omyl. Pri SOLID princípy treba postupovať inak.,negative,correcting
+Ideme na gradient descent.,neutral,neutral
+"Nič sa nestalo, integrál nie je jednoduchý.",negative,patient
+"Prekvapuješ ma, struct je pokročilá téma.",neutral,surprise
+"Zaujímalo by ma, prečo sa pýtaš na cykly.",neutral,curious
+"Rastieš ako programátor, objekt ti ide čoraz lepšie.",positive,proud
+Perfektné! Tvoja odpoveď o NLP je úplne správna.,positive,celebrating
+"Skvelé! Presne tak, Taylorov polynom funguje práve takto.",positive,celebrating
+Poďme ďalej na deriváciu.,neutral,neutral
+Pozrime sa na premenná z iného uhla.,negative,patient
+Pomaly a postupne. SOLID princípy pochopíš.,negative,patient
+"Wow, nečakal som otázku o súboroch tak skoro.",neutral,surprise
+"Zaujímalo by ma, prečo sa pýtaš na neurónové siete.",neutral,curious
+"Nevadí, poďme si diferenciálne rovnice vysvetliť ešte raz.",negative,patient
+"Tak, polymorfizmus — začneme od začiatku.",neutral,neutral
+Chyba. Limita sa nepoužíva týmto spôsobom.,negative,correcting
+Úžasne! Takáto odpoveď o quick sort ma teší.,positive,celebrating
+Úžasne! Takáto odpoveď o linked list ma teší.,positive,celebrating
+"Som hrdý na to, ako zvládaš struct.",positive,proud
+Perfektné! Tvoja odpoveď o zložitosti algoritmov je úplne správna.,positive,celebrating
+"Áno, toto je dobrý smer pri premenné.",positive,encouraging_mild
+"Výborná otázka, gradient si zaslúži pozornosť.",neutral,curious
+Super práca s pole! Presne to som chcel počuť.,positive,celebrating
+Poďme analyzovať enkapsulácia od základov.,neutral,thinking_deep
+"Nevadí, chyby sú súčasťou učenia. NLP zvládneš.",negative,patient
+To nie je celkom správne. Rekurzia má inú definíciu.,negative,correcting
+"Dobre, si na správnej ceste s klasifikácia.",positive,encouraging_mild
+"Nie, skúste znova. Malloc funguje odlišne.",negative,correcting
+"Skvelé! Presne tak, integrál funguje práve takto.",positive,celebrating
+Zamyslime sa nad derivácia systematicky.,neutral,thinking_deep
+"Dobrá práca, funkcia vyzerá sľubne.",positive,encouraging_mild
+"Nevadí, poďme si triedy a objekty vysvetliť ešte raz.",negative,patient
+Dobre sa pýtaš na diferenciálne rovnice.,neutral,curious
+Toto je komplexný problém. Premenné má viac vrstiev.,neutral,thinking_deep
+"Hej, rozumieš pointer, to je hlavné.",positive,encouraging_mild
+Prejdime k ďalšej časti o gradient.,neutral,neutral
+"Som rada, že cykly ti už nerobí problémy.",positive,proud
+"Dobre, pokračujme s štruktúrami.",neutral,neutral
+Zaujímavý pohľad na klastrovanie.,neutral,curious
+"Nevadí, skúsme to znova. Regresia je náročná téma.",negative,patient
+Bohužiaľ nie. Abstrakcia sa tak neimplementuje.,negative,correcting
+"Dajme si dynamické programovanie ešte raz, tentoraz podrobnejšie.",negative,patient
+"Dobre, pokračujme s deriváciami.",neutral,neutral
+"Vidím, že si sa naučil perceptrón veľmi dobre.",positive,proud
+Zaujímavá otázka o hash tabuľky. Pozrime sa na to bližšie.,neutral,curious
+Poďme sa zamyslieť nad trieda krok po kroku.,neutral,thinking_deep
+Úžasne! Takáto odpoveď o enkapsulácii ma teší.,positive,celebrating
+Pozrime sa na DFS z iného uhla.,negative,patient
+"Výborná otázka, Gaussova eliminácia si zaslúži pozornosť.",neutral,curious
+Chyba v odpovedi. Klasifikácia treba pochopiť inak.,negative,correcting
+Prejdime k ďalšej časti o perceptrón.,neutral,neutral
+Pozrime sa na rekurzia z iného uhla.,negative,patient
+"Skoro si tam, struct potrebuje len malú úpravu.",positive,encouraging_mild
+"Áno, toto je dobrý smer pri ukazovateľoch.",positive,encouraging_mild
+"Moment, derivácie potrebuje dôkladnejší rozbor.",neutral,thinking_deep
+Chyba. Hash funkcia sa nepoužíva týmto spôsobom.,negative,correcting
+Pomaly a postupne. Triedy a objekty pochopíš.,negative,patient
+"Dajme si neurónové siete ešte raz, tentoraz podrobnejšie.",negative,patient
+Poďme preskúmať BFS hlbšie.,neutral,curious
+To nie je celkom správne. Neurón má inú definíciu.,negative,correcting
+Skvelo si to vyriešil! Klastrovanie je jasný.,positive,celebrating
+Pomaly a postupne. Vlastné čísla pochopíš.,negative,patient
+Dobre sa pýtaš na štruktúry.,neutral,curious
+Pomaly a postupne. Gradient descent pochopíš.,negative,patient
+"Pekne, len pokračuj s NLP.",positive,encouraging_mild
+"Moment, dedičnosť potrebuje dôkladnejší rozbor.",neutral,thinking_deep
+"V poriadku, zložitosť algoritmov ide dobrým smerom.",positive,encouraging_mild
+"Vidím, že robíš veľký pokrok v Taylorov rad.",positive,proud
+Bohužiaľ nie. Rekurzia sa tak neimplementuje.,negative,correcting
+"Nie, skúste znova. Limita funguje odlišne.",negative,correcting
+"Nič sa nedeje, hash funkcia vyžaduje prax.",negative,patient
+"Nevadí, poďme si neurónové siete vysvetliť ešte raz.",negative,patient
+"Prekvapuješ ma, objekt je pokročilá téma.",neutral,surprise
+Toto je nesprávne riešenie pre integrály.,negative,correcting
+To nie je celkom správne. Determinant má inú definíciu.,negative,correcting
+Perfektné! Tvoja odpoveď o grafoch je úplne správna.,positive,celebrating
+"Som hrdý na to, ako zvládaš neurón.",positive,proud
+Chyba v odpovedi. Vlastné čísla treba pochopiť inak.,negative,correcting
+"Skvelé! Presne tak, O-notácia funguje práve takto.",positive,celebrating
+Perfektné! Tvoja odpoveď o deriváciách je úplne správna.,positive,celebrating
+"Dobrá práca, funkcia vyzerá sľubne.",positive,encouraging_mild
+"Wow, nečakal som otázku o neurónové siete tak skoro.",neutral,surprise
+Pozrime sa na hash funkcia podrobnejšie.,neutral,curious
+"Pekne, len pokračuj s klasifikáciou.",positive,encouraging_mild
+Omyl. Pri vlastné čísla treba postupovať inak.,negative,correcting
+"Som rada, že spájané zoznamy ti už nerobí problémy.",positive,proud
+Omyl. Pri matice treba postupovať inak.,negative,correcting
+"Skvelé! Presne tak, fread funguje práve takto.",positive,celebrating
+"Vedel som, že O-notácia zvládneš. A zvládol si to.",positive,proud
+"Dobrá práca, pointer vyzerá sľubne.",positive,encouraging_mild
+"Vidím, že si sa naučil enkapsulácia veľmi dobre.",positive,proud
+Dobrá otázka. Attention je zaujímavá téma.,neutral,curious
+Poďme ďalej na embedding.,neutral,neutral
+Dobre sa pýtaš na limity.,neutral,curious
+"Som rada, že strojové učenie ti už nerobí problémy.",positive,proud
+"Výborne, presne tak sa limita implementuje.",positive,celebrating
+Pomaly a postupne. Neurónové siete pochopíš.,negative,patient
+"Dobrá práca, gradient vyzerá sľubne.",positive,encouraging_mild
+Toto vyžaduje hlbšiu analýzu determinanty.,neutral,thinking_deep
+"Nevadí, chyby sú súčasťou učenia. NLP zvládneš.",negative,patient
+"To je v poriadku, veľa študentov má problémy s deriváciou.",negative,patient
+Pomaly a postupne. Klasifikácia pochopíš.,negative,patient
+Tvoj pokrok v klastrovaní je skutočne pôsobivý.,positive,proud
+"Bravo! Vidím, že Gaussova eliminácia ti už ide skvele.",positive,celebrating
+"Dajme si klastrovanie ešte raz, tentoraz podrobnejšie.",negative,patient
+Poďme sa zamyslieť nad Factory vzor krok po kroku.,neutral,thinking_deep
+Nesprávne. Klastrovanie vyžaduje iný prístup.,negative,correcting
+"Rastieš ako programátor, struct ti ide čoraz lepšie.",positive,proud
+Toto je nesprávne riešenie pre Taylorov rad.,negative,correcting
+Chyba. Hash funkcia sa nepoužíva týmto spôsobom.,negative,correcting
+Zamyslime sa nad determinant systematicky.,neutral,thinking_deep
+To je relevantná otázka o DFS.,neutral,curious
+Úžasne! Takáto odpoveď o premenná ma teší.,positive,celebrating
+Pozrime sa na BFS podrobnejšie.,neutral,curious
+"Skoro si tam, Taylorov polynom potrebuje len malú úpravu.",positive,encouraging_mild
+"Prekvapuješ ma, binárny strom je pokročilá téma.",neutral,surprise
+"Výborne, presne tak sa polymorfizmus implementuje.",positive,celebrating
+Toto si zaslúži hlbší pohľad na pole.,neutral,thinking_deep
+Toto vyžaduje hlbšiu analýzu súbory.,neutral,thinking_deep
+"Hej, rozumieš attention, to je hlavné.",positive,encouraging_mild
+"Hmm, gradient descent — to je naozaj dobrá otázka.",neutral,curious
+"Nevadí, poďme si Taylorov rad vysvetliť ešte raz.",negative,patient
+"Nevadí, chyby sú súčasťou učenia. Premenné zvládneš.",negative,patient
+Toto je nesprávne riešenie pre súbory.,negative,correcting
+To si zvládol sám! Perceptrón je pre teba jasný.,positive,proud
+Toto je komplexný problém. Spájané zoznamy majú viac vrstiev.,neutral,thinking_deep
+"V poriadku, integrál si teraz vysvetlíme.",neutral,neutral
+Zamyslime sa nad determinant systematicky.,neutral,thinking_deep
+Toto je nesprávne riešenie pre diferenciálne rovnice.,negative,correcting
+"Skoro si tam, pole potrebuje len malú úpravu.",positive,encouraging_mild
+To ma prekvapuje! Derivácia zvyčajne študenti neriešia.,neutral,surprise
+Prejdime k ďalšej časti o fread.,neutral,neutral
+Poďme sa zamyslieť nad O-notácia krok po kroku.,neutral,thinking_deep
+"Nevadí, skúsme to znova. Klasifikácia je náročná téma.",negative,patient
+Skvelo si to vyriešil! Limity je jasný.,positive,celebrating
+"Tak, hash tabuľky — začneme od začiatku.",neutral,neutral
+Premýšľam nad embedding... Je tam viacero aspektov.,neutral,thinking_deep
+Zaujímavá otázka o SOLID princípy. Pozrime sa na to bližšie.,neutral,curious
+Omyl. Pri súbory treba postupovať inak.,negative,correcting
+"Hmm, cykly je zložitejší problém. Treba to rozobrať.",neutral,thinking_deep
+"Tak, determinanty — začneme od začiatku.",neutral,neutral
+Chyba. Abstrakcia sa nepoužíva týmto spôsobom.,negative,correcting
+"Nie, skúste znova. Gaussova eliminácia funguje odlišne.",negative,correcting
+"V poriadku, pole si teraz vysvetlíme.",neutral,neutral
+Výnimočný výkon! Vyhľadávanie zvládaš na výbornú.,positive,celebrating
+"V poriadku, prejdime k triedenie.",neutral,neutral
+"Bravo! Vidím, že pointer ti už ide skvele.",positive,celebrating
+Poďme ďalej na backtracking.,neutral,neutral
+"Dajme si vyhľadávanie ešte raz, tentoraz podrobnejšie.",negative,patient
+Zlepšil si sa v enkapsulácia oproti minulému týždňu.,positive,proud
+Vidím pokrok v tvojom chápaní klasifikácie.,positive,proud
+"Nie, skúste znova. Rekurzia funguje odlišne.",negative,correcting
+Fantastické riešenie! Hash tabuľky si pochopil dokonale.,positive,celebrating
+Poďme analyzovať struct od základov.,neutral,thinking_deep
+Toto si zaslúži hlbší pohľad na determinant.,neutral,thinking_deep
+Poďme preskúmať Factory vzor hlbšie.,neutral,curious
+"V poriadku, prejdime k SOLID princípy.",neutral,neutral
+"Som hrdý na to, ako zvládaš Factory vzor.",positive,proud
+"V poriadku, prejdime k funkcie.",neutral,neutral
+Bohužiaľ nie. Perceptrón sa tak neimplementuje.,negative,correcting
+Poďme sa zamyslieť nad integrál krok po kroku.,neutral,thinking_deep
+"Nevadí, skúsme to znova. Funkcie sú náročná téma.",negative,patient
+To je relevantná otázka o RNN.,neutral,curious
+"V poriadku, funkcie ide dobrým smerom.",positive,encouraging_mild
+Prejdime k ďalšej časti o BFS.,neutral,neutral
+"Prekvapuješ ma, transformer je pokročilá téma.",neutral,surprise
+"Hej, rozumieš BFS algoritmu, to je hlavné.",positive,encouraging_mild
+Dobre sa pýtaš na ukazovatele.,neutral,curious
+"To je v poriadku, veľa študentov má problémy s rozhranie.",negative,patient
+Omyl. Pri strojové učenie treba postupovať inak.,negative,correcting
+Perfektné! Tvoja odpoveď o SOLID princípoch je úplne správna.,positive,celebrating
+"Hej, rozumieš Gaussova eliminácia, to je hlavné.",positive,encouraging_mild
+"Tak, dynamické programovanie — začneme od začiatku.",neutral,neutral
+"Správny prístup k triedenie, len dolaď detaily.",positive,encouraging_mild
+Dobre sa pýtaš na abstraktné triedy.,neutral,curious
+"To je v poriadku, veľa študentov má problémy s dedičnosťou.",negative,patient
+"Nevadí, chyby sú súčasťou učenia. Štruktúry zvládneš.",negative,patient
+"Nevadí, chyby sú súčasťou učenia. Taylorov rad zvládneš.",negative,patient
+Toto je komplexný problém. Hash tabuľky majú viac vrstiev.,neutral,thinking_deep
+"Moment, klastrovanie potrebuje dôkladnejší rozbor.",neutral,thinking_deep
+"Vidím, že si sa naučil objekt veľmi dobre.",positive,proud
+"Dobre, pokračujme s rozhraniami.",neutral,neutral
+"Vedel som, že RNN zvládneš. A zvládol si to.",positive,proud
+"V poriadku, triedenie ide dobrým smerom.",positive,encouraging_mild
+Zaujímavá otázka o maticiach. Pozrime sa na to bližšie.,neutral,curious
+"Nič sa nestalo, determinant nie je jednoduchý.",negative,patient
+"Dobrá práca, linked list vyzerá sľubne.",positive,encouraging_mild
+"Nevadí, chyby sú súčasťou učenia. Limity zvládneš.",negative,patient
+Zaujímavý pohľad na vlastné čísla.,neutral,curious
+Fantastické riešenie! Derivácie si pochopil dokonale.,positive,celebrating
+Chyba. Enkapsulácia sa nepoužíva týmto spôsobom.,negative,correcting
+Pomaly a postupne. Triedenie pochopíš.,negative,patient
+"Som hrdý na to, ako zvládaš embedding.",positive,proud
+Chyba v odpovedi. Cykly treba pochopiť inak.,negative,correcting
+"Trpezlivosť, trieda príde s praxou.",negative,patient
+"Tak teda, derivácia je naša ďalšia téma.",neutral,neutral
+"Dobre, pokračujme s cyklami.",neutral,neutral
+"Správny prístup k SOLID princípy, len dolaď detaily.",positive,encouraging_mild
+"Som hrdý na to, ako zvládaš attention.",positive,proud
+"Nevadí, skúsme to znova. Štruktúry sú náročná téma.",negative,patient
+Perfektné! Tvoja odpoveď o maticiach je úplne správna.,positive,celebrating
+Nesprávne. Gradient descent vyžaduje iný prístup.,negative,correcting
+"Rastieš ako programátor, fread ti ide čoraz lepšie.",positive,proud
+"Tak, triedenie — začneme od začiatku.",neutral,neutral
+To si zvládol sám! Attention je pre teba jasný.,positive,proud
+"Nie, skúste znova. RNN funguje odlišne.",negative,correcting
+"Zaujímavé! Nečakal som, že sa budeš pýtať na súbory.",neutral,surprise
+"Bravo! Vidím, že rozhranie ti už ide skvele.",positive,celebrating
+"Pekne, len pokračuj s regresiou.",positive,encouraging_mild
+"Dobre, pozrime sa teraz na rozhrania.",neutral,neutral
+"Správny prístup k determinanty, len dolaď detaily.",positive,encouraging_mild
+Nesprávne. SOLID princípy vyžaduje iný prístup.,negative,correcting
+"To je v poriadku, veľa študentov má problémy s binárny strom.",negative,patient
+"Vidím, že robíš veľký pokrok v dynamickom programovaní.",positive,proud
+"Výborne, presne tak sa gradient implementuje.",positive,celebrating
+"Som hrdý na to, ako zvládaš BFS.",positive,proud
+Výborne! Vyhľadávanie si zvládol na jednotku.,positive,celebrating
+Prejdime k ďalšej časti o determinant.,neutral,neutral
+Prejdime k ďalšej časti o pointer.,neutral,neutral
+Zaujímavý pohľad na limity.,neutral,curious
+"Nič sa nestalo, attention nie je jednoduchý.",negative,patient
+Prejdime k ďalšej časti o Gaussova eliminácia.,neutral,neutral
+"Fajn, základ polymorfizmu máš správne.",positive,encouraging_mild
+"Bohužiaľ, stromy nefunguje takto. Skús to inak.",negative,correcting
+"Nevadí, poďme si matice vysvetliť ešte raz.",negative,patient
+Dobrá otázka. Rekurzia je zaujímavá téma.,neutral,curious
+"Nie, skúste znova. RNN funguje odlišne.",negative,correcting
+"Nič sa nedeje, neurón vyžaduje prax.",negative,patient
+To nie je celkom správne. Objekt má inú definíciu.,negative,correcting
+"Rastieš ako programátor, limita ti ide čoraz lepšie.",positive,proud
+Perfektné! Tvoja odpoveď o spájané zoznamy je úplne správna.,positive,celebrating
+Vidím pokrok v tvojom chápaní dynamického programovania.,positive,proud
+"Rastieš ako programátor, transformer ti ide čoraz lepšie.",positive,proud
+"Moment, matice potrebuje dôkladnejší rozbor.",neutral,thinking_deep
+Chyba. Limita sa nepoužíva týmto spôsobom.,negative,correcting
+To ma prekvapuje! Gaussova eliminácia zvyčajne študenti neriešia.,neutral,surprise
+Toto vyžaduje hlbšiu analýzu klastrovanie.,neutral,thinking_deep
+"Výborne, presne tak sa RNN implementuje.",positive,celebrating
+Výborne! Návrhové vzory si zvládol na jednotku.,positive,celebrating
+"Prekvapuješ ma, funkcia je pokročilá téma.",neutral,surprise
+"Nevadí, chyby sú súčasťou učenia. Enkapsulácia zvládneš.",negative,patient
+Chyba v odpovedi. Diferenciálne rovnice treba pochopiť inak.,negative,correcting
+"Dobre, si na správnej ceste s premenné.",positive,encouraging_mild
+"Rastieš ako programátor, gradient ti ide čoraz lepšie.",positive,proud
+"Dobre, si na správnej ceste s gradient descent.",positive,encouraging_mild
+"Nevadí, poďme si rozhrania vysvetliť ešte raz.",negative,patient
+"Výborná otázka, binárny strom si zaslúži pozornosť.",neutral,curious
+"To je v poriadku, veľa študentov má problémy s DFS.",negative,patient
+Poďme preskúmať attention hlbšie.,neutral,curious
+To si zvládol sám! BFS je pre teba jasný.,positive,proud
+Perfektné! Tvoja odpoveď o dynamickom programovaní je úplne správna.,positive,celebrating
+Premýšľam nad RNN... Je tam viacero aspektov.,neutral,thinking_deep
+"Hmm, zložitosť algoritmov — to je naozaj dobrá otázka.",neutral,curious
+"Správny prístup k regresia, len dolaď detaily.",positive,encouraging_mild
+To nie je celkom správne. Perceptrón má inú definíciu.,negative,correcting
+Toto si zaslúži hlbší pohľad na perceptrón.,neutral,thinking_deep
+"Oh, to je neočakávaná otázka o dynamické programovanie!",neutral,surprise
+Fantastické riešenie! Taylorov rad si pochopil dokonale.,positive,celebrating
+"Skvelé! Presne tak, derivácia funguje práve takto.",positive,celebrating
+Výnimočný výkon! Diferenciálne rovnice zvládaš na výbornú.,positive,celebrating
+Omyl. Pri správa pamäti treba postupovať inak.,negative,correcting
+Pozrime sa na limita z iného uhla.,negative,patient
+Omyl. Pri dedičnosť treba postupovať inak.,negative,correcting
+Zamyslime sa nad neurón systematicky.,neutral,thinking_deep
+Premýšľam nad Singleton vzor... Je tam viacero aspektov.,neutral,thinking_deep
+Chyba v odpovedi. Cykly treba pochopiť inak.,negative,correcting
+"Nevadí, poďme si Taylorov rad vysvetliť ešte raz.",negative,patient
+"Dajme si rozhrania ešte raz, tentoraz podrobnejšie.",negative,patient
+"Rozmýšľam, ako najlepšie vysvetliť hash tabuľky.",neutral,thinking_deep
+Pozrime sa na DFS podrobnejšie.,neutral,curious
+Bohužiaľ nie. Rozhranie sa tak neimplementuje.,negative,correcting
+"Wow, nečakal som otázku o neurónové siete tak skoro.",neutral,surprise
+Výborne! SOLID princípy si zvládol na jednotku.,positive,celebrating
+"Nie, skúste znova. Enkapsulácia funguje odlišne.",negative,correcting
+"Vidím, že robíš veľký pokrok v spájaných zoznamoch.",positive,proud
+"Nie, skúste znova. Pointer funguje odlišne.",negative,correcting
+"Nič sa nestalo, Factory vzor nie je jednoduchý.",negative,patient
+"To je v poriadku, veľa študentov má problémy s quick sort.",negative,patient
+"Nevadí, chyby sú súčasťou učenia. Dynamické programovanie zvládneš.",negative,patient
+"Dobre, si na správnej ceste s polymorfizmus.",positive,encouraging_mild
+Dobrá otázka. Funkcia je zaujímavá téma.,neutral,curious
+Toto vyžaduje hlbšiu analýzu enkapsulácia.,neutral,thinking_deep
+"Som hrdý na to, ako zvládaš rekurzia.",positive,proud
+Zaujímavá otázka o spájané zoznamy. Pozrime sa na to bližšie.,neutral,curious
+Perfektné! Tvoja odpoveď o gradient descent je úplne správna.,positive,celebrating
+"Dobrá práca, trieda vyzerá sľubne.",positive,encouraging_mild
+"Bravo! Vidím, že backtracking ti už ide skvele.",positive,celebrating
+"Dobre, pozrime sa teraz na triedenie.",neutral,neutral
+Dobrá otázka. Quick sort je zaujímavá téma.,neutral,curious
+"V poriadku, neurónové siete ide dobrým smerom.",positive,encouraging_mild
+"Moment, dynamické programovanie potrebuje dôkladnejší rozbor.",neutral,thinking_deep
+"Pokračuj tak ďalej, abstrakcia sa ti darí.",positive,encouraging_mild
+Pozrime sa na struct z iného uhla.,negative,patient
+"Vidím, že si sa naučil struct veľmi dobre.",positive,proud
+Výnimočný výkon! Súbory zvládaš na výbornú.,positive,celebrating
+"Nie, toto nie je správna odpoveď. Determinant znamená niečo iné.",negative,correcting
+To si zvládol sám! For cyklus je pre teba jasný.,positive,proud
+Zaujímavý pohľad na abstraktné triedy.,neutral,curious
+"Nič sa nedeje, dedičnosť vyžaduje prax.",negative,patient
+"Som rada, že spájané zoznamy ti už nerobí problémy.",positive,proud
+"Rozmýšľam, ako najlepšie vysvetliť neurónové siete.",neutral,thinking_deep
+Toto je komplexný problém. Strojové učenie majú viac vrstiev.,neutral,thinking_deep
+"Dobre, si na správnej ceste s regresia.",positive,encouraging_mild
+"Skvelé! Presne tak, quick sort funguje práve takto.",positive,celebrating
+"Trpezlivosť, for cyklus príde s praxou.",negative,patient
+"Dajme si determinanty ešte raz, tentoraz podrobnejšie.",negative,patient
+Výborne! Súbory si zvládol na jednotku.,positive,celebrating
+Toto je nesprávne riešenie pre polymorfizmus.,negative,correcting
+Tak poďme na fread.,neutral,neutral
+"Nič sa nestalo, trieda nie je jednoduchý.",negative,patient
+Úžasne! Takáto odpoveď o Gaussova eliminácia ma teší.,positive,celebrating
+To nie je celkom správne. Konvolúcia má inú definíciu.,negative,correcting
+Poďme ďalej na enkapsulácia.,neutral,neutral
+Pozrime sa na dedičnosť podrobnejšie.,neutral,curious
+Výborne! Taylorov rad si zvládol na jednotku.,positive,celebrating
+Omyl. Pri gradient descent treba postupovať inak.,negative,correcting
+"Skvelé! Presne tak, fread funguje práve takto.",positive,celebrating
+Toto je nesprávne riešenie pre správa pamäti.,negative,correcting
+"Pokračuj tak ďalej, binárny strom sa ti darí.",positive,encouraging_mild
+"Výborne, presne tak sa Taylorov polynom implementuje.",positive,celebrating
+Tvoj pokrok v neurónových sieťach je skutočne pôsobivý.,positive,proud
+"Hej, rozumieš neurón, to je hlavné.",positive,encouraging_mild
+"Dobre, si na správnej ceste s enkapsulácia.",positive,encouraging_mild
+Omyl. Pri regresia treba postupovať inak.,negative,correcting
+"Moment, štruktúry potrebuje dôkladnejší rozbor.",neutral,thinking_deep
+"Dobrá práca, struct vyzerá sľubne.",positive,encouraging_mild
+"Moment, matice potrebuje dôkladnejší rozbor.",neutral,thinking_deep
+Vidím pokrok v tvojom chápaní polymorfizmu.,positive,proud
+"Hmm, spájané zoznamy — to je naozaj dobrá otázka.",neutral,curious
+"Dobre, pokračujme s vyhľadávanie.",neutral,neutral
+"Nevadí, chyby sú súčasťou učenia. Premenné zvládneš.",negative,patient
+Omyl. Pri abstraktné triedy treba postupovať inak.,negative,correcting
+Super práca s transformer! Presne to som chcel počuť.,positive,celebrating
+Toto vyžaduje hlbšiu analýzu správa pamäti.,neutral,thinking_deep
+"Som hrdý na to, ako zvládaš funkcia.",positive,proud
+"Nevadí, skúsme to znova. Dedičnosť je náročná téma.",negative,patient
+"Zaujímavé! Nečakal som, že sa budeš pýtať na gradient descent.",neutral,surprise
+"Skvelé! Presne tak, attention funguje práve takto.",positive,celebrating
+Výnimočný výkon! Neurónové siete zvládaš na výbornú.,positive,celebrating
+Pozrime sa na Gaussova eliminácia podrobnejšie.,neutral,curious
+Výborne! Návrhové vzory si zvládol na jednotku.,positive,celebrating
+"Skoro si tam, O-notácia potrebuje len malú úpravu.",positive,encouraging_mild
+Toto vyžaduje hlbšiu analýzu spájané zoznamy.,neutral,thinking_deep
+"Dobrá práca, hash funkcia vyzerá sľubne.",positive,encouraging_mild
+"Výborne, presne tak sa derivácia implementuje.",positive,celebrating
+Výnimočný výkon! Triedenie zvládaš na výbornú.,positive,celebrating
+Poďme analyzovať Singleton vzor od základov.,neutral,thinking_deep
+"Nevadí, chyby sú súčasťou učenia. Limity zvládneš.",negative,patient
+"V poriadku, prejdime k rozhrania.",neutral,neutral
+Dobrá otázka. Rekurzia je zaujímavá téma.,neutral,curious
+"Nevadí, poďme si dynamické programovanie vysvetliť ešte raz.",negative,patient
+Bohužiaľ nie. Gaussova eliminácia sa tak neimplementuje.,negative,correcting
+Premýšľam nad Gaussova eliminácia... Je tam viacero aspektov.,neutral,thinking_deep
+Poďme analyzovať Gaussova eliminácia od základov.,neutral,thinking_deep
+"Nevadí, skúsme to znova. Strojové učenie sú náročná téma.",negative,patient
+"Nevadí, chyby sú súčasťou učenia. Matice zvládneš.",negative,patient
+"Nevadí, poďme si determinanty vysvetliť ešte raz.",negative,patient
+Toto si zaslúži hlbší pohľad na linked list.,neutral,thinking_deep
+"V poriadku, for cykluso si teraz vysvetlíme.",neutral,neutral
+Prejdime k ďalšej časti o rozhranie.,neutral,neutral
+Úžasne! Takáto odpoveď o trieda ma teší.,positive,celebrating
+"Trpezlivosť, quick sort príde s praxou.",negative,patient
+"Hej, rozumieš enkapsulácia, to je hlavné.",positive,encouraging_mild
+Prejdime k ďalšej časti o for cyklus.,neutral,neutral
+"To je v poriadku, veľa študentov má problémy s limitou.",negative,patient
+"Rozmýšľam, ako najlepšie vysvetliť enkapsuláciu.",neutral,thinking_deep
+"To je v poriadku, veľa študentov má problémy s deriváciou.",negative,patient
+Omyl. Pri Taylorov rad treba postupovať inak.,negative,correcting
+Bohužiaľ nie. Attention sa tak neimplementuje.,negative,correcting
+"Vidím, že robíš veľký pokrok v dedičnosť.",positive,proud
+Výborne! Rekurzia si zvládol na jednotku.,positive,celebrating
+Omyl. Pri derivácie treba postupovať inak.,negative,correcting
+Skvelo si to vyriešil! Neurónové siete je jasný.,positive,celebrating
+"Hmm, správa pamäti je zložitejší problém. Treba to rozobrať.",neutral,thinking_deep
+Chyba. Dedičnosť sa nepoužíva týmto spôsobom.,negative,correcting
+"Nevadí, skúsme to znova. Taylorov rad je náročná téma.",negative,patient
+"Tak teda, rekurzia je naša ďalšia téma.",neutral,neutral
+Poďme preskúmať BFS hlbšie.,neutral,curious
+"Vidím, že robíš veľký pokrok v správe pamäti.",positive,proud
+"Vidím, že robíš veľký pokrok v maticiach.",positive,proud
+"Vedel som, že abstrakcia zvládneš. A zvládol si to.",positive,proud
+Poďme ďalej na determinant.,neutral,neutral
+"Fajn, základ hašovacej funkcie máš správne.",positive,encouraging_mild
+"Nie, skúste znova. O-notácia funguje odlišne.",negative,correcting
+Fantastické riešenie! Klasifikácia si pochopil dokonale.,positive,celebrating
+Dobre sa pýtaš na determinanty.,neutral,curious
+Dobre sa pýtaš na klastrovanie.,neutral,curious
+Pomaly a postupne. Regresia pochopíš.,negative,patient
+Perfektné! Tvoja odpoveď o diferenciálnych rovniciach je úplne správna.,positive,celebrating
+"Bohužiaľ, enkapsulácia nefunguje takto. Skús to inak.",negative,correcting
+Bohužiaľ nie. Dedičnosť sa tak neimplementuje.,negative,correcting
+"Nič sa nedeje, Singleton vzor vyžaduje prax.",negative,patient
+To si zvládol sám! Premenná je pre teba jasný.,positive,proud
+Poďme sa zamyslieť nad perceptrón krok po kroku.,neutral,thinking_deep
+Omyl. Pri rekurzia treba postupovať inak.,negative,correcting
+Ideme na matice.,neutral,neutral
+"V poriadku, rozhrania ide dobrým smerom.",positive,encouraging_mild
+"Fajn, základ Taylorovho polynómu máš správne.",positive,encouraging_mild
+Pozrime sa na integrál podrobnejšie.,neutral,curious
+Tak poďme na integrál.,neutral,neutral
+Vidím pokrok v tvojom chápaní gradientu descent.,positive,proud
+"Bravo! Vidím, že dedičnosť ti už ide skvele.",positive,celebrating
+Zaujímavá otázka o NLP. Pozrime sa na to bližšie.,neutral,curious
+"Dobrá práca, transformer vyzerá sľubne.",positive,encouraging_mild
+"Nie, toto nie je správna odpoveď. Binárny strom znamená niečo iné.",negative,correcting
+"Nič sa nestalo, quick sort nie je jednoduchý.",negative,patient
+Bohužiaľ nie. BFS sa tak neimplementuje.,negative,correcting
+Prejdime k ďalšej časti o hash funkcia.,neutral,neutral
+"Áno, toto je dobrý smer pri abstraktné triedy.",positive,encouraging_mild
+"Správny prístup k hash tabuľky, len dolaď detaily.",positive,encouraging_mild
+"Nevadí, poďme si NLP vysvetliť ešte raz.",negative,patient
+"Rastieš ako programátor, DFS ti ide čoraz lepšie.",positive,proud
+"Tak teda, enkapsulácia je naša ďalšia téma.",neutral,neutral
+"To je v poriadku, veľa študentov má problémy s transformer.",negative,patient
+"Tak teda, attention je naša ďalšia téma.",neutral,neutral
+"Hmm, triedenie — to je naozaj dobrá otázka.",neutral,curious
+"Bravo! Vidím, že quick sort ti už ide skvele.",positive,celebrating
+"Dobre, si na správnej ceste s vlastné čísla.",positive,encouraging_mild
+"Dobrá práca, integrál vyzerá sľubne.",positive,encouraging_mild
+Chyba. Enkapsulácia sa nepoužíva týmto spôsobom.,negative,correcting
+Výnimočný výkon! Vlastné čísla zvládaš na výbornú.,positive,celebrating
+To ma prekvapuje! Backtracking zvyčajne študenti neriešia.,neutral,surprise
+"Výborná otázka, Taylorov polynom si zaslúži pozornosť.",neutral,curious
+"Prekvapuješ ma, trieda je pokročilá téma.",neutral,surprise
+"Bravo! Vidím, že backtracking ti už ide skvele.",positive,celebrating
+Toto vyžaduje hlbšiu analýzu tried a objektov.,neutral,thinking_deep
+"Vidím, že robíš veľký pokrok v diferenciálnych rovniciach.",positive,proud
+Super práca s enkapsulácia! Presne to som chcel počuť.,positive,celebrating
+"Vidím, že si sa naučil polymorfizmus veľmi dobre.",positive,proud
+"Hmm, grafy — to je naozaj dobrá otázka.",neutral,curious
+Omyl. Pri hash tabuľky treba postupovať inak.,negative,correcting
+"Bravo! Vidím, že rozhranie ti už ide skvele.",positive,celebrating
+Chyba v odpovedi. NLP treba pochopiť inak.,negative,correcting
+"Wow, nečakal som otázku o ukazovateľoch tak skoro.",neutral,surprise
+"Vidím, že si sa naučil trieda veľmi dobre.",positive,proud
+"Nie, toto nie je správna odpoveď. Binárny strom znamená niečo iné.",negative,correcting
+Omyl. Pri cykly treba postupovať inak.,negative,correcting
+Pozrime sa na transformer z iného uhla.,negative,patient
+Výborne! Diferenciálne rovnice si zvládol na jednotku.,positive,celebrating
+"Nič sa nedeje, rozhranie vyžaduje prax.",negative,patient
+Vidím pokrok v tvojom chápaní Taylorovho radu.,positive,proud
+Toto si zaslúži hlbší pohľad na DFS.,neutral,thinking_deep
+Zamyslime sa nad RNN systematicky.,neutral,thinking_deep
+"Dobrá práca, abstrakcia vyzerá sľubne.",positive,encouraging_mild
+Výnimočný výkon! Triedy a objekty zvládaš na výbornú.,positive,celebrating
+"Skoro si tam, Gaussova eliminácia potrebuje len malú úpravu.",positive,encouraging_mild
+Dobrá otázka. Trieda je zaujímavá téma.,neutral,curious
+Toto vyžaduje hlbšiu analýzu klastrovanie.,neutral,thinking_deep
+"Dobre, si na správnej ceste s gradient descent.",positive,encouraging_mild
+"Skoro si tam, Factory vzor potrebuje len malú úpravu.",positive,encouraging_mild
+"Nevadí, chyby sú súčasťou učenia. Funkcie zvládneš.",negative,patient
+"V poriadku, gradient descent ide dobrým smerom.",positive,encouraging_mild
+Zaujímavá otázka o SOLID princípy. Pozrime sa na to bližšie.,neutral,curious
+"Skoro si tam, Taylorov polynom potrebuje len malú úpravu.",positive,encouraging_mild
+Omyl. Pri derivácie treba postupovať inak.,negative,correcting
+Toto je komplexný problém. Abstraktné triedy majú viac vrstiev.,neutral,thinking_deep
+Perfektné! Tvoja odpoveď o hash tabuľky je úplne správna.,positive,celebrating
+Tak poďme na binárny strom.,neutral,neutral
+"Dajme si správa pamäti ešte raz, tentoraz podrobnejšie.",negative,patient
+"Hmm, grafy je zložitejší problém. Treba to rozobrať.",neutral,thinking_deep
+"Dajme si derivácie ešte raz, tentoraz podrobnejšie.",negative,patient
+Skvelo si to vyriešil! Rozhrania je jasný.,positive,celebrating
+Bohužiaľ nie. Embedding sa tak neimplementuje.,negative,correcting
+Zaujímavá otázka o rozhraniach. Pozrime sa na to bližšie.,neutral,curious
+"Hej, rozumieš funkcia, to je hlavné.",positive,encouraging_mild
+"Nič sa nedeje, konvolúcia vyžaduje prax.",negative,patient
+"Dobrá práca, fread vyzerá sľubne.",positive,encouraging_mild
+"Som rada, že triedenie ti už nerobí problémy.",positive,proud
+"Tak teda, DFS je naša ďalšia téma.",neutral,neutral
+"V poriadku, prejdime k gradient descent.",neutral,neutral
+"Bravo! Vidím, že enkapsulácia ti už ide skvele.",positive,celebrating
+"Hmm, grafy je zložitejší problém. Treba to rozobrať.",neutral,thinking_deep
+"Skoro si tam, pole potrebuje len malú úpravu.",positive,encouraging_mild
+"Zaujímavé! Nečakal som, že sa budeš pýtať na funkcie.",neutral,surprise
+Výborne! Zložitosť algoritmov si zvládol na jednotku.,positive,celebrating
+"Som rada, že triedenie ti už nerobí problémy.",positive,proud
+To nie je celkom správne. Polymorfizmus má inú definíciu.,negative,correcting
+Nesprávne. Matice vyžadujú iný prístup.,negative,correcting
+Zlepšil si sa v dynamické programovanie oproti minulému týždňu.,positive,proud
+Bohužiaľ nie. Dedičnosť sa tak neimplementuje.,negative,correcting
+"Wow, nečakal som otázku o integráloch tak skoro.",neutral,surprise
+"Skvelé! Presne tak, malloc funguje práve takto.",positive,celebrating
+"Skvelé! Presne tak, derivácia funguje práve takto.",positive,celebrating
+Tvoj pokrok v limitách je skutočne pôsobivý.,positive,proud
+"Trpezlivosť, for cyklus príde s praxou.",negative,patient
+Výborne! Vlastné čísla si zvládol na jednotku.,positive,celebrating
+"Vidím, že si sa naučil Taylorov polynom veľmi dobre.",positive,proud
+Poďme analyzovať binárny strom od základov.,neutral,thinking_deep
+To ma prekvapuje! Embedding zvyčajne študenti neriešia.,neutral,surprise
+"To je v poriadku, veľa študentov má problémy s Taylorov polynom.",negative,patient
+"Nie, toto nie je správna odpoveď. Quick sort znamená niečo iné.",negative,correcting
+Premýšľam nad objekt... Je tam viacero aspektov.,neutral,thinking_deep
+"Nič sa nestalo, O-notácia nie je jednoduchý.",negative,patient
+"Hmm, vyhľadávanie — to je naozaj dobrá otázka.",neutral,curious
+"Trpezlivosť, limita príde s praxou.",negative,patient
+"Vedel som, že BFS zvládneš. A zvládol si to.",positive,proud
+To nie je celkom správne. Binárny strom má inú definíciu.,negative,correcting
+Poďme analyzovať limita od základov.,neutral,thinking_deep
+Pozrime sa na polymorfizmus podrobnejšie.,neutral,curious
+"Áno, toto je dobrý smer pri rekurzia.",positive,encouraging_mild
+Ideme na funkcie.,neutral,neutral
+"Nevadí, skúsme to znova. Premenné je náročná téma.",negative,patient
+Prejdime k ďalšej časti o BFS.,neutral,neutral
+"Pokračuj tak ďalej, embedding sa ti darí.",positive,encouraging_mild
+"Dobre, si na správnej ceste so strojové učenie.",positive,encouraging_mild
+"Správny prístup k SOLID princípy, len dolaď detaily.",positive,encouraging_mild
+Toto si zaslúži hlbší pohľad na enkapsulácia.,neutral,thinking_deep
+"Bohužiaľ, polia nefunguje takto. Skús to inak.",negative,correcting
+"Dobre, pokračujme s hash tabuľky.",neutral,neutral
+Chyba. Linked list sa nepoužíva týmto spôsobom.,negative,correcting
+Pozrime sa na fread podrobnejšie.,neutral,curious
+"To je v poriadku, veľa študentov má problémy s fread.",negative,patient
+Vidím pokrok v tvojom chápaní rozhraní.,positive,proud
+Zlepšil si sa v maticiach oproti minulému týždňu.,positive,proud
+"Výborná otázka, O-notácia si zaslúži pozornosť.",neutral,curious
+Bohužiaľ nie. Derivácia sa tak neimplementuje.,negative,correcting
+Pomaly a postupne. SOLID princípy pochopíš.,negative,patient
+"Trpezlivosť, perceptrón príde s praxou.",negative,patient
+"Nie, toto nie je správna odpoveď. Hash funkcia znamená niečo iné.",negative,correcting
+Toto je nesprávne riešenie pre regresia.,negative,correcting
+"Oh, to je neočakávaná otázka o rekurzii!",neutral,surprise
+"Nevadí, chyby sú súčasťou učenia. Štruktúry zvládneš.",negative,patient
+Premýšľam nad O-notácia... Je tam viacero aspektov.,neutral,thinking_deep
+To nie je celkom správne. Integrál má inú definíciu.,negative,correcting
+Pomaly a postupne. Funkcie pochopíš.,negative,patient
+Poďme ďalej na konvolúcia.,neutral,neutral
+To si zvládol sám! Binárny strom je pre teba jasný.,positive,proud
+"Pokračuj tak ďalej, for cykluso sa ti darí.",positive,encouraging_mild
+"Fajn, základ gradientu máš správne.",positive,encouraging_mild
+Tak poďme na Taylorov polynom.,neutral,neutral
+Prejdime k ďalšej časti o malloc.,neutral,neutral
+Tak poďme na transformer.,neutral,neutral
+"Moment, grafy potrebuje dôkladnejší rozbor.",neutral,thinking_deep
+"Výborne, presne tak sa Gaussova eliminácia implementuje.",positive,celebrating
+"Moment, enkapsulácia potrebuje dôkladnejší rozbor.",neutral,thinking_deep
+Super práca s fread! Presne to som chcel počuť.,positive,celebrating
+"Výborná otázka, fread si zaslúži pozornosť.",neutral,curious
+Tvoj pokrok v neurónových sieťach je skutočne pôsobivý.,positive,proud
+"Výborná otázka, derivácia si zaslúži pozornosť.",neutral,curious
+Toto je komplexný problém. Polia majú viac vrstiev.,neutral,thinking_deep
+Dobrá otázka. Perceptrón je zaujímavá téma.,neutral,curious
+Tvoj pokrok v integráloch je skutočne pôsobivý.,positive,proud
+Skvelo si to vyriešil! Funkcie je jasný.,positive,celebrating
+Pozrime sa na pole z iného uhla.,negative,patient
+To si zvládol sám! Determinant je pre teba jasný.,positive,proud
+"V poriadku, prejdime k funkcie.",neutral,neutral
+"Správny prístup k Taylorov rad, len dolaď detaily.",positive,encouraging_mild
+Poďme preskúmať hash funkcia hlbšie.,neutral,curious
+"Správny prístup k SOLID princípy, len dolaď detaily.",positive,encouraging_mild
+"Nič sa nedeje, polymorfizmus vyžaduje prax.",negative,patient
+Tvoj pokrok v správe pamäti je skutočne pôsobivý.,positive,proud
+"Áno, toto je dobrý smer pri poliach.",positive,encouraging_mild
+"Hej, rozumieš rozhranie, to je hlavné.",positive,encouraging_mild
+Bohužiaľ nie. Konvolúcia sa tak neimplementuje.,negative,correcting
+"Rastieš ako programátor, malloc ti ide čoraz lepšie.",positive,proud
+"To je v poriadku, veľa študentov má problémy s premenná.",negative,patient
+"Rastieš ako programátor, linked list ti ide čoraz lepšie.",positive,proud
+Zaujímavý pohľad na premenné.,neutral,curious
+"Hej, rozumieš DFS algoritmu, to je hlavné.",positive,encouraging_mild
+"V poriadku, limita si teraz vysvetlíme.",neutral,neutral
+"Zaujímavé! Nečakal som, že sa budeš pýtať na determinanty.",neutral,surprise
+"Nevadí, chyby sú súčasťou učenia. Regresia zvládneš.",negative,patient
+Poďme sa zamyslieť nad rozhranie krok po kroku.,neutral,thinking_deep
+Toto si zaslúži hlbší pohľad na struct.,neutral,thinking_deep
+Chyba. Transformer sa nepoužíva týmto spôsobom.,negative,correcting
+"Dajme si derivácie ešte raz, tentoraz podrobnejšie.",negative,patient
+"Bohužiaľ, dynamické programovanie nefunguje takto. Skús to inak.",negative,correcting
+Výborne! Rozhrania si zvládol na jednotku.,positive,celebrating
+"Dobre, si na správnej ceste so stromami.",positive,encouraging_mild
+Tvoj pokrok v diferenciálnych rovniciach je skutočne pôsobivý.,positive,proud
+Tak poďme na funkcia.,neutral,neutral
+"Zaujímalo by ma, prečo sa pýtaš na rozhrania.",neutral,curious
+"V poriadku, funkcia si teraz vysvetlíme.",neutral,neutral
+"Zaujímalo by ma, prečo sa pýtaš na determinanty.",neutral,curious
+Poďme sa zamyslieť nad struct krok po kroku.,neutral,thinking_deep
+Nesprávne. Regresia vyžaduje iný prístup.,negative,correcting
+Pozrime sa na limita podrobnejšie.,neutral,curious
+"Tak, Taylorov rad — začneme od začiatku.",neutral,neutral
+"Dobre, pokračujme so súbormi.",neutral,neutral
+"Trpezlivosť, transformer príde s praxou.",negative,patient
+Omyl. Pri Taylorov rad treba postupovať inak.,negative,correcting
+"Wow, nečakal som otázku o deriváciách tak skoro.",neutral,surprise
+"Dobrá práca, Gaussova eliminácia vyzerá sľubne.",positive,encouraging_mild
+Toto je komplexný problém. Abstraktné triedy majú viac vrstiev.,neutral,thinking_deep
+"Výborná otázka, neurón si zaslúži pozornosť.",neutral,curious
+"Bohužiaľ, správa pamäti nefunguje takto. Skús to inak.",negative,correcting
+"Vidím, že si sa naučil prácu so súbormi veľmi dobre.",positive,proud
+"Skvelé! Presne tak, fread funguje práve takto.",positive,celebrating
+Premýšľam nad O-notácia... Je tam viacero aspektov.,neutral,thinking_deep
+"Hmm, rekurzia je zložitejší problém. Treba to rozobrať.",neutral,thinking_deep
+Výnimočný výkon! Polia zvládaš na výbornú.,positive,celebrating
+"Nič sa nestalo, derivácia nie je jednoduchý.",negative,patient
+"Nevadí, poďme si rekurziu vysvetliť ešte raz.",negative,patient
+"Vidím, že si sa naučil DFS veľmi dobre.",positive,proud
+Úžasne! Takáto odpoveď o Factory vzor ma teší.,positive,celebrating
+"Zaujímalo by ma, prečo sa pýtaš na stromy.",neutral,curious
+To si zvládol sám! Determinant je pre teba jasný.,positive,proud
+"Bohužiaľ, grafy nefunguje takto. Skús to inak.",negative,correcting
+"Výborná otázka, rekurzia si zaslúži pozornosť.",neutral,curious
+"Zaujímalo by ma, prečo sa pýtaš na derivácie.",neutral,curious
+"Vidím, že si sa naučil integrál veľmi dobre.",positive,proud
+"Hmm, dynamické programovanie — to je naozaj dobrá otázka.",neutral,curious
+"Hmm, enkapsulácia je zložitejší problém. Treba to rozobrať.",neutral,thinking_deep
+"Výborná otázka, determinant si zaslúži pozornosť.",neutral,curious
+Zaujímavý pohľad na triedy a objekty.,neutral,curious
+Fantastické riešenie! Strojové učenie si pochopil dokonale.,positive,celebrating
+"Dobre, si na správnej ceste s rekurzia.",positive,encouraging_mild
+"Nevadí, skúsme to znova. Premenné je náročná téma.",negative,patient
+"Nevadí, poďme si dynamické programovanie vysvetliť ešte raz.",negative,patient
+Poďme analyzovať neurón od základov.,neutral,thinking_deep
+"Fajn, základ práce s poľami máš správne.",positive,encouraging_mild
+"Hmm, premenné — to je naozaj dobrá otázka.",neutral,curious
+Fantastické riešenie! Štruktúry si pochopil dokonale.,positive,celebrating
+"Bohužiaľ, zložitosť algoritmov nefunguje takto. Skús to inak.",negative,correcting
+"Prekvapuješ ma, pointer je pokročilá téma.",neutral,surprise
+"Správny prístup k neurónové siete, len dolaď detaily.",positive,encouraging_mild
+To nie je celkom správne. For cyklus má inú definíciu.,negative,correcting
+Poďme preskúmať funkcia hlbšie.,neutral,curious
+To ma prekvapuje! Singleton vzor zvyčajne študenti neriešia.,neutral,surprise
+"Hej, rozumieš pointer, to je hlavné.",positive,encouraging_mild
+"Hmm, rozhrania — to je naozaj dobrá otázka.",neutral,curious
+To je relevantná otázka o determinante.,neutral,curious
+Zaujímavý pohľad na matice.,neutral,curious
+"Vedel som, že for cyklus zvládneš. A zvládol si to.",positive,proud
+"Bravo! Vidím, že enkapsulácia ti už ide skvele.",positive,celebrating
+"Bravo! Vidím, že linked list ti už ide skvele.",positive,celebrating
+"Dobre, pozrime sa teraz na stromy.",neutral,neutral
+"Hmm, dynamické programovanie je zložitejší problém. Treba to rozobrať.",neutral,thinking_deep
+Tvoj pokrok v klastrovaní je skutočne pôsobivý.,positive,proud
+Pozrime sa na limita z iného uhla.,negative,patient
+"Trpezlivosť, RNN príde s praxou.",negative,patient
+Dobre sa pýtaš na strojové učenie.,neutral,curious
+Chyba v odpovedi. Klastrovanie treba pochopiť inak.,negative,correcting
+"Nevadí, poďme si hash tabuľky vysvetliť ešte raz.",negative,patient
+"Som rada, že dynamické programovanie ti už nerobí problémy.",positive,proud
+Poďme ďalej na O-notácia.,neutral,neutral
+"Oh, to je neočakávaná otázka o polymorfizme!",neutral,surprise
+Zamyslime sa nad enkapsulácia systematicky.,neutral,thinking_deep
+Chyba v odpovedi. NLP treba pochopiť inak.,negative,correcting
+"Pokračuj tak ďalej, integrál sa ti darí.",positive,encouraging_mild
+Zamyslime sa nad Gaussova eliminácia systematicky.,neutral,thinking_deep
+Premýšľam nad for cyklus... Je tam viacero aspektov.,neutral,thinking_deep
+Toto vyžaduje hlbšiu analýzu klastrovanie.,neutral,thinking_deep
+"Bravo! Vidím, že RNN ti už ide skvele.",positive,celebrating
+Nesprávne. Limity vyžaduje iný prístup.,negative,correcting
+Chyba v odpovedi. Cykly treba pochopiť inak.,negative,correcting
+Perfektné! Tvoja odpoveď o polymorfizme je úplne správna.,positive,celebrating
+"Výborne, presne tak sa embedding implementuje.",positive,celebrating
+Dobre sa pýtaš na abstraktné triedy.,neutral,curious
+"To je v poriadku, veľa študentov má problémy s pole.",negative,patient
+"Dobre, pozrime sa teraz na derivácie.",neutral,neutral
+"Výborná otázka, abstrakcia si zaslúži pozornosť.",neutral,curious
+Zaujímavá otázka o štruktúrach. Pozrime sa na to bližšie.,neutral,curious
+"Vedel som, že transformer zvládneš. A zvládol si to.",positive,proud
+"Výborne, presne tak sa pole implementuje.",positive,celebrating
+"V poriadku, prejdime k enkapsulácia.",neutral,neutral
+Pozrime sa na pointer z iného uhla.,negative,patient
+"Nevadí, poďme si determinanty vysvetliť ešte raz.",negative,patient
+"V poriadku, prejdime k vlastné čísla.",neutral,neutral
+"Správny prístup k NLP, len dolaď detaily.",positive,encouraging_mild
+Pozrime sa na fread z iného uhla.,negative,patient
+"Hmm, štruktúry je zložitejší problém. Treba to rozobrať.",neutral,thinking_deep
+"Výborná otázka, O-notácia si zaslúži pozornosť.",neutral,curious
+"Tak teda, derivácia je naša ďalšia téma.",neutral,neutral
+"To je v poriadku, veľa študentov má problémy s pole.",negative,patient
+Vidím pokrok v tvojom chápaní rozhraní.,positive,proud
+Vidím pokrok v tvojom chápaní derivácií.,positive,proud
+Super práca s polymorfizmus! Presne to som chcel počuť.,positive,celebrating
+"Som rada, že limity ti už nerobí problémy.",positive,proud
+"Vidím, že si sa naučil perceptrón veľmi dobre.",positive,proud
+"Dobrá práca, O-notácia vyzerá sľubne.",positive,encouraging_mild
+Pozrime sa na linked list z iného uhla.,negative,patient
+Dobrá otázka. Dedičnosť je zaujímavá téma.,neutral,curious
+"Trpezlivosť, hash funkcia príde s praxou.",negative,patient
+Toto je nesprávne riešenie pre regresia.,negative,correcting
+Dobrá otázka. Perceptrón je zaujímavá téma.,neutral,curious
+Pozrime sa na rekurzia z iného uhla.,negative,patient
+"To je v poriadku, veľa študentov má problémy s rozhranie.",negative,patient
+"Prekvapuješ ma, dedičnosť je pokročilá téma.",neutral,surprise
+"Pekne, len pokračuj s dedičnosťou.",positive,encouraging_mild
+Pozrime sa na Singleton vzor z iného uhla.,negative,patient
+"Nevadí, poďme si regresiu vysvetliť ešte raz.",negative,patient
+Zlepšil si sa v cykloch oproti minulému týždňu.,positive,proud
+Chyba. Gradient sa nepoužíva týmto spôsobom.,negative,correcting
+Prejdime k ďalšej časti o neurón.,neutral,neutral
+"Nevadí, skúsme to znova. Rekurzia je náročná téma.",negative,patient
+"Trpezlivosť, DFS príde s praxou.",negative,patient
+Toto je nesprávne riešenie pre neurónové siete.,negative,correcting
+"Fajn, základ abstrakcie máš správne.",positive,encouraging_mild
+"Dobre, pozrime sa teraz na rozhrania.",neutral,neutral
+"Rastieš ako programátor, integrál ti ide čoraz lepšie.",positive,proud
+"Bravo! Vidím, že abstrakcia ti už ide skvele.",positive,celebrating
+Úžasne! Takáto odpoveď o polymorfizme ma teší.,positive,celebrating
+"Som rada, že enkapsulácia ti už nerobí problémy.",positive,proud
+"Rastieš ako programátor, fread ti ide čoraz lepšie.",positive,proud
+"Nevadí, skúsme to znova. Abstraktné triedy sú náročná téma.",negative,patient
+To nie je celkom správne. Funkcia má inú definíciu.,negative,correcting
+"Nevadí, poďme si štruktúry vysvetliť ešte raz.",negative,patient
+Omyl. Pri premenné treba postupovať inak.,negative,correcting
+"Oh, to je neočakávaná otázka o triedech a objektoch!",neutral,surprise
+"Dobrá práca, linked list vyzerá sľubne.",positive,encouraging_mild
+Zlepšil si sa v gradient descent oproti minulému týždňu.,positive,proud
+"Výborne, presne tak sa BFS implementuje.",positive,celebrating
+Dobrá otázka. Pointer je zaujímavá téma.,neutral,curious
+"Nie, skúste znova. Hash funkcia funguje odlišne.",negative,correcting
+"Bohužiaľ, zložitosť algoritmov nefunguje takto. Skús to inak.",negative,correcting
+Zaujímavý pohľad na neurónové siete.,neutral,curious
+"Áno, toto je dobrý smer pri funkciách.",positive,encouraging_mild
+Prejdime k ďalšej časti o embedding.,neutral,neutral
+"Bohužiaľ, vyhľadávanie nefunguje takto. Skús to inak.",negative,correcting
+"Som rada, že premenné ti už nerobí problémy.",positive,proud
+Skvelo si to vyriešil! Polia je jasný.,positive,celebrating
+"Wow, nečakal som otázku o limitách tak skoro.",neutral,surprise
+"Vidím, že si sa naučil správu pamäte veľmi dobre.",positive,proud
+Zlepšil si sa v determinanty oproti minulému týždňu.,positive,proud
+Poďme preskúmať pointer hlbšie.,neutral,curious
+Poďme analyzovať Gaussova eliminácia od základov.,neutral,thinking_deep
+"Som hrdý na to, ako zvládaš determinant.",positive,proud
+"Vedel som, že perceptrón zvládneš. A zvládol si to.",positive,proud
+Výnimočný výkon! Spájané zoznamy zvládaš na výbornú.,positive,celebrating
+"Bravo! Vidím, že determinant ti už ide skvele.",positive,celebrating
+"Hej, rozumieš binárny strom, to je hlavné.",positive,encouraging_mild
+Chyba. Embedding sa nepoužíva týmto spôsobom.,negative,correcting
+Dobre sa pýtaš na regresia.,neutral,curious
+"Pekne, len pokračuj s enkapsulácia.",positive,encouraging_mild
+Zaujímavá otázka o rekurzii. Pozrime sa na to bližšie.,neutral,curious
+"Rozmýšľam, ako najlepšie vysvetliť triedy a objekty.",neutral,thinking_deep
+Výnimočný výkon! Ukazovatele zvládaš na výbornú.,positive,celebrating
+"Rastieš ako programátor, integrál ti ide čoraz lepšie.",positive,proud
+Nesprávne. Stromy vyžaduje iný prístup.,negative,correcting
+"Trpezlivosť, integrál príde s praxou.",negative,patient
+"Nevadí, chyby sú súčasťou učenia. Hash tabuľky zvládneš.",negative,patient
+"Pokračuj tak ďalej, determinant sa ti darí.",positive,encouraging_mild
+Toto vyžaduje hlbšiu analýzu dynamické programovanie.,neutral,thinking_deep
+Bohužiaľ nie. DFS sa tak neimplementuje.,negative,correcting
+"Skoro si tam, rozhranie potrebuje len malú úpravu.",positive,encouraging_mild
+"V poriadku, prejdime k dynamické programovanie.",neutral,neutral
+"Hej, rozumieš neurón, to je hlavné.",positive,encouraging_mild
+Poďme preskúmať attention hlbšie.,neutral,curious
+Zlepšil si sa v správa pamäti oproti minulému týždňu.,positive,proud
+"Som rada, že ukazovatele ti už nerobí problémy.",positive,proud
+To nie je celkom správne. Binárny strom má inú definíciu.,negative,correcting
+To si zvládol sám! Attention je pre teba jasný.,positive,proud
+"V poriadku, malloc si teraz vysvetlíme.",neutral,neutral
+To je relevantná otázka o derivácii.,neutral,curious
+To si zvládol sám! Enkapsulácia je pre teba jasný.,positive,proud
+"Nevadí, chyby sú súčasťou učenia. Limity zvládneš.",negative,patient
+"Vedel som, že gradient zvládneš. A zvládol si to.",positive,proud
+"Tak, limity — začneme od začiatku.",neutral,neutral
+"Dobre, pokračujme s dynamické programovanie.",neutral,neutral
+Toto je nesprávne riešenie pre gradient descent.,negative,correcting
+"Rozmýšľam, ako najlepšie vysvetliť klastrovanie.",neutral,thinking_deep
+"Prekvapuješ ma, abstrakcia je pokročilá téma.",neutral,surprise
+"Vedel som, že abstrakcia zvládneš. A zvládol si to.",positive,proud
+"Prekvapuješ ma, integrál je pokročilá téma.",neutral,surprise
+"To je v poriadku, veľa študentov má problémy s objekt.",negative,patient
+Chyba. Quick sort sa nepoužíva týmto spôsobom.,negative,correcting
+"Trpezlivosť, polymorfizmus príde s praxou!",negative,patient
+"Rozmýšľam, ako najlepšie vysvetliť diferenciálne rovnice!",neutral,thinking_deep
+Zamyslime sa nad dedičnosť systematicky.,neutral,thinking_deep
+"Pokračuj tak ďalej, objekt sa ti darí!",positive,encouraging_mild
+Omyl. Pri derivácie treba postupovať inak...,negative,correcting
+"Som rada, že cykly ti už nerobí problémy!",positive,proud
+Omyl. Pri ukazovatele treba postupovať inak.,negative,correcting
+"Som rada, že NLP ti už nerobí problémy!",positive,proud
+"Dobre, si na správnej ceste so strojové učenie!",positive,encouraging_mild
+"Hmm, abstraktné triedy je zložitejší problém. Treba to rozobrať.",neutral,thinking_deep
+Poďme ďalej na abstrakciu!,neutral,neutral
+"Rastieš ako programátor, struct ti ide čoraz lepšie...",positive,proud
+"Skoro si tam, pole potrebuje len malú úpravu.",positive,encouraging_mild
+"Bohužiaľ, návrhové vzory nefunguje takto. Skús to inak!",negative,correcting
+"Vidím, že robíš veľký pokrok v spájaných zoznamoch.",positive,proud
+"Vidím, že si sa naučil Gaussova eliminácia veľmi dobre.",positive,proud
+Chyba. Embedding sa nepoužíva týmto spôsobom.,negative,correcting
+Pomaly a postupne. Integrály pochopíš.,negative,patient
+"Bravo! Vidím, že Factory vzor ti už ide skvele!",positive,celebrating
+Prejdime k ďalšej časti o malloc!,neutral,neutral
+"Pekne, len pokračuj s polymorfizmom!",positive,encouraging_mild
+Poďme analyzovať Factory vzor od základov!,neutral,thinking_deep
+To nie je celkom správne. Neurón má inú definíciu...,negative,correcting
+Výnimočný výkon! Triedenie zvládaš na výbornú.,positive,celebrating
+"Výborná otázka, determinant si zaslúži pozornosť...",neutral,curious
+"Nie, toto nie je správna odpoveď. Binárny strom znamená niečo iné...",negative,correcting
+Ideme na gradient descent.,neutral,neutral
+"Hej, rozumieš Gaussova eliminácia, to je hlavné...",positive,encouraging_mild
+Bohužiaľ nie. BFS sa tak neimplementuje!,negative,correcting
+"Rozmýšľam, ako najlepšie vysvetliť diferenciálne rovnice...",neutral,thinking_deep
+"Tak teda, derivácia je naša ďalšia téma...",neutral,neutral
+"Tak, Taylorov rad — začneme od začiatku!",neutral,neutral
+"Výborná otázka, Taylorov polynom si zaslúži pozornosť...",neutral,curious
+"Som hrdý na to, ako zvládaš BFS!",positive,proud
+Vidím pokrok v tvojom chápaní gradientu descent.,positive,proud
+"To je v poriadku, veľa študentov má problémy s rozhranie.",negative,patient
+"Hej, rozumieš abstrakcia, to je hlavné!",positive,encouraging_mild
+Dobrá otázka. Pointer je zaujímavá téma!,neutral,curious
+Dobre sa pýtaš na klasifikácia!,neutral,curious
+Úžasne! Takáto odpoveď o enkapsulácii ma teší...,positive,celebrating
+"Som hrdý na to, ako zvládaš Factory vzor.",positive,proud
+"Pokračuj tak ďalej, abstrakcia sa ti darí!",positive,encouraging_mild
+Tak poďme na Taylorov polynom!,neutral,neutral
+"Dobre, pokračujme s gradient descent.",neutral,neutral
+"Rastieš ako programátor, linked list ti ide čoraz lepšie.",positive,proud
+Toto vyžaduje hlbšiu analýzu klastrovanie!,neutral,thinking_deep
+Skvelo si to vyriešil! Návrhové vzory je jasný!,positive,celebrating
+"Dobre, pokračujme s limitami!",neutral,neutral
+"Skoro si tam, Gaussova eliminácia potrebuje len malú úpravu...",positive,encouraging_mild
+Chyba. Konvolúcia sa nepoužíva týmto spôsobom...,negative,correcting
+Zaujímavý pohľad na zložitosť algoritmov!,neutral,curious
+Perfektné! Tvoja odpoveď o polymorfizme je úplne správna...,positive,celebrating
+Vidím pokrok v tvojom chápaní dedičnosti...,positive,proud
+Poďme analyzovať Singleton vzor od základov.,neutral,thinking_deep
+Pomaly a postupne. Premenné pochopíš...,negative,patient
+"Nevadí, poďme si Taylorov rad vysvetliť ešte raz!",negative,patient
+"Rozmýšľam, ako najlepšie vysvetliť neurónové siete.",neutral,thinking_deep
+"Nič sa nedeje, trieda vyžaduje prax.",negative,patient
+"Moment, dynamické programovanie potrebuje dôkladnejší rozbor.",neutral,thinking_deep
+"Hej, rozumieš Gaussova eliminácia, to je hlavné!",positive,encouraging_mild
+"Som hrdý na to, ako zvládaš neurón...",positive,proud
+"Správny prístup k klasifikácia, len dolaď detaily!",positive,encouraging_mild
+"Výborne, presne tak sa pole implementuje!",positive,celebrating
+To nie je celkom správne. Factory vzor má inú definíciu.,negative,correcting
+"Hmm, rozhrania — to je naozaj dobrá otázka.",neutral,curious
+"Bravo! Vidím, že dedičnosť ti už ide skvele!",positive,celebrating
+"Dobre, pokračujme s limitami.",neutral,neutral
+"Hej, rozumieš abstrakcia, to je hlavné!",positive,encouraging_mild
+"Bohužiaľ, klasifikácia nefunguje takto. Skús to inak...",negative,correcting
+"Skoro si tam, pole potrebuje len malú úpravu.",positive,encouraging_mild
+"Som rada, že triedenie ti už nerobí problémy...",positive,proud
+Pozrime sa na pointer z iného uhla!,negative,patient
+"Pokračuj tak ďalej, perceptrón sa ti darí!",positive,encouraging_mild
+"Nevadí, skúsme to znova. Abstraktné triedy sú náročná téma!",negative,patient
+"V poriadku, prejdime k návrhové vzory...",neutral,neutral
+"Dajme si dynamické programovanie ešte raz, tentoraz podrobnejšie!",negative,patient
+"Nie, skúste znova. Limita funguje odlišne.",negative,correcting
+"To je v poriadku, veľa študentov má problémy s pole...",negative,patient
+"Dobrá práca, backtracking vyzerá sľubne!",positive,encouraging_mild
+"Hmm, matice — to je naozaj dobrá otázka...",neutral,curious
+"Nevadí, chyby sú súčasťou učenia. Limity zvládneš.",negative,patient
+Toto vyžaduje hlbšiu analýzu súbory...,neutral,thinking_deep
+Poďme ďalej na linked list...,neutral,neutral
+"Bravo! Vidím, že enkapsulácia ti už ide skvele...",positive,celebrating
+"Wow, nečakal som otázku o stromoch tak skoro...",neutral,surprise
+Zlepšil si sa v enkapsulácia oproti minulému týždňu...,positive,proud
+Chyba. Konvolúcia sa nepoužíva týmto spôsobom.,negative,correcting
+"Oh, to je neočakávaná otázka o triedech a objektoch!",neutral,surprise
+Poďme analyzovať struct od základov!,neutral,thinking_deep
+Chyba v odpovedi. Diferenciálne rovnice treba pochopiť inak...,negative,correcting
+Pozrime sa na DFS z iného uhla...,negative,patient
+Tvoj pokrok v poliachch je skutočne pôsobivý...,positive,proud
+"Bravo! Vidím, že polymorfizmus ti už ide skvele...",positive,celebrating
+Poďme ďalej na backtracking!,neutral,neutral
+"Hmm, vyhľadávanie je zložitejší problém. Treba to rozobrať...",neutral,thinking_deep
+"Hej, rozumieš determinant, to je hlavné!",positive,encouraging_mild
+"Pekne, len pokračuj s enkapsulácia.",positive,encouraging_mild
+"Nevadí, poďme si neurónové siete vysvetliť ešte raz!",negative,patient
+"Nevadí, skúsme to znova. Abstraktné triedy sú náročná téma...",negative,patient
