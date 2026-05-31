@@ -111,5 +111,5 @@ pytest-asyncio>=0.23.0
 pytest-cov>=4.1.0
 
 # ── Misc model/data deps ──────────────────────────────────────
-huggingface-hub>=0.17.0
+huggingface-hub>=1.17.0
 scipy>=1.10.0
