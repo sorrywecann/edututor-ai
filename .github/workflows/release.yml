@@ -165,7 +165,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: source-tarball
 
@@ -237,7 +237,7 @@ jobs:
         with:
           fetch-depth: 0   # need full history for release-notes extraction
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           path: artifacts
 
