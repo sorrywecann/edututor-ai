@@ -58,7 +58,7 @@ mutagen>=1.47.0
 pysbd==0.3.4
 
 # ── TTS: diffusers + omegaconf (used by Kokoro + other model wrappers) ───
-diffusers>=0.29.0
+diffusers>=0.38.0
 omegaconf==2.3.0
 pyloudnorm==0.2.0
 
