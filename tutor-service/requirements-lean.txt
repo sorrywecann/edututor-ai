@@ -34,7 +34,7 @@ edge-tts>=6.1.9
 faster-whisper>=1.0.0
 
 # ── Light deps the startup path imports at module level ──
-numpy>=1.24.0
+numpy>=2.4.6
 tiktoken>=0.7.0
 mutagen>=1.47.0
 pysbd==0.3.4
