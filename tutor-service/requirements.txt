@@ -45,7 +45,7 @@ misaki[en]>=0.9.4
 # Czech (cs), English (en). Model auto-downloads from HuggingFace on
 # first use. See tts_service.py _synthesize_omnivoice() for details.
 omnivoice
-torchaudio>=2.1.0
+torchaudio>=2.11.0
 
 # ── TTS supporting libs (audio processing) ───────────────────────────────
 librosa>=0.10.0
