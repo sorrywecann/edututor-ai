@@ -18,7 +18,7 @@ aiofiles>=24.1.0
 python-dotenv>=1.1.1
 
 # ── Database (SQLite for desktop) ──
-sqlalchemy[asyncio]>=2.0.36
+sqlalchemy[asyncio]>=2.0.50
 aiosqlite>=0.20.0
 
 # ── Cache (redis client is imported at module level in main.py; the backend

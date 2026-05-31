@@ -14,7 +14,7 @@ aiofiles>=24.1.0
 python-dotenv>=1.1.1
 
 # ── Database ──────────────────────────────────────────────────
-sqlalchemy[asyncio]>=2.0.36
+sqlalchemy[asyncio]>=2.0.50
 aiosqlite>=0.20.0
 # asyncpg: async PostgreSQL driver — required when DATABASE_URL is
 # postgresql+asyncpg://... (docker-compose.yml hardcodes this).
