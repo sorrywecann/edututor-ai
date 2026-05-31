@@ -19,7 +19,7 @@ python-dotenv>=1.1.1
 
 # ── Database (SQLite for desktop) ──
 sqlalchemy[asyncio]>=2.0.36
-aiosqlite>=0.20.0
+aiosqlite>=0.22.1
 
 # ── Cache (redis client is imported at module level in main.py; the backend
 #    runs fine with no redis server reachable, but the import must resolve) ──

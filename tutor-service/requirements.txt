@@ -15,7 +15,7 @@ python-dotenv>=1.1.1
 
 # ── Database ──────────────────────────────────────────────────
 sqlalchemy[asyncio]>=2.0.36
-aiosqlite>=0.20.0
+aiosqlite>=0.22.1
 # asyncpg: async PostgreSQL driver — required when DATABASE_URL is
 # postgresql+asyncpg://... (docker-compose.yml hardcodes this).
 # Without this, backend crashes at startup with ModuleNotFoundError.
