@@ -1,0 +1,923 @@
+[
+  {
+    "id": "DSA-001",
+    "question": "Čo je pole a aka je zložitosť prístupu k prvku?",
+    "expected_keywords": [
+      "pole",
+      "index",
+      "O(1)",
+      "priamy prístup"
+    ],
+    "difficulty": "easy",
+    "subject": "DSA",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: pole, index, O(1)"
+  },
+  {
+    "id": "DSA-002",
+    "question": "Čo je spájaný zoznam?",
+    "expected_keywords": [
+      "spájaný zoznam",
+      "uzol",
+      "pointer",
+      "next",
+      "dynamicky"
+    ],
+    "difficulty": "easy",
+    "subject": "DSA",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: spájaný zoznam, uzol, pointer"
+  },
+  {
+    "id": "DSA-003",
+    "question": "Čo je zasobnik (stack)?",
+    "expected_keywords": [
+      "zasobnik",
+      "LIFO",
+      "push",
+      "pop",
+      "posledny dnu"
+    ],
+    "difficulty": "easy",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-004",
+    "question": "Čo je fronta (queue)?",
+    "expected_keywords": [
+      "fronta",
+      "FIFO",
+      "enqueue",
+      "dequeue",
+      "prvy von"
+    ],
+    "difficulty": "easy",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-005",
+    "question": "Čo je binárny strom?",
+    "expected_keywords": [
+      "binárny strom",
+      "koren",
+      "lavy",
+      "pravy",
+      "uzol"
+    ],
+    "difficulty": "easy",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-006",
+    "question": "Čo je binárny vyhľadávací strom (BST)?",
+    "expected_keywords": [
+      "BST",
+      "lavy mensi",
+      "pravy vacsi",
+      "vyhľadávanie",
+      "strom"
+    ],
+    "difficulty": "easy",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-007",
+    "question": "Čo je hašovacia tabuľka?",
+    "expected_keywords": [
+      "hašovacia tabuľka",
+      "kluc",
+      "hodnota",
+      "hašovacia funkcia",
+      "O(1)"
+    ],
+    "difficulty": "easy",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-008",
+    "question": "Čo je graf?",
+    "expected_keywords": [
+      "graf",
+      "vrcholy",
+      "hrany",
+      "orientovany",
+      "neorientovany"
+    ],
+    "difficulty": "easy",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-009",
+    "question": "Čo je O-notacia?",
+    "expected_keywords": [
+      "O-notacia",
+      "zložitosť",
+      "asymptotická",
+      "najhorsi pripad"
+    ],
+    "difficulty": "easy",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-010",
+    "question": "Čo je linearné vyhľadávanie?",
+    "expected_keywords": [
+      "linearne",
+      "O(n)",
+      "sekvenčné",
+      "porovnanie"
+    ],
+    "difficulty": "easy",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-011",
+    "question": "Čo je binarne vyhľadávanie?",
+    "expected_keywords": [
+      "binarne",
+      "O(log n)",
+      "stred",
+      "zotriedene pole"
+    ],
+    "difficulty": "easy",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-012",
+    "question": "Čo je bubble sort?",
+    "expected_keywords": [
+      "bubble sort",
+      "porovnanie",
+      "zamena",
+      "O(n^2)"
+    ],
+    "difficulty": "easy",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-013",
+    "question": "Čo je halda (heap)?",
+    "expected_keywords": [
+      "halda",
+      "heap",
+      "priorita",
+      "rodic",
+      "min-heap",
+      "max-heap"
+    ],
+    "difficulty": "easy",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-014",
+    "question": "Aký je rozdiel medzi polom a spajanym zoznamom?",
+    "expected_keywords": [
+      "pole",
+      "spájaný zoznam",
+      "prístup",
+      "vlozenie",
+      "pamat"
+    ],
+    "difficulty": "easy",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-015",
+    "question": "Čo je rekurzia v kontexte algoritmov?",
+    "expected_keywords": [
+      "rekurzia",
+      "zakladny pripad",
+      "rekurzivne volanie",
+      "zasobnik"
+    ],
+    "difficulty": "easy",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-016",
+    "question": "Čo je deque (obojstranna fronta)?",
+    "expected_keywords": [
+      "deque",
+      "obojstranna",
+      "zaciatok",
+      "koniec",
+      "vlozenie"
+    ],
+    "difficulty": "easy",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-017",
+    "question": "Čo je prioritna fronta?",
+    "expected_keywords": [
+      "prioritna fronta",
+      "priorita",
+      "halda",
+      "minimum",
+      "maximum"
+    ],
+    "difficulty": "easy",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-018",
+    "question": "Vysvetlite casovu zložitosť O(1), O(n), O(log n), O(n^2).",
+    "expected_keywords": [
+      "O(1)",
+      "O(n)",
+      "O(log n)",
+      "O(n^2)",
+      "porovnanie",
+      "zložitosť"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: O(1), O(n), O(log n)"
+  },
+  {
+    "id": "DSA-019",
+    "question": "Vysvetlite quick sort algoritmus.",
+    "expected_keywords": [
+      "quick sort",
+      "pivot",
+      "rozdelenie",
+      "O(n log n)",
+      "rekurzia"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: quick sort, pivot, rozdelenie"
+  },
+  {
+    "id": "DSA-020",
+    "question": "Vysvetlite merge sort algoritmus.",
+    "expected_keywords": [
+      "merge sort",
+      "rozdelenie",
+      "zlucenie",
+      "O(n log n)",
+      "stabilný"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-021",
+    "question": "Vysvetlite heap sort.",
+    "expected_keywords": [
+      "heap sort",
+      "halda",
+      "extrakcia maxima",
+      "O(n log n)"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-022",
+    "question": "Čo je AVL strom?",
+    "expected_keywords": [
+      "AVL",
+      "vyvazeny",
+      "rotacia",
+      "vyska",
+      "faktor vyvazenosti"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-023",
+    "question": "Čo je B-strom?",
+    "expected_keywords": [
+      "B-strom",
+      "viaccestný",
+      "databazy",
+      "disk",
+      "balansovany"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-024",
+    "question": "Vysvetlite algoritmus BFS.",
+    "expected_keywords": [
+      "BFS",
+      "prehladavanie do sirky",
+      "fronta",
+      "uroven",
+      "graf"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-025",
+    "question": "Vysvetlite algoritmus DFS.",
+    "expected_keywords": [
+      "DFS",
+      "prehladavanie do hlbky",
+      "zasobnik",
+      "rekurzia",
+      "graf"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-026",
+    "question": "Čo je topologické triedenie?",
+    "expected_keywords": [
+      "topologické triedenie",
+      "DAG",
+      "závislosťi",
+      "poradie"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-027",
+    "question": "Vysvetlite Dijkstrov algoritmus.",
+    "expected_keywords": [
+      "Dijkstra",
+      "najkratsia cesta",
+      "vahy",
+      "prioritna fronta",
+      "relaxacia"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-028",
+    "question": "Čo je kolizia v hašovacej tabuľke a ako ju riesit?",
+    "expected_keywords": [
+      "kolizia",
+      "retazenie",
+      "otvorene adresovanie",
+      "hash",
+      "rovnaky index"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-029",
+    "question": "Porovnajte selection sort a insertion sort.",
+    "expected_keywords": [
+      "selection sort",
+      "insertion sort",
+      "O(n^2)",
+      "stabilita",
+      "porovnanie"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-030",
+    "question": "Čo je trie (prefixovy strom)?",
+    "expected_keywords": [
+      "trie",
+      "prefix",
+      "retazce",
+      "vyhľadávanie",
+      "uzol"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-031",
+    "question": "Čo je cerveno-cierny strom?",
+    "expected_keywords": [
+      "cerveno-cierny",
+      "vyvazeny",
+      "farba",
+      "rotacia",
+      "pravidla"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-032",
+    "question": "Vysvetlite amortizovanú zložitosť.",
+    "expected_keywords": [
+      "amortizovaná",
+      "priemerne",
+      "operacie",
+      "dynamicke pole",
+      "zložitosť"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-033",
+    "question": "Čo je counting sort?",
+    "expected_keywords": [
+      "counting sort",
+      "O(n+k)",
+      "pocitanie",
+      "rozsah",
+      "nestabilný"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-034",
+    "question": "Čo je radix sort?",
+    "expected_keywords": [
+      "radix sort",
+      "cislice",
+      "pozicia",
+      "O(d*(n+k))",
+      "stabilný"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-035",
+    "question": "Aký je rozdiel medzi DFS a BFS?",
+    "expected_keywords": [
+      "DFS",
+      "BFS",
+      "zasobnik",
+      "fronta",
+      "hlbka",
+      "sirka"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-036",
+    "question": "Čo je spanning tree grafu?",
+    "expected_keywords": [
+      "spanning tree",
+      "kostra",
+      "hrany",
+      "spojeny",
+      "minimum"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-037",
+    "question": "Vysvetlite princíp divide and conquer.",
+    "expected_keywords": [
+      "divide and conquer",
+      "rozdelenie",
+      "vyriesenie",
+      "zlucenie",
+      "rekurzia"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-038",
+    "question": "Čo je backtracking?",
+    "expected_keywords": [
+      "backtracking",
+      "spätné sledovanie",
+      "pokusy",
+      "orezavanie",
+      "rekurzia"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-039",
+    "question": "Čo je dynamické programovanie?",
+    "expected_keywords": [
+      "dynamické programovanie",
+      "podproblemy",
+      "memorizacia",
+      "tabulka",
+      "optimalita"
+    ],
+    "difficulty": "hard",
+    "subject": "DSA",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: dynamické programovanie, podproblemy, memorizacia"
+  },
+  {
+    "id": "DSA-040",
+    "question": "Vysvetlite problem batohu (knapsack).",
+    "expected_keywords": [
+      "batoh",
+      "knapsack",
+      "kapacita",
+      "hodnota",
+      "dynamické programovanie"
+    ],
+    "difficulty": "hard",
+    "subject": "DSA",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: batoh, knapsack, kapacita"
+  },
+  {
+    "id": "DSA-041",
+    "question": "Riešenie problemu najdlhšej spoločnej podpostupnosti (LCS).",
+    "expected_keywords": [
+      "LCS",
+      "podpostupnost",
+      "dynamické programovanie",
+      "tabulka"
+    ],
+    "difficulty": "hard",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-042",
+    "question": "Vysvetlite Bellman-Fordov algoritmus.",
+    "expected_keywords": [
+      "Bellman-Ford",
+      "zaporne vahy",
+      "relaxacia",
+      "najkratsia cesta",
+      "cyklus"
+    ],
+    "difficulty": "hard",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-043",
+    "question": "Čo je Floydov-Warshallov algoritmus?",
+    "expected_keywords": [
+      "Floyd-Warshall",
+      "vsetky pary",
+      "najkratsia cesta",
+      "matica",
+      "O(n^3)"
+    ],
+    "difficulty": "hard",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-044",
+    "question": "Vysvetlite Kruskalov algoritmus pre MST.",
+    "expected_keywords": [
+      "Kruskal",
+      "minimalna kostra",
+      "triedenie hran",
+      "union-find",
+      "cyklus"
+    ],
+    "difficulty": "hard",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-045",
+    "question": "Vysvetlite Primov algoritmus pre MST.",
+    "expected_keywords": [
+      "Prim",
+      "minimalna kostra",
+      "prioritna fronta",
+      "vrchol",
+      "rozsirovanie"
+    ],
+    "difficulty": "hard",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-046",
+    "question": "Čo je Union-Find datova struktura?",
+    "expected_keywords": [
+      "union-find",
+      "disjunktne mnoziny",
+      "find",
+      "union",
+      "kompresia cesty"
+    ],
+    "difficulty": "hard",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-047",
+    "question": "Vysvetlite problem obchodneho cestujuceho (TSP).",
+    "expected_keywords": [
+      "TSP",
+      "obchodny cestujuci",
+      "NP-tazky",
+      "heuristika",
+      "optimalizacia"
+    ],
+    "difficulty": "hard",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-048",
+    "question": "Čo je greedy algoritmus a uveďte príklad.",
+    "expected_keywords": [
+      "greedy",
+      "hladovy",
+      "lokalny optimum",
+      "globalny",
+      "mince"
+    ],
+    "difficulty": "hard",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-049",
+    "question": "Vysvetlite segment tree.",
+    "expected_keywords": [
+      "segment tree",
+      "intervalove dotazy",
+      "aktualizacia",
+      "O(log n)",
+      "strom"
+    ],
+    "difficulty": "hard",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-050",
+    "question": "Čo je Fenwickov strom (Binary Indexed Tree)?",
+    "expected_keywords": [
+      "Fenwickov strom",
+      "BIT",
+      "prefixove sucty",
+      "aktualizacia",
+      "O(log n)"
+    ],
+    "difficulty": "hard",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-051",
+    "question": "Vysvetlite A* algoritmus.",
+    "expected_keywords": [
+      "A star",
+      "heuristika",
+      "f(n)",
+      "g(n)",
+      "h(n)",
+      "najkratsia cesta"
+    ],
+    "difficulty": "hard",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-052",
+    "question": "Čo je skip list?",
+    "expected_keywords": [
+      "skip list",
+      "urovne",
+      "pravdepodobnostný",
+      "vyhľadávanie",
+      "O(log n)"
+    ],
+    "difficulty": "hard",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-053",
+    "question": "Porovnajte casove zložitosťi roznych triediacich algoritmov.",
+    "expected_keywords": [
+      "bubble",
+      "quick",
+      "merge",
+      "heap",
+      "O(n^2)",
+      "O(n log n)"
+    ],
+    "difficulty": "hard",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-054",
+    "question": "Vysvetlite priestorovu zložitosť.",
+    "expected_keywords": [
+      "priestorova zložitosť",
+      "pamat",
+      "pomocny priestor",
+      "O(1)",
+      "O(n)"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-055",
+    "question": "Čo je stabilný triediaci algoritmus?",
+    "expected_keywords": [
+      "stabilný",
+      "poradie",
+      "rovnake kluce",
+      "merge sort"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-056",
+    "question": "Ako detekovať cyklus v spajanom zozname?",
+    "expected_keywords": [
+      "cyklus",
+      "Floyd",
+      "korytnacka a zajac",
+      "dva ukazovateľe"
+    ],
+    "difficulty": "hard",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-057",
+    "question": "Čo je bloom filter?",
+    "expected_keywords": [
+      "bloom filter",
+      "pravdepodobnostný",
+      "false positive",
+      "hash",
+      "mnozina"
+    ],
+    "difficulty": "hard",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-058",
+    "question": "Vysvetlite LRU cache.",
+    "expected_keywords": [
+      "LRU",
+      "cache",
+      "naposledy pouzite",
+      "hash mapa",
+      "spojeny zoznam"
+    ],
+    "difficulty": "hard",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-059",
+    "question": "Čo je in-order, pre-order a post-order priechod stromom?",
+    "expected_keywords": [
+      "in-order",
+      "pre-order",
+      "post-order",
+      "priechod",
+      "rekurzia"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-060",
+    "question": "Vysvetlite princíp master theorem.",
+    "expected_keywords": [
+      "master theorem",
+      "rekurzia",
+      "divide and conquer",
+      "zložitosť",
+      "T(n)"
+    ],
+    "difficulty": "hard",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-061",
+    "question": "Aký je rozdiel medzi stromom a grafom?",
+    "expected_keywords": [
+      "strom",
+      "graf",
+      "cyklus",
+      "koren",
+      "hierarchia"
+    ],
+    "difficulty": "easy",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-062",
+    "question": "Čo je adjacency matrix a adjacency list?",
+    "expected_keywords": [
+      "adjacency matrix",
+      "adjacency list",
+      "graf",
+      "reprezentacia",
+      "pamat"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-063",
+    "question": "Vysvetlite insertion do AVL stromu.",
+    "expected_keywords": [
+      "AVL",
+      "vlozenie",
+      "rotacia",
+      "vyvazenost",
+      "vyska"
+    ],
+    "difficulty": "hard",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-064",
+    "question": "Čo je circular buffer?",
+    "expected_keywords": [
+      "circular buffer",
+      "kruhovy",
+      "front",
+      "rear",
+      "modulo"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-065",
+    "question": "Vysvetlite best-case, worst-case a average-case zložitosť.",
+    "expected_keywords": [
+      "best-case",
+      "worst-case",
+      "average",
+      "zložitosť",
+      "analyza"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-066",
+    "question": "Čo je memoizacia?",
+    "expected_keywords": [
+      "memoizacia",
+      "cache",
+      "uz vypocitane",
+      "rekurzia",
+      "efektivita"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-067",
+    "question": "Vysvetlite problem najdlhšej rastúcej podpostupnosti (LIS).",
+    "expected_keywords": [
+      "LIS",
+      "rastucea",
+      "podpostupnost",
+      "dynamické programovanie",
+      "O(n log n)"
+    ],
+    "difficulty": "hard",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-068",
+    "question": "Čo je suffix array?",
+    "expected_keywords": [
+      "suffix array",
+      "pripoiny",
+      "zotriedenie",
+      "vyhľadávanie retazcov"
+    ],
+    "difficulty": "hard",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-069",
+    "question": "Vysvetlite double hashing.",
+    "expected_keywords": [
+      "double hashing",
+      "kolizia",
+      "druha hašovacia funkcia",
+      "otvorene adresovanie"
+    ],
+    "difficulty": "hard",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-070",
+    "question": "Čo je minimum spanning tree?",
+    "expected_keywords": [
+      "minimum spanning tree",
+      "kostra",
+      "minimalna vaha",
+      "Kruskal",
+      "Prim"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA"
+  },
+  {
+    "id": "DSA-071",
+    "question": "Aký je rozdiel medzi depth-limited search a iterative deepening?",
+    "expected_keywords": [
+      "depth-limited",
+      "iterative deepening",
+      "hlbka",
+      "limit",
+      "DFS"
+    ],
+    "difficulty": "hard",
+    "subject": "DSA"
+  }
+]

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8" />
+<title>EduTutor</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --bg-deep: #0b0705;
+    --bg-warm: #1a0e08;
+    --t1: #f4e8d8;
+    --t3: #a89786;
+    --accent-rgb: 217, 130, 85;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; height: 100%;
+    -webkit-user-select: none; user-select: none;
+    -webkit-app-region: drag;
+    overflow: hidden;
+  }
+  body {
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: radial-gradient(ellipse at 50% 32%, var(--bg-warm) 0%, var(--bg-deep) 72%);
+    color: var(--t1);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    -webkit-font-smoothing: antialiased;
+    animation: fade-in 480ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    /* Smooth handoff to the main window — main.mjs adds .fade-out before close. */
+    transition: opacity 520ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  body.fade-out { opacity: 0; }
+
+  /* Tiny wordmark — minimal, doesn't compete with the orb. */
+  .wordmark {
+    font-size: 10px; letter-spacing: 0.42em; text-transform: uppercase;
+    color: var(--t3); opacity: 0.55;
+    margin-bottom: 32px;
+  }
+
+  /* ── Orb ── warm amber core + breathing halo, mirrors GradientOrb idle. */
+  .orb-wrap {
+    position: relative; width: 120px; height: 120px;
+    margin-bottom: 36px;
+  }
+  .halo {
+    position: absolute; inset: -38px; border-radius: 50%;
+    background: radial-gradient(circle,
+      rgba(var(--accent-rgb), 0.34) 0%,
+      rgba(var(--accent-rgb), 0) 65%);
+    animation: halo-breathe 6.5s ease-in-out infinite;
+    will-change: transform, opacity;
+  }
+  .orb {
+    position: absolute; inset: 0; border-radius: 50%;
+    background: radial-gradient(circle at 34% 30%,
+      #fde2bc 0%,
+      #e6a26b 32%,
+      #c4774a 62%,
+      #2a1810 100%);
+    box-shadow:
+      inset 0 -12px 24px rgba(20, 8, 4, 0.58),
+      inset 0 7px 16px rgba(255, 220, 180, 0.18),
+      0 16px 42px rgba(var(--accent-rgb), 0.32);
+    animation: orb-breathe 6.5s ease-in-out infinite;
+    will-change: transform;
+  }
+  /* Soft specular highlight on the top-left — gives the orb roundness. */
+  .orb::after {
+    content: '';
+    position: absolute; inset: 0; border-radius: 50%;
+    background: radial-gradient(circle at 30% 26%,
+      rgba(255, 255, 255, 0.30) 0%,
+      rgba(255, 255, 255, 0) 38%);
+    filter: blur(1.5px);
+    pointer-events: none;
+  }
+  @keyframes orb-breathe {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.04); }
+  }
+  @keyframes halo-breathe {
+    0%, 100% { opacity: 0.65; transform: scale(1); }
+    50%      { opacity: 1;    transform: scale(1.10); }
+  }
+  @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+
+  /* ── Rotating ritual word ── the main visible "I'm alive" signal. */
+  .word {
+    height: 26px;            /* fixed so layout doesn't jump */
+    overflow: hidden;
+    position: relative;
+    font-size: 17px; font-weight: 500; letter-spacing: -0.005em;
+    color: var(--t1);
+  }
+  .word-inner {
+    display: inline-block;
+    animation: word-cycle 1.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  /* Each word fades in from below, holds, fades out to above — framer-feel. */
+  @keyframes word-cycle {
+    0%   { opacity: 0; transform: translateY(10px); }
+    14%  { opacity: 1; transform: translateY(0); }
+    78%  { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-10px); }
+  }
+
+  /* Service status — secondary, quiet, only when something's happening. */
+  .status {
+    margin-top: 16px;
+    font-family: ui-monospace, "JetBrains Mono", "Consolas", monospace;
+    font-size: 10px; letter-spacing: 0.06em;
+    color: var(--t3); opacity: 0.55;
+    min-height: 12px; text-align: center;
+    transition: opacity 0.3s;
+  }
+
+  /* Thin amber progress bar.
+     Used during three phases:
+       1. First-launch UE5 download (determinate, bytes-driven)
+       2. Orchestrator boot (determinate, weighted-service-driven)
+       3. Frontend extract (indeterminate)
+     Stays hidden when no phase is active. */
+  .progress {
+    margin-top: 16px;
+    width: 280px; height: 2px;
+    background: rgba(244, 232, 216, 0.07);
+    border-radius: 2px;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .progress.visible { opacity: 1; }
+  .progress .fill {
+    height: 100%;
+    background: linear-gradient(90deg,
+      rgba(var(--accent-rgb), 0.55),
+      rgba(var(--accent-rgb), 0.95));
+    box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.55);
+    width: 0%;
+    border-radius: 2px;
+    /* The bar grows. Soft easing reads as deliberate, not jumpy. */
+    transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    /* Subtle breathing on the fill itself so even when ratio is static
+       (waiting for backend) the user sees the bar is alive. */
+    animation: progress-pulse 2.6s ease-in-out infinite;
+  }
+  @keyframes progress-pulse {
+    0%, 100% { box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.50); }
+    50%      { box-shadow: 0 0 14px rgba(var(--accent-rgb), 0.78); }
+  }
+  .progress.indeterminate .fill {
+    width: 30%;
+    animation: indeterminate 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite,
+               progress-pulse 2.6s ease-in-out infinite;
+  }
+  @keyframes indeterminate {
+    0%   { transform: translateX(-100%); }
+    100% { transform: translateX(380%); }
+  }
+</style>
+</head>
+<body>
+  <div class="wordmark">EduTutor</div>
+
+  <div class="orb-wrap">
+    <div class="halo" aria-hidden="true"></div>
+    <div class="orb"  aria-hidden="true"></div>
+  </div>
+
+  <div class="word"><span class="word-inner" id="word">Waking up</span></div>
+  <div class="status" id="status">&nbsp;</div>
+  <div class="progress" id="progress"><div class="fill" id="progress-fill"></div></div>
+
+  <script>
+    // Ritual words that cycle while the stack boots — so the wait feels alive,
+    // not anxious. Simple Slovak; anyone gets it. Add/remove freely.
+    // English ritual words — feels more "tech / minimal / international" while
+    // the rest of the app stays Slovak. Edit freely.
+    const WORDS = [
+      'Waking up',
+      'Breathing',
+      'Studying',
+      'Thinking',
+      'Listening',
+      'Vibing',
+      'Flowing',
+      'Jamming',
+    ];
+    let i = 0;
+    const wordEl = document.getElementById('word');
+    function cycle() {
+      i = (i + 1) % WORDS.length;
+      // Re-fire the CSS animation by removing+re-applying it (force a reflow).
+      wordEl.style.animation = 'none';
+      void wordEl.offsetWidth;
+      wordEl.textContent = WORDS[i];
+      wordEl.style.animation = '';
+    }
+    setInterval(cycle, 1900);
+
+    // Called from main.mjs via executeJavaScript whenever the orchestrator
+    // reports service progress. Stays subtle below the rotating word.
+    window.setStatus = (t) => {
+      const el = document.getElementById('status');
+      if (el) el.textContent = t || '';
+    };
+
+    // Called from main.mjs during the first-launch UE5 download (or any
+    // future long-running staged step). `label` goes to the status line;
+    // `ratio` (0..1) drives the thin amber bar — null = indeterminate.
+    // Passing label=null + ratio=null hides the bar (download done).
+    window.setProgress = ({ label, ratio }) => {
+      const stat = document.getElementById('status');
+      const bar = document.getElementById('progress');
+      const fill = document.getElementById('progress-fill');
+      if (stat) stat.textContent = label || '';
+      if (!bar || !fill) return;
+      if (label == null && ratio == null) {
+        bar.classList.remove('visible', 'indeterminate');
+        fill.style.width = '0%';
+        return;
+      }
+      bar.classList.add('visible');
+      if (ratio == null) {
+        bar.classList.add('indeterminate');
+        fill.style.width = '30%';
+      } else {
+        bar.classList.remove('indeterminate');
+        fill.style.width = Math.max(0, Math.min(100, ratio * 100)) + '%';
+      }
+    };
+  </script>
+</body>
+</html>

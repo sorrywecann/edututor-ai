@@ -1,0 +1,572 @@
+/* biome-ignore lint/suspicious/noUnknownAtRules: Tailwind directives */
+@tailwind base;
+/* biome-ignore lint/suspicious/noUnknownAtRules: Tailwind directives */
+@tailwind components;
+/* biome-ignore lint/suspicious/noUnknownAtRules: Tailwind directives */
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────────────────────
+   ATMOSPHERE TOKENS (Phase 1 — UNCLAW-inspired foundation, 2026-05-20)
+   Additive layer on top of the existing --bg/--surface/--raised system.
+   Don't change anything existing; just provides new primitives:
+     * deep navy radial gradient for hero/onboarding backgrounds
+     * frosted glass card pattern
+     * all-caps tracked micro-label typography
+     * pagination dot states
+     * status pill states
+   ───────────────────────────────────────────────────────────────────────── */
+:root,
+[data-theme="dark"] {
+  /* Hero gradient — warm charcoal fading to near-black, soft top vignette */
+  --atm-hero-from:   #221912;
+  --atm-hero-mid:    #160f0a;
+  --atm-hero-to:     #0c0805;
+  --atm-hero:        radial-gradient(
+                       ellipse 120% 80% at 50% 18%,
+                       var(--atm-hero-from) 0%,
+                       var(--atm-hero-mid) 45%,
+                       var(--atm-hero-to) 100%
+                     );
+
+  /* Glass card — warm translucent, blurred, faint cream ring */
+  --atm-glass-bg:        rgba(26, 20, 16, 0.62);
+  --atm-glass-border:    rgba(245, 237, 216, 0.10);
+  --atm-glass-ring:      rgba(245, 237, 216, 0.05);
+  --atm-glass-blur:      24px;
+  --atm-glass-saturate:  1.2;
+  --atm-glass-shadow:    0 22px 60px -20px rgba(0, 0, 0, 0.7),
+                         0 1px 0 0 rgba(245, 237, 216, 0.06) inset;
+
+  /* Typography knobs */
+  --atm-micro-size:    9px;
+  --atm-micro-track:   0.16em;
+  --atm-micro-color:   rgba(245, 237, 216, 0.42);
+  --atm-quote-color:   rgba(245, 237, 216, 0.55);
+  --atm-quote-attrib:  rgba(245, 237, 216, 0.32);
+  --atm-greeting:      rgba(245, 237, 216, 0.96);
+
+  /* Step dots */
+  --atm-dot-idle:    rgba(245, 237, 216, 0.22);
+  --atm-dot-active:  #D4845A;     /* amber */
+  --atm-dot-done:    rgba(245, 237, 216, 0.55);
+
+  /* Status pill colours — all warm */
+  --atm-pill-ok-bg:     rgba(127, 176, 105, 0.14);
+  --atm-pill-ok-text:   #7FB069;
+  --atm-pill-ok-ring:   rgba(127, 176, 105, 0.35);
+  --atm-pill-warn-bg:   rgba(224, 164, 88, 0.14);
+  --atm-pill-warn-text: #E0A458;
+  --atm-pill-warn-ring: rgba(224, 164, 88, 0.35);
+  --atm-pill-info-bg:   rgba(212, 132, 90, 0.14);
+  --atm-pill-info-text: #D4845A;
+  --atm-pill-info-ring: rgba(212, 132, 90, 0.30);
+
+  /* Qualitative slider */
+  --atm-slider-track:    rgba(255, 255, 255, 0.10);
+  --atm-slider-fill:     rgba(255, 255, 255, 0.55);
+  --atm-slider-thumb:    #ffffff;
+  --atm-slider-marker:   rgba(255, 255, 255, 0.92);
+  --atm-slider-label:    rgba(255, 255, 255, 0.35);
+}
+
+[data-theme="light"] {
+  --atm-hero-from:   #F2EBDD;
+  --atm-hero-mid:    #E6DCC9;
+  --atm-hero-to:     #D8CDB6;
+  --atm-hero:        radial-gradient(
+                       ellipse 120% 80% at 50% 18%,
+                       var(--atm-hero-from) 0%,
+                       var(--atm-hero-mid) 45%,
+                       var(--atm-hero-to) 100%
+                     );
+
+  --atm-glass-bg:        rgba(250, 245, 235, 0.72);
+  --atm-glass-border:    rgba(60, 40, 20, 0.10);
+  --atm-glass-ring:      rgba(255, 255, 255, 0.6);
+  --atm-glass-blur:      20px;
+  --atm-glass-saturate:  1.2;
+  --atm-glass-shadow:    0 22px 60px -20px rgba(60, 40, 20, 0.18),
+                         0 1px 0 0 rgba(255, 255, 255, 0.6) inset;
+
+  --atm-micro-color:   rgba(42, 31, 22, 0.50);
+  --atm-quote-color:   rgba(42, 31, 22, 0.62);
+  --atm-quote-attrib:  rgba(42, 31, 22, 0.42);
+  --atm-greeting:      rgba(42, 31, 22, 0.92);
+
+  --atm-dot-idle:    rgba(60, 40, 20, 0.18);
+  --atm-dot-active:  #C2703F;
+  --atm-dot-done:    rgba(60, 40, 20, 0.45);
+
+  --atm-slider-track:    rgba(0, 0, 0, 0.08);
+  --atm-slider-fill:     rgba(0, 0, 0, 0.55);
+  --atm-slider-thumb:    #1a1a1a;
+  --atm-slider-marker:   rgba(0, 0, 0, 0.85);
+  --atm-slider-label:    rgba(0, 0, 0, 0.35);
+}
+
+/* Atmosphere utility classes — use directly in TSX */
+.atm-hero {
+  background: var(--atm-hero);
+  position: relative;
+}
+.atm-hero::after {
+  /* Subtle film-grain-ish noise via radial dots, very faint */
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: radial-gradient(rgba(255,255,255,0.4) 1px, transparent 1px);
+  background-size: 3px 3px;
+  mix-blend-mode: overlay;
+}
+.atm-glass {
+  background: var(--atm-glass-bg);
+  border: 1px solid var(--atm-glass-border);
+  border-radius: 16px;
+  box-shadow: var(--atm-glass-shadow);
+  backdrop-filter: blur(var(--atm-glass-blur)) saturate(var(--atm-glass-saturate));
+  -webkit-backdrop-filter: blur(var(--atm-glass-blur)) saturate(var(--atm-glass-saturate));
+}
+.atm-micro {
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
+  font-size: var(--atm-micro-size);
+  letter-spacing: var(--atm-micro-track);
+  text-transform: uppercase;
+  color: var(--atm-micro-color);
+}
+
+/* v0.8.0: editorial numerals — Instrument Serif italic for hero numbers
+   on metric tiles, history dates, progress page. Loaded font is unused
+   today except for blockquotes. Magazine pull-quote feel. */
+.atm-numeral {
+  font-family: var(--font-instrument), Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  font-feature-settings: "lnum", "ss01";
+  line-height: 0.95;
+}
+
+/* v0.8.0: tabular nums for body-context numeric cells. Inter aligns columns
+   without the typewriter texture of JetBrains Mono. */
+.atm-tabular {
+  font-family: var(--font-inter), sans-serif;
+  font-feature-settings: "tnum", "lnum";
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+.atm-greeting {
+  font-family: var(--font-syne), var(--font-inter), -apple-system, sans-serif;
+  font-size: clamp(28px, 4.4vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--atm-greeting);
+  line-height: 1.05;
+}
+
+/* Display face for headline moments */
+.font-display {
+  font-family: var(--font-syne), var(--font-inter), sans-serif;
+  letter-spacing: -0.02em;
+}
+.atm-quote {
+  font-style: italic;
+  font-size: 13px;
+  color: var(--atm-quote-color);
+  line-height: 1.5;
+}
+.atm-quote-attrib {
+  font-style: italic;
+  font-size: 13px;
+  color: var(--atm-quote-attrib);
+}
+
+@keyframes atm-quote-fade {
+  0%   { opacity: 0; transform: translateY(4px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Indeterminate progress sweep (first-run setup bars when % is unknown). */
+@keyframes atm-indeterminate {
+  0%   { transform: translateX(-120%); }
+  100% { transform: translateX(320%); }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   GLOBAL FORM STYLING — atmosphere-consistent inputs and selects.
+   Per-page styles can still override these but the baseline now sits
+   on the gradient instead of looking like raw OS controls.
+   ───────────────────────────────────────────────────────────────────────── */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+input[type="url"],
+input[type="tel"],
+textarea,
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--atm-glass-border);
+  border-radius: 8px;
+  color: var(--t1);
+  font-family: var(--font-inter);
+  font-size: 13px;
+  padding: 9px 12px;
+  outline: none;
+  transition: border-color 150ms ease, background 150ms ease;
+}
+
+[data-theme="light"] input[type="text"],
+[data-theme="light"] input[type="email"],
+[data-theme="light"] input[type="password"],
+[data-theme="light"] input[type="number"],
+[data-theme="light"] input[type="search"],
+[data-theme="light"] input[type="url"],
+[data-theme="light"] input[type="tel"],
+[data-theme="light"] textarea,
+[data-theme="light"] select {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: rgba(var(--accent-r), 0.45);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--t3);
+}
+
+/* Native select dropdown chevron — replaces the platform default with
+   a small caret rendered as a background SVG. The open menu itself
+   is OS-native and not fully styleable — see <Select> primitive for
+   a fully glass-themed alternative. */
+select {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='none' stroke='rgba(255,255,255,0.45)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' d='M1 1l4 4 4-4'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+  cursor: pointer;
+}
+
+[data-theme="light"] select {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='none' stroke='rgba(0,0,0,0.45)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' d='M1 1l4 4 4-4'/></svg>");
+}
+
+/* The platform-rendered <option> list — most browsers ignore this
+   except for the background+color. Tries to push toward atmosphere. */
+option {
+  background: rgb(10, 14, 24);
+  color: var(--t1);
+}
+[data-theme="light"] option {
+  background: rgb(232, 237, 243);
+  color: var(--t1);
+}
+
+/* Number input arrow cleanup */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+/* Buttons that don't opt in to atmosphere classes still get a sane reset
+   so the page doesn't show the OS chrome on plain <button>. Atmosphere
+   <Button> still ships its own variants. */
+button {
+  font-family: var(--font-inter);
+  color: inherit;
+}
+
+/* ── LIVING ROOM DARK (default) ── */
+:root,
+[data-theme="dark"] {
+  --bg:         #100C08;   /* warm charcoal */
+  --surface:    #1A1410;
+  --raised:     #241C16;
+  --raised-2:   #2E241B;
+  --subtle:     rgba(245, 237, 216, 0.035);
+  --border:     rgba(245, 237, 216, 0.08);
+  --border-mid: rgba(245, 237, 216, 0.14);
+
+  --t1: rgba(245, 237, 216, 0.92);   /* cream */
+  --t2: rgba(245, 237, 216, 0.56);
+  --t3: rgba(245, 237, 216, 0.30);
+
+  --accent:      #D4845A;            /* amber */
+  --accent-r:    212, 132, 90;
+  --accent-soft: rgba(212, 132, 90, 0.18);
+  --accent-dim:  rgba(212, 132, 90, 0.10);
+
+  --green:   #7FB069;                /* warm sage */
+  --green-r: 127, 176, 105;
+
+  /* Avatar / orb state colours — all warm */
+  --state-idle:      rgba(245, 237, 216, 0.45);
+  --state-listening: #7FB069;
+  --state-thinking:  #E0A458;
+  --state-speaking:  #D4845A;
+
+  --shadow-soft: 0 12px 40px rgba(0, 0, 0, 0.45);
+  --shadow-lift: 0 18px 60px rgba(0, 0, 0, 0.55);
+}
+
+:root,
+[data-theme="dark"] {
+  --sc-background: 30 33% 5%;
+  --sc-foreground: 43 52% 90%;
+  --sc-card: 30 27% 8%;
+  --sc-card-foreground: 43 52% 90%;
+  --sc-primary: 21 59% 59%;
+  --sc-primary-foreground: 30 35% 8%;
+  --sc-secondary: 30 22% 11%;
+  --sc-secondary-foreground: 43 52% 90%;
+  --sc-muted: 30 22% 11%;
+  --sc-muted-foreground: 43 18% 56%;
+  --sc-accent: 30 22% 13%;
+  --sc-accent-foreground: 43 52% 90%;
+  --sc-destructive: 4 70% 56%;
+  --sc-destructive-foreground: 0 0% 100%;
+  --sc-border: 30 20% 16%;
+  --sc-input: 30 20% 18%;
+  --sc-ring: 21 59% 59%;
+  --sc-radius: 0.875rem;
+}
+
+/* ── LIVING ROOM LIGHT (warm paper) ── */
+[data-theme="light"] {
+  --bg:         #F2EBDD;
+  --surface:    #EAE2D2;
+  --raised:     #E2D9C6;
+  --raised-2:   #D8CEB8;
+  --subtle:     rgba(60, 40, 20, 0.03);
+  --border:     rgba(60, 40, 20, 0.10);
+  --border-mid: rgba(60, 40, 20, 0.16);
+
+  --t1: #2A1F16;
+  --t2: #5C4B3A;
+  --t3: #93826E;
+
+  --accent:      #C2703F;
+  --accent-r:    194, 112, 63;
+  --accent-soft: rgba(194, 112, 63, 0.16);
+  --accent-dim:  rgba(194, 112, 63, 0.10);
+
+  --green:   #5E8C4A;
+  --green-r: 94, 140, 74;
+
+  --state-idle:      rgba(60, 40, 20, 0.40);
+  --state-listening: #5E8C4A;
+  --state-thinking:  #B07A2E;
+  --state-speaking:  #C2703F;
+
+  --shadow-soft: 0 12px 40px rgba(60, 40, 20, 0.12);
+  --shadow-lift: 0 18px 60px rgba(60, 40, 20, 0.18);
+}
+
+[data-theme="light"] {
+  --sc-background: 41 41% 91%;
+  --sc-foreground: 28 30% 13%;
+  --sc-card: 41 30% 86%;
+  --sc-card-foreground: 28 30% 13%;
+  --sc-primary: 23 51% 50%;
+  --sc-primary-foreground: 0 0% 100%;
+  --sc-secondary: 41 24% 82%;
+  --sc-secondary-foreground: 28 30% 13%;
+  --sc-muted: 41 24% 82%;
+  --sc-muted-foreground: 28 18% 38%;
+  --sc-accent: 41 24% 80%;
+  --sc-accent-foreground: 28 30% 13%;
+  --sc-destructive: 4 70% 50%;
+  --sc-destructive-foreground: 0 0% 100%;
+  --sc-border: 38 18% 74%;
+  --sc-input: 38 18% 77%;
+  --sc-ring: 23 51% 50%;
+  --sc-radius: 0.875rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--bg);
+  color: var(--t1);
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+::selection {
+  background: rgba(var(--accent-r), 0.2);
+  color: var(--t1);
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-mid); border-radius: 2px; }
+
+/* ── ORB ANIMATIONS ── */
+@keyframes orb-ring-pulse {
+  0%   { inset: -6px;  opacity: 0.7; }
+  100% { inset: -32px; opacity: 0; }
+}
+
+@keyframes orb-arc-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orb-dot-breathe {
+  0%, 100% { transform: scale(1);   opacity: 0.7; }
+  50%       { transform: scale(1.45); opacity: 1; }
+}
+
+@keyframes orb-dot-think {
+  0%   { transform: scale(0.8) rotate(0deg);   opacity: 0.4; }
+  50%  { transform: scale(1.1) rotate(180deg); opacity: 1; }
+  100% { transform: scale(0.8) rotate(360deg); opacity: 0.4; }
+}
+
+@keyframes orb-dot-speak {
+  0%, 100% { transform: scale(1);    opacity: 0.85; }
+  50%       { transform: scale(1.15); opacity: 1; }
+}
+
+@keyframes aura-breathe {
+  0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+  50%       { opacity: 1;   transform: translate(-50%, -50%) scale(1.1); }
+}
+
+@keyframes status-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+@keyframes waveform-bar {
+  0%, 100% { height: 3px;      opacity: 0.25; }
+  50%       { height: var(--h); opacity: 0.9; }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes generating-pulse {
+  0%, 100% { opacity: 0.6; }
+  50%      { opacity: 1; }
+}
+
+/* Soft entrance for flyouts / hover labels */
+@keyframes living-rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ───────────────────────────────────────────────────────────────────────── */
+/*  Chamber design variant — per docs/design-spec.                            */
+/*  Active only when <html data-design-variant="chamber">. The atmosphere     */
+/*  variant (default) keeps all tokens above untouched.                       */
+/* ───────────────────────────────────────────────────────────────────────── */
+
+html[data-design-variant="chamber"] {
+  /* Background depths (deepest → near-surface). Deepest for full-bleed
+     screens; upper steps for cards / panels layered above. */
+  --ch-bg:           #050403;
+  --ch-bg-1:         #080605;
+  --ch-bg-2:         #0c0907;
+  --ch-bg-elev:      #0e0a07;
+  --ch-bg-card:      #15100a;
+  --ch-bg-card-warm: #1a0e07;
+
+  /* Warm-neutral surface mids — borders, inactive UI, glyph backgrounds. */
+  --ch-surf-1:       #2a2018;
+  --ch-surf-2:       #2a2520;
+  --ch-mid:          #6b6259;
+
+  /* Text ladder — warm cream, NOT pure white. Five steps for hierarchy. */
+  --ch-ink:          #f4ede4;   /* primary body / hero */
+  --ch-ink-bright:   #fdf9f1;   /* extra-bright moments (rare) */
+  --ch-ink-soft:     #d8cdb8;   /* large display tinted */
+  --ch-ink-dim:      #9a8f82;   /* secondary */
+  --ch-ink-mid:      #a39a8d;   /* mid-secondary */
+  --ch-ink-faint:    #5a5048;   /* meta / mono labels */
+
+  /* Lines — hairlines for dividers / outlines. */
+  --ch-line:         rgba(244, 237, 228, 0.06);
+  --ch-line-strong:  rgba(244, 237, 228, 0.12);
+
+  /* Amber — THE accent. Full ladder from deepest to brightest. */
+  --ch-amber:        #E8A87C;   /* the canonical accent */
+  --ch-amber-bright: #F4B58A;   /* hover / focused / top of gradients */
+  --ch-amber-warm:   #D17A52;
+  --ch-amber-deep:   #B87A52;   /* gradient bottom on primary buttons */
+  --ch-amber-deeper: #B8633E;
+  --ch-amber-deepest:#94492B;
+  --ch-amber-glow:   rgba(232, 168, 124, 0.18);
+
+  /* Secondary moods — used sparingly. */
+  --ch-ok:           #7ea88a;   /* muted sage for success — never pure green */
+  --ch-ok-deep:      #5f8268;
+  --ch-warn:         #ff8a80;   /* soft coral for errors / warnings */
+  --ch-warn-deep:    #5c2b2e;
+
+  /* Motion easing — single curve across the variant. */
+  --ch-ease:         cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Chamber easings + screen entrance — one motion language for the variant. */
+@keyframes chamber-rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes chamber-breathe {
+  0%, 100% { transform: scale(1);    opacity: 0.86; }
+  50%      { transform: scale(1.03); opacity: 1;    }
+}
+@keyframes chamber-halo {
+  0%, 100% { opacity: 0.55; transform: scale(1);    }
+  50%      { opacity: 0.85; transform: scale(1.07); }
+}
+
+/* Chamber bg override — pure black across the whole frame so the orb sits
+   seamlessly in the void. Overrides atm-hero / atmosphere page backgrounds. */
+html[data-design-variant="chamber"],
+html[data-design-variant="chamber"] body {
+  background: var(--ch-bg) !important;
+  color: var(--ch-ink);
+}
+html[data-design-variant="chamber"] main,
+html[data-design-variant="chamber"] main.atm-hero {
+  background: var(--ch-bg) !important;
+  background-image: none !important;
+}
+/* Subtle warm vignette under the orb — keeps Chamber from feeling flat. */
+html[data-design-variant="chamber"] main::before {
+  content: '';
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 60% 50% at 50% 55%, rgba(232, 168, 124, 0.04), rgba(232, 168, 124, 0) 70%);
+  z-index: 0;
+}
+
+/* The Chamber orb's outer halo — sits OUTSIDE the canvas via negative inset,
+   so the orb has no perceivable square edge. Softer pulse than the
+   chamber-halo / chamber-breathe keyframes (which are for in-screen lights). */
+@keyframes chamber-orb-halo {
+  0%, 100% { opacity: 0.80; transform: scale(1);    }
+  50%      { opacity: 1.00; transform: scale(1.03); }
+}

@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="sk" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>UE5 Blueprint Change Notes — EduTutor.AI</title>
+<meta name="description" content="Per-version Blueprint changes for Roland Vraník — v2.0 → v4.0 protocol delta with Blueprint pseudocode, ARKit LiveLink path, and test recipes." />
+<style>
+  :root {
+    --bg:         #000000;
+    --surface:    #080808;
+    --raised:     #0e0e0e;
+    --subtle:     rgba(255, 255, 255, 0.03);
+    --border:     rgba(255, 255, 255, 0.06);
+    --border-mid: rgba(255, 255, 255, 0.09);
+    --border-hi:  rgba(255, 255, 255, 0.14);
+    --t1: rgba(255, 255, 255, 0.88);
+    --t2: rgba(255, 255, 255, 0.42);
+    --t3: rgba(255, 255, 255, 0.20);
+    --accent:     #5B8DF6;
+    --accent-r:   91, 141, 246;
+    --accent-dim: rgba(91, 141, 246, 0.10);
+    --green:      #3DD68C;
+    --green-dim:  rgba(61, 214, 140, 0.10);
+    --amber:      #f59e0b;
+    --amber-dim:  rgba(245, 158, 11, 0.10);
+    --red:        #ef4444;
+    --red-dim:    rgba(239, 68, 68, 0.10);
+    --indigo:     #6366f1;
+    --indigo-dim: rgba(99, 102, 241, 0.10);
+    --font-sans: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--t1); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  ::selection { background: rgba(var(--accent-r), 0.25); color: #fff; }
+  ::-webkit-scrollbar { width: 3px; height: 3px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border-mid); border-radius: 2px; }
+
+  /* ── Layout ─────────────────────────────────────────────── */
+  .page {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    max-width: 1280px;
+    margin: 0 auto;
+    min-height: 100vh;
+  }
+  @media (max-width: 880px) {
+    .page { grid-template-columns: 1fr; }
+    .sidebar { position: static !important; height: auto !important; border-right: none !important; border-bottom: 1px solid var(--border) !important; }
+    .content { padding: 32px 20px !important; }
+  }
+
+  /* ── Sidebar ────────────────────────────────────────────── */
+  .sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    border-right: 1px solid var(--border);
+    padding: 32px 24px;
+    background: var(--surface);
+  }
+  .brand { font-size: 13px; font-weight: 600; letter-spacing: -0.01em; color: var(--t1); margin-bottom: 2px; }
+  .brand-sub { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em; color: var(--t3); text-transform: uppercase; margin-bottom: 32px; }
+  .nav-section { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em; color: var(--t3); text-transform: uppercase; margin: 24px 0 10px; }
+  .nav-section:first-of-type { margin-top: 0; }
+  .nav a { display: block; color: var(--t2); text-decoration: none; padding: 6px 0; font-size: 12.5px; line-height: 1.4; border-left: 1.5px solid transparent; padding-left: 10px; transition: color 0.15s ease, border-color 0.15s ease; }
+  .nav a:hover { color: var(--t1); border-left-color: var(--border-mid); }
+  .nav a.active { color: var(--accent); border-left-color: var(--accent); }
+
+  /* ── Content ────────────────────────────────────────────── */
+  .content { padding: 60px 56px 80px; max-width: 960px; }
+  .role-tag { display: inline-block; font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em; color: var(--accent); text-transform: uppercase; padding: 3px 8px; border: 1px solid var(--accent); border-radius: 4px; margin-bottom: 16px; }
+  h1 { font-size: 32px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; margin: 0 0 8px; }
+  .subtitle { color: var(--t2); font-size: 14px; line-height: 1.55; margin-bottom: 4px; }
+  .meta-line { color: var(--t3); font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; margin-top: 12px; }
+
+  h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.01em; margin: 56px 0 14px; padding-top: 16px; scroll-margin-top: 16px; }
+  h2::before { content: ""; display: block; width: 28px; height: 1.5px; background: var(--accent); margin-bottom: 14px; }
+  h3 { font-size: 15px; font-weight: 600; margin: 28px 0 10px; color: var(--t1); }
+  h4 { font-size: 12.5px; font-weight: 600; margin: 18px 0 8px; color: var(--t1); text-transform: uppercase; letter-spacing: 0.06em; font-family: var(--font-mono); }
+
+  p { line-height: 1.65; font-size: 14.5px; color: var(--t1); margin: 12px 0; }
+  p.muted { color: var(--t2); }
+  ul, ol { line-height: 1.7; font-size: 14.5px; padding-left: 22px; }
+  li { margin: 6px 0; }
+  strong { color: var(--t1); font-weight: 600; }
+  em { color: var(--t2); font-style: italic; }
+
+  /* ── Links ──────────────────────────────────────────────── */
+  a { color: var(--accent); text-decoration: none; transition: opacity 0.15s ease; }
+  a:hover { opacity: 0.75; text-decoration: underline; text-underline-offset: 3px; }
+
+  /* ── Code ──────────────────────────────────────────────── */
+  code { font-family: var(--font-mono); font-size: 0.88em; background: var(--raised); padding: 1px 6px; border-radius: 4px; color: var(--t1); border: 1px solid var(--border); }
+  pre { background: var(--raised); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; overflow-x: auto; line-height: 1.6; font-size: 12.5px; margin: 14px 0; }
+  pre code { background: transparent; padding: 0; border: none; font-size: inherit; color: var(--t1); }
+  .code-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em; color: var(--t3); text-transform: uppercase; padding: 8px 14px 0; margin: 14px 0 -8px; background: var(--raised); border: 1px solid var(--border); border-bottom: none; border-radius: 8px 8px 0 0; }
+  .code-label + pre { border-top-left-radius: 0; border-top-right-radius: 0; margin-top: 0; }
+
+  /* ── Tables ────────────────────────────────────────────── */
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+  th, td { padding: 10px 12px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border); }
+  th { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; color: var(--t3); text-transform: uppercase; border-bottom: 1px solid var(--border-mid); font-weight: 500; }
+  tbody tr:hover { background: var(--subtle); }
+  td code { font-size: 0.85em; }
+
+  /* ── Priority badges ────────────────────────────────────── */
+  .pri { display: inline-block; font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.10em; padding: 2px 7px; border-radius: 3px; font-weight: 600; }
+  .pri-p0 { background: var(--red-dim); color: var(--red); border: 1px solid var(--red); }
+  .pri-p1 { background: var(--amber-dim); color: var(--amber); border: 1px solid var(--amber); }
+  .pri-p2 { background: var(--accent-dim); color: var(--accent); border: 1px solid var(--accent); }
+  .pri-done { background: var(--green-dim); color: var(--green); border: 1px solid var(--green); }
+
+  /* ── State pills ────────────────────────────────────────── */
+  .pill { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.10em; padding: 3px 9px; border-radius: 12px; background: var(--surface); border: 1px solid var(--border-mid); text-transform: uppercase; }
+  .pill::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+  .pill-idle      { color: #6b7280; }
+  .pill-thinking  { color: var(--indigo); }
+  .pill-searching { color: var(--amber); }
+  .pill-writing   { color: var(--green); }
+  .pill-listening { color: var(--accent); }
+
+  /* ── Callout boxes ──────────────────────────────────────── */
+  .callout { border-left: 2px solid; padding: 14px 18px; margin: 18px 0; border-radius: 0 6px 6px 0; font-size: 13.5px; line-height: 1.6; }
+  .callout-info  { background: var(--accent-dim); border-left-color: var(--accent); }
+  .callout-warn  { background: var(--amber-dim); border-left-color: var(--amber); }
+  .callout-ok    { background: var(--green-dim); border-left-color: var(--green); }
+  .callout-tip   { background: var(--subtle); border-left-color: var(--t3); }
+  .callout strong { display: block; margin-bottom: 4px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; }
+  .callout-info strong  { color: var(--accent); }
+  .callout-warn strong  { color: var(--amber); }
+  .callout-ok strong    { color: var(--green); }
+  .callout-tip strong   { color: var(--t2); }
+
+  /* ── Version cards ──────────────────────────────────────── */
+  .version-card { border: 1px solid var(--border); border-radius: 10px; padding: 24px 28px; margin: 18px 0; background: var(--surface); }
+  .version-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+  .version-tag { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.10em; color: var(--accent); background: var(--accent-dim); padding: 3px 9px; border-radius: 4px; border: 1px solid var(--accent); }
+  .version-name { font-size: 18px; font-weight: 600; color: var(--t1); }
+  .version-meta { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; color: var(--t3); margin-bottom: 18px; }
+
+  /* ── Footer ─────────────────────────────────────────────── */
+  footer { margin-top: 80px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--t3); font-size: 11px; font-family: var(--font-mono); letter-spacing: 0.04em; line-height: 1.8; }
+
+  /* ── Print ──────────────────────────────────────────────── */
+  @media print {
+    .sidebar { display: none; }
+    .page { grid-template-columns: 1fr; max-width: none; }
+    .content { padding: 20px; }
+    pre, .callout, .version-card { break-inside: avoid; }
+    a { color: var(--t1); text-decoration: underline; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <aside class="sidebar">
+    <div class="brand">EduTutor.AI</div>
+    <div class="brand-sub">UE5 Blueprint · Change Notes</div>
+
+    <nav class="nav">
+      <div class="nav-section">Quick start</div>
+      <a href="#tldr">TL;DR for Roland</a>
+      <a href="#test-recipe">5-min test recipe</a>
+
+      <div class="nav-section">Per-version delta</div>
+      <a href="#v2-0">v2.0 — baseline</a>
+      <a href="#v2-1">v2.1 — agentState</a>
+      <a href="#v3-0">v3.0 — ARKit</a>
+      <a href="#v4-0">v4.0 — audio clock</a>
+
+      <div class="nav-section">Reference</div>
+      <a href="#field-table">All fields × versions</a>
+      <a href="#debug">Debug tips</a>
+      <a href="#files">File index</a>
+      <a href="#questions">Questions / blockers</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+
+    <span class="role-tag">FOR ROLAND · UE5 Blueprint Dev</span>
+    <h1>UE5 Blueprint Change Notes</h1>
+    <p class="subtitle">Per-version delta of the EduTutor avatar protocol.<br/>Canonical contract lives in <code>docs/ue5-avatar-contract.md</code> — <em>this doc is the actionable summary.</em></p>
+    <div class="meta-line">UPDATED · 2026-05-12 · POST ORACLE DEV-MODE AUDIT + PROTOCOL v4.0 STABILIZATION</div>
+
+    <h2 id="tldr">TL;DR — čo musíš urobiť</h2>
+
+    <table>
+      <thead>
+        <tr><th>Verzia</th><th>Tvoja akcia</th><th style="width: 110px">Priorita</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>v2.0</code><br/><span style="color: var(--t3); font-size: 11px;">baseline</span></td>
+          <td>Asi už máš — WS connect, JSON parse, viseme → blendshape lerp, emotion state machine</td>
+          <td><span class="pri pri-done">✓ DONE</span></td>
+        </tr>
+        <tr>
+          <td><code>v2.1</code><br/><span style="color: var(--t3); font-size: 11px;">+ agentState</span></td>
+          <td><strong>Pridať State Machine v AnimBP</strong> pre 5 idle stavov</td>
+          <td><span class="pri pri-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><code>v3.0</code><br/><span style="color: var(--t3); font-size: 11px;">+ ARKit</span></td>
+          <td><strong>Pridať ARKit mode detection</strong> + LiveLink Pose Asset alebo manuálny <code>SetMorphTarget</code></td>
+          <td><span class="pri pri-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><code>v4.0</code><br/><span style="color: var(--t3); font-size: 11px;">+ audio clock</span></td>
+          <td><strong>Nahradiť tvoj timeline ticker</strong> sender-supplied lookup-om</td>
+          <td><span class="pri pri-p2">P2</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-ok">
+      <strong>Back-compat guarantee</strong>
+      Tvoj existujúci v2.0 Blueprint funguje TERAZ. Všetky nové polia sú aditívne a optional. Pridaj postupne — neexistuje "must rewrite everything" moment.
+    </div>
+
+    <div class="callout callout-info">
+      <strong>Pro tip — test bez chatu</strong>
+      Použi nový <code>/avatar-debug</code> Inject panel (<a href="http://localhost:3000/avatar-debug">localhost:3000/avatar-debug</a>, rozbal "🛠 Inject avatar command") na testovanie nových polí bez chat triggeru. Hardvér + chat nie sú podmienka pre validáciu Blueprintu.
+    </div>
+
+    <h2 id="test-recipe">5-min test recipe</h2>
+
+    <ol>
+      <li>Otvor <a href="http://localhost:3000/avatar-debug">localhost:3000/avatar-debug</a> v prehliadači</li>
+      <li>Pripoj svoj Blueprint na <code>ws://localhost:8000/ws/avatar</code></li>
+      <li>Verify pill v pravom hornom rohu zobrazí <span class="pill pill-idle">IDLE</span> — backend heartbeat alive</li>
+      <li>Rozbal "🛠 Inject avatar command" → vyber preset → klikni <strong>Inject</strong></li>
+      <li>Pozri Blueprint reakciu na payload — bez chat triggeru, bez TTS, bez LLM</li>
+    </ol>
+
+    <div class="callout callout-tip">
+      <strong>Presets na vyskúšanie</strong>
+      <ul style="margin: 6px 0 0;">
+        <li><strong>Idle</strong> — pasívne pozeranie</li>
+        <li><strong>Speaking (aa viseme)</strong> — otvorené ústa, viseme path</li>
+        <li><strong>Joy speaking</strong> — emotion + viseme spolu</li>
+        <li><strong>agentState: searching</strong> — testuje v2.1 idle state machine</li>
+        <li><strong>ARKit frame (JawOpen)</strong> — testuje v3.0 blendshape mapping</li>
+      </ul>
+    </div>
+
+    <h2 id="v2-0">v2.0 — baseline</h2>
+
+    <div class="version-card">
+      <div class="version-head">
+        <span class="version-tag">v2.0</span>
+        <span class="version-name">Pôvodný protokol (ak nemáš, začni tu)</span>
+      </div>
+      <div class="version-meta">EMOTION · INTENSITY · ISSPEAKING · VISEMES · BLINK · VISEME_TIMELINE · TOTAL_DURATION_MS</div>
+
+      <h4>JSON payload shape</h4>
+      <pre><code>{
+  "emotion": "joy",
+  "intensity": 0.9,
+  "isSpeaking": true,
+  "visemes": [{"viseme": "aa", "weight": 0.9}],
+  "blink": 0.0,
+  "viseme_timeline": [
+    {"viseme": "PP", "weight": 1.0, "start_ms": 0,  "duration_ms": 80},
+    {"viseme": "aa", "weight": 1.0, "start_ms": 80, "duration_ms": 120}
+  ],
+  "total_duration_ms": 2400
+}</code></pre>
+
+      <h4>Blueprint nodes (minimum viable)</h4>
+      <ol>
+        <li><strong>WebSocket node</strong> → connect to <code>ws://localhost:8000/ws/avatar</code></li>
+        <li><strong>OnConnected</strong> → send handshake <code>{"type":"avatar_ready","capabilities":["viseme","emotion","state"]}</code></li>
+        <li><strong>OnMessage</strong> → JSON parse → branch on <code>parsed.type</code>:
+          <ul>
+            <li><code>type=="connected"</code> → log, ignore</li>
+            <li>else (per-frame command):
+              <ul>
+                <li>Lerp emotion blendshape (200–300ms blend time)</li>
+                <li>Lerp current viseme blendshape (80–100ms)</li>
+                <li>If <code>viseme_timeline</code> present → start timeline scrub</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><strong>Emotion → State Machine</strong> v AnimBP (9 states: neutral/joy/proud/encouraging_mild/sadness/patient/curious/thinking_deep/surprise)</li>
+        <li><strong>Viseme → Blendshape</strong> mapping (14 Slovak visemes: sil/aa/oh/ou/ih/E/PP/FF/DD/nn/SS/CH/kk/RR)</li>
+        <li><strong>Auto-blink</strong> — local Blueprint ticker, every 3–6s, ignore <code>blink</code> field if 0.0</li>
+      </ol>
+
+      <p class="muted"><strong>Reference TypeScript:</strong> <code>useUE5Bridge.ts</code> — same logic in JS form (we send, you receive).</p>
+    </div>
+
+    <h2 id="v2-1">v2.1 — agentState <span class="pri pri-p1" style="font-size: 10px;">P1</span></h2>
+
+    <div class="version-card">
+      <div class="version-head">
+        <span class="version-tag">v2.1</span>
+        <span class="version-name">Idle state machine</span>
+      </div>
+      <div class="version-meta">PHASE 6A · 2026-05-07 · OPTIONAL FIELD · BACK-COMPAT GUARANTEED</div>
+
+      <h4>Čo sa zmenilo</h4>
+      <p>Pridané jedno <strong>optional</strong> pole: <code>agentState</code> (string).</p>
+
+      <pre><code>{ "emotion":"thinking_deep", "intensity":0.6, "isSpeaking":false,
+  "visemes":[{"viseme":"sil","weight":1.0}], "blink":0.0,
+  "agentState":"searching"   ← NOVÉ
+}</code></pre>
+
+      <h4>Hodnoty (5 stavov)</h4>
+      <table>
+        <thead><tr><th>State</th><th>Kedy</th><th>Idle animácia (návrh)</th></tr></thead>
+        <tbody>
+          <tr><td><span class="pill pill-idle">IDLE</span></td><td>Default, nečinný stav</td><td>Subtle breathing, occasional blink</td></tr>
+          <tr><td><span class="pill pill-thinking">THINKING</span></td><td>LLM premýšľa nad odpoveďou</td><td>Look up-left, slight head tilt</td></tr>
+          <tr><td><span class="pill pill-searching">SEARCHING</span></td><td>Tool dispatch (web search, KB)</td><td>Eyes scan left-right, faster blink</td></tr>
+          <tr><td><span class="pill pill-writing">WRITING</span></td><td>Generovanie textu</td><td>Subtle head nod, focused stare</td></tr>
+          <tr><td><span class="pill pill-listening">LISTENING</span></td><td>User hovorí, mikrofón aktívny</td><td>Lean forward, attentive</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout callout-ok">
+        <strong>Back-compat</strong>
+        Keď backend neposiela <code>agentState</code>, pole je úplne vynechané z JSON. Tvoj v2.0 Blueprint, ktorý <code>JSON Parse Object</code> → <code>Get Field "agentState"</code>, dostane <code>null</code> a tichá vetva ho ignoruje. <strong>Žiadna zmena nie je potrebná</strong> pre v2.0 chat traffic. Pinné v <code>test_ws_avatar.py:412-475</code> (3 testy).
+      </div>
+
+      <h4>Čo pridať do Blueprintu</h4>
+      <ol>
+        <li><strong>AnimBP State Machine</strong> s 5 stavmi (idle / thinking / searching / writing / listening)</li>
+        <li><strong>Transition rule</strong> — read <code>agentState</code> na každom incoming payload, set as enum/string variable, transition based on it</li>
+        <li><strong>Idle pose</strong> v každom state — môže byť rovnaký rig, len iná blendshape preset</li>
+        <li><strong>Default fallback</strong> — keď <code>agentState</code> chýba alebo má neznámu hodnotu, transition na <code>idle</code></li>
+      </ol>
+
+      <div class="code-label">BLUEPRINT PSEUDOKÓD</div>
+<pre><code>OnMessage(json):
+  agentState = json.Get("agentState")          // string or null
+  IF agentState IS VALID STRING:
+    SET CurrentAgentState = agentState         // AnimBP var
+  ELSE:
+    SET CurrentAgentState = "idle"
+  // ... continue existing emotion/viseme logic</code></pre>
+
+      <h4>Test recipe</h4>
+      <ol>
+        <li>Otvor <code>localhost:3000/avatar-debug</code></li>
+        <li>Pripoj svoj Blueprint na <code>ws://localhost:8000/ws/avatar</code></li>
+        <li>Rozbal Inject panel, vyber <strong>agentState: searching</strong> preset, klikni Inject</li>
+        <li>Tvoj Blueprint má prejsť do <span class="pill pill-searching">SEARCHING</span> idle animácie. Pill v rohu ukáže <code>SEARCHING</code>.</li>
+        <li>Vyber preset <strong>Idle</strong> → návrat do <span class="pill pill-idle">IDLE</span></li>
+      </ol>
+    </div>
+
+    <h2 id="v3-0">v3.0 — ARKit <span class="pri pri-p1" style="font-size: 10px;">P1</span></h2>
+
+    <div class="version-card">
+      <div class="version-head">
+        <span class="version-tag">v3.0</span>
+        <span class="version-name">52-channel ARKit blendshapes</span>
+      </div>
+      <div class="version-meta">PHASE 5+ · AUDIO2LIPSYNC INTEGRATION · LIVELINK POSE ASSET RECOMMENDED</div>
+
+      <h4>Čo sa zmenilo</h4>
+      <p>Pridané dve nové polia: <code>arkit</code> (per-frame snapshot) a <code>arkit_frames</code> (timeline).</p>
+
+      <pre><code>{ "emotion":"neutral", "intensity":0.4, "isSpeaking":true,
+  "visemes":[{"viseme":"sil","weight":1.0}],     ← visemes ostávajú, ale ignoruj v ARKit mode
+  "arkit": {                                       ← NOVÉ snapshot
+    "JawOpen": 0.31,
+    "MouthFunnel": 0.12,
+    "MouthSmileLeft": 0.08
+  },
+  "blink": 0.0,
+  "arkit_frames": [                                ← NOVÉ timeline
+    {"start_ms": 0,  "duration_ms": 16, "arkit": {"JawOpen": 0.02}},
+    {"start_ms": 16, "duration_ms": 16, "arkit": {"JawOpen": 0.18, "MouthFunnel": 0.12}}
+  ]
+}</code></pre>
+
+      <h4>Mode detection</h4>
+<pre><code>IF parsed.Get("arkit") IS VALID OR parsed.Get("arkit_frames") IS VALID:
+  ARKitMode = TRUE                          // use 52-channel blendshapes
+ELSE:
+  ARKitMode = FALSE                         // use 14-viseme path (v2.0)</code></pre>
+
+      <div class="callout callout-warn">
+        <strong>Channel naming (CRITICAL — najčastejší Blueprint bug)</strong>
+        Náš model produkuje <strong>PascalCase</strong> mená kanálov, presne podľa iPhone Live Link Face format:<br/>
+        <code style="margin-top: 8px; display: block; padding: 8px;">EyeBlinkLeft, JawForward, JawRight, JawLeft, JawOpen, MouthClose, MouthFunnel, MouthSmileLeft, MouthSmileRight, BrowInnerUp, ...</code>
+        Plný 52-kanálový zoznam: <code>audio2lipsync/constants.py:23-57</code>. Pinné v teste <code>test_arkit_channel_names_are_pascalcase</code>.
+      </div>
+
+      <h3>Dve cesty implementácie</h3>
+
+      <div class="callout callout-ok">
+        <strong>Cesta A — LiveLink Pose Asset (odporúčaná)</strong>
+        <ol style="margin: 8px 0 0;">
+          <li>Použi MetaHuman default Pose Asset <code>mh_arkit_mapping_pose</code> (Asset Browser → Faces → Source Assets)</li>
+          <li>Vytvor <strong>Custom LiveLink Source</strong> (Plugins → Live Link → Add → Custom)</li>
+          <li>Push 52-channel float pole každý frame</li>
+          <li>Pose Asset automaticky mapuje PascalCase → MetaHuman Control Rig curves (<code>CTRL_expressions_jawOpen</code>, atď.)</li>
+          <li><strong>Žiadne manuálne mapovanie!</strong></li>
+        </ol>
+      </div>
+
+      <div class="callout callout-tip">
+        <strong>Cesta B — Manuálny SetMorphTarget</strong>
+        <ol style="margin: 8px 0 0;">
+          <li>Iteruj cez <code>arkit</code> dict</li>
+          <li>Pre každý key v PascalCase → namapuj na MetaHuman morph target naming (camelCase first letter lower):
+            <ul style="margin: 4px 0 0;">
+              <li><code>JawOpen</code> → <code>jawOpen</code></li>
+              <li><code>MouthSmileLeft</code> → <code>mouthSmileLeft</code></li>
+              <li><code>EyeBlinkLeft</code> → <code>eyeBlinkLeft</code></li>
+            </ul>
+          </li>
+          <li>Volaj <code>SkeletalMeshComponent.SetMorphTarget(target_name, value)</code></li>
+        </ol>
+        <em style="display: block; margin-top: 8px; color: var(--t2);">Pre prvý pokus odporúčam Cestu A. Zaberie 30 minút setup, ušetrí hodiny debuggingu mapping bugov.</em>
+      </div>
+
+      <h4>Timeline scheduling (60fps)</h4>
+      <p><code>arkit_frames</code> je per-sentence pre-queued. Každá veta posiela kompletný array frames vopred. Tvoj Blueprint má:</p>
+      <ol>
+        <li><strong>Snapshot frames</strong> keď príde nový payload s <code>arkit_frames</code></li>
+        <li><strong>Schedule</strong> každý frame proti audio clock <em>(NIE proti Blueprint Tick — pozri v4.0)</em></li>
+        <li><strong>Apply</strong> ARKit dict na blendshapes pri scheduled time</li>
+        <li><strong>Threshold pruning</strong> — len kanály s value &gt; 0.005 sú v payload. Chýbajúce kanály = 0.0 (lerp z aktuálnej hodnoty späť na 0)</li>
+      </ol>
+
+      <h4>Test recipe</h4>
+      <ol>
+        <li>Inject panel → preset <strong>ARKit frame (JawOpen)</strong> → Inject</li>
+        <li>Tvoj MetaHuman by mal otvoriť ústa (JawOpen=0.31) + zatlačiť pery (MouthFunnel=0.12)</li>
+        <li>Po ~50ms relax späť na neutral</li>
+        <li>Ak sa nič nedeje: skontroluj (a) ARKitMode detection (b) PascalCase mapping (c) Pose Asset wiring</li>
+      </ol>
+    </div>
+
+    <h2 id="v4-0">v4.0 — audioPositionMs + sentenceIdx <span class="pri pri-p2" style="font-size: 10px;">P2</span></h2>
+
+    <div class="version-card">
+      <div class="version-head">
+        <span class="version-tag">v4.0</span>
+        <span class="version-name">Sender-supplied audio clock</span>
+      </div>
+      <div class="version-meta">PHASE 7 · 2026-05-08 · PER-FRAME · REPLACES SELF-TIMING DRIFT</div>
+
+      <h4>Čo sa zmenilo</h4>
+      <p>Frontend pošle <strong>na každom rAF tick</strong> dve nové polia <em>kým je <code>isSpeaking=true</code></em>:</p>
+
+      <pre><code>{ "emotion":"joy", "intensity":0.9, "isSpeaking":true,
+  "visemes":[{"viseme":"aa","weight":0.9}],
+  "blink":0.0,
+  "audioPositionMs": 1280,   ← NOVÉ — ms od začiatku lipsync (browser AudioContext clock)
+  "sentenceIdx": 2           ← NOVÉ — ktorá veta v multi-sentence chat odpovedi
+}</code></pre>
+
+      <h4>Prečo je toto dôležité</h4>
+      <p>Doteraz si v Blueprint timeline scruboval <strong>vlastným tickerom</strong> — Blueprint Tick alebo <code>Set Timer by Function Name</code>. To má drift: 16ms tick + audio device latency + frame variability = až 100ms desync na konci dlhej vety.</p>
+      <p>S v4.0 <strong>sender ti pošle presnú audio pozíciu</strong>. Tvoj Blueprint scrubuje proti tomu, nie proti vlastným hodinám.</p>
+
+      <div class="code-label">BLUEPRINT PSEUDOKÓD</div>
+<pre><code>audioPositionMs = parsed.Get("audioPositionMs", -1)
+sentenceIdx     = parsed.Get("sentenceIdx",     -1)
+
+IF audioPositionMs >= 0:                     // v4.0 client
+  IF sentenceIdx != LastSentenceIdx:
+    LastSentenceIdx = sentenceIdx
+    // Reset interpolation state, swap timelines
+  frameStepMs = ActiveTimeline[1].start_ms - ActiveTimeline[0].start_ms  // dynamic, server default 40ms since 2026-05-12 (was 8ms)
+                                                                          // for arkit_frames: use frame's duration_ms (~16ms @ 60fps)
+  idx = Clamp(Floor(audioPositionMs / frameStepMs), 0, Len(ActiveTimeline)-1)
+  ActiveFrame = ActiveTimeline[idx]
+  ApplyFrame(ActiveFrame)
+ELSE:                                         // v3.0 or older client fallback
+  // Keep your own ticker logic for old browsers</code></pre>
+
+      <div class="callout callout-info">
+        <strong>Reference implementácia</strong>
+        TypeScript verzia tohto algoritmu žije v <code>core/src/app/(shell)/avatar-debug/simulator/page.tsx:49-68</code>. Komentár v kóde explicitne hovorí <em>"this page IS the Blueprint reference."</em> Otvor <a href="http://localhost:3000/avatar-debug/simulator">localhost:3000/avatar-debug/simulator</a> a pozri ako to scrubuje vizuálne.
+      </div>
+
+      <div class="callout callout-warn">
+        <strong>⚠ Viseme frame step zmenený: 8ms → 40ms (2026-05-12)</strong>
+        Roland nahlásil že 8ms grid pôsobí na MetaHumanovi ako rýchle prskanie. Bumpli sme default na <strong>40ms</strong> (jeho dolný odhad pre prirodzenú reč). Tunable cez <code>EDU_VISEME_FRAME_STEP_MS</code> env var (range 4-200ms).
+        <br/><br/>
+        <strong>Čo to znamená:</strong> Ak <code>frameStepMs</code> derivuješ z <code>timeline[1].start_ms - timeline[0].start_ms</code> (ako simulátor + frontend), nič nemusíš robiť — auto-adaptuje sa. Ak máš zahardcodované <code>frameStepMs = 8</code>, <code>Floor(audioPositionMs/8)</code> vráti index mimo array a Blueprint zamrzne na poslednej frame. <strong>Fix: jedna riadka</strong> — nahraď konštantu derivátom z timeline.
+        <br/><br/>
+        <strong>ARKit cesta nezmenená:</strong> <code>arkit_frames</code> má 60fps (~16ms) ako predtým. Toto sa týka iba viseme cesty.
+      </div>
+
+      <h4>Benefit</h4>
+      <ul>
+        <li>Drift &lt; 50ms aj na slabých browseroch</li>
+        <li>Žiadny custom ticker v Blueprinte</li>
+        <li>Sentence boundary detection cez <code>sentenceIdx</code> zmenu → reset interpolation pri každej novej vete</li>
+      </ul>
+
+      <h4>Test recipe</h4>
+      <ol>
+        <li>Pošli reálnu chat správu z chat UI (<code>localhost:3000</code>)</li>
+        <li>Pozri <code>/avatar-debug</code> live log — uvidíš payloads s <code>audioPositionMs: 0, 16, 32, ...</code></li>
+        <li>Tvoj Blueprint by mal scrubovať lipsync presne s audio — bez drift na konci vety</li>
+      </ol>
+    </div>
+
+    <h2 id="field-table">Rýchla orientácia — všetky polia × verzie</h2>
+
+    <table>
+      <thead>
+        <tr><th>Pole</th><th>Verzia</th><th>Vždy prítomné?</th><th>Tvoja akcia ak chýba</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>emotion</code></td><td>v2.0</td><td>✓</td><td>—</td></tr>
+        <tr><td><code>intensity</code></td><td>v2.0</td><td>✓</td><td>—</td></tr>
+        <tr><td><code>isSpeaking</code></td><td>v2.0</td><td>✓</td><td>—</td></tr>
+        <tr><td><code>visemes</code></td><td>v2.0</td><td>✓</td><td>—</td></tr>
+        <tr><td><code>blink</code></td><td>v2.0</td><td>✓</td><td>—</td></tr>
+        <tr><td><code>viseme_timeline</code></td><td>v2.0</td><td>iba na <code>sentence_start</code></td><td>scrub vlastným tickerom</td></tr>
+        <tr><td><code>total_duration_ms</code></td><td>v2.0</td><td>iba na <code>sentence_start</code></td><td>—</td></tr>
+        <tr><td><code>agentState</code></td><td>v2.1</td><td>optional, často vynechané</td><td>default na <code>"idle"</code></td></tr>
+        <tr><td><code>arkit</code></td><td>v3.0</td><td>iba v ARKit mode</td><td>viseme mode fallback</td></tr>
+        <tr><td><code>arkit_frames</code></td><td>v3.0</td><td>iba na <code>sentence_start</code> v ARKit mode</td><td>viseme mode fallback</td></tr>
+        <tr><td><code>audioPositionMs</code></td><td>v4.0</td><td>každý frame ak <code>isSpeaking=true</code></td><td>vlastný ticker fallback</td></tr>
+        <tr><td><code>sentenceIdx</code></td><td>v4.0</td><td>každý frame ak <code>isSpeaking=true</code></td><td>ignore sentence boundary detection</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-tip">
+      <strong>Migration order ak začínaš teraz</strong>
+      <ol style="margin: 6px 0 0;">
+        <li>v2.0 baseline <span class="pri pri-p0" style="margin-left: 6px;">P0</span></li>
+        <li>v2.1 agentState <span class="pri pri-p1" style="margin-left: 6px;">P1</span> · 1–2h práce</li>
+        <li>v3.0 ARKit cez LiveLink Pose Asset <span class="pri pri-p1" style="margin-left: 6px;">P1</span> · 2–4h</li>
+        <li>v4.0 audio clock <span class="pri pri-p2" style="margin-left: 6px;">P2</span> · 1h — replace ticker</li>
+      </ol>
+    </div>
+
+    <h2 id="debug">Debugging tipy</h2>
+
+    <table>
+      <thead>
+        <tr><th style="width: 40%;">Symptóm</th><th style="width: 30%;">Možná príčina</th><th>Kde sa pozrieť</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Blueprint sa nepripojí</td><td>Origin gating, port mismatch</td><td><code>tutor-service/app/api/ws_avatar.py</code> (dev mode accepts všetko z localhost)</td></tr>
+        <tr><td><code>connected</code> príde, ale per-frame nič</td><td>Žiadny chat trigger</td><td>Pošli správu v chat UI ALEBO použi Inject panel</td></tr>
+        <tr><td>visemes funguje, emotion nie</td><td>Emotion state machine missing</td><td>AnimBP State Machine pre 9 emotion stavov</td></tr>
+        <tr><td>ARKit <code>arkit</code> field tu, ale rig nereaguje</td><td>PascalCase mapping bug</td><td>Cesta A (Pose Asset) namiesto manuálneho mappingu</td></tr>
+        <tr><td>Lipsync je posunutý 50–100ms</td><td>Self-timing drift</td><td>Použi v4.0 <code>audioPositionMs</code></td></tr>
+        <tr><td><code>audioPositionMs</code> skáče</td><td>Browser sleep / tab backgrounded</td><td>Contract :296-302 popisuje failure modes</td></tr>
+        <tr><td>Nevidím nový <code>agentState</code> v žiadnom payload</td><td>LearningMode bez <code>enabled_skills</code></td><td><code>assistant</code> alebo <code>tutor_practice</code> mode triggeruje tool calls</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="files">Kde nájdeš čo</h2>
+
+    <table>
+      <thead><tr><th>Čo</th><th>Súbor</th></tr></thead>
+      <tbody>
+        <tr><td>Canonical protocol spec</td><td><code>docs/ue5-avatar-contract.md</code></td></tr>
+        <tr><td>Backend broadcast helper</td><td><code>tutor-service/app/api/chat.py</code> (<code>_broadcast_avatar_state</code>)</td></tr>
+        <tr><td>Frontend WS emission</td><td><code>core/src/hooks/useUE5Bridge.ts</code></td></tr>
+        <tr><td>Blueprint TS reference</td><td><code>core/src/app/(shell)/avatar-debug/simulator/page.tsx</code></td></tr>
+        <tr><td>Contract tests</td><td><code>tutor-service/tests/test_ws_avatar.py</code> (27 tests)</td></tr>
+        <tr><td>ARKit channel names</td><td><code>tutor-service/app/services/audio2lipsync/constants.py</code> (52 PascalCase)</td></tr>
+        <tr><td>Smoke test script</td><td><code>scripts/smoke_avatar_ws.py</code> (stdlib-only)</td></tr>
+        <tr><td>Dev injector</td><td><code>POST /api/v1/avatar/dev/broadcast</code> (gated on <code>EDU_DEV_MODE</code>, default ON)</td></tr>
+        <tr><td>Live UI for testing</td><td><a href="http://localhost:3000/avatar-debug">/avatar-debug</a> — agentState pill + Inject panel + log</td></tr>
+        <tr><td>Simulator UI</td><td><a href="http://localhost:3000/avatar-debug/simulator">/avatar-debug/simulator</a> — TypeScript Blueprint reference</td></tr>
+        <tr><td>Collab workflow</td><td><code>docs/output3/COLLAB-WORKFLOW.md</code></td></tr>
+        <tr><td>Markdown verzia tohto súboru</td><td><code>docs/DEV-BLUEPRINT-CHANGES.md</code></td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="questions">Otázky / blokátory</h2>
+
+    <p>Hláste v Slacku <code>#edututor-ue5</code> alebo email na platform tím. Pri novom proto poli vždy v poradí:</p>
+    <ol>
+      <li>Pozri canonical <code>docs/ue5-avatar-contract.md</code></li>
+      <li>Pozri test pinning v <code>test_ws_avatar.py</code></li>
+      <li>Pozri simulator pseudokód v <code>simulator/page.tsx</code></li>
+      <li>Ak stále nejasné — Slack</li>
+    </ol>
+
+    <div class="callout callout-info">
+      Žiadne otázky neexistujú, ktoré sú "trivial" — ak je niečo nejasné v contract spec, je to bug v specu, nie v tebe.
+    </div>
+
+    <footer>
+      Vznik dokumentu: 2026-05-12 po Oracle dev-mode audit (ses_1e61bcf80ffenmYO20x6gYor0f).<br/>
+      Aktualizuj keď sa protokol zmení — žiadny "stale Blueprint doc" stav nie je akceptovateľný.<br/>
+      <br/>
+      EduTutor.AI · SORRYWECAN s.r.o. · grant 09I05-03-V04-00072
+    </footer>
+
+  </main>
+</div>
+
+<script>
+  (function() {
+    const sections = document.querySelectorAll('h2[id]');
+    const links = document.querySelectorAll('.nav a[href^="#"]');
+    const map = new Map();
+    links.forEach(l => map.set(l.getAttribute('href').slice(1), l));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          links.forEach(l => l.classList.remove('active'));
+          const link = map.get(e.target.id);
+          if (link) link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+
+    sections.forEach(s => observer.observe(s));
+
+    document.querySelectorAll('.nav a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.replaceState(null, '', '#' + id);
+        }
+      });
+    });
+  })();
+</script>
+</body>
+</html>

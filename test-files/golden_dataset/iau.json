@@ -1,0 +1,918 @@
+[
+  {
+    "id": "IAU-001",
+    "question": "Čo je strojové učenie?",
+    "expected_keywords": [
+      "strojové učenie",
+      "data",
+      "model",
+      "trenovanie",
+      "predikcia"
+    ],
+    "difficulty": "easy",
+    "subject": "IAU",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: strojové učenie, data, model"
+  },
+  {
+    "id": "IAU-002",
+    "question": "Čo je neurónová sieť?",
+    "expected_keywords": [
+      "neurónová sieť",
+      "neurony",
+      "vrstvy",
+      "vahy",
+      "aktivacna funkcia"
+    ],
+    "difficulty": "easy",
+    "subject": "IAU",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: neurónová sieť, neurony, vrstvy"
+  },
+  {
+    "id": "IAU-003",
+    "question": "Čo je klasifikácia?",
+    "expected_keywords": [
+      "klasifikácia",
+      "kategorie",
+      "triedy",
+      "model",
+      "predikcia"
+    ],
+    "difficulty": "easy",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-004",
+    "question": "Čo je regresia?",
+    "expected_keywords": [
+      "regresia",
+      "spojita hodnota",
+      "predikcia",
+      "ciselna",
+      "linearny"
+    ],
+    "difficulty": "easy",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-005",
+    "question": "Čo je klastrovanie?",
+    "expected_keywords": [
+      "klastrovanie",
+      "zhlukovanie",
+      "skupiny",
+      "nepriamo ucenie",
+      "podobnost"
+    ],
+    "difficulty": "easy",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-006",
+    "question": "Aký je rozdiel medzi supervised a unsupervised ucenim?",
+    "expected_keywords": [
+      "supervised",
+      "unsupervised",
+      "oznacene data",
+      "bez oznacenia"
+    ],
+    "difficulty": "easy",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-007",
+    "question": "Čo je trenovacia a testovacia mnozina?",
+    "expected_keywords": [
+      "trenovacia",
+      "testovacia",
+      "rozdelenie",
+      "evaluacia",
+      "generalIzacia"
+    ],
+    "difficulty": "easy",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-008",
+    "question": "Čo je overfitting?",
+    "expected_keywords": [
+      "overfitting",
+      "pretrénovanie",
+      "generalIzacia",
+      "trenovacie data",
+      "nové data"
+    ],
+    "difficulty": "easy",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-009",
+    "question": "Čo je underfitting?",
+    "expected_keywords": [
+      "underfitting",
+      "jednoduchý model",
+      "nepresnost",
+      "nedostatocne ucenie"
+    ],
+    "difficulty": "easy",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-010",
+    "question": "Čo je rozhodovací strom?",
+    "expected_keywords": [
+      "rozhodovací strom",
+      "uzly",
+      "vetvy",
+      "listy",
+      "podmienky"
+    ],
+    "difficulty": "easy",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-011",
+    "question": "Čo je k-nearest neighbors (k-NN)?",
+    "expected_keywords": [
+      "k-NN",
+      "najblizsich susedov",
+      "vzdialenost",
+      "hlasovanie"
+    ],
+    "difficulty": "easy",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-012",
+    "question": "Čo je linearna regresia?",
+    "expected_keywords": [
+      "linearna regresia",
+      "priamka",
+      "y = ax + b",
+      "najmenšie stvorce"
+    ],
+    "difficulty": "easy",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-013",
+    "question": "Čo je logisticka regresia?",
+    "expected_keywords": [
+      "logisticka regresia",
+      "pravdepodobnost",
+      "sigmoid",
+      "binarna klasifikácia"
+    ],
+    "difficulty": "easy",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-014",
+    "question": "Čo je SVM (Support Vector Machine)?",
+    "expected_keywords": [
+      "SVM",
+      "nadplocha",
+      "margin",
+      "oporné vektory",
+      "klasifikácia"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: SVM, nadplocha, margin"
+  },
+  {
+    "id": "IAU-015",
+    "question": "Čo je k-means klastrovanie?",
+    "expected_keywords": [
+      "k-means",
+      "centroidy",
+      "priradenie",
+      "aktualizacia",
+      "iteracia"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: k-means, centroidy, priradenie"
+  },
+  {
+    "id": "IAU-016",
+    "question": "Čo je confusion matrix?",
+    "expected_keywords": [
+      "confusion matrix",
+      "TP",
+      "FP",
+      "TN",
+      "FN",
+      "klasifikácia"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-017",
+    "question": "Čo je precision a recall?",
+    "expected_keywords": [
+      "precision",
+      "recall",
+      "relevantné",
+      "vyhladané",
+      "metriky"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-018",
+    "question": "Čo je F1 skóre?",
+    "expected_keywords": [
+      "F1",
+      "harmonický priemer",
+      "precision",
+      "recall"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-019",
+    "question": "Čo je cross-validacia?",
+    "expected_keywords": [
+      "cross-validacia",
+      "K-fold",
+      "rozdelenie",
+      "evaluacia",
+      "robustnost"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-020",
+    "question": "Čo je gradient descent?",
+    "expected_keywords": [
+      "gradient descent",
+      "optimalizacia",
+      "derivacia",
+      "ucenie",
+      "minimum"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-021",
+    "question": "Čo je learning rate?",
+    "expected_keywords": [
+      "learning rate",
+      "rychlost ucenia",
+      "krok",
+      "konvergencia"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-022",
+    "question": "Čo je loss funkcia?",
+    "expected_keywords": [
+      "loss funkcia",
+      "strata",
+      "chyba",
+      "optimalizacia",
+      "minimalizacia"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-023",
+    "question": "Čo je regularizacia (L1, L2)?",
+    "expected_keywords": [
+      "regularizacia",
+      "L1",
+      "L2",
+      "pretrénovanie",
+      "penalizacia"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-024",
+    "question": "Vysvetlite nahodne lesy (Random Forest).",
+    "expected_keywords": [
+      "random forest",
+      "nahodne lesy",
+      "ensemble",
+      "bagging",
+      "stromy"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-025",
+    "question": "Čo je bagging a boosting?",
+    "expected_keywords": [
+      "bagging",
+      "boosting",
+      "ensemble",
+      "kombinovanie",
+      "modely"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-026",
+    "question": "Čo je PCA (Principal Component Analysis)?",
+    "expected_keywords": [
+      "PCA",
+      "redukcia dimenzii",
+      "hlavné komponenty",
+      "variancia"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-027",
+    "question": "Čo je aktivacna funkcia v neurónovej sieti?",
+    "expected_keywords": [
+      "aktivacna funkcia",
+      "ReLU",
+      "sigmoid",
+      "nelinearita"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-028",
+    "question": "Čo je backpropagation?",
+    "expected_keywords": [
+      "backpropagation",
+      "spatna propagacia",
+      "gradient",
+      "vahy",
+      "ucenie"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-029",
+    "question": "Aký je rozdiel medzi batch a stochastic gradient descent?",
+    "expected_keywords": [
+      "batch",
+      "stochastic",
+      "mini-batch",
+      "aktualizacia",
+      "efektivita"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-030",
+    "question": "Čo je konvolučná neurónová sieť (CNN)?",
+    "expected_keywords": [
+      "CNN",
+      "konvolucia",
+      "filtre",
+      "pooling",
+      "obrazy"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-031",
+    "question": "Čo je rekurentná neurónová sieť (RNN)?",
+    "expected_keywords": [
+      "RNN",
+      "rekurentná",
+      "sekvencia",
+      "cas",
+      "pamät"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-032",
+    "question": "Čo je LSTM?",
+    "expected_keywords": [
+      "LSTM",
+      "dlha kratkodobá pamät",
+      "brany",
+      "sekvencne data"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-033",
+    "question": "Čo je transformer architektura?",
+    "expected_keywords": [
+      "transformer",
+      "attention",
+      "self-attention",
+      "paralelizacia",
+      "NLP"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-034",
+    "question": "Čo je attention mechanizmus?",
+    "expected_keywords": [
+      "attention",
+      "pozornost",
+      "vahy",
+      "kontext",
+      "relevancia"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-035",
+    "question": "Čo je NLP (spracovanie prirodzeneho jazyka)?",
+    "expected_keywords": [
+      "NLP",
+      "text",
+      "jazyk",
+      "tokenizacia",
+      "porozumenie"
+    ],
+    "difficulty": "easy",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-036",
+    "question": "Čo je tokenizacia v NLP?",
+    "expected_keywords": [
+      "tokenizacia",
+      "tokeny",
+      "slova",
+      "subslova",
+      "BPE"
+    ],
+    "difficulty": "easy",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-037",
+    "question": "Čo je word embedding?",
+    "expected_keywords": [
+      "embedding",
+      "vektorová reprezentácia",
+      "Word2Vec",
+      "semantika"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-038",
+    "question": "Čo je transfer learning?",
+    "expected_keywords": [
+      "transfer learning",
+      "predtrénovaný",
+      "fine-tuning",
+      "domaina"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-039",
+    "question": "Čo je data augmentation?",
+    "expected_keywords": [
+      "data augmentation",
+      "rozsirovanie dat",
+      "rotacia",
+      "flip",
+      "trenovanie"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-040",
+    "question": "Čo je dropout v neuronovych sietiach?",
+    "expected_keywords": [
+      "dropout",
+      "regularizacia",
+      "nahodne vynechanie",
+      "pretrénovanie"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-041",
+    "question": "Čo je batch normalization?",
+    "expected_keywords": [
+      "batch normalization",
+      "normalizacia",
+      "vrstvy",
+      "stabilizacia",
+      "trenovanie"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-042",
+    "question": "Čo je GAN (Generative Adversarial Network)?",
+    "expected_keywords": [
+      "GAN",
+      "generator",
+      "diskriminator",
+      "adversarial",
+      "generovanie"
+    ],
+    "difficulty": "hard",
+    "subject": "IAU",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: GAN, generator, diskriminator"
+  },
+  {
+    "id": "IAU-043",
+    "question": "Čo je autoencoder?",
+    "expected_keywords": [
+      "autoencoder",
+      "encoder",
+      "decoder",
+      "kompresia",
+      "rekonstrukcia"
+    ],
+    "difficulty": "hard",
+    "subject": "IAU",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: autoencoder, encoder, decoder"
+  },
+  {
+    "id": "IAU-044",
+    "question": "Čo je reinforcement learning?",
+    "expected_keywords": [
+      "reinforcement learning",
+      "agent",
+      "prostredie",
+      "odmena",
+      "akcie"
+    ],
+    "difficulty": "hard",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-045",
+    "question": "Vysvetlite bias-variance tradeoff.",
+    "expected_keywords": [
+      "bias",
+      "variance",
+      "kompromis",
+      "pretrénovanie",
+      "jednoduchost"
+    ],
+    "difficulty": "hard",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-046",
+    "question": "Čo je feature engineering?",
+    "expected_keywords": [
+      "feature engineering",
+      "priznaky",
+      "transformacia",
+      "vyber",
+      "kvalita"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-047",
+    "question": "Vysvetlite ROC krivku a AUC.",
+    "expected_keywords": [
+      "ROC",
+      "AUC",
+      "true positive rate",
+      "false positive rate",
+      "prah"
+    ],
+    "difficulty": "hard",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-048",
+    "question": "Čo je gradient vanishing problem?",
+    "expected_keywords": [
+      "vanishing gradient",
+      "miznutie",
+      "hlboké siete",
+      "aktivacia",
+      "LSTM"
+    ],
+    "difficulty": "hard",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-049",
+    "question": "Vysvetlite princíp BERT modelu.",
+    "expected_keywords": [
+      "BERT",
+      "bidirektionalny",
+      "maskovanie",
+      "transformer",
+      "predtrenovanie"
+    ],
+    "difficulty": "hard",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-050",
+    "question": "Čo je fine-tuning predtrénovaneho modelu?",
+    "expected_keywords": [
+      "fine-tuning",
+      "predtrénovaný",
+      "doladenie",
+      "mensi dataset",
+      "transfer"
+    ],
+    "difficulty": "hard",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-051",
+    "question": "Čo je RAG (Retrieval-Augmented Generation)?",
+    "expected_keywords": [
+      "RAG",
+      "retrieval",
+      "generovanie",
+      "vektorova databaza",
+      "kontext"
+    ],
+    "difficulty": "hard",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-052",
+    "question": "Vysvetlite word2vec (CBOW a Skip-gram).",
+    "expected_keywords": [
+      "word2vec",
+      "CBOW",
+      "skip-gram",
+      "kontextové okno",
+      "embedding"
+    ],
+    "difficulty": "hard",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-053",
+    "question": "Čo je cosine similarity?",
+    "expected_keywords": [
+      "cosine similarity",
+      "uhol",
+      "vektory",
+      "podobnost",
+      "normalizacia"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-054",
+    "question": "Čo je one-hot encoding?",
+    "expected_keywords": [
+      "one-hot",
+      "binárny vektor",
+      "kategorická premenná",
+      "enkódovanie"
+    ],
+    "difficulty": "easy",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-055",
+    "question": "Čo je normalizacia a standardizacia dat?",
+    "expected_keywords": [
+      "normalizacia",
+      "standardizacia",
+      "škálovanie",
+      "priemer",
+      "smerodajna odchylka"
+    ],
+    "difficulty": "easy",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-056",
+    "question": "Čo je epoch v trenovaní?",
+    "expected_keywords": [
+      "epoch",
+      "iterácia",
+      "celý dataset",
+      "trenovanie",
+      "opakovanie"
+    ],
+    "difficulty": "easy",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-057",
+    "question": "Čo je mini-batch?",
+    "expected_keywords": [
+      "mini-batch",
+      "podmnozina",
+      "trenovanie",
+      "aktualizacia vah",
+      "efektivita"
+    ],
+    "difficulty": "easy",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-058",
+    "question": "Vysvetlite softmax funkciu.",
+    "expected_keywords": [
+      "softmax",
+      "pravdepodobnosti",
+      "klasifikácia",
+      "exponenciala",
+      "normalizacia"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-059",
+    "question": "Čo je Xavier/He inicializacia vah?",
+    "expected_keywords": [
+      "Xavier",
+      "He",
+      "inicializacia",
+      "vahy",
+      "rozptyl"
+    ],
+    "difficulty": "hard",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-060",
+    "question": "Čo je object detection v pocitacovom videni?",
+    "expected_keywords": [
+      "object detection",
+      "bounding box",
+      "YOLO",
+      "SSD",
+      "lokalizacia"
+    ],
+    "difficulty": "hard",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-061",
+    "question": "Čo je semantic segmentation?",
+    "expected_keywords": [
+      "segmentacia",
+      "pixely",
+      "triedy",
+      "maska",
+      "obraz"
+    ],
+    "difficulty": "hard",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-062",
+    "question": "Vysvetlite princíp GPT modelu.",
+    "expected_keywords": [
+      "GPT",
+      "autoregresivny",
+      "generovanie textu",
+      "transformer",
+      "decoder"
+    ],
+    "difficulty": "hard",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-063",
+    "question": "Čo je hyperparameter tuning?",
+    "expected_keywords": [
+      "hyperparametre",
+      "grid search",
+      "random search",
+      "optimalizacia"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-064",
+    "question": "Vysvetlite ensemble metody.",
+    "expected_keywords": [
+      "ensemble",
+      "kombinovanie modelov",
+      "bagging",
+      "boosting",
+      "voting"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-065",
+    "question": "Čo je Naive Bayes klasifikator?",
+    "expected_keywords": [
+      "Naive Bayes",
+      "pravdepodobnost",
+      "podmienena",
+      "nezávislosť",
+      "Bayes"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-066",
+    "question": "Čo je XGBoost?",
+    "expected_keywords": [
+      "XGBoost",
+      "gradient boosting",
+      "stromy",
+      "regularizacia",
+      "vykon"
+    ],
+    "difficulty": "hard",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-067",
+    "question": "Vysvetlite t-SNE vizualizáciu.",
+    "expected_keywords": [
+      "t-SNE",
+      "redukcia dimenzii",
+      "vizualizacia",
+      "klastry",
+      "podobnost"
+    ],
+    "difficulty": "hard",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-068",
+    "question": "Čo je early stopping?",
+    "expected_keywords": [
+      "early stopping",
+      "pretrénovanie",
+      "validacna strata",
+      "zastavenie",
+      "trenovanie"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-069",
+    "question": "Vysvetlite koncepty precision@K a recall@K.",
+    "expected_keywords": [
+      "precision@K",
+      "recall@K",
+      "odporucacie systemy",
+      "top-K",
+      "evaluacia"
+    ],
+    "difficulty": "hard",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-070",
+    "question": "Čo je data pipeline v ML projekte?",
+    "expected_keywords": [
+      "data pipeline",
+      "prepracovanie",
+      "cistenie",
+      "transformacia",
+      "automatizacia"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU"
+  },
+  {
+    "id": "IAU-071",
+    "question": "Aké sú etické aspekty umelej inteligencie?",
+    "expected_keywords": [
+      "etika",
+      "zaujatost",
+      "bias",
+      "transparentnost",
+      "spravodlivost",
+      "AI"
+    ],
+    "difficulty": "easy",
+    "subject": "IAU"
+  }
+]

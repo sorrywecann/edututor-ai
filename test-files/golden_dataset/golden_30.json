@@ -1,0 +1,417 @@
+[
+  {
+    "id": "OOP-001",
+    "question": "Čo je trieda v objektovo orientovanom programovaní?",
+    "expected_keywords": [
+      "trieda",
+      "šablóna",
+      "objekt",
+      "atributy",
+      "metody"
+    ],
+    "difficulty": "easy",
+    "subject": "OOP",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: trieda, šablóna, objekt"
+  },
+  {
+    "id": "OOP-002",
+    "question": "Čo je objekt a ako vznikne z triedy?",
+    "expected_keywords": [
+      "objekt",
+      "inštancia",
+      "trieda",
+      "konštruktor"
+    ],
+    "difficulty": "easy",
+    "subject": "OOP",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: objekt, inštancia, trieda"
+  },
+  {
+    "id": "OOP-019",
+    "question": "Čo je viacnasobna dedičnosť?",
+    "expected_keywords": [
+      "viacnasobna dedičnosť",
+      "viac rodicov",
+      "diamond problem",
+      "interface"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: viacnasobna dedičnosť, viac rodicov, diamond problem"
+  },
+  {
+    "id": "OOP-021",
+    "question": "Aký je rozdiel medzi abstraktnou triedou a rozhranim?",
+    "expected_keywords": [
+      "abstraktná trieda",
+      "rozhranie",
+      "implementacia",
+      "dedičnosť",
+      "viacnasobne"
+    ],
+    "difficulty": "medium",
+    "subject": "OOP",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: abstraktná trieda, rozhranie, implementacia"
+  },
+  {
+    "id": "OOP-042",
+    "question": "Ako by ste navrhli triednu hierarchiu pre skolsky informacny system?",
+    "expected_keywords": [
+      "triedy",
+      "student",
+      "ucitel",
+      "dedičnosť",
+      "system",
+      "navrh"
+    ],
+    "difficulty": "hard",
+    "subject": "OOP",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: triedy, student, ucitel"
+  },
+  {
+    "id": "OOP-043",
+    "question": "Vysvetlite návrhový vzor MVC v kontexte webovej aplikácie.",
+    "expected_keywords": [
+      "MVC",
+      "model",
+      "view",
+      "controller",
+      "oddelenie zodpovednosti"
+    ],
+    "difficulty": "hard",
+    "subject": "OOP",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: MVC, model, view"
+  },
+  {
+    "id": "PRPR-001",
+    "question": "Čo je premenná v jazyku C?",
+    "expected_keywords": [
+      "premenná",
+      "dátový typ",
+      "pamat",
+      "hodnota",
+      "deklaracia"
+    ],
+    "difficulty": "easy",
+    "subject": "PRPR",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: premenná, dátový typ, pamat"
+  },
+  {
+    "id": "PRPR-002",
+    "question": "Vymenujte základné dátové typy v C.",
+    "expected_keywords": [
+      "int",
+      "float",
+      "char",
+      "double",
+      "dátový typ"
+    ],
+    "difficulty": "easy",
+    "subject": "PRPR",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: int, float, char"
+  },
+  {
+    "id": "PRPR-019",
+    "question": "Ako funguje malloc a free?",
+    "expected_keywords": [
+      "malloc",
+      "free",
+      "dynamicka pamat",
+      "halda",
+      "alokovanie"
+    ],
+    "difficulty": "medium",
+    "subject": "PRPR",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: malloc, free, dynamicka pamat"
+  },
+  {
+    "id": "PRPR-020",
+    "question": "Čo je rozdiel medzi calloc a malloc?",
+    "expected_keywords": [
+      "calloc",
+      "malloc",
+      "inicializacia nulami",
+      "pocet prvkov"
+    ],
+    "difficulty": "medium",
+    "subject": "PRPR",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: calloc, malloc, inicializacia nulami"
+  },
+  {
+    "id": "PRPR-041",
+    "question": "Implementujte bubble sort v C.",
+    "expected_keywords": [
+      "bubble sort",
+      "triedenie",
+      "zamena",
+      "cyklus",
+      "porovnanie"
+    ],
+    "difficulty": "hard",
+    "subject": "PRPR",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: bubble sort, triedenie, zamena"
+  },
+  {
+    "id": "PRPR-042",
+    "question": "Implementujte reverzovanie retazca v C.",
+    "expected_keywords": [
+      "reverz",
+      "retazec",
+      "znaky",
+      "zamena",
+      "dlzka"
+    ],
+    "difficulty": "hard",
+    "subject": "PRPR",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: reverz, retazec, znaky"
+  },
+  {
+    "id": "DSA-001",
+    "question": "Čo je pole a aka je zložitosť prístupu k prvku?",
+    "expected_keywords": [
+      "pole",
+      "index",
+      "O(1)",
+      "priamy prístup"
+    ],
+    "difficulty": "easy",
+    "subject": "DSA",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: pole, index, O(1)"
+  },
+  {
+    "id": "DSA-002",
+    "question": "Čo je spájaný zoznam?",
+    "expected_keywords": [
+      "spájaný zoznam",
+      "uzol",
+      "pointer",
+      "next",
+      "dynamicky"
+    ],
+    "difficulty": "easy",
+    "subject": "DSA",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: spájaný zoznam, uzol, pointer"
+  },
+  {
+    "id": "DSA-018",
+    "question": "Vysvetlite casovu zložitosť O(1), O(n), O(log n), O(n^2).",
+    "expected_keywords": [
+      "O(1)",
+      "O(n)",
+      "O(log n)",
+      "O(n^2)",
+      "porovnanie",
+      "zložitosť"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: O(1), O(n), O(log n)"
+  },
+  {
+    "id": "DSA-019",
+    "question": "Vysvetlite quick sort algoritmus.",
+    "expected_keywords": [
+      "quick sort",
+      "pivot",
+      "rozdelenie",
+      "O(n log n)",
+      "rekurzia"
+    ],
+    "difficulty": "medium",
+    "subject": "DSA",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: quick sort, pivot, rozdelenie"
+  },
+  {
+    "id": "DSA-039",
+    "question": "Čo je dynamické programovanie?",
+    "expected_keywords": [
+      "dynamické programovanie",
+      "podproblemy",
+      "memorizacia",
+      "tabulka",
+      "optimalita"
+    ],
+    "difficulty": "hard",
+    "subject": "DSA",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: dynamické programovanie, podproblemy, memorizacia"
+  },
+  {
+    "id": "DSA-040",
+    "question": "Vysvetlite problem batohu (knapsack).",
+    "expected_keywords": [
+      "batoh",
+      "knapsack",
+      "kapacita",
+      "hodnota",
+      "dynamické programovanie"
+    ],
+    "difficulty": "hard",
+    "subject": "DSA",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: batoh, knapsack, kapacita"
+  },
+  {
+    "id": "IAU-001",
+    "question": "Čo je strojové učenie?",
+    "expected_keywords": [
+      "strojové učenie",
+      "data",
+      "model",
+      "trenovanie",
+      "predikcia"
+    ],
+    "difficulty": "easy",
+    "subject": "IAU",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: strojové učenie, data, model"
+  },
+  {
+    "id": "IAU-002",
+    "question": "Čo je neurónová sieť?",
+    "expected_keywords": [
+      "neurónová sieť",
+      "neurony",
+      "vrstvy",
+      "vahy",
+      "aktivacna funkcia"
+    ],
+    "difficulty": "easy",
+    "subject": "IAU",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: neurónová sieť, neurony, vrstvy"
+  },
+  {
+    "id": "IAU-014",
+    "question": "Čo je SVM (Support Vector Machine)?",
+    "expected_keywords": [
+      "SVM",
+      "nadplocha",
+      "margin",
+      "oporné vektory",
+      "klasifikácia"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: SVM, nadplocha, margin"
+  },
+  {
+    "id": "IAU-015",
+    "question": "Čo je k-means klastrovanie?",
+    "expected_keywords": [
+      "k-means",
+      "centroidy",
+      "priradenie",
+      "aktualizacia",
+      "iteracia"
+    ],
+    "difficulty": "medium",
+    "subject": "IAU",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: k-means, centroidy, priradenie"
+  },
+  {
+    "id": "IAU-042",
+    "question": "Čo je GAN (Generative Adversarial Network)?",
+    "expected_keywords": [
+      "GAN",
+      "generator",
+      "diskriminator",
+      "adversarial",
+      "generovanie"
+    ],
+    "difficulty": "hard",
+    "subject": "IAU",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: GAN, generator, diskriminator"
+  },
+  {
+    "id": "IAU-043",
+    "question": "Čo je autoencoder?",
+    "expected_keywords": [
+      "autoencoder",
+      "encoder",
+      "decoder",
+      "kompresia",
+      "rekonstrukcia"
+    ],
+    "difficulty": "hard",
+    "subject": "IAU",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: autoencoder, encoder, decoder"
+  },
+  {
+    "id": "MA-001",
+    "question": "Čo je limita funkcie?",
+    "expected_keywords": [
+      "limita",
+      "funkcia",
+      "blizi sa",
+      "hodnota",
+      "epsilon"
+    ],
+    "difficulty": "easy",
+    "subject": "MA",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: limita, funkcia, blizi sa"
+  },
+  {
+    "id": "MA-002",
+    "question": "Čo je derivácia funkcie?",
+    "expected_keywords": [
+      "derivacia",
+      "zmena",
+      "smernica",
+      "dotycnica",
+      "rychlost"
+    ],
+    "difficulty": "easy",
+    "subject": "MA",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: derivacia, zmena, smernica"
+  },
+  {
+    "id": "MA-015",
+    "question": "Čo je parciálna derivácia?",
+    "expected_keywords": [
+      "parciálna derivácia",
+      "viac premenných",
+      "jedna premenná",
+      "konstanty"
+    ],
+    "difficulty": "medium",
+    "subject": "MA",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: parciálna derivácia, viac premenných, jedna premenná"
+  },
+  {
+    "id": "MA-016",
+    "question": "Vysvetlite L'Hôpitalovo pravidlo.",
+    "expected_keywords": [
+      "L'Hôpitalovo",
+      "neurcity tvar",
+      "0/0",
+      "derivácia citatela",
+      "menovatela"
+    ],
+    "difficulty": "medium",
+    "subject": "MA",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: L'Hôpitalovo, neurcity tvar, 0/0"
+  },
+  {
+    "id": "MA-029",
+    "question": "Čo je Jacobian?",
+    "expected_keywords": [
+      "Jacobian",
+      "matica",
+      "parcialne derivacie",
+      "transformacia"
+    ],
+    "difficulty": "hard",
+    "subject": "MA",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: Jacobian, matica, parcialne derivacie"
+  },
+  {
+    "id": "MA-030",
+    "question": "Čo je Hessova matica?",
+    "expected_keywords": [
+      "Hessova matica",
+      "druhe derivacie",
+      "extremy",
+      "konvexnost"
+    ],
+    "difficulty": "hard",
+    "subject": "MA",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: Hessova matica, druhe derivacie, extremy"
+  }
+]

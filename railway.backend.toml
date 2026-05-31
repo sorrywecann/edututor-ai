@@ -1,0 +1,10 @@
+[build]
+builder = "dockerfile"
+dockerfilePath = "tutor-service/Dockerfile"
+watchPatterns = ["tutor-service/**"]
+
+[deploy]
+healthcheckPath = "/api/v1/health"
+healthcheckTimeout = 300
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 3

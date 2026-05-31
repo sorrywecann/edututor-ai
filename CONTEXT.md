@@ -1,0 +1,174 @@
+# EduTutor.AI — Domain Glossary
+
+This file is the single source of truth for domain language in EduTutor.AI.
+Agents entering this repository MUST read this file first. Use the exact terms defined here.
+
+> **Rule:** If you catch yourself using an _Avoid_ term, stop and replace it. Inconsistent language causes miscommunication between humans and between agents across sessions.
+
+---
+
+## Product & Repositories
+
+**EduTutor.AI**
+The product. An AI-powered tutoring platform with a 3D avatar, local LLM support, and a knowledge-base (KB) mode.
+_Avoid:_ edututor (without the dot), EdTech app, tutoring bot
+
+**edututor-ai-sandbox** (current dev sandbox)
+The active development repository: `github.com/princeofwellness/edututor-ai-sandbox`. Where all work happens. Note: the public release URL is TBD.
+_Avoid:_ edututor-platform (archived), main repo (ambiguous)
+
+**edututor-ai** (release repo)
+The clean public release repository: `github.com/sorrywecann/edututor-ai`. No Claude/AI references in history.
+_Avoid:_ fork, copy, deploy repo
+
+**edotutor-test**
+The active local frontend clone running at `:3000`. Branch `feat/living-room-redesign` or the current working branch.
+_Avoid:_ edotutor-fresh, the other clone
+
+---
+
+## People & Roles
+
+**Roland**
+Product lead and owner (SORRYWECAN s.r.o.). Coordinates all workstreams and signs off on decisions.
+_Avoid:_ dev, user (when referring to Roland specifically)
+
+**Martin**
+UE5 artist and developer. Owns: avatar scene, animations, emotion plugin, audio playback in UE5.
+_Avoid:_ artist (without context), UE5 person
+
+**Dominik**
+Blueprint developer. Owns: `ABP_Face_PostProcess`, viseme-to-blendshape mapping, face rig.
+_Avoid:_ Blueprint guy, the tech artist
+
+---
+
+## Architecture: Services
+
+**Tutor Service** (backend)
+The Python/FastAPI backend. Handles LLM calls, TTS generation, WebSocket avatar protocol, KB indexing.
+_Avoid:_ the server, FastAPI app, backend server
+
+**Core** (frontend)
+The Next.js 15 App Router frontend living in `core/`. Runs at `:3000`.
+_Avoid:_ the app, React app, frontend folder
+
+**Wilbur**
+The WebSocket signalling service that brokers the connection between Core and the UE5 Pixel Streaming session.
+_Avoid:_ signal server, WebRTC broker, the relay
+
+**UE5 Build** / **UE5 Session**
+The running Unreal Engine 5 instance. Streams the avatar via Pixel Streaming over the Wilbur connection.
+_Avoid:_ the game, Unreal server, UE
+
+---
+
+## Architecture: Avatar Pipeline
+
+**Avatar**
+The 3D MetaHuman character running inside UE5. Receives viseme + emotion data over `/ws/avatar` and renders speech and expressions.
+_Avoid:_ orb (the orb is a separate 2D component), bot, character (without context)
+
+**MHC_Girl**
+The MetaHuman character asset used as the avatar. The current face mesh for viseme mapping.
+_Avoid:_ the girl, MetaHuman (when you mean the specific asset)
+
+**Orb**
+The 2D animated state indicator shown on the main chat page. State-only — it does not render visemes or emotions.
+_Avoid:_ avatar (when meaning the orb), circle, loader
+
+**ABP_Face_PostProcess**
+The Unreal Engine Animation Blueprint owned by Dominik. Reads viseme + emotion data from the `/ws/avatar` WebSocket and drives `MHC_Girl`'s blendshapes in real time.
+_Avoid:_ face rig, anim BP, PostProcess blueprint (without the full name on first reference)
+
+**Viseme**
+One of 14 phoneme-mapped face positions. A float value `[0.0, 1.0]` sent in the avatar WebSocket payload to drive a specific blendshape curve.
+_Avoid:_ ARKit blendshape (ARKit is a format reference only, not our system), phoneme, mouth shape
+
+**ZenDyn**
+The emotion + speech co-render subsystem. Sends both viseme curves and emotion labels in the same WebSocket tick so lip movement and expression are always in sync.
+_Avoid:_ lipsync system, emotion renderer, sync engine
+
+**ARKit**
+Apple's ARKit blendshape format. Referenced in legacy code and the viseme mapping CSV. **Not the active lipsync system.** The `audio2lipsync/ARKit` path in the backend is orphaned — do not extend it.
+_Avoid:_ using ARKit as the name for our lipsync (we use ZenDyn + visemes)
+
+---
+
+## Architecture: Protocols
+
+**/ws/avatar**
+The WebSocket endpoint the Tutor Service broadcasts on. Carries the avatar protocol: visemes, emotion label + intensity, and (when `EDU_UE5_AUDIO` is set) base64-encoded TTS audio chunks.
+_Avoid:_ avatar socket, WS endpoint (be specific), broadcast channel
+
+**Avatar Protocol**
+The JSON contract over `/ws/avatar`. Each message includes: `visemes` (object, 14 keys), `emotion` (string label), `intensity` (float), and optionally `audio_chunk` (base64 MP3).
+_Avoid:_ the message format, WS protocol (ambiguous)
+
+**EDU_UE5_AUDIO**
+The feature flag (environment variable) that enables UE5-side audio playback. When set, the Tutor Service streams audio chunks to UE5 and the browser mutes its own TTS playback.
+_Avoid:_ audio flag, the env var
+
+**TTS**
+Text-to-Speech. Generated by the Tutor Service backend (currently ElevenLabs or Kokoro). The audio output that drives visemes.
+_Avoid:_ speech, voice (without context)
+
+---
+
+## Grant & Milestones
+
+**Grant**
+Research/development grant `09I05-03-V04-00072`. The project's primary funding source.
+_Avoid:_ the grant (always include the number on first reference per document)
+
+**Výstup 3**
+The grant deliverable milestone. Achieved when the product ships as **v1.0.0**.
+_Avoid:_ milestone, deliverable (use the Slovak term as the canonical name)
+
+**v1.0.0**
+The first public release. Ships from the clean `sorrywecann/edututor-ai` repo. Requires Výstup 3 completion.
+_Avoid:_ launch, go-live, release (use the version tag)
+
+---
+
+## Workstreams
+
+These are the active plan workstreams from `docs/MASTER_PLAN.md`.
+
+| ID | Name | Owner |
+|---|---|---|
+| **W1** | Desktop launcher EXE | Eng + Roland |
+| **W2** | UE5 single-source audio + sync | Eng + Martin |
+| **W3** | Lip-sync blendshapes for new avatar | Dominik + Martin |
+| **W4** | Emotions: detect → send → render | Eng + Martin |
+| **W5** | Avatar in KB workspace + orb | Eng |
+| **W6** | Clean release repo | Eng + Roland |
+| **W7** | Frontend polish (Výstup 3 scope) | Eng |
+| **W8** | Docs + onboarding | Eng + Roland |
+| **W9** | QA + acceptance testing | All |
+| **W10** | Code-signing + distribution | Eng + Roland |
+
+---
+
+## Design Language
+
+**Atmosphere**
+The design language. UNCLAW-inspired: warm charcoal gradients, frosted glass panels, JetBrains Mono micro-labels. See `DESIGN.md` for all tokens.
+_Avoid:_ dark mode, premium design, glass design (use Atmosphere)
+
+**Living Room** (design direction)
+The goal visual feeling: warm, cozy, premium — amber/cream/charcoal tones as opposed to cold dark-navy. The `feat/living-room-redesign` branch realises this.
+_Avoid:_ warm theme, amber theme (use Living Room)
+
+**GlassCard / MicroLabel / StatusPill / StepDots / QualitativeSlider / AtmosphereHeader / AtmosphereModal / PageHeader / EmptyState / MetricCard / DataTable / UploadZone / Button / Select**
+The Atmosphere component primitives in `core/src/components/atmosphere/`. Use these. Do not reinvent per-page.
+_Avoid:_ card component, label component (use the exact component name)
+
+---
+
+## Flagged Ambiguities
+
+- **"avatar"** alone is ambiguous if you mean the UE5 MetaHuman character vs. any agent persona — resolve at first use per document.
+- **"ARKit"** appears in legacy files and comments; it does NOT describe our lipsync system.
+- **"audio2lipsync"** path in the backend is orphaned; mention it only when explicitly planning its removal.
+- **"edututor-ai-sandbox"** / **"edututor-ai"** (repo names) vs **"EduTutor.AI"** (product name) — lowercase hyphenated = repo, title-case with dot = product. The sandbox is the active dev repo; `edututor-ai` is the future clean public release repo.

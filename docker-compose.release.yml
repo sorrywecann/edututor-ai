@@ -1,0 +1,22 @@
+# docker-compose.release.yml — overlay for pre-built image releases
+#
+# Usage:
+#   IMAGE_TAG=v1.0.0 GHCR_OWNER=sorrywecan \
+#     docker compose -f docker-compose.yml -f docker-compose.release.yml pull
+#   IMAGE_TAG=v1.0.0 GHCR_OWNER=sorrywecan \
+#     docker compose -f docker-compose.yml -f docker-compose.release.yml up -d
+#
+# Used by:
+#   - .github/workflows/release.yml smoke-test job (CI verification)
+#   - End-user production install via GitHub Release tarball
+#
+# Defaults:
+#   - GHCR_OWNER defaults to sorrywecan (the canonical Output 3 home)
+#   - IMAGE_TAG defaults to "latest"
+
+services:
+  tutor-service:
+    image: ghcr.io/${GHCR_OWNER:-sorrywecan}/edututor-backend:${IMAGE_TAG:-latest}
+
+  core:
+    image: ghcr.io/${GHCR_OWNER:-sorrywecan}/edututor-frontend:${IMAGE_TAG:-latest}

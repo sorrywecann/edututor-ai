@@ -1,0 +1,115 @@
+# EduTutor.AI — Python Dependencies
+# Everything here installs reliably on Windows, Mac, and Linux.
+# Run: pip install -r requirements.txt
+
+# ── Web framework ─────────────────────────────────────────────
+fastapi[standard]>=0.115.0
+uvicorn[standard]>=0.32.0
+pydantic>=2.10.0
+pydantic-settings>=2.6.0
+python-multipart>=0.0.20
+websockets>=14.1
+httpx>=0.27.0
+aiofiles>=24.1.0
+python-dotenv>=1.1.1
+
+# ── Database ──────────────────────────────────────────────────
+sqlalchemy[asyncio]>=2.0.36
+aiosqlite>=0.20.0
+# asyncpg: async PostgreSQL driver — required when DATABASE_URL is
+# postgresql+asyncpg://... (docker-compose.yml hardcodes this).
+# Without this, backend crashes at startup with ModuleNotFoundError.
+asyncpg>=0.30.0
+
+# ── Cache ─────────────────────────────────────────────────────
+redis[hiredis]>=5.2.0
+
+# ── STT ───────────────────────────────────────────────────────
+faster-whisper>=1.0.3
+groq>=0.9.0
+soundfile>=0.12.1
+av>=13.0.0
+numpy>=1.24.0
+
+# ── TTS ───────────────────────────────────────────────────────
+edge-tts>=6.1.9
+piper-tts>=1.2.0
+
+# ── TTS: Kokoro (82M, fast CPU inference, 8 languages, 50 preset voices) ──
+kokoro>=0.9.4
+misaki[en]>=0.9.4
+
+# ── TTS: OmniVoice voice cloning (k2-fsa/OmniVoice, ~1.2GB model) ────────
+# Active voice cloning engine (replaced XTTS-v2 / Chatterbox / Coqui VITS
+# in commit b22c568, máj 2026). Supports 600+ languages incl. Slovak (sk),
+# Czech (cs), English (en). Model auto-downloads from HuggingFace on
+# first use. See tts_service.py _synthesize_omnivoice() for details.
+omnivoice
+torchaudio>=2.1.0
+
+# ── TTS supporting libs (audio processing) ───────────────────────────────
+librosa>=0.10.0
+gruut>=2.2.3
+anyascii==0.3.3
+inflect==7.5.0
+
+# ── Audio metadata (probe MP3 duration for trailing-silence pad in lipsync) ──
+mutagen>=1.47.0
+pysbd==0.3.4
+
+# ── TTS: diffusers + omegaconf (used by Kokoro + other model wrappers) ───
+diffusers>=0.29.0
+omegaconf==2.3.0
+pyloudnorm==0.2.0
+
+# ── LLM ───────────────────────────────────────────────────────
+openai>=1.54.0
+anthropic>=0.40.0
+tiktoken>=0.7.0
+
+# ── RAG / Vector DB ──────────────────────────────────────────
+chromadb>=0.5.0
+sentence-transformers>=5.2.0
+torch>=2.1.0
+transformers>=4.36.0
+
+# ── Document processing ──────────────────────────────────────
+python-docx>=1.1.0
+docx2txt>=0.8
+openpyxl>=3.1.5
+pdfplumber>=0.10.0
+pypdf>=3.17.0
+pypdfium2>=4.0.0   # third-tier PDF extractor for files pdfplumber+pypdf can't parse
+
+# ── Utilities ─────────────────────────────────────────────────
+psutil>=5.9.0
+
+# ── Skills (Phase 7) ──────────────────────────────────────────
+# Web search backend for the WebSearchSkill search_web tool (DuckDuckGo HTML,
+# no API key). 8.x is sync-only; we wrap DDGS().text() in run_in_executor.
+# Pinned to major version: ddgs renamed and broke import paths between 7.x→8.x.
+duckduckgo-search>=8.0.0,<9.0.0
+
+# Main-content extractor for the WebSearchSkill fetch_url tool. Strips nav,
+# headers, footers, ads — returns clean readable body text suitable for LLM
+# context. Pure Python (lxml-backed); ~5MB total. Apache 2.0.
+# Replaces our originally-planned Scrapling dependency, which import-time
+# requires Playwright (~300MB Chromium) even when only sync HTTP is used.
+trafilatura>=2.0.0,<3.0.0
+
+# Free Spaced Repetition Scheduler — algorithm behind Anki — for the
+# SpacedRepetitionSkill. Pure Python; ~200KB. Pinned to major version 6.x;
+# 6.3.1 was the current stable when Phase 7 shipped.
+fsrs>=6.0.0,<7.0.0
+
+# ── Apple Silicon only (auto-skipped on Windows/Linux) ────────
+mlx-whisper>=0.4.0; sys_platform == "darwin" and platform_machine == "arm64"
+
+# ── Testing ───────────────────────────────────────────────────
+pytest>=8.0.0
+pytest-asyncio>=0.23.0
+pytest-cov>=4.1.0
+
+# ── Misc model/data deps ──────────────────────────────────────
+huggingface-hub>=0.17.0
+scipy>=1.10.0

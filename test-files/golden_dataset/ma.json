@@ -1,0 +1,900 @@
+[
+  {
+    "id": "MA-001",
+    "question": "Čo je limita funkcie?",
+    "expected_keywords": [
+      "limita",
+      "funkcia",
+      "blizi sa",
+      "hodnota",
+      "epsilon"
+    ],
+    "difficulty": "easy",
+    "subject": "MA",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: limita, funkcia, blizi sa"
+  },
+  {
+    "id": "MA-002",
+    "question": "Čo je derivácia funkcie?",
+    "expected_keywords": [
+      "derivacia",
+      "zmena",
+      "smernica",
+      "dotycnica",
+      "rychlost"
+    ],
+    "difficulty": "easy",
+    "subject": "MA",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: derivacia, zmena, smernica"
+  },
+  {
+    "id": "MA-003",
+    "question": "Čo je integral?",
+    "expected_keywords": [
+      "integral",
+      "plocha",
+      "antiderivacia",
+      "primitivna funkcia"
+    ],
+    "difficulty": "easy",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-004",
+    "question": "Čo je určitý integrál?",
+    "expected_keywords": [
+      "určitý integrál",
+      "hranice",
+      "plocha pod krivkou",
+      "a",
+      "b"
+    ],
+    "difficulty": "easy",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-005",
+    "question": "Čo je neurčitý integrál?",
+    "expected_keywords": [
+      "neurčitý integrál",
+      "primitivna funkcia",
+      "konstanta C",
+      "antiderivacia"
+    ],
+    "difficulty": "easy",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-006",
+    "question": "Čo je postupnost?",
+    "expected_keywords": [
+      "postupnost",
+      "členy",
+      "n-ty clen",
+      "konvergencia",
+      "index"
+    ],
+    "difficulty": "easy",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-007",
+    "question": "Čo je rad?",
+    "expected_keywords": [
+      "rad",
+      "sucet",
+      "nekonečný",
+      "konvergencia",
+      "divergencia"
+    ],
+    "difficulty": "easy",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-008",
+    "question": "Čo je spojitosť funkcie?",
+    "expected_keywords": [
+      "spojitosť",
+      "limita",
+      "funkčna hodnota",
+      "bod",
+      "nepretrzitost"
+    ],
+    "difficulty": "easy",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-009",
+    "question": "Čo je derivácia podla definicie?",
+    "expected_keywords": [
+      "derivacia",
+      "limita",
+      "prirustok",
+      "h",
+      "podiel"
+    ],
+    "difficulty": "easy",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-010",
+    "question": "Ako derivujeme sucin dvoch funkcii?",
+    "expected_keywords": [
+      "sucin",
+      "pravidlo",
+      "f'g + fg'",
+      "Leibniz"
+    ],
+    "difficulty": "easy",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-011",
+    "question": "Ako derivujeme podiel dvoch funkcii?",
+    "expected_keywords": [
+      "podiel",
+      "pravidlo",
+      "citatel",
+      "menovatel",
+      "derivacia"
+    ],
+    "difficulty": "easy",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-012",
+    "question": "Čo je reťazové pravidlo?",
+    "expected_keywords": [
+      "reťazové pravidlo",
+      "chain rule",
+      "zlozena funkcia",
+      "vonkajsia",
+      "vnutorna"
+    ],
+    "difficulty": "easy",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-013",
+    "question": "Čo je lokálne maximum a minimum?",
+    "expected_keywords": [
+      "lokálne maximum",
+      "minimum",
+      "extremy",
+      "derivacia",
+      "nula"
+    ],
+    "difficulty": "easy",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-014",
+    "question": "Čo je inflexny bod?",
+    "expected_keywords": [
+      "inflexny bod",
+      "druha derivacia",
+      "zmena konkavity",
+      "nula"
+    ],
+    "difficulty": "easy",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-015",
+    "question": "Čo je parciálna derivácia?",
+    "expected_keywords": [
+      "parciálna derivácia",
+      "viac premenných",
+      "jedna premenná",
+      "konstanty"
+    ],
+    "difficulty": "medium",
+    "subject": "MA",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: parciálna derivácia, viac premenných, jedna premenná"
+  },
+  {
+    "id": "MA-016",
+    "question": "Vysvetlite L'Hôpitalovo pravidlo.",
+    "expected_keywords": [
+      "L'Hôpitalovo",
+      "neurcity tvar",
+      "0/0",
+      "derivácia citatela",
+      "menovatela"
+    ],
+    "difficulty": "medium",
+    "subject": "MA",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: L'Hôpitalovo, neurcity tvar, 0/0"
+  },
+  {
+    "id": "MA-017",
+    "question": "Čo je Taylorov rad?",
+    "expected_keywords": [
+      "Taylorov rad",
+      "aproximacia",
+      "derivacie",
+      "polynom",
+      "bod"
+    ],
+    "difficulty": "medium",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-018",
+    "question": "Čo je Maclaurinov rad?",
+    "expected_keywords": [
+      "Maclaurinov",
+      "Taylor",
+      "bod nula",
+      "rozvoj",
+      "aproximacia"
+    ],
+    "difficulty": "medium",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-019",
+    "question": "Vysvetlite metodu per partes.",
+    "expected_keywords": [
+      "per partes",
+      "integrovanie",
+      "u",
+      "v",
+      "sucin"
+    ],
+    "difficulty": "medium",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-020",
+    "question": "Vysvetlite substituciu pri integrovani.",
+    "expected_keywords": [
+      "substitucia",
+      "premenná",
+      "zmena",
+      "zjednodusenie",
+      "integral"
+    ],
+    "difficulty": "medium",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-021",
+    "question": "Čo je diferenciálna rovnica?",
+    "expected_keywords": [
+      "diferenciálna rovnica",
+      "derivacia",
+      "funkcia",
+      "riesenie",
+      "rad"
+    ],
+    "difficulty": "medium",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-022",
+    "question": "Čo je obycajna diferenciálna rovnica (ODE)?",
+    "expected_keywords": [
+      "ODE",
+      "obycajna",
+      "jedna premenná",
+      "riesenie"
+    ],
+    "difficulty": "medium",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-023",
+    "question": "Čo je separovatelna diferenciálna rovnica?",
+    "expected_keywords": [
+      "separovatelna",
+      "oddelenie premenných",
+      "integrovanie",
+      "obe strany"
+    ],
+    "difficulty": "medium",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-024",
+    "question": "Čo je geometricky rad?",
+    "expected_keywords": [
+      "geometricky rad",
+      "kvocient",
+      "sucet",
+      "konvergencia",
+      "|q|<1"
+    ],
+    "difficulty": "medium",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-025",
+    "question": "Čo je harmonicky rad?",
+    "expected_keywords": [
+      "harmonicky rad",
+      "1/n",
+      "divergencia",
+      "nekonečný"
+    ],
+    "difficulty": "medium",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-026",
+    "question": "Vysvetlite kritérium konvergencie radov.",
+    "expected_keywords": [
+      "konvergencia",
+      "kriterium",
+      "porovnanie",
+      "podielove",
+      "odmocninove"
+    ],
+    "difficulty": "medium",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-027",
+    "question": "Čo je Riemannov integral?",
+    "expected_keywords": [
+      "Riemann",
+      "sucet",
+      "obdlzniky",
+      "jemnost delenia",
+      "plocha"
+    ],
+    "difficulty": "medium",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-028",
+    "question": "Čo je gradient funkcie viac premennych?",
+    "expected_keywords": [
+      "gradient",
+      "vektor",
+      "parcialne derivacie",
+      "smer",
+      "maximum"
+    ],
+    "difficulty": "medium",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-029",
+    "question": "Čo je Jacobian?",
+    "expected_keywords": [
+      "Jacobian",
+      "matica",
+      "parcialne derivacie",
+      "transformacia"
+    ],
+    "difficulty": "hard",
+    "subject": "MA",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: Jacobian, matica, parcialne derivacie"
+  },
+  {
+    "id": "MA-030",
+    "question": "Čo je Hessova matica?",
+    "expected_keywords": [
+      "Hessova matica",
+      "druhe derivacie",
+      "extremy",
+      "konvexnost"
+    ],
+    "difficulty": "hard",
+    "subject": "MA",
+    "expected_answer_snippet": "Odpoved by mala obsahovat: Hessova matica, druhe derivacie, extremy"
+  },
+  {
+    "id": "MA-031",
+    "question": "Vysvetlite vetu o strednej hodnote.",
+    "expected_keywords": [
+      "stredna hodnota",
+      "Lagrange",
+      "derivacia",
+      "interval",
+      "rovnost"
+    ],
+    "difficulty": "medium",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-032",
+    "question": "Čo je Rolleova veta?",
+    "expected_keywords": [
+      "Rolle",
+      "nulova derivacia",
+      "interval",
+      "krajne body",
+      "rovnake hodnoty"
+    ],
+    "difficulty": "medium",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-033",
+    "question": "Vysvetlite pojem konvexna a konkavna funkcia.",
+    "expected_keywords": [
+      "konvexna",
+      "konkavna",
+      "druha derivacia",
+      "zakrivenie"
+    ],
+    "difficulty": "medium",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-034",
+    "question": "Čo je nevlastný integrál?",
+    "expected_keywords": [
+      "nevlastný integrál",
+      "nekonecno",
+      "hranica",
+      "konvergencia",
+      "divergencia"
+    ],
+    "difficulty": "hard",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-035",
+    "question": "Vysvetlite Fourierov rad.",
+    "expected_keywords": [
+      "Fourier",
+      "sinusoidy",
+      "kosinusoidy",
+      "koeficienty",
+      "periodicka funkcia"
+    ],
+    "difficulty": "hard",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-036",
+    "question": "Čo je Laplaceova transformacia?",
+    "expected_keywords": [
+      "Laplace",
+      "transformacia",
+      "s-domena",
+      "diferenciálne rovnice"
+    ],
+    "difficulty": "hard",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-037",
+    "question": "Čo je epsilon-delta definicia limity?",
+    "expected_keywords": [
+      "epsilon",
+      "delta",
+      "definicia",
+      "limita",
+      "formálna"
+    ],
+    "difficulty": "hard",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-038",
+    "question": "Vysvetlite viacnásobný integrál.",
+    "expected_keywords": [
+      "viacnásobný integrál",
+      "dvojny",
+      "trojny",
+      "objem",
+      "plocha"
+    ],
+    "difficulty": "hard",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-039",
+    "question": "Čo je matica a ake su základné operacie?",
+    "expected_keywords": [
+      "matica",
+      "scitanie",
+      "nasobenie",
+      "transponovanie",
+      "riadky",
+      "stlpce"
+    ],
+    "difficulty": "easy",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-040",
+    "question": "Čo je determinant matice?",
+    "expected_keywords": [
+      "determinant",
+      "matica",
+      "hodnota",
+      "singularna",
+      "inverzna"
+    ],
+    "difficulty": "medium",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-041",
+    "question": "Čo je inverzná matica?",
+    "expected_keywords": [
+      "inverzná matica",
+      "A^-1",
+      "jednotkova",
+      "determinant",
+      "nenulovy"
+    ],
+    "difficulty": "medium",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-042",
+    "question": "Čo sú vlastné čísla a vlastné vektory?",
+    "expected_keywords": [
+      "vlastné čísla",
+      "vlastné vektory",
+      "Ax=lambda x",
+      "matica"
+    ],
+    "difficulty": "hard",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-043",
+    "question": "Vysvetlite Gaussovu eliminaciu.",
+    "expected_keywords": [
+      "Gauss",
+      "eliminacia",
+      "schodkovy tvar",
+      "sustava rovnic",
+      "riadkove operacie"
+    ],
+    "difficulty": "medium",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-044",
+    "question": "Čo je lineárna nezávislosť vektorov?",
+    "expected_keywords": [
+      "lineárna nezávislosť",
+      "kombinacia",
+      "nulova",
+      "vektory"
+    ],
+    "difficulty": "medium",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-045",
+    "question": "Čo je baza vektoroveho priestoru?",
+    "expected_keywords": [
+      "baza",
+      "vektory",
+      "generovanie",
+      "lineárna nezávislosť",
+      "dimenzia"
+    ],
+    "difficulty": "medium",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-046",
+    "question": "Čo je norma vektora?",
+    "expected_keywords": [
+      "norma",
+      "velkost",
+      "dlzka",
+      "euklidovska",
+      "vzdialenost"
+    ],
+    "difficulty": "easy",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-047",
+    "question": "Čo je skalarny sucin?",
+    "expected_keywords": [
+      "skalarny sucin",
+      "dot product",
+      "uhol",
+      "projekcia"
+    ],
+    "difficulty": "easy",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-048",
+    "question": "Vysvetlite Cramerovo pravidlo.",
+    "expected_keywords": [
+      "Cramer",
+      "determinanty",
+      "sustava rovnic",
+      "riesenie"
+    ],
+    "difficulty": "medium",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-049",
+    "question": "Čo je hodnost matice?",
+    "expected_keywords": [
+      "hodnost",
+      "rank",
+      "lineárna nezávislosť",
+      "riadky",
+      "stlpce"
+    ],
+    "difficulty": "medium",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-050",
+    "question": "Čo je numerická integracia (trapezoidna, Simpsonova)?",
+    "expected_keywords": [
+      "numericka integracia",
+      "trapezoid",
+      "Simpson",
+      "aproximacia",
+      "delenie"
+    ],
+    "difficulty": "hard",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-051",
+    "question": "Vysvetlite Newtonovu metodu hladania korenov.",
+    "expected_keywords": [
+      "Newton",
+      "iteracia",
+      "derivacia",
+      "koren",
+      "aproximacia"
+    ],
+    "difficulty": "hard",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-052",
+    "question": "Čo je konvergencia postupnosti?",
+    "expected_keywords": [
+      "konvergencia",
+      "limita",
+      "epsilon",
+      "N",
+      "blizi sa"
+    ],
+    "difficulty": "easy",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-053",
+    "question": "Vysvetlite Leibnizovo kritérium pre striedavé rady.",
+    "expected_keywords": [
+      "Leibniz",
+      "striedavy rad",
+      "klesajuce cleny",
+      "limita nula"
+    ],
+    "difficulty": "hard",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-054",
+    "question": "Čo je mocninový rad?",
+    "expected_keywords": [
+      "mocninový rad",
+      "koeficienty",
+      "polomer konvergencie",
+      "funkcia"
+    ],
+    "difficulty": "hard",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-055",
+    "question": "Vysvetlite pojem supremum a infimum.",
+    "expected_keywords": [
+      "supremum",
+      "infimum",
+      "horná hranica",
+      "dolná hranica",
+      "mnozina"
+    ],
+    "difficulty": "hard",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-056",
+    "question": "Čo je Bolzano-Weierstrassova veta?",
+    "expected_keywords": [
+      "Bolzano-Weierstrass",
+      "ohraničená",
+      "podpostupnost",
+      "konvergentna"
+    ],
+    "difficulty": "hard",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-057",
+    "question": "Ako sa počíta objem rotačného telesa?",
+    "expected_keywords": [
+      "objem",
+      "rotacia",
+      "integral",
+      "pi",
+      "r^2"
+    ],
+    "difficulty": "hard",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-058",
+    "question": "Čo je implicitná derivácia?",
+    "expected_keywords": [
+      "implicitna",
+      "derivacia",
+      "rovnica",
+      "dy/dx",
+      "obe strany"
+    ],
+    "difficulty": "medium",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-059",
+    "question": "Vysvetlite pojem asymptota funkcie.",
+    "expected_keywords": [
+      "asymptota",
+      "horizontalna",
+      "vertikalna",
+      "limita",
+      "nekonecno"
+    ],
+    "difficulty": "easy",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-060",
+    "question": "Čo je monotónna funkcia?",
+    "expected_keywords": [
+      "monotónna",
+      "rastucea",
+      "klesajuca",
+      "derivacia",
+      "znamienko"
+    ],
+    "difficulty": "easy",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-061",
+    "question": "Vysvetlite dôsledky Cauchyho vety o strednej hodnote.",
+    "expected_keywords": [
+      "Cauchy",
+      "stredna hodnota",
+      "dve funkcie",
+      "podiel",
+      "derivacia"
+    ],
+    "difficulty": "hard",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-062",
+    "question": "Čo je linearna diferenciálna rovnica s konstantnymi koeficientmi?",
+    "expected_keywords": [
+      "linearna",
+      "konstantné koeficienty",
+      "charakteristicka rovnica",
+      "korene"
+    ],
+    "difficulty": "hard",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-063",
+    "question": "Vysvetlite pojem diferencovateľnosť.",
+    "expected_keywords": [
+      "diferencovateľnosť",
+      "derivacia",
+      "existuje",
+      "spojitosť",
+      "linearizacia"
+    ],
+    "difficulty": "medium",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-064",
+    "question": "Čo je vektorovy sucin?",
+    "expected_keywords": [
+      "vektorovy sucin",
+      "cross product",
+      "kolmy vektor",
+      "plocha",
+      "determinant"
+    ],
+    "difficulty": "medium",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-065",
+    "question": "Vysvetlite parametricke krivky.",
+    "expected_keywords": [
+      "parametricka",
+      "krivka",
+      "t",
+      "x(t)",
+      "y(t)",
+      "trajektoria"
+    ],
+    "difficulty": "medium",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-066",
+    "question": "Čo je krivočiarový integrál?",
+    "expected_keywords": [
+      "krivočiarový integrál",
+      "krivka",
+      "praca",
+      "sila",
+      "draha"
+    ],
+    "difficulty": "hard",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-067",
+    "question": "Aké sú aplikácie derivacii v praxi?",
+    "expected_keywords": [
+      "derivacia",
+      "rychlost",
+      "zmena",
+      "optimalizacia",
+      "fyzika"
+    ],
+    "difficulty": "easy",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-068",
+    "question": "Aké sú aplikácie integralov v praxi?",
+    "expected_keywords": [
+      "integral",
+      "plocha",
+      "objem",
+      "praca",
+      "fyzika"
+    ],
+    "difficulty": "easy",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-069",
+    "question": "Čo je divergencia vektorového poľa?",
+    "expected_keywords": [
+      "divergencia",
+      "vektorové pole",
+      "zdroj",
+      "spotrebic",
+      "tok"
+    ],
+    "difficulty": "hard",
+    "subject": "MA"
+  },
+  {
+    "id": "MA-070",
+    "question": "Čo je rotacia (curl) vektorového poľa?",
+    "expected_keywords": [
+      "rotacia",
+      "curl",
+      "vir",
+      "vektorové pole",
+      "cirkulacia"
+    ],
+    "difficulty": "hard",
+    "subject": "MA"
+  }
+]

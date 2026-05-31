@@ -1,0 +1,58 @@
+version: 2
+
+updates:
+  # Backend — Python requirements
+  - package-ecosystem: pip
+    directory: "/tutor-service"
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: Europe/Bratislava
+    open-pull-requests-limit: 5
+    groups:
+      python-minor:
+        applies-to: version-updates
+        update-types: ["minor", "patch"]
+    labels:
+      - dependencies
+      - backend
+    commit-message:
+      prefix: "chore(deps)"
+      include: scope
+
+  # Frontend — npm
+  - package-ecosystem: npm
+    directory: "/core"
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: Europe/Bratislava
+    open-pull-requests-limit: 5
+    groups:
+      npm-minor:
+        applies-to: version-updates
+        update-types: ["minor", "patch"]
+    ignore:
+      # next-auth peer dep on next is fragile — manual upgrades only
+      - dependency-name: "next-auth"
+      - dependency-name: "next"
+    labels:
+      - dependencies
+      - frontend
+    commit-message:
+      prefix: "chore(deps)"
+      include: scope
+
+  # GitHub Actions
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: monthly
+    labels:
+      - dependencies
+      - ci
+    commit-message:
+      prefix: "chore(deps)"
+      include: scope
