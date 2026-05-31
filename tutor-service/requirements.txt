@@ -33,7 +33,7 @@ numpy>=1.24.0
 
 # ── TTS ───────────────────────────────────────────────────────
 edge-tts>=6.1.9
-piper-tts>=1.2.0
+piper-tts>=1.4.2
 
 # ── TTS: Kokoro (82M, fast CPU inference, 8 languages, 50 preset voices) ──
 kokoro>=0.9.4
