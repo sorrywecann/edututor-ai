@@ -16,11 +16,12 @@ avatar — in a single double-click. No `git clone`, no Python, no Node, no Dock
 
 ### 1 · Download
 
-**v1.0 release: coming soon** — the public installer will live at
-`sorrywecann/edututor-ai/releases` once cut. In the meantime, see
-[`docs/guides/FULL_STACK_SETUP.md`](./docs/guides/FULL_STACK_SETUP.md)
-for the current dev setup (clone + run from source). The signed
-`EduTutor-Setup-X.exe` (~600 MB) ships with the v1.0 cut.
+**v1.0 is LIVE** — download the latest installer:
+https://github.com/sorrywecann/edututor-ai/releases/latest
+
+The signed `EduTutor-Setup-X.exe` (~600 MB) ships with every release.
+For the dev setup (clone + run from source), see
+[`docs/guides/FULL_STACK_SETUP.md`](./docs/guides/FULL_STACK_SETUP.md).
 
 The installer is much smaller than previous releases because the 3D
 MetaHuman avatar engine (~1.5 GB) is now shipped as a separate asset
@@ -152,6 +153,18 @@ Common gotchas:
 | **Build the installer from source** (cook UE5 + stage resources + electron-builder) | [`desktop/BUNDLE.md`](./desktop/BUNDLE.md) |
 | **Just the web stack on Windows** (no UE5 avatar) | `start.bat` (or `start.ps1`) |
 
+## Recommended start path
+
+Three supported start paths, in order of recommendation:
+
+1. **Quick start (most users)** — `.\start.ps1` (Windows) or `./start.sh` (Mac/Linux). One command, runs from source. See [`docs/guides/START_STACK.md`](./docs/guides/START_STACK.md).
+2. **Docker (optional production deploy)** — `docker compose up`. Use this for server deploys or fully reproducible local runs.
+3. **Packaged installer (`.exe`)** — download from [releases/latest](https://github.com/sorrywecann/edututor-ai/releases/latest). One double-click, no clone, no Python/Node/Docker required.
+
+The three sections below document each path in detail.
+
+---
+
 ## Quick Start — klikni a spusti (Docker)
 
 > **Predpoklady:** [Docker Desktop](https://www.docker.com/products/docker-desktop) (Mac / Windows / Linux). Nič iné.
@@ -172,7 +185,7 @@ Launcher si overí Docker, vyrobí `.env` z `.env.example`, postaví kontajnery 
 
 ## Quick Start — manuálne (bez Docker, pre vývoj)
 
-> **Requires:** Python 3.11+, Node.js 18+, pnpm (or npm)
+> **Requires:** Python 3.11+, Node.js 20+, pnpm (or npm)
 
 ```bash
 # 1. Clone

@@ -10,6 +10,19 @@ pieces (§1–5)** in this order. The all-in-one launcher scripts in older clone
 > This file is the single source of truth for `git clone → working avatar`.
 > `docs/INSTALLATION.md` covers only the cloud/Docker backend+frontend (no avatar).
 
+## Recommended path
+Pick the row that matches you — they are ordered easiest → most involved.
+
+| Use case | Command |
+|---|---|
+| **Easiest** — try it locally without cloning | Download the installer from [releases/latest](https://github.com/sorrywecann/edututor-ai/releases/latest) (1 click) |
+| **Web chat (no avatar)** | `./start.ps1` *(Windows)* or `./start.sh` *(macOS/Linux)* |
+| **Full avatar (auto-download UE5)** | `./start.ps1 -Avatar` — fetches the UE5 binary on first run |
+| **Team UE5 dev** *(requires private source access)* | `./start.ps1 -Avatar -UseSiblingClone` — see §0 + Quickstart below |
+
+If you're not sure: start at the top row and move down only when you hit a need
+the previous row can't meet.
+
 ## Quickstart: backend + frontend only
 If you don't need the avatar (just web-app dev) and you want the processes to
 **survive killing your terminal or any background-task harness**, use the
@@ -38,12 +51,16 @@ correct order — no separate scripts to run.
 .\start.ps1 -Avatar
 
 # Team member with a sibling UE5 clone — skip download, use local source.
-# The UE5 source repo is managed separately from this sandbox.
-# For access: see CONTRIBUTING.md "Avatar work" section, or open a GitHub
-# issue tagged 'avatar-access' on sorrywecann/edututor-ai.
 #
-# Once you have access:
-git clone -b Edutor_UnrealEngine <UE5_REPO_URL> ..\edotutor-ue5-latest
+# UE5 source is not yet publicly available. To get the avatar working as a
+# fresh contributor, use the packaged installer from releases/latest (which
+# auto-downloads the UE5 binary) — see the "Recommended path" table above.
+#
+# For source-level UE5 development access (the .uproject + .uasset files on
+# the Edutor_UnrealEngine branch), file a GitHub issue on
+# sorrywecann/edututor-ai tagged 'avatar-access'. Once granted, clone the
+# private UE5 repo as a sibling and use -UseSiblingClone:
+git clone -b Edutor_UnrealEngine <granted-UE5-repo-URL> ..\edotutor-ue5-latest
 .\start.ps1 -Avatar -UseSiblingClone
 
 # Offline / reuse existing cache

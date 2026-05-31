@@ -5,11 +5,30 @@
 Install these once per machine. `start.sh` can auto-install Python and Node on Mac/Linux, but installing all prerequisites up front is the most reliable path.
 
 ### Windows
-- Python 3.11+: `winget install Python.Python.3.11`
-- Node.js LTS: `winget install OpenJS.NodeJS.LTS`
-- pnpm: `npm i -g pnpm`
-- uv (Python package manager): `winget install astral-sh.uv` (or `pip install uv`)
-- Git: `winget install Git.Git`
+
+Run these from an elevated PowerShell prompt:
+
+```powershell
+winget install Python.Python.3.11
+winget install OpenJS.NodeJS.LTS
+winget install Git.Git
+winget install astral-sh.uv
+npm install -g pnpm
+```
+
+(`uv` falls back to `pip install uv` if winget is unavailable.)
+
+### Optional: Ollama (free local LLM)
+
+If you don't want to use OpenAI/Anthropic API keys, install Ollama for local inference:
+
+- Windows: `winget install Ollama.Ollama`
+- macOS: `brew install ollama`
+- Linux: `curl -fsSL https://ollama.com/install.sh | sh`
+
+Then: `ollama pull gemma3:12b`   (or `qwen2.5:14b` for stronger Slovak)
+
+The app auto-detects Ollama running on `:11434`.
 
 ### Mac
 - Python 3.11+: `brew install python@3.11`
@@ -39,10 +58,22 @@ uv --version      # should print uv 0.x
 ```bash
 git clone https://github.com/sorrywecann/edututor-ai.git
 cd edututor-ai
-./start.sh
 ```
 
-**That's it.** `start.sh` handles everything automatically:
+### Windows (primary)
+
+```powershell
+.\start.ps1                    # web chat
+.\start.ps1 -Avatar             # full stack with MetaHuman
+```
+
+### Mac / Linux
+
+```bash
+./start.sh                       # web chat
+```
+
+**That's it.** The launcher handles everything automatically:
 
 1. Installs Python 3.11+ if missing (`brew` on Mac, `apt` on Linux)
 2. Installs Node.js 20+ if missing

@@ -33,6 +33,28 @@ if not exist "%~dp0start.ps1" (
     exit /b 1
 )
 
+REM --- Verify Python 3.11+ before launching ------------------------------
+where python >nul 2>&1 || (
+  echo [ERROR] Python not found on PATH.
+  echo Install: winget install Python.Python.3.11
+  echo Then close+reopen terminal so PATH updates.
+  pause
+  exit /b 1
+)
+for /f "tokens=2" %%V in ('python --version 2^>^&1') do set PYVER=%%V
+for /f "tokens=1,2 delims=." %%a in ("%PYVER%") do (set PYMAJOR=%%a& set PYMINOR=%%b)
+if %PYMAJOR% LSS 3 (goto :badpython)
+if %PYMAJOR% EQU 3 if %PYMINOR% LSS 11 (goto :badpython)
+goto :pythonok
+
+:badpython
+echo [ERROR] Python 3.11+ required, found %PYVER%
+echo Install: winget install Python.Python.3.11
+pause
+exit /b 1
+
+:pythonok
+
 REM --- Invoke the launcher with safe flags -------------------------------
 "%PS_EXE%" -NoProfile -ExecutionPolicy Bypass -File "%~dp0start.ps1" %*
 set "RC=%ERRORLEVEL%"

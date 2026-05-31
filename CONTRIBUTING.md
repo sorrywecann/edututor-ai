@@ -109,7 +109,7 @@ Containers and GitHub Codespaces.
 ### Maintainers
 - **Project Owner**: princeofwellness ([GitHub](https://github.com/princeofwellness))
 - **UE5 / Avatar**: open a GitHub issue tagged `avatar` on this repo, or DM via GitHub.
-- **Slack/Discord**: TBD — see repo README for community channels.
+- **Community channels**: open a GitHub Discussion at https://github.com/sorrywecann/edututor-ai/discussions or file an issue. Slack/Discord may be added later.
 
 ### Avatar work
 Avatar pipeline changes (visemes, MetaHuman Blueprint, ZenDyn) require coordination with the UE5 team. Before touching:
