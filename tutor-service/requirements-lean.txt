@@ -31,7 +31,7 @@ edge-tts>=6.1.9
 # ── STT: faster-whisper (local, CPU-only, multilingual incl. Slovak) ──
 # Voice input works offline; model auto-downloads to HF_HOME on first use
 # (~145 MB for whisper-base). Saves the bundle ~150 MB vs torch-based whisper.
-faster-whisper>=1.0.0
+faster-whisper>=1.2.1
 
 # ── Light deps the startup path imports at module level ──
 numpy>=1.24.0
