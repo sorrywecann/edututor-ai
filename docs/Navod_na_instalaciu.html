@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EduTutor.AI — Návod na inštaláciu</title>
+<style>
+  html, body { margin: 0; padding: 0; background: #fff; color: #111; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-size: 14.5px;
+    line-height: 1.55;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 56px 32px 80px;
+  }
+  h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+  .sub {
+    color: #555;
+    margin: 0 0 40px;
+    font-size: 14px;
+  }
+  h2 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 32px 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #000;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 6px;
+  }
+  p, ol, ul { margin: 0 0 12px; }
+  ol, ul { padding-left: 22px; }
+  li { margin-bottom: 4px; }
+  code {
+    font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 13px;
+    background: #f4f4f4;
+    border: 1px solid #e4e4e4;
+    border-radius: 4px;
+    padding: 1px 6px;
+  }
+  .dim { color: #777; }
+  a { color: #0645ad; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  footer {
+    margin-top: 56px;
+    padding-top: 16px;
+    border-top: 1px solid #ddd;
+    font-size: 12px;
+    color: #777;
+    display: flex;
+    justify-content: space-between;
+  }
+  @media print {
+    body { padding: 24px; max-width: none; }
+    footer { page-break-inside: avoid; }
+    a { color: #000; }
+  }
+</style>
+</head>
+<body>
+
+<h1>EduTutor.AI</h1>
+<p class="sub">Slovenský AI tutor s lokálnym jazykovým modelom a živým 3D avatarom. Verzia 0.8.8.</p>
+
+<h2>Inštalácia</h2>
+<ol>
+  <li>Spusti <code>EduTutor-Setup-0.8.8.exe</code></li>
+  <li>Preklikaj sa sprievodcom inštalácie</li>
+  <li>Otvor EduTutor z desktopovej ikony</li>
+</ol>
+<p class="dim">Pri prvom spustení sa automaticky stiahne MetaHuman avatar (~1.7 GB). Ďalšie spustenia sú už okamžité.</p>
+
+<h2>Systémové požiadavky</h2>
+<ul>
+  <li>Windows 11 (64-bit)</li>
+  <li>16 GB RAM odporúčané</li>
+  <li>~6 GB voľného miesta (+1.7 GB pre avatar)</li>
+  <li>NVIDIA GPU s aktuálnym ovládačom</li>
+  <li>Pripojenie na internet pri prvom spustení</li>
+</ul>
+
+<h2>Overenie pravosti (voliteľné)</h2>
+<p>V cmd alebo PowerShelli:</p>
+<p><code>certutil -hashfile EduTutor-Setup-0.8.8.exe SHA256</code></p>
+<p>Porovnaj výsledok s obsahom <code>EduTutor-Setup-0.8.8.exe.sha256</code>. Musia byť identické.</p>
+
+<h2>Kde sú tvoje dáta</h2>
+<ul>
+  <li>Konfigurácia a API kľúče: <code>%APPDATA%\edututor-desktop\</code></li>
+  <li>LLM modely a UE5 avatar: <code>%APPDATA%\edututor-desktop\ollama-models\</code> a <code>\ue5\</code></li>
+  <li>Konverzácie: lokálne v SQLite databáze, nikam sa neposielajú</li>
+  <li>API kľúče sa odosielajú výhradne providerovi (OpenAI, Anthropic, ...), nikam inam</li>
+</ul>
+
+<h2>Odinštalovanie</h2>
+<ul>
+  <li>Štart Menu → EduTutor.AI → Uninstall EduTutor.AI, alebo</li>
+  <li>Windows → Nastavenia → Aplikácie → EduTutor.AI → Odinštalovať</li>
+</ul>
+<p class="dim">Užívateľské dáta v <code>%APPDATA%\edututor-desktop\</code> ostanú zachované. Odstráň ručne ak chceš úplne čistú stopu.</p>
+
+<h2>Aktualizácie a podpora</h2>
+<p>Nové verzie nájdeš na: <a href="https://github.com/sorrywecann/edututor-ai/releases">github.com/sorrywecann/edututor-ai/releases</a></p>
+<p>Predošlé stabilné verzie sú dostupné v Releases history ako fallback.</p>
+
+<h2>Licencia</h2>
+<p>Proprietary. SORRYWECAN s.r.o. · grant 09I05-03-V04-00072.</p>
+
+<footer>
+  <span>v0.8.8</span>
+  <span>sorrywecann.com</span>
+</footer>
+
+</body>
+</html>
