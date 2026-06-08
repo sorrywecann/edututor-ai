@@ -95,7 +95,7 @@ duckduckgo-search>=8.0.0,<9.0.0
 # context. Pure Python (lxml-backed); ~5MB total. Apache 2.0.
 # Replaces our originally-planned Scrapling dependency, which import-time
 # requires Playwright (~300MB Chromium) even when only sync HTTP is used.
-trafilatura>=2.0.0,<3.0.0
+trafilatura>=2.1.0,<3.0.0
 
 # Free Spaced Repetition Scheduler — algorithm behind Anki — for the
 # SpacedRepetitionSkill. Pure Python; ~200KB. Pinned to major version 6.x;
