@@ -57,7 +57,7 @@ pypdfium2>=4.0.0
 
 # ── Skills (web search, spaced repetition) — all light ──
 duckduckgo-search>=8.0.0,<9.0.0
-trafilatura>=2.0.0,<3.0.0
+trafilatura>=2.1.0,<3.0.0
 fsrs>=6.0.0,<7.0.0
 
 # ── Utilities ──
